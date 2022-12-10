@@ -33,7 +33,7 @@ struct BT_API btBatchedConstraints
 		BATCHING_METHOD_SPATIAL_GRID_3D,
 		BATCHING_METHOD_COUNT
 	};
-	struct Range
+	struct BT_API Range
 	{
 		int begin;
 		int end;

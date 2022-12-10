@@ -101,7 +101,7 @@ public:
 	void destroy(pointer ptr) { ptr->~value_type(); }
 
 	template <typename O>
-	struct rebind
+	struct BT_API rebind
 	{
 		typedef btAlignedAllocator<O, Alignment> other;
 	};

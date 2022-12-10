@@ -21,7 +21,7 @@ struct BT_API btVehicleRaycaster
 	virtual ~btVehicleRaycaster()
 	{
 	}
-	struct btVehicleRaycasterResult
+	struct BT_API btVehicleRaycasterResult
 	{
 		btVehicleRaycasterResult() : m_distFraction(btScalar(-1.)){};
 		btVector3 m_hitPointInWorld;

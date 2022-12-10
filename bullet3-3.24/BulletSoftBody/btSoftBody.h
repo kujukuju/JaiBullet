@@ -86,7 +86,7 @@ public:
 	//
 
 	///eAeroModel
-	struct eAeroModel
+	struct BT_API eAeroModel
 	{
 		enum _
 		{
@@ -102,7 +102,7 @@ public:
 	};
 
 	///eVSolver : velocities solvers
-	struct eVSolver
+	struct BT_API eVSolver
 	{
 		enum _
 		{
@@ -112,7 +112,7 @@ public:
 	};
 
 	///ePSolver : positions solvers
-	struct ePSolver
+	struct BT_API ePSolver
 	{
 		enum _
 		{
@@ -125,7 +125,7 @@ public:
 	};
 
 	///eSolverPresets
-	struct eSolverPresets
+	struct BT_API eSolverPresets
 	{
 		enum _
 		{
@@ -137,7 +137,7 @@ public:
 	};
 
 	///eFeature
-	struct eFeature
+	struct BT_API eFeature
 	{
 		enum _
 		{
@@ -158,7 +158,7 @@ public:
 	//
 
 	///fCollision
-	struct fCollision
+	struct BT_API fCollision
 	{
 		enum _
 		{
@@ -184,7 +184,7 @@ public:
 	};
 
 	///fMaterial
-	struct fMaterial
+	struct BT_API fMaterial
 	{
 		enum _
 		{
@@ -200,7 +200,7 @@ public:
 	//
 
 	/* sRayCast		*/
-	struct sRayCast
+	struct BT_API sRayCast
 	{
 		btSoftBody* body;     /// soft body
 		eFeature::_ feature;  /// feature type
@@ -209,7 +209,7 @@ public:
 	};
 
 	/* ImplicitFn	*/
-	struct ImplicitFn
+	struct BT_API ImplicitFn
 	{
 		virtual ~ImplicitFn() {}
 		virtual btScalar Eval(const btVector3& x) = 0;
@@ -223,7 +223,7 @@ public:
 	typedef btAlignedObjectArray<btVector3> tVector3Array;
 
 	/* sCti is Softbody contact info	*/
-	struct sCti
+	struct BT_API sCti
 	{
 		const btCollisionObject* m_colObj; /* Rigid body			*/
 		btVector3 m_normal;                /* Outward normal		*/
@@ -232,7 +232,7 @@ public:
 	};
 
 	/* sMedium		*/
-	struct sMedium
+	struct BT_API sMedium
 	{
 		btVector3 m_velocity; /* Velocity				*/
 		btScalar m_pressure;  /* Pressure				*/
@@ -240,7 +240,7 @@ public:
 	};
 
 	/* Base type	*/
-	struct Element
+	struct BT_API Element
 	{
 		void* m_tag;  // User data
 		Element() : m_tag(0) {}
@@ -260,7 +260,7 @@ public:
 		Material* m_material;  // Material
 	};
 	/* Node			*/
-	struct RenderNode
+	struct BT_API RenderNode
 	{
 		btVector3 m_x;
 		btVector3 m_uv1;
@@ -298,7 +298,7 @@ public:
 
 		BT_DECLARE_ALIGNED_ALLOCATOR();
 	};
-	struct RenderFace
+	struct BT_API RenderFace
 	{
 		RenderNode* m_n[3];  // Node pointers
 	};
@@ -330,7 +330,7 @@ public:
 	};
 
 	/*  TetraScratch  */
-	struct TetraScratch
+	struct BT_API TetraScratch
 	{
 		btMatrix3x3 m_F;           // deformation gradient F
 		btScalar m_trace;          // trace of F^T * F
@@ -340,7 +340,7 @@ public:
 	};
 
 	/* RContact		*/
-	struct RContact
+	struct BT_API RContact
 	{
 		sCti m_cti;        // Contact infos
 		Node* m_node;      // Owner node
@@ -358,7 +358,7 @@ public:
 		btVector3 t2;
 	};
 
-	class DeformableRigidContact
+	class BT_API DeformableRigidContact
 	{
 	public:
 		sCti m_cti;        // Contact infos
@@ -398,7 +398,7 @@ public:
 		btVector3 m_weights;       // v_contactPoint * m_weights[i] = m_face->m_node[i]->m_v;
 	};
 
-	struct DeformableFaceNodeContact
+	struct BT_API DeformableFaceNodeContact
 	{
 		Node* m_node;         // Node
 		Face* m_face;         // Face
@@ -413,7 +413,7 @@ public:
 	};
 
 	/* SContact		*/
-	struct SContact
+	struct BT_API SContact
 	{
 		Node* m_node;         // Node
 		Face* m_face;         // Face
@@ -424,7 +424,7 @@ public:
 		btScalar m_cfm[2];    // Constraint force mixing
 	};
 	/* Anchor		*/
-	struct Anchor
+	struct BT_API Anchor
 	{
 		Node* m_node;         // Node pointer
 		btVector3 m_local;    // Anchor position in body space
@@ -444,7 +444,7 @@ public:
 		btScalar m_coords[4];  // Coordinates
 	};
 	/* Pose			*/
-	struct Pose
+	struct BT_API Pose
 	{
 		bool m_bvolume;       // Is valid
 		bool m_bframe;        // Is frame
@@ -457,7 +457,7 @@ public:
 		btMatrix3x3 m_aqq;    // Base scaling
 	};
 	/* Cluster		*/
-	struct Cluster
+	struct BT_API Cluster
 	{
 		tScalarArray m_masses;
 		btAlignedObjectArray<Node*> m_nodes;
@@ -489,7 +489,7 @@ public:
 		}
 	};
 	/* Impulse		*/
-	struct Impulse
+	struct BT_API Impulse
 	{
 		btVector3 m_velocity;
 		btVector3 m_drift;
@@ -512,7 +512,7 @@ public:
 		}
 	};
 	/* Body			*/
-	struct Body
+	struct BT_API Body
 	{
 		Cluster* m_soft;
 		btRigidBody* m_rigid;
@@ -619,9 +619,9 @@ public:
 		}
 	};
 	/* Joint		*/
-	struct Joint
+	struct BT_API Joint
 	{
-		struct eType
+		struct BT_API eType
 		{
 			enum _
 			{
@@ -630,7 +630,7 @@ public:
 				Contact
 			};
 		};
-		struct Specs
+		struct BT_API Specs
 		{
 			Specs() : erp(1), cfm(1), split(1) {}
 			btScalar erp;
@@ -669,7 +669,7 @@ public:
 	/* AJoint		*/
 	struct AJoint : Joint
 	{
-		struct IControl
+		struct BT_API IControl
 		{
 			virtual ~IControl() {}
 			virtual void Prepare(AJoint*) {}
@@ -707,7 +707,7 @@ public:
 		eType::_ Type() const { return (eType::Contact); }
 	};
 	/* Config		*/
-	struct Config
+	struct BT_API Config
 	{
 		eAeroModel::_ aeromodel;    // Aerodynamic model (default: V_Point)
 		btScalar kVCF;              // Velocities correction factor (Baumgarte)
@@ -742,7 +742,7 @@ public:
 		btScalar m_maxStress;       // Maximum principle first Piola stress
 	};
 	/* SolverState	*/
-	struct SolverState
+	struct BT_API SolverState
 	{
 		//if you add new variables, always initialize them!
 		SolverState()

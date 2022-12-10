@@ -37,7 +37,7 @@ class btIDebugDraw;
 class BT_API btSimulationIslandManagerMt : public btSimulationIslandManager
 {
 public:
-	struct Island
+	struct BT_API Island
 	{
 		// a simulation island consisting of bodies, manifolds and constraints,
 		// to be passed into a constraint solver.
@@ -49,7 +49,7 @@ public:
 
 		void append(const Island& other);  // add bodies, manifolds, constraints to my own
 	};
-	struct SolverParams
+	struct BT_API SolverParams
 	{
 		btConstraintSolver* m_solverPool;
 		btConstraintSolver* m_solverMt;

@@ -44,7 +44,7 @@ public:
 
 	typedef void (*ThreadFunc)(void* userPtr);
 
-	struct ConstructionInfo
+	struct BT_API ConstructionInfo
 	{
 		ConstructionInfo(const char* uniqueName,
 						 ThreadFunc userThreadFunc,

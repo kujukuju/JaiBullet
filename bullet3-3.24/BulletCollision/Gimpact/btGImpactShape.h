@@ -297,7 +297,7 @@ class BT_API btGImpactCompoundShape : public btGImpactShapeInterface
 {
 public:
 	//! compound primitive manager
-	class CompoundPrimitiveManager : public btPrimitiveManagerBase
+	class BT_API CompoundPrimitiveManager : public btPrimitiveManagerBase
 	{
 	public:
 		virtual ~CompoundPrimitiveManager() {}
@@ -508,7 +508,7 @@ public:
 	/*!
 	Manages the info from btStridingMeshInterface object and controls the Lock/Unlock mechanism
 	*/
-	class TrimeshPrimitiveManager : public btPrimitiveManagerBase
+	class BT_API TrimeshPrimitiveManager : public btPrimitiveManagerBase
 	{
 	public:
 		btScalar m_margin;

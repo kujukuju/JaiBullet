@@ -108,7 +108,7 @@ public:
 	///You can use the motion state to synchronize the world transform between physics and graphics objects.
 	///And if the motion state is provided, the rigid body will initialize its initial world transform from the motion state,
 	///m_startWorldTransform is only used when you don't provide a motion state.
-	struct btRigidBodyConstructionInfo
+	struct BT_API btRigidBodyConstructionInfo
 	{
 		btScalar m_mass;
 

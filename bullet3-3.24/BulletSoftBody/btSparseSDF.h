@@ -62,13 +62,13 @@ struct BT_API btSparseSdf
 	//
 	// Inner types
 	//
-	struct IntFrac
+	struct BT_API IntFrac
 	{
 		int b;
 		int i;
 		btScalar f;
 	};
-	struct Cell
+	struct BT_API Cell
 	{
 		btScalar d[CELLSIZE + 1][CELLSIZE + 1][CELLSIZE + 1];
 		int c[3];

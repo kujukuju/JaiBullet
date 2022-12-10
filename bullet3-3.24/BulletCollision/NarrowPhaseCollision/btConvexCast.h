@@ -45,7 +45,7 @@ public:
 
 	///RayResult stores the closest result
 	/// alternatively, add a callback method to decide about closest/all results
-	struct CastResult
+	struct BT_API CastResult
 	{
 		//virtual bool	addRayResult(const btVector3& normal,btScalar	fraction) = 0;
 

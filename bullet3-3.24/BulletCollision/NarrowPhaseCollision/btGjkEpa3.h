@@ -33,7 +33,7 @@ Improvements and refactoring by Erwin Coumans, 2008-2014
 
 struct BT_API btGjkEpaSolver3
 {
-	struct sResults
+	struct BT_API sResults
 	{
 		enum eStatus
 		{
@@ -136,11 +136,11 @@ template <typename btConvexTemplate>
 struct BT_API GJK
 {
 	/* Types		*/
-	struct sSV
+	struct BT_API sSV
 	{
 		btVector3 d, w;
 	};
-	struct sSimplex
+	struct BT_API sSimplex
 	{
 		sSV* c[4];
 		btScalar p[4];
@@ -547,7 +547,7 @@ struct BT_API EPA
 {
 	/* Types		*/
 
-	struct sFace
+	struct BT_API sFace
 	{
 		btVector3 n;
 		btScalar d;
@@ -557,13 +557,13 @@ struct BT_API EPA
 		U1 e[3];
 		U1 pass;
 	};
-	struct sList
+	struct BT_API sList
 	{
 		sFace* root;
 		U count;
 		sList() : root(0), count(0) {}
 	};
-	struct sHorizon
+	struct BT_API sHorizon
 	{
 		sFace* cf;
 		sFace* ff;

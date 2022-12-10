@@ -38,7 +38,7 @@ struct BT_API btWheelInfoConstructionInfo
 /// btWheelInfo contains information per wheel about friction and suspension.
 struct BT_API btWheelInfo
 {
-	struct RaycastInfo
+	struct BT_API RaycastInfo
 	{
 		//set by raycaster
 		btVector3 m_contactNormalWS;  //contactnormal

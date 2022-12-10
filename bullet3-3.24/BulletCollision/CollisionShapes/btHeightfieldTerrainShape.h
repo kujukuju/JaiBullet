@@ -73,7 +73,7 @@ ATTRIBUTE_ALIGNED16(class)
 BT_API btHeightfieldTerrainShape : public btConcaveShape
 {
 public:
-	struct Range
+	struct BT_API Range
 	{
 		Range() {}
 		Range(btScalar min, btScalar max) : min(min), max(max) {}

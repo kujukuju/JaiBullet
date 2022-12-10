@@ -65,7 +65,7 @@ public:
 	virtual btScalar solveGroupCacheFriendlyFinish(btCollisionObject * *bodies, int numBodies, const btContactSolverInfo& infoGlobal) BT_OVERRIDE;
 
 	// temp struct used to collect info from persistent manifolds into a cache-friendly struct using multiple threads
-	struct btContactManifoldCachedInfo
+	struct BT_API btContactManifoldCachedInfo
 	{
 		static const int MAX_NUM_CONTACT_POINTS = 4;
 
@@ -77,7 +77,7 @@ public:
 		btManifoldPoint* contactPoints[MAX_NUM_CONTACT_POINTS];
 	};
 	// temp struct used for setting up joint constraints in parallel
-	struct JointParams
+	struct BT_API JointParams
 	{
 		int m_solverConstraint;
 		int m_solverBodyA;

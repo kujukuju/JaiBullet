@@ -112,14 +112,14 @@ public:
 	btTypedConstraint(btTypedConstraintType type, btRigidBody & rbA);
 	btTypedConstraint(btTypedConstraintType type, btRigidBody & rbA, btRigidBody & rbB);
 
-	struct btConstraintInfo1
+	struct BT_API btConstraintInfo1
 	{
 		int m_numConstraintRows, nub;
 	};
 
 	static btRigidBody& getFixedBody();
 
-	struct btConstraintInfo2
+	struct BT_API btConstraintInfo2
 	{
 		// integrator parameters: frames per second (1/stepsize), default error
 		// reduction parameter (0..1).

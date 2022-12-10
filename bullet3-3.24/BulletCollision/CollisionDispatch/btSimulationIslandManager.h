@@ -51,7 +51,7 @@ public:
 
 	void findUnions(btDispatcher* dispatcher, btCollisionWorld* colWorld);
 
-	struct IslandCallback
+	struct BT_API IslandCallback
 	{
 		virtual ~IslandCallback(){};
 
