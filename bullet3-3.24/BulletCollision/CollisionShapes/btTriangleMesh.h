@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_TRIANGLE_MESH_H
 #define BT_TRIANGLE_MESH_H
 
+#include "btApi.h"
+
 #include "btTriangleIndexVertexArray.h"
 #include "LinearMath/btVector3.h"
 #include "LinearMath/btAlignedObjectArray.h"

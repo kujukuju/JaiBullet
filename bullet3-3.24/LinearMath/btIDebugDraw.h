@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_IDEBUG_DRAW__H
 #define BT_IDEBUG_DRAW__H
 
+#include "btApi.h"
+
 #include "btVector3.h"
 #include "btTransform.h"
 

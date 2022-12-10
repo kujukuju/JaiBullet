@@ -15,6 +15,9 @@
 
 #ifndef BT_CONJUGATE_GRADIENT_H
 #define BT_CONJUGATE_GRADIENT_H
+
+#include "btApi.h"
+
 #include "btKrylovSolver.h"
 template <class MatrixX>
 class btConjugateGradient : public btKrylovSolver<MatrixX>

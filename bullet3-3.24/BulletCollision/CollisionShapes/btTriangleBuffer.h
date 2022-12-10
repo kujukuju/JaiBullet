@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_TRIANGLE_BUFFER_H
 #define BT_TRIANGLE_BUFFER_H
 
+#include "btApi.h"
+
 #include "btTriangleCallback.h"
 #include "LinearMath/btAlignedObjectArray.h"
 

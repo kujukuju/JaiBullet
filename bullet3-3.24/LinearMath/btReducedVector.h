@@ -6,6 +6,9 @@
 //
 #ifndef btReducedVectors_h
 #define btReducedVectors_h
+
+#include "btApi.h"
+
 #include "btVector3.h"
 #include "btMatrix3x3.h"
 #include "btAlignedObjectArray.h"

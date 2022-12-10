@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_BOX_BOX__COLLISION_ALGORITHM_H
 #define BT_BOX_BOX__COLLISION_ALGORITHM_H
 
+#include "btApi.h"
+
 #include "btActivatingCollisionAlgorithm.h"
 #include "BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
 #include "BulletCollision/BroadphaseCollision/btDispatcher.h"

@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef _BT_TRIANGLE_INFO_MAP_H
 #define _BT_TRIANGLE_INFO_MAP_H
 
+#include "btApi.h"
+
 #include "LinearMath/btHashMap.h"
 #include "LinearMath/btSerializer.h"
 

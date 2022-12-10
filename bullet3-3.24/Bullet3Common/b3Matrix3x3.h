@@ -15,6 +15,8 @@ subject to the following restrictions:
 #ifndef B3_MATRIX3x3_H
 #define B3_MATRIX3x3_H
 
+#include "btApi.h"
+
 #include "b3Vector3.h"
 #include "b3Quaternion.h"
 #include <stdio.h>

@@ -15,6 +15,8 @@ subject to the following restrictions:
 #ifndef BT_SIMD__QUATERNION_H_
 #define BT_SIMD__QUATERNION_H_
 
+#include "btApi.h"
+
 #include "btVector3.h"
 #include "btQuadWord.h"
 

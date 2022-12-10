@@ -15,6 +15,8 @@ subject to the following restrictions:
 #ifndef B3_SCALAR_H
 #define B3_SCALAR_H
 
+#include "btApi.h"
+
 #ifdef B3_MANAGED_CODE
 //Aligned data types not supported in managed code
 #pragma unmanaged

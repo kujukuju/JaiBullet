@@ -1,6 +1,8 @@
 #ifndef GIM_CLIP_POLYGON_H_INCLUDED
 #define GIM_CLIP_POLYGON_H_INCLUDED
 
+#include "btApi.h"
+
 /*! \file gim_tri_collision.h
 \author Francisco Leon Najera
 */

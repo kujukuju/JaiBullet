@@ -15,6 +15,8 @@ subject to the following restrictions:
 #ifndef B3_SIMD_QUADWORD_H
 #define B3_SIMD_QUADWORD_H
 
+#include "btApi.h"
+
 #include "b3Scalar.h"
 #include "b3MinMax.h"
 

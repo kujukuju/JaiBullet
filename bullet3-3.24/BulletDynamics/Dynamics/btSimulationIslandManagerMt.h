@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_SIMULATION_ISLAND_MANAGER_MT_H
 #define BT_SIMULATION_ISLAND_MANAGER_MT_H
 
+#include "btApi.h"
+
 #include "BulletCollision/CollisionDispatch/btSimulationIslandManager.h"
 
 class btTypedConstraint;

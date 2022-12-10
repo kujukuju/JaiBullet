@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_BROADPHASE_PROXY_H
 #define BT_BROADPHASE_PROXY_H
 
+#include "btApi.h"
+
 #include "LinearMath/btScalar.h"  //for SIMD_FORCE_INLINE
 #include "LinearMath/btVector3.h"
 #include "LinearMath/btAlignedAllocator.h"

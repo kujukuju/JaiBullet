@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_MULTIBODY_LINK_H
 #define BT_MULTIBODY_LINK_H
 
+#include "btApi.h"
+
 #include "LinearMath/btQuaternion.h"
 #include "LinearMath/btVector3.h"
 #include "BulletCollision/CollisionDispatch/btCollisionObject.h"

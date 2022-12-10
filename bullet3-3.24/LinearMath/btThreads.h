@@ -15,6 +15,8 @@ subject to the following restrictions:
 #ifndef BT_THREADS_H
 #define BT_THREADS_H
 
+#include "btApi.h"
+
 #include "btScalar.h"  // has definitions like SIMD_FORCE_INLINE
 
 #if defined(_MSC_VER) && _MSC_VER >= 1600

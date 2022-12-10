@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_SEQUENTIAL_IMPULSE_CONSTRAINT_SOLVER_H
 #define BT_SEQUENTIAL_IMPULSE_CONSTRAINT_SOLVER_H
 
+#include "btApi.h"
+
 class btIDebugDraw;
 class btPersistentManifold;
 class btDispatcher;

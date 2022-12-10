@@ -15,6 +15,8 @@ subject to the following restrictions:
 #ifndef _BT_POOL_ALLOCATOR_H
 #define _BT_POOL_ALLOCATOR_H
 
+#include "btApi.h"
+
 #include "btScalar.h"
 #include "btAlignedAllocator.h"
 #include "btThreads.h"

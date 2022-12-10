@@ -2,6 +2,8 @@
 #ifndef B3_GPU_BROADPHASE_INTERFACE_H
 #define B3_GPU_BROADPHASE_INTERFACE_H
 
+#include "btApi.h"
+
 #include "Bullet3OpenCL/Initialize/b3OpenCLInclude.h"
 #include "Bullet3Common/b3Vector3.h"
 #include "b3SapAabb.h"

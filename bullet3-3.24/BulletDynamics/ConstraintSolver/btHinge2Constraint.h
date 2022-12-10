@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_HINGE2_CONSTRAINT_H
 #define BT_HINGE2_CONSTRAINT_H
 
+#include "btApi.h"
+
 #include "LinearMath/btVector3.h"
 #include "btTypedConstraint.h"
 #include "btGeneric6DofSpring2Constraint.h"

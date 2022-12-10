@@ -1,6 +1,8 @@
 #include "../btDeformableContactConstraint.h"
 #include "btReducedDeformableBody.h"
 
+#include "btApi.h"
+
 // ================= static constraints ===================
 class btReducedDeformableStaticConstraint : public btDeformableStaticConstraint
 {

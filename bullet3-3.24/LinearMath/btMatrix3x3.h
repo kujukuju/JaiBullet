@@ -15,6 +15,8 @@ subject to the following restrictions:
 #ifndef BT_MATRIX3x3_H
 #define BT_MATRIX3x3_H
 
+#include "btApi.h"
+
 #include "btVector3.h"
 #include "btQuaternion.h"
 #include <stdio.h>

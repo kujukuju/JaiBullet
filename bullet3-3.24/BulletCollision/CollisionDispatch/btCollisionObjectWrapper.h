@@ -1,6 +1,8 @@
 #ifndef BT_COLLISION_OBJECT_WRAPPER_H
 #define BT_COLLISION_OBJECT_WRAPPER_H
 
+#include "btApi.h"
+
 ///btCollisionObjectWrapperis an internal data structure.
 ///Most users can ignore this and use btCollisionObject and btCollisionShape instead
 class btCollisionShape;

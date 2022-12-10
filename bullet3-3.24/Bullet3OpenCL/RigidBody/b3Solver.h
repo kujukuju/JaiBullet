@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef __ADL_SOLVER_H
 #define __ADL_SOLVER_H
 
+#include "btApi.h"
+
 #include "Bullet3OpenCL/ParallelPrimitives/b3OpenCLArray.h"
 #include "b3GpuConstraint4.h"
 

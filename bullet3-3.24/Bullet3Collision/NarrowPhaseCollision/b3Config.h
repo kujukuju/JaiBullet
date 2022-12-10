@@ -1,6 +1,8 @@
 #ifndef B3_CONFIG_H
 #define B3_CONFIG_H
 
+#include "btApi.h"
+
 struct b3Config
 {
 	int m_maxConvexBodies;

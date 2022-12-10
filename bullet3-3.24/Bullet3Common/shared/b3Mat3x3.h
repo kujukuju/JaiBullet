@@ -2,6 +2,8 @@
 #ifndef B3_MAT3x3_H
 #define B3_MAT3x3_H
 
+#include "btApi.h"
+
 #include "Bullet3Common/shared/b3Quat.h"
 
 #ifdef __cplusplus

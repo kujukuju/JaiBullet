@@ -19,6 +19,8 @@ subject to the following restrictions:
 #ifndef B3_OPENCL_UTILS_H
 #define B3_OPENCL_UTILS_H
 
+#include "btApi.h"
+
 #include "b3OpenCLInclude.h"
 
 #ifdef __cplusplus

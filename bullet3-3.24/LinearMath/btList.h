@@ -15,6 +15,8 @@ subject to the following restrictions:
 #ifndef BT_GEN_LIST_H
 #define BT_GEN_LIST_H
 
+#include "btApi.h"
+
 class btGEN_Link
 {
 public:

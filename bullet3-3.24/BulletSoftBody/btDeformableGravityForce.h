@@ -16,6 +16,8 @@
 #ifndef BT_DEFORMABLE_GRAVITY_FORCE_H
 #define BT_DEFORMABLE_GRAVITY_FORCE_H
 
+#include "btApi.h"
+
 #include "btDeformableLagrangianForce.h"
 
 class btDeformableGravityForce : public btDeformableLagrangianForce

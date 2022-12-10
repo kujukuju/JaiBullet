@@ -1,6 +1,8 @@
 #ifndef GIM_CONTACT_H_INCLUDED
 #define GIM_CONTACT_H_INCLUDED
 
+#include "btApi.h"
+
 /*! \file gim_contact.h
 \author Francisco Leon Najera
 */

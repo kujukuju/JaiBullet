@@ -17,6 +17,8 @@ subject to the following restrictions:
 #ifndef BT_DYNAMIC_BOUNDING_VOLUME_TREE_H
 #define BT_DYNAMIC_BOUNDING_VOLUME_TREE_H
 
+#include "btApi.h"
+
 #include "LinearMath/btAlignedObjectArray.h"
 #include "LinearMath/btVector3.h"
 #include "LinearMath/btTransform.h"

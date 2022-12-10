@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef B3_BULLET_FILE_H
 #define B3_BULLET_FILE_H
 
+#include "btApi.h"
+
 #include "b3File.h"
 #include "Bullet3Common/b3AlignedObjectArray.h"
 #include "b3Defines.h"

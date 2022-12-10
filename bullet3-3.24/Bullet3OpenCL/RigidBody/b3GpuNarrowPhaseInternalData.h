@@ -2,6 +2,8 @@
 #ifndef B3_GPU_NARROWPHASE_INTERNAL_DATA_H
 #define B3_GPU_NARROWPHASE_INTERNAL_DATA_H
 
+#include "btApi.h"
+
 #include "Bullet3OpenCL/ParallelPrimitives/b3OpenCLArray.h"
 #include "Bullet3Collision/NarrowPhaseCollision/shared/b3ConvexPolyhedronData.h"
 #include "Bullet3Collision/NarrowPhaseCollision/b3Config.h"

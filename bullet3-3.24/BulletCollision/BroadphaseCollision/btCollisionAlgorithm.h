@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_COLLISION_ALGORITHM_H
 #define BT_COLLISION_ALGORITHM_H
 
+#include "btApi.h"
+
 #include "LinearMath/btScalar.h"
 #include "LinearMath/btAlignedObjectArray.h"
 

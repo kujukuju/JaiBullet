@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_DISCRETE_COLLISION_DETECTOR1_INTERFACE_H
 #define BT_DISCRETE_COLLISION_DETECTOR1_INTERFACE_H
 
+#include "btApi.h"
+
 #include "LinearMath/btTransform.h"
 #include "LinearMath/btVector3.h"
 

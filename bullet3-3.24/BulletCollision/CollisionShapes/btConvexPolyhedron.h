@@ -18,6 +18,8 @@ subject to the following restrictions:
 #ifndef _BT_POLYHEDRAL_FEATURES_H
 #define _BT_POLYHEDRAL_FEATURES_H
 
+#include "btApi.h"
+
 #include "LinearMath/btTransform.h"
 #include "LinearMath/btAlignedObjectArray.h"
 

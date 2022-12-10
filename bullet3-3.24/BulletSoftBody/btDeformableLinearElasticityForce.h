@@ -16,6 +16,8 @@
 #ifndef BT_LINEAR_ELASTICITY_H
 #define BT_LINEAR_ELASTICITY_H
 
+#include "btApi.h"
+
 #include "btDeformableLagrangianForce.h"
 #include "LinearMath/btQuickprof.h"
 #include "btSoftBodyInternals.h"

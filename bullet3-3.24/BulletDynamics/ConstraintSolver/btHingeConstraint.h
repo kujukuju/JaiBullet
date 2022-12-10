@@ -18,6 +18,8 @@ subject to the following restrictions:
 #ifndef BT_HINGECONSTRAINT_H
 #define BT_HINGECONSTRAINT_H
 
+#include "btApi.h"
+
 #define _BT_USE_CENTER_LIMIT_ 1
 
 #include "LinearMath/btVector3.h"

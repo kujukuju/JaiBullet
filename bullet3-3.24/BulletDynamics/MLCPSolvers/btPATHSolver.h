@@ -17,6 +17,8 @@ subject to the following restrictions:
 #ifndef BT_PATH_SOLVER_H
 #define BT_PATH_SOLVER_H
 
+#include "btApi.h"
+
 //#define BT_USE_PATH
 #ifdef BT_USE_PATH
 

@@ -1,6 +1,8 @@
 #ifndef B3_CONTACT4DATA_H
 #define B3_CONTACT4DATA_H
 
+#include "btApi.h"
+
 #include "Bullet3Common/shared/b3Float4.h"
 
 typedef struct b3Contact4Data b3Contact4Data_t;

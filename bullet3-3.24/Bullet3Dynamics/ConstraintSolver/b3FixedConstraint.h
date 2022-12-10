@@ -2,6 +2,8 @@
 #ifndef B3_FIXED_CONSTRAINT_H
 #define B3_FIXED_CONSTRAINT_H
 
+#include "btApi.h"
+
 #include "b3TypedConstraint.h"
 
 B3_ATTRIBUTE_ALIGNED16(class)

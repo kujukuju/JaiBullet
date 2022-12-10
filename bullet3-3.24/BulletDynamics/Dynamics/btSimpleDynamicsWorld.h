@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_SIMPLE_DYNAMICS_WORLD_H
 #define BT_SIMPLE_DYNAMICS_WORLD_H
 
+#include "btApi.h"
+
 #include "btDynamicsWorld.h"
 
 class btDispatcher;

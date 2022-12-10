@@ -1,5 +1,8 @@
 #ifndef GIM_RADIXSORT_H_INCLUDED
 #define GIM_RADIXSORT_H_INCLUDED
+
+#include "btApi.h"
+
 /*! \file gim_radixsort.h
 \author Francisco Leon Najera.
 Based on the work of Michael Herf : "fast floating-point radix sort"

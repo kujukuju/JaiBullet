@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_SOFT_BODY_CONCAVE_COLLISION_ALGORITHM_H
 #define BT_SOFT_BODY_CONCAVE_COLLISION_ALGORITHM_H
 
+#include "btApi.h"
+
 #include "BulletCollision/BroadphaseCollision/btCollisionAlgorithm.h"
 #include "BulletCollision/BroadphaseCollision/btDispatcher.h"
 #include "BulletCollision/BroadphaseCollision/btBroadphaseInterface.h"

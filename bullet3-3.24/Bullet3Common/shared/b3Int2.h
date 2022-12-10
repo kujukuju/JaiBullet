@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef B3_INT2_H
 #define B3_INT2_H
 
+#include "btApi.h"
+
 #ifdef __cplusplus
 
 struct b3UnsignedInt2

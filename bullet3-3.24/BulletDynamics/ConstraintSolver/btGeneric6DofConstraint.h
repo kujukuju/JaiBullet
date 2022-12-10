@@ -26,6 +26,8 @@ http://gimpact.sf.net
 #ifndef BT_GENERIC_6DOF_CONSTRAINT_H
 #define BT_GENERIC_6DOF_CONSTRAINT_H
 
+#include "btApi.h"
+
 #include "LinearMath/btVector3.h"
 #include "btJacobianEntry.h"
 #include "btTypedConstraint.h"

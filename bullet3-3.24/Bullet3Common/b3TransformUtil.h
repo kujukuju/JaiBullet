@@ -15,6 +15,8 @@ subject to the following restrictions:
 #ifndef B3_TRANSFORM_UTIL_H
 #define B3_TRANSFORM_UTIL_H
 
+#include "btApi.h"
+
 #include "b3Transform.h"
 #define B3_ANGULAR_MOTION_THRESHOLD b3Scalar(0.5) * B3_HALF_PI
 

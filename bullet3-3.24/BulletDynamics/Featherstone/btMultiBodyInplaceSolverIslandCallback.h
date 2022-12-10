@@ -14,6 +14,8 @@
 #ifndef BT_MULTIBODY_INPLACE_SOLVER_ISLAND_CALLBACK_H
 #define BT_MULTIBODY_INPLACE_SOLVER_ISLAND_CALLBACK_H
 
+#include "btApi.h"
+
 #include "BulletDynamics/Featherstone/btMultiBodyConstraintSolver.h"
 #include "BulletCollision/CollisionDispatch/btSimulationIslandManager.h"
 #include "BulletDynamics/Featherstone/btMultiBodyDynamicsWorld.h"

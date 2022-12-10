@@ -1,6 +1,8 @@
 #ifndef B3_INT4_H
 #define B3_INT4_H
 
+#include "btApi.h"
+
 #ifdef __cplusplus
 
 #include "Bullet3Common/b3Scalar.h"

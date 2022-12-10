@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_MINKOWSKI_PENETRATION_DEPTH_SOLVER_H
 #define BT_MINKOWSKI_PENETRATION_DEPTH_SOLVER_H
 
+#include "btApi.h"
+
 #include "btConvexPenetrationDepthSolver.h"
 
 ///MinkowskiPenetrationDepthSolver implements bruteforce penetration depth estimation.

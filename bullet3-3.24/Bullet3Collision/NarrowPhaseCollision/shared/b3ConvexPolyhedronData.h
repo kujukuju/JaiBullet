@@ -2,6 +2,8 @@
 #ifndef B3_CONVEX_POLYHEDRON_DATA_H
 #define B3_CONVEX_POLYHEDRON_DATA_H
 
+#include "btApi.h"
+
 #include "Bullet3Common/shared/b3Float4.h"
 #include "Bullet3Common/shared/b3Quat.h"
 

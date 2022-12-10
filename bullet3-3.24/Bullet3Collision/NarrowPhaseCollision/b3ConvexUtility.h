@@ -17,6 +17,8 @@ subject to the following restrictions:
 #ifndef _BT_CONVEX_UTILITY_H
 #define _BT_CONVEX_UTILITY_H
 
+#include "btApi.h"
+
 #include "Bullet3Common/b3AlignedObjectArray.h"
 #include "Bullet3Common/b3Transform.h"
 

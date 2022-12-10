@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_COLLISION_CONFIGURATION
 #define BT_COLLISION_CONFIGURATION
 
+#include "btApi.h"
+
 struct btCollisionAlgorithmCreateFunc;
 
 class btPoolAllocator;

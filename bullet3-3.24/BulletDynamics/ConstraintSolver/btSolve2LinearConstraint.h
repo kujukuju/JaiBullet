@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_SOLVE_2LINEAR_CONSTRAINT_H
 #define BT_SOLVE_2LINEAR_CONSTRAINT_H
 
+#include "btApi.h"
+
 #include "LinearMath/btMatrix3x3.h"
 #include "LinearMath/btVector3.h"
 

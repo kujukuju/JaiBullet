@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_MULTIBODY_JOINT_LIMIT_CONSTRAINT_H
 #define BT_MULTIBODY_JOINT_LIMIT_CONSTRAINT_H
 
+#include "btApi.h"
+
 #include "btMultiBodyConstraint.h"
 struct btSolverInfo;
 

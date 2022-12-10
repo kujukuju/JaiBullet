@@ -1,6 +1,8 @@
 #ifndef GIM_LINEAR_H_INCLUDED
 #define GIM_LINEAR_H_INCLUDED
 
+#include "btApi.h"
+
 /*! \file gim_linear_math.h
 *\author Francisco Leon Najera
 Type Independant Vector and matrix operations.

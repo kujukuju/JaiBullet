@@ -2,6 +2,8 @@
 #ifndef B3_CONTACT_CONVEX_CONVEX_SAT_H
 #define B3_CONTACT_CONVEX_CONVEX_SAT_H
 
+#include "btApi.h"
+
 #include "Bullet3Collision/NarrowPhaseCollision/shared/b3Contact4Data.h"
 #include "Bullet3Collision/NarrowPhaseCollision/shared/b3FindSeparatingAxis.h"
 #include "Bullet3Collision/NarrowPhaseCollision/shared/b3ReduceContacts.h"

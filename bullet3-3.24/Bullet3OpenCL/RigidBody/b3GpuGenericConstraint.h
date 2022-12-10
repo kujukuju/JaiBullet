@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef B3_GPU_GENERIC_CONSTRAINT_H
 #define B3_GPU_GENERIC_CONSTRAINT_H
 
+#include "btApi.h"
+
 #include "Bullet3Common/b3Quaternion.h"
 struct b3RigidBodyData;
 enum B3_CONSTRAINT_FLAGS

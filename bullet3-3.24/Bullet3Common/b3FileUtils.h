@@ -1,6 +1,8 @@
 #ifndef B3_FILE_UTILS_H
 #define B3_FILE_UTILS_H
 
+#include "btApi.h"
+
 #include <stdio.h>
 #include "b3Scalar.h"
 #include <stddef.h>  //ptrdiff_h

@@ -21,6 +21,8 @@
 #ifndef BT_MPR_PENETRATION_H
 #define BT_MPR_PENETRATION_H
 
+#include "btApi.h"
+
 #define BT_DEBUG_MPR1
 
 #include "LinearMath/btTransform.h"

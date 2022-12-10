@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_OBB_TRIANGLE_MINKOWSKI_H
 #define BT_OBB_TRIANGLE_MINKOWSKI_H
 
+#include "btApi.h"
+
 #include "btConvexShape.h"
 #include "btBoxShape.h"
 

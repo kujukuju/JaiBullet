@@ -1,6 +1,8 @@
 #ifndef GIM_BASIC_GEOMETRY_OPERATIONS_H_INCLUDED
 #define GIM_BASIC_GEOMETRY_OPERATIONS_H_INCLUDED
 
+#include "btApi.h"
+
 /*! \file gim_basic_geometry_operations.h
 *\author Francisco Leon Najera
 type independant geometry routines

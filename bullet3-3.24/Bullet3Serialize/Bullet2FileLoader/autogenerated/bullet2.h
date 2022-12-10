@@ -19,6 +19,9 @@
 // Auto generated from Bullet/Extras/HeaderGenerator/bulletGenerate.py
 #ifndef __BULLET2_H__
 #define __BULLET2_H__
+
+#include "btApi.h"
+
 namespace Bullet3SerializeBullet2
 {
 // put an empty struct in the case

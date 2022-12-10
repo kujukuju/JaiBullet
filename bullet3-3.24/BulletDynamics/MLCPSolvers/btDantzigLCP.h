@@ -44,6 +44,8 @@ to be implemented. the first `nub' variables are assumed to have findex < 0.
 #ifndef _BT_LCP_H_
 #define _BT_LCP_H_
 
+#include "btApi.h"
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <assert.h>

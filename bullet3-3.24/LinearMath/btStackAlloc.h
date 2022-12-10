@@ -20,6 +20,8 @@ Nov.2006
 #ifndef BT_STACK_ALLOC
 #define BT_STACK_ALLOC
 
+#include "btApi.h"
+
 #include "btScalar.h"  //for btAssert
 #include "btAlignedAllocator.h"
 

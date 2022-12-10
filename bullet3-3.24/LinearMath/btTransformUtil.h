@@ -15,6 +15,8 @@ subject to the following restrictions:
 #ifndef BT_TRANSFORM_UTIL_H
 #define BT_TRANSFORM_UTIL_H
 
+#include "btApi.h"
+
 #include "btTransform.h"
 #define ANGULAR_MOTION_THRESHOLD btScalar(0.5) * SIMD_HALF_PI
 

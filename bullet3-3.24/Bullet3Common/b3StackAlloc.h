@@ -20,6 +20,8 @@ Nov.2006
 #ifndef B3_STACK_ALLOC
 #define B3_STACK_ALLOC
 
+#include "btApi.h"
+
 #include "b3Scalar.h"  //for b3Assert
 #include "b3AlignedAllocator.h"
 

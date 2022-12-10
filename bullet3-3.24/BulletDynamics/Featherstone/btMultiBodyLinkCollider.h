@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_FEATHERSTONE_LINK_COLLIDER_H
 #define BT_FEATHERSTONE_LINK_COLLIDER_H
 
+#include "btApi.h"
+
 #include "BulletCollision/CollisionDispatch/btCollisionObject.h"
 
 #include "btMultiBody.h"

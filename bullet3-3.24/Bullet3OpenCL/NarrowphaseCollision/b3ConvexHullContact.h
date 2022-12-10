@@ -2,6 +2,8 @@
 #ifndef _CONVEX_HULL_CONTACT_H
 #define _CONVEX_HULL_CONTACT_H
 
+#include "btApi.h"
+
 #include "Bullet3OpenCL/ParallelPrimitives/b3OpenCLArray.h"
 #include "Bullet3Collision/NarrowPhaseCollision/shared/b3RigidBodyData.h"
 #include "Bullet3Common/b3AlignedObjectArray.h"

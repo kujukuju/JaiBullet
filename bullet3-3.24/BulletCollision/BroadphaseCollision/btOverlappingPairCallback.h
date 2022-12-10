@@ -17,6 +17,8 @@ subject to the following restrictions:
 #ifndef OVERLAPPING_PAIR_CALLBACK_H
 #define OVERLAPPING_PAIR_CALLBACK_H
 
+#include "btApi.h"
+
 class btDispatcher;
 struct btBroadphasePair;
 

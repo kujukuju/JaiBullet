@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef __BDNA_H__
 #define __BDNA_H__
 
+#include "btApi.h"
+
 #include "b3Common.h"
 
 namespace bParse

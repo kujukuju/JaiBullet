@@ -1,6 +1,8 @@
 #ifndef GIM_GEOMETRY_H_INCLUDED
 #define GIM_GEOMETRY_H_INCLUDED
 
+#include "btApi.h"
+
 /*! \file gim_geometry.h
 \author Francisco Leon Najera
 */

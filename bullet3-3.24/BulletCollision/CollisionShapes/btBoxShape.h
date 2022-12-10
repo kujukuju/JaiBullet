@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_OBB_BOX_MINKOWSKI_H
 #define BT_OBB_BOX_MINKOWSKI_H
 
+#include "btApi.h"
+
 #include "btPolyhedralConvexShape.h"
 #include "btCollisionMargin.h"
 #include "BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"

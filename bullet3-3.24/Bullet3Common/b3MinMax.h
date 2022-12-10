@@ -15,6 +15,8 @@ subject to the following restrictions:
 #ifndef B3_GEN_MINMAX_H
 #define B3_GEN_MINMAX_H
 
+#include "btApi.h"
+
 #include "b3Scalar.h"
 
 template <class T>

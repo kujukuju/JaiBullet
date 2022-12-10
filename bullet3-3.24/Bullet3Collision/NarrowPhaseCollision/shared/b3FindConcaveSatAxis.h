@@ -1,6 +1,8 @@
 #ifndef B3_FIND_CONCAVE_SEPARATING_AXIS_H
 #define B3_FIND_CONCAVE_SEPARATING_AXIS_H
 
+#include "btApi.h"
+
 #define B3_TRIANGLE_NUM_CONVEX_FACES 5
 
 #include "Bullet3Common/shared/b3Int4.h"

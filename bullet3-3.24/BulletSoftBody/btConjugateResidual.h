@@ -15,6 +15,9 @@
 
 #ifndef BT_CONJUGATE_RESIDUAL_H
 #define BT_CONJUGATE_RESIDUAL_H
+
+#include "btApi.h"
+
 #include "btKrylovSolver.h"
 
 template <class MatrixX>

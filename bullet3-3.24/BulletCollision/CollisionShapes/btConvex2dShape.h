@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_CONVEX_2D_SHAPE_H
 #define BT_CONVEX_2D_SHAPE_H
 
+#include "btApi.h"
+
 #include "BulletCollision/CollisionShapes/btConvexShape.h"
 #include "BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"  // for the types
 

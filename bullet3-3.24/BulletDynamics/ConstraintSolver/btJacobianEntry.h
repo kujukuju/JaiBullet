@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_JACOBIAN_ENTRY_H
 #define BT_JACOBIAN_ENTRY_H
 
+#include "btApi.h"
+
 #include "LinearMath/btMatrix3x3.h"
 
 //notes:

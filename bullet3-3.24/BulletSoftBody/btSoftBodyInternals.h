@@ -17,6 +17,8 @@ subject to the following restrictions:
 #ifndef _BT_SOFT_BODY_INTERNALS_H
 #define _BT_SOFT_BODY_INTERNALS_H
 
+#include "btApi.h"
+
 #include "btSoftBody.h"
 #include "LinearMath/btQuickprof.h"
 #include "LinearMath/btPolarDecomposition.h"

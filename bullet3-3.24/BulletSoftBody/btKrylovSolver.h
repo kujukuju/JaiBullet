@@ -15,6 +15,9 @@
 
 #ifndef BT_KRYLOV_SOLVER_H
 #define BT_KRYLOV_SOLVER_H
+
+#include "btApi.h"
+
 #include <iostream>
 #include <cmath>
 #include <limits>

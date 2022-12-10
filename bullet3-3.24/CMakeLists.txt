@@ -8,6 +8,7 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/bin")
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/bin")
 
 option(BUILD_SHARED_LIBS "Build bullet as a shared library" ON)
+option(BUILD_SIMD "Build bullet using simd" ON)
 
 ADD_DEFINITIONS(-DB3_USE_CLEW)
 
@@ -25,6 +26,11 @@ OPTION(BULLET2_MULTITHREADING "Build Bullet 2 libraries with mutex locking aroun
 IF (BUILD_SHARED_LIBS)
     ADD_DEFINITIONS( -DBT_SHARED)
 ENDIF (BUILD_SHARED_LIBS)
+
+# I'm not sure what will happen when I try to compile for wasm because it seems to check if your platform
+# IF (BUILD_SIMD)
+#     ADD_DEFINITIONS( -DBT_USE_SSE)
+# ENDIF (BUILD_SIMD)
 
 IF (CLAMP_VELOCITIES)
     ADD_DEFINITIONS( -DBT_CLAMP_VELOCITY_TO=${CLAMP_VELOCITIES})

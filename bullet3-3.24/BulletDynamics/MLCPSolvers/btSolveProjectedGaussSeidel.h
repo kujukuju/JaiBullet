@@ -17,6 +17,8 @@ subject to the following restrictions:
 #ifndef BT_SOLVE_PROJECTED_GAUSS_SEIDEL_H
 #define BT_SOLVE_PROJECTED_GAUSS_SEIDEL_H
 
+#include "btApi.h"
+
 #include "btMLCPSolverInterface.h"
 
 ///This solver is mainly for debug/learning purposes: it is functionally equivalent to the btSequentialImpulseConstraintSolver solver, but much slower (it builds the full LCP matrix)

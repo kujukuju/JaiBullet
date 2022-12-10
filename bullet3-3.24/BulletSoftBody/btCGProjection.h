@@ -16,6 +16,8 @@
 #ifndef BT_CG_PROJECTION_H
 #define BT_CG_PROJECTION_H
 
+#include "btApi.h"
+
 #include "btSoftBody.h"
 #include "BulletDynamics/Featherstone/btMultiBodyLinkCollider.h"
 #include "BulletDynamics/Featherstone/btMultiBodyConstraint.h"

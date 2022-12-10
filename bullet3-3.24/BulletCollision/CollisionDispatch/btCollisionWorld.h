@@ -69,6 +69,8 @@ subject to the following restrictions:
 #ifndef BT_COLLISION_WORLD_H
 #define BT_COLLISION_WORLD_H
 
+#include "btApi.h"
+
 class btCollisionShape;
 class btConvexShape;
 class btBroadphaseInterface;

@@ -1,6 +1,8 @@
 #ifndef B3_CLIP_FACES_H
 #define B3_CLIP_FACES_H
 
+#include "btApi.h"
+
 #include "Bullet3Common/shared/b3Int4.h"
 #include "Bullet3Collision/NarrowPhaseCollision/shared/b3RigidBodyData.h"
 #include "Bullet3Collision/NarrowPhaseCollision/shared/b3Collidable.h"

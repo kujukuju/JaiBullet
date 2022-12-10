@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_SERIALIZER_H
 #define BT_SERIALIZER_H
 
+#include "btApi.h"
+
 #include "btScalar.h"  // has definitions like SIMD_FORCE_INLINE
 #include "btHashMap.h"
 

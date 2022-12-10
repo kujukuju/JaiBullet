@@ -1,5 +1,8 @@
 #ifndef GIM_MATH_H_INCLUDED
 #define GIM_MATH_H_INCLUDED
+
+#include "btApi.h"
+
 /*! \file gim_math.h
 \author Francisco Leon Najera
 */

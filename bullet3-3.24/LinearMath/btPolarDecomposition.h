@@ -1,6 +1,8 @@
 #ifndef POLARDECOMPOSITION_H
 #define POLARDECOMPOSITION_H
 
+#include "btApi.h"
+
 #include "btMatrix3x3.h"
 
 /**

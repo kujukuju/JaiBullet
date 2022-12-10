@@ -2,6 +2,8 @@
 #ifndef B3_BVH_SUBTREE_INFO_DATA_H
 #define B3_BVH_SUBTREE_INFO_DATA_H
 
+#include "btApi.h"
+
 typedef struct b3BvhSubtreeInfoData b3BvhSubtreeInfoData_t;
 
 struct b3BvhSubtreeInfoData

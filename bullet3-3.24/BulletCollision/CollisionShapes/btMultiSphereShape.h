@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_MULTI_SPHERE_MINKOWSKI_H
 #define BT_MULTI_SPHERE_MINKOWSKI_H
 
+#include "btApi.h"
+
 #include "btConvexInternalShape.h"
 #include "BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"  // for the types
 #include "LinearMath/btAlignedObjectArray.h"

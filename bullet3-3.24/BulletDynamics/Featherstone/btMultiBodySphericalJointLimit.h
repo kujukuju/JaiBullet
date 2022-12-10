@@ -18,6 +18,8 @@ subject to the following restrictions:
 #ifndef BT_MULTIBODY_SPHERICAL_JOINT_LIMIT_H
 #define BT_MULTIBODY_SPHERICAL_JOINT_LIMIT_H
 
+#include "btApi.h"
+
 #include "btMultiBodyConstraint.h"
 struct btSolverInfo;
 

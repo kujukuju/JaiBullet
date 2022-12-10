@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_GJK_EPA_PENETATION_CONVEX_COLLISION_H
 #define BT_GJK_EPA_PENETATION_CONVEX_COLLISION_H
 
+#include "btApi.h"
+
 #include "LinearMath/btTransform.h"  // Note that btVector3 might be double precision...
 #include "btGjkEpa3.h"
 #include "btGjkCollisionDescription.h"

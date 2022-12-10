@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_MANIFOLD_CONTACT_POINT_H
 #define BT_MANIFOLD_CONTACT_POINT_H
 
+#include "btApi.h"
+
 #include "LinearMath/btVector3.h"
 #include "LinearMath/btTransformUtil.h"
 

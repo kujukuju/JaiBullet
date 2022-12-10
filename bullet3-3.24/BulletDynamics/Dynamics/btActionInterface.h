@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef _BT_ACTION_INTERFACE_H
 #define _BT_ACTION_INTERFACE_H
 
+#include "btApi.h"
+
 class btIDebugDraw;
 class btCollisionWorld;
 

@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_CYLINDER_MINKOWSKI_H
 #define BT_CYLINDER_MINKOWSKI_H
 
+#include "btApi.h"
+
 #include "btBoxShape.h"
 #include "BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"  // for the types
 #include "LinearMath/btVector3.h"

@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_TRIANGLE_MESH_SHAPE_H
 #define BT_TRIANGLE_MESH_SHAPE_H
 
+#include "btApi.h"
+
 #include "btConcaveShape.h"
 #include "btStridingMeshInterface.h"
 

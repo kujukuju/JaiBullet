@@ -11,6 +11,8 @@
 #ifndef BT_VEHICLE_RAYCASTER_H
 #define BT_VEHICLE_RAYCASTER_H
 
+#include "btApi.h"
+
 #include "LinearMath/btVector3.h"
 
 /// btVehicleRaycaster is provides interface for between vehicle simulation and raycasting

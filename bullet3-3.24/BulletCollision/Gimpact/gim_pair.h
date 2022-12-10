@@ -1,6 +1,8 @@
 #ifndef GIM_PAIR_H
 #define GIM_PAIR_H
 
+#include "btApi.h"
+
 
 //! Overlapping pair
 struct GIM_PAIR

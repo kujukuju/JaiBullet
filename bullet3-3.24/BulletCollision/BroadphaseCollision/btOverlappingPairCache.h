@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_OVERLAPPING_PAIR_CACHE_H
 #define BT_OVERLAPPING_PAIR_CACHE_H
 
+#include "btApi.h"
+
 #include "btBroadphaseInterface.h"
 #include "btBroadphaseProxy.h"
 #include "btOverlappingPairCallback.h"

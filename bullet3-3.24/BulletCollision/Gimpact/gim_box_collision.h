@@ -1,6 +1,8 @@
 #ifndef GIM_BOX_COLLISION_H_INCLUDED
 #define GIM_BOX_COLLISION_H_INCLUDED
 
+#include "btApi.h"
+
 /*! \file gim_box_collision.h
 \author Francisco Leon Najera
 */

@@ -4,6 +4,9 @@
 
 #ifndef POLY_34
 #define POLY_34
+
+#include "btApi.h"
+
 #include "LinearMath/btScalar.h"
 // x - array of size 2
 // return 2: 2 real roots x[0], x[1]

@@ -24,6 +24,8 @@ subject to the following restrictions:
 #ifndef GIMPACT_MASS_UTIL_H
 #define GIMPACT_MASS_UTIL_H
 
+#include "btApi.h"
+
 #include "LinearMath/btTransform.h"
 
 SIMD_FORCE_INLINE btVector3 gim_inertia_add_transformed(

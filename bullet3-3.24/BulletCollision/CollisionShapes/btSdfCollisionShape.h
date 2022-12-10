@@ -1,6 +1,8 @@
 #ifndef BT_SDF_COLLISION_SHAPE_H
 #define BT_SDF_COLLISION_SHAPE_H
 
+#include "btApi.h"
+
 #include "btConcaveShape.h"
 
 class btSdfCollisionShape : public btConcaveShape

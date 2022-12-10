@@ -16,6 +16,8 @@
 #ifndef BT_PRECONDITIONER_H
 #define BT_PRECONDITIONER_H
 
+#include "btApi.h"
+
 class Preconditioner
 {
 public:

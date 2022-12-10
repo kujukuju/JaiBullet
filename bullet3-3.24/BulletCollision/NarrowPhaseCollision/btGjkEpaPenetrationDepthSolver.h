@@ -17,6 +17,8 @@ subject to the following restrictions:
 #ifndef BT_GJP_EPA_PENETRATION_DEPTH_H
 #define BT_GJP_EPA_PENETRATION_DEPTH_H
 
+#include "btApi.h"
+
 #include "btConvexPenetrationDepthSolver.h"
 
 ///EpaPenetrationDepthSolver uses the Expanding Polytope Algorithm to

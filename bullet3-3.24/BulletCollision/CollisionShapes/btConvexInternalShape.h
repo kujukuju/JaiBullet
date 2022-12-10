@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_CONVEX_INTERNAL_SHAPE_H
 #define BT_CONVEX_INTERNAL_SHAPE_H
 
+#include "btApi.h"
+
 #include "btConvexShape.h"
 #include "LinearMath/btAabbUtil2.h"
 

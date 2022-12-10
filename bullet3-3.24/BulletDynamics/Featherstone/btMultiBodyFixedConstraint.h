@@ -18,6 +18,8 @@ subject to the following restrictions:
 #ifndef BT_MULTIBODY_FIXED_CONSTRAINT_H
 #define BT_MULTIBODY_FIXED_CONSTRAINT_H
 
+#include "btApi.h"
+
 #include "btMultiBodyConstraint.h"
 
 class btMultiBodyFixedConstraint : public btMultiBodyConstraint

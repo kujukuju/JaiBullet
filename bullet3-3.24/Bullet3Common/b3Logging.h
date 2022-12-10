@@ -2,6 +2,8 @@
 #ifndef B3_LOGGING_H
 #define B3_LOGGING_H
 
+#include "btApi.h"
+
 #ifdef __cplusplus
 extern "C"
 {

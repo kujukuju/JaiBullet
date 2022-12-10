@@ -15,6 +15,9 @@ subject to the following restrictions:
 
 #ifndef BT_EMPTY_ALGORITH
 #define BT_EMPTY_ALGORITH
+
+#include "btApi.h"
+
 #include "BulletCollision/BroadphaseCollision/btCollisionAlgorithm.h"
 #include "btCollisionCreateFunc.h"
 #include "btCollisionDispatcher.h"

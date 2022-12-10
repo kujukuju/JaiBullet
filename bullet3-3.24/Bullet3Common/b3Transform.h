@@ -15,6 +15,8 @@ subject to the following restrictions:
 #ifndef B3_TRANSFORM_H
 #define B3_TRANSFORM_H
 
+#include "btApi.h"
+
 #include "b3Matrix3x3.h"
 
 #ifdef B3_USE_DOUBLE_PRECISION

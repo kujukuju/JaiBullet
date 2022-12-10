@@ -15,6 +15,8 @@ subject to the following restrictions:
 #ifndef BT_AABB_UTIL2
 #define BT_AABB_UTIL2
 
+#include "btApi.h"
+
 #include "btTransform.h"
 #include "btVector3.h"
 #include "btMinMax.h"

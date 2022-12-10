@@ -2,6 +2,8 @@
 #ifndef B3_CONTACT_SPHERE_SPHERE_H
 #define B3_CONTACT_SPHERE_SPHERE_H
 
+#include "btApi.h"
+
 void computeContactSphereConvex(int pairIndex,
 								int bodyIndexA, int bodyIndexB,
 								int collidableIndexA, int collidableIndexB,

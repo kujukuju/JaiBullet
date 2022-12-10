@@ -15,6 +15,8 @@ subject to the following restrictions:
 #ifndef BT_CONVEX_HULL_COMPUTER_H
 #define BT_CONVEX_HULL_COMPUTER_H
 
+#include "btApi.h"
+
 #include "btVector3.h"
 #include "btAlignedObjectArray.h"
 

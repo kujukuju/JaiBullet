@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef B3_STRIDING_MESHINTERFACE_H
 #define B3_STRIDING_MESHINTERFACE_H
 
+#include "btApi.h"
+
 #include "Bullet3Common/b3Vector3.h"
 #include "b3TriangleCallback.h"
 //#include "b3ConcaveShape.h"

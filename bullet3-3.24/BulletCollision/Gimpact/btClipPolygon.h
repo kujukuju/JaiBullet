@@ -1,6 +1,8 @@
 #ifndef BT_CLIP_POLYGON_H_INCLUDED
 #define BT_CLIP_POLYGON_H_INCLUDED
 
+#include "btApi.h"
+
 /*! \file btClipPolygon.h
 \author Francisco Leon Najera
 */

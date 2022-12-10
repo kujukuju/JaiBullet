@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_CONSTRAINT_SOLVER_H
 #define BT_CONSTRAINT_SOLVER_H
 
+#include "btApi.h"
+
 #include "LinearMath/btScalar.h"
 
 class btPersistentManifold;

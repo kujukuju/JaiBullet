@@ -1,6 +1,8 @@
 #ifndef B3_VECTOR_FLOAT4_H
 #define B3_VECTOR_FLOAT4_H
 
+#include "btApi.h"
+
 #include "Bullet3Common/b3Transform.h"
 
 //#define cross3(a,b) (a.cross(b))

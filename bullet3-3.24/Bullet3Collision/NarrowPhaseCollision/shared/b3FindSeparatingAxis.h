@@ -1,6 +1,8 @@
 #ifndef B3_FIND_SEPARATING_AXIS_H
 #define B3_FIND_SEPARATING_AXIS_H
 
+#include "btApi.h"
+
 inline void b3ProjectAxis(const b3ConvexPolyhedronData& hull, const b3Float4& pos, const b3Quaternion& orn, const b3Float4& dir, const b3AlignedObjectArray<b3Vector3>& vertices, b3Scalar& min, b3Scalar& max)
 {
 	min = FLT_MAX;

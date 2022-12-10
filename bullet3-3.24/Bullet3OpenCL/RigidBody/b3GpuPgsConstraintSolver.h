@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef B3_GPU_PGS_CONSTRAINT_SOLVER_H
 #define B3_GPU_PGS_CONSTRAINT_SOLVER_H
 
+#include "btApi.h"
+
 struct b3Contact4;
 struct b3ContactPoint;
 

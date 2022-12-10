@@ -17,6 +17,8 @@ subject to the following restrictions:
 #ifndef BT_COMPOUND_COMPOUND_COLLISION_ALGORITHM_H
 #define BT_COMPOUND_COMPOUND_COLLISION_ALGORITHM_H
 
+#include "btApi.h"
+
 #include "btCompoundCollisionAlgorithm.h"
 
 #include "BulletCollision/CollisionDispatch/btActivatingCollisionAlgorithm.h"

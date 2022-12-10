@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_UNIFORM_SCALING_SHAPE_H
 #define BT_UNIFORM_SCALING_SHAPE_H
 
+#include "btApi.h"
+
 #include "btConvexShape.h"
 #include "BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"  // for the types
 

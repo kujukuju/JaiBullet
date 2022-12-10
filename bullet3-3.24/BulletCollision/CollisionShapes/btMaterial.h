@@ -18,6 +18,8 @@ subject to the following restrictions:
 #ifndef BT_MATERIAL_H
 #define BT_MATERIAL_H
 
+#include "btApi.h"
+
 // Material class to be used by btMultimaterialTriangleMeshShape to store triangle properties
 class btMaterial
 {

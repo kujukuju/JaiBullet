@@ -1,5 +1,8 @@
 #ifndef GIM_MEMORY_H_INCLUDED
 #define GIM_MEMORY_H_INCLUDED
+
+#include "btApi.h"
+
 /*! \file gim_memory.h
 \author Francisco Leon Najera
 */

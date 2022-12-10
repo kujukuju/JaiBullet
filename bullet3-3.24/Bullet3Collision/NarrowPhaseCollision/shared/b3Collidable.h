@@ -2,6 +2,8 @@
 #ifndef B3_COLLIDABLE_H
 #define B3_COLLIDABLE_H
 
+#include "btApi.h"
+
 #include "Bullet3Common/shared/b3Float4.h"
 #include "Bullet3Common/shared/b3Quat.h"
 

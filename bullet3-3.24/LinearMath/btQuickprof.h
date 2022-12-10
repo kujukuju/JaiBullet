@@ -13,6 +13,8 @@
 #ifndef BT_QUICK_PROF_H
 #define BT_QUICK_PROF_H
 
+#include "btApi.h"
+
 #include "btScalar.h"
 #define USE_BT_CLOCK 1
 

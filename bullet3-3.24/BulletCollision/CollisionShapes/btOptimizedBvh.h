@@ -18,6 +18,8 @@ subject to the following restrictions:
 #ifndef BT_OPTIMIZED_BVH_H
 #define BT_OPTIMIZED_BVH_H
 
+#include "btApi.h"
+
 #include "BulletCollision/BroadphaseCollision/btQuantizedBvh.h"
 
 class btStridingMeshInterface;

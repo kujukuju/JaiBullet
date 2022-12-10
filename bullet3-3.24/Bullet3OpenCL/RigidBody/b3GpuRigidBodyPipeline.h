@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef B3_GPU_RIGIDBODY_PIPELINE_H
 #define B3_GPU_RIGIDBODY_PIPELINE_H
 
+#include "btApi.h"
+
 #include "Bullet3OpenCL/Initialize/b3OpenCLInclude.h"
 #include "Bullet3Collision/NarrowPhaseCollision/b3Config.h"
 

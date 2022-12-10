@@ -19,6 +19,8 @@
 #ifndef __B_DEFINES_H__
 #define __B_DEFINES_H__
 
+#include "btApi.h"
+
 // MISC defines, see BKE_global.h, BKE_utildefines.h
 #define B3_SIZEOFBLENDERHEADER 12
 

@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_SOFT_BODY_SOLVER_VERTEX_BUFFER_H
 #define BT_SOFT_BODY_SOLVER_VERTEX_BUFFER_H
 
+#include "btApi.h"
+
 class btVertexBufferDescriptor
 {
 public:

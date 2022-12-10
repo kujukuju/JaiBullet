@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_COLLISION_MARGIN_H
 #define BT_COLLISION_MARGIN_H
 
+#include "btApi.h"
+
 ///The CONVEX_DISTANCE_MARGIN is a default collision margin for convex collision shapes derived from btConvexInternalShape.
 ///This collision margin is used by Gjk and some other algorithms
 ///Note that when creating small objects, you need to make sure to set a smaller collision margin, using the 'setMargin' API

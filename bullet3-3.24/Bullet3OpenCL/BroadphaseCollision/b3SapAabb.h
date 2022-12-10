@@ -1,6 +1,8 @@
 #ifndef B3_SAP_AABB_H
 #define B3_SAP_AABB_H
 
+#include "btApi.h"
+
 #include "Bullet3Common/b3Scalar.h"
 #include "Bullet3Collision/BroadPhaseCollision/shared/b3Aabb.h"
 

@@ -1,6 +1,8 @@
 #ifndef BT_REDUCED_SOFT_BODY_HELPERS_H
 #define BT_REDUCED_SOFT_BODY_HELPERS_H
 
+#include "btApi.h"
+
 #include "btReducedDeformableBody.h"
 #include <string>
 

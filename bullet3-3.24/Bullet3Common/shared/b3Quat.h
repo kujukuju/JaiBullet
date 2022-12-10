@@ -1,6 +1,8 @@
 #ifndef B3_QUAT_H
 #define B3_QUAT_H
 
+#include "btApi.h"
+
 #include "Bullet3Common/shared/b3PlatformDefinitions.h"
 #include "Bullet3Common/shared/b3Float4.h"
 

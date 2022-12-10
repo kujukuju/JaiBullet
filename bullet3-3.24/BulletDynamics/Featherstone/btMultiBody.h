@@ -24,6 +24,8 @@
 #ifndef BT_MULTIBODY_H
 #define BT_MULTIBODY_H
 
+#include "btApi.h"
+
 #include "LinearMath/btScalar.h"
 #include "LinearMath/btVector3.h"
 #include "LinearMath/btQuaternion.h"

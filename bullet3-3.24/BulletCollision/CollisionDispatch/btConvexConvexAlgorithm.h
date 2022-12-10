@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_CONVEX_CONVEX_ALGORITHM_H
 #define BT_CONVEX_CONVEX_ALGORITHM_H
 
+#include "btApi.h"
+
 #include "btActivatingCollisionAlgorithm.h"
 #include "BulletCollision/NarrowPhaseCollision/btGjkPairDetector.h"
 #include "BulletCollision/NarrowPhaseCollision/btPersistentManifold.h"

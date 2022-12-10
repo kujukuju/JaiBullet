@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_BVH_TRIANGLE_MESH_SHAPE_H
 #define BT_BVH_TRIANGLE_MESH_SHAPE_H
 
+#include "btApi.h"
+
 #include "btTriangleMeshShape.h"
 #include "btOptimizedBvh.h"
 #include "LinearMath/btAlignedAllocator.h"

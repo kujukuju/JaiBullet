@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_EMPTY_SHAPE_H
 #define BT_EMPTY_SHAPE_H
 
+#include "btApi.h"
+
 #include "btConcaveShape.h"
 
 #include "LinearMath/btVector3.h"

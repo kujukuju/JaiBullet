@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_MULTIBODY_CONSTRAINT_H
 #define BT_MULTIBODY_CONSTRAINT_H
 
+#include "btApi.h"
+
 #include "LinearMath/btScalar.h"
 #include "LinearMath/btAlignedObjectArray.h"
 #include "btMultiBody.h"

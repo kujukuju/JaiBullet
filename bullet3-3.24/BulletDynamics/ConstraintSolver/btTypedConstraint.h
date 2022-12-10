@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_TYPED_CONSTRAINT_H
 #define BT_TYPED_CONSTRAINT_H
 
+#include "btApi.h"
+
 #include "LinearMath/btScalar.h"
 #include "btSolverConstraint.h"
 #include "BulletDynamics/Dynamics/btRigidBody.h"

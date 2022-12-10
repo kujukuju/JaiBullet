@@ -17,6 +17,8 @@ subject to the following restrictions:
 #ifndef BT_LEMKE_SOLVER_H
 #define BT_LEMKE_SOLVER_H
 
+#include "btApi.h"
+
 #include "btMLCPSolverInterface.h"
 #include "btLemkeAlgorithm.h"
 

@@ -15,6 +15,8 @@ subject to the following restrictions:
 #ifndef BT_TRANSFORM_H
 #define BT_TRANSFORM_H
 
+#include "btApi.h"
+
 #include "btMatrix3x3.h"
 
 #ifdef BT_USE_DOUBLE_PRECISION

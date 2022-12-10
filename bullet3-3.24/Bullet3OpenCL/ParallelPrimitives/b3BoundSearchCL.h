@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef B3_BOUNDSEARCH_H
 #define B3_BOUNDSEARCH_H
 
+#include "btApi.h"
+
 #pragma once
 
 /*#include <Adl/Adl.h>

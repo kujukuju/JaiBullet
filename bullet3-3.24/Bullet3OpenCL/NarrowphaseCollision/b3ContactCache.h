@@ -17,6 +17,8 @@ subject to the following restrictions:
 #ifndef B3_CONTACT_CACHE_H
 #define B3_CONTACT_CACHE_H
 
+#include "btApi.h"
+
 #include "Bullet3Common/b3Vector3.h"
 #include "Bullet3Common/b3Transform.h"
 #include "Bullet3Common/b3AlignedAllocator.h"

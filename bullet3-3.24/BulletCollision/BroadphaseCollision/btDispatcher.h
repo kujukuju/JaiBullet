@@ -15,6 +15,9 @@ subject to the following restrictions:
 
 #ifndef BT_DISPATCHER_H
 #define BT_DISPATCHER_H
+
+#include "btApi.h"
+
 #include "LinearMath/btScalar.h"
 
 class btCollisionAlgorithm;

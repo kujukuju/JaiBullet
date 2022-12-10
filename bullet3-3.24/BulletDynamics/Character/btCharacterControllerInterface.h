@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_CHARACTER_CONTROLLER_INTERFACE_H
 #define BT_CHARACTER_CONTROLLER_INTERFACE_H
 
+#include "btApi.h"
+
 #include "LinearMath/btVector3.h"
 #include "BulletDynamics/Dynamics/btActionInterface.h"
 

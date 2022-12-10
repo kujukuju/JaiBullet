@@ -26,6 +26,8 @@ http://gimpact.sf.net
 #ifndef B3_GENERIC_6DOF_CONSTRAINT_H
 #define B3_GENERIC_6DOF_CONSTRAINT_H
 
+#include "btApi.h"
+
 #include "Bullet3Common/b3Vector3.h"
 #include "b3JacobianEntry.h"
 #include "b3TypedConstraint.h"

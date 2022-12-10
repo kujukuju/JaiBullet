@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_SOFTBODY_FLOAT_DATA
 #define BT_SOFTBODY_FLOAT_DATA
 
+#include "btApi.h"
+
 #include "BulletCollision/CollisionDispatch/btCollisionObject.h"
 #include "BulletDynamics/Dynamics/btRigidBody.h"
 

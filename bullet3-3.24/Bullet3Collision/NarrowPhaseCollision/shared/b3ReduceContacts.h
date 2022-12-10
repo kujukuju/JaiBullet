@@ -1,6 +1,8 @@
 #ifndef B3_REDUCE_CONTACTS_H
 #define B3_REDUCE_CONTACTS_H
 
+#include "btApi.h"
+
 inline int b3ReduceContacts(const b3Float4* p, int nPoints, const b3Float4& nearNormal, b3Int4* contactIdx)
 {
 	if (nPoints == 0)

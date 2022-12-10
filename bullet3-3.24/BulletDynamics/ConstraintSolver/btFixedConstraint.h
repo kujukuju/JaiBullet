@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_FIXED_CONSTRAINT_H
 #define BT_FIXED_CONSTRAINT_H
 
+#include "btApi.h"
+
 #include "btGeneric6DofSpring2Constraint.h"
 
 ATTRIBUTE_ALIGNED16(class)

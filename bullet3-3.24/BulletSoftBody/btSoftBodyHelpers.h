@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_SOFT_BODY_HELPERS_H
 #define BT_SOFT_BODY_HELPERS_H
 
+#include "btApi.h"
+
 #include "btSoftBody.h"
 #include <fstream>
 #include <string>

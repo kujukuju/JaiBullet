@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_DISCRETE_DYNAMICS_WORLD_MT_H
 #define BT_DISCRETE_DYNAMICS_WORLD_MT_H
 
+#include "btApi.h"
+
 #include "btDiscreteDynamicsWorld.h"
 #include "btSimulationIslandManagerMt.h"
 #include "BulletDynamics/ConstraintSolver/btConstraintSolver.h"

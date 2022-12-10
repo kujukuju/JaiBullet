@@ -16,6 +16,8 @@
 #ifndef BT_DEFORMABLE_MULTIBODY_CONSTRAINT_SOLVER_H
 #define BT_DEFORMABLE_MULTIBODY_CONSTRAINT_SOLVER_H
 
+#include "btApi.h"
+
 #include "btDeformableBodySolver.h"
 #include "BulletDynamics/Featherstone/btMultiBodyConstraintSolver.h"
 

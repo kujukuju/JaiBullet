@@ -18,6 +18,8 @@ subject to the following restrictions:
 #ifndef BT_MULTIBODY_POINT2POINT_H
 #define BT_MULTIBODY_POINT2POINT_H
 
+#include "btApi.h"
+
 #include "btMultiBodyConstraint.h"
 
 //#define BTMBP2PCONSTRAINT_BLOCK_ANGULAR_MOTION_TEST

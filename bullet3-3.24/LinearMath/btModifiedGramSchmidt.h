@@ -8,6 +8,8 @@
 #ifndef btModifiedGramSchmidt_h
 #define btModifiedGramSchmidt_h
 
+#include "btApi.h"
+
 #include "btReducedVector.h"
 #include "btAlignedObjectArray.h"
 #include <iostream>

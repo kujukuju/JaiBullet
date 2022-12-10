@@ -18,6 +18,8 @@ subject to the following restrictions:
 #ifndef BT_POLYHEDRAL_CONTACT_CLIPPING_H
 #define BT_POLYHEDRAL_CONTACT_CLIPPING_H
 
+#include "btApi.h"
+
 #include "LinearMath/btAlignedObjectArray.h"
 #include "LinearMath/btTransform.h"
 #include "btDiscreteCollisionDetectorInterface.h"

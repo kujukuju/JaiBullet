@@ -15,6 +15,8 @@ subject to the following restrictions:
 #ifndef B3_VECTOR3_H
 #define B3_VECTOR3_H
 
+#include "btApi.h"
+
 //#include <stdint.h>
 #include "b3Scalar.h"
 #include "b3MinMax.h"

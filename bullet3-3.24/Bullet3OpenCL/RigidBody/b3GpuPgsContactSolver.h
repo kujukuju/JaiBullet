@@ -2,6 +2,8 @@
 #ifndef B3_GPU_BATCHING_PGS_SOLVER_H
 #define B3_GPU_BATCHING_PGS_SOLVER_H
 
+#include "btApi.h"
+
 #include "Bullet3OpenCL/Initialize/b3OpenCLInclude.h"
 #include "Bullet3OpenCL/ParallelPrimitives/b3OpenCLArray.h"
 #include "Bullet3Collision/NarrowPhaseCollision/shared/b3RigidBodyData.h"

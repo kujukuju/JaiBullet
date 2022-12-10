@@ -16,6 +16,8 @@
 #ifndef BT_MOUSE_PICKING_FORCE_H
 #define BT_MOUSE_PICKING_FORCE_H
 
+#include "btApi.h"
+
 #include "btDeformableLagrangianForce.h"
 
 class btDeformableMousePickingForce : public btDeformableLagrangianForce

@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_HASH_MAP_H
 #define BT_HASH_MAP_H
 
+#include "btApi.h"
+
 #include <string>
 #include "btAlignedObjectArray.h"
 

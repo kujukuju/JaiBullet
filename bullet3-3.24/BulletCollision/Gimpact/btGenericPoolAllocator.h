@@ -21,6 +21,8 @@ subject to the following restrictions:
 #ifndef BT_GENERIC_POOL_ALLOCATOR_H
 #define BT_GENERIC_POOL_ALLOCATOR_H
 
+#include "btApi.h"
+
 #include <limits.h>
 #include <stdio.h>
 #include <string.h>

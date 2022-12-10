@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_MULTIBODY_DYNAMICS_WORLD_H
 #define BT_MULTIBODY_DYNAMICS_WORLD_H
 
+#include "btApi.h"
+
 #include "BulletDynamics/Dynamics/btDiscreteDynamicsWorld.h"
 #include "BulletDynamics/Featherstone/btMultiBodyInplaceSolverIslandCallback.h"
 

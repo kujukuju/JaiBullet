@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef B3_JACOBIAN_ENTRY_H
 #define B3_JACOBIAN_ENTRY_H
 
+#include "btApi.h"
+
 #include "Bullet3Common/b3Matrix3x3.h"
 
 //notes:

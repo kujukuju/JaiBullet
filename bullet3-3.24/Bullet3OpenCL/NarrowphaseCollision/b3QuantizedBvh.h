@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef B3_QUANTIZED_BVH_H
 #define B3_QUANTIZED_BVH_H
 
+#include "btApi.h"
+
 class b3Serializer;
 
 //#define DEBUG_CHECK_DEQUANTIZATION 1

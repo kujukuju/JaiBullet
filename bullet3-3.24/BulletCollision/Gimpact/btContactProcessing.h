@@ -1,6 +1,8 @@
 #ifndef BT_CONTACT_H_INCLUDED
 #define BT_CONTACT_H_INCLUDED
 
+#include "btApi.h"
+
 /*! \file gim_contact.h
 \author Francisco Leon Najera
 */

@@ -16,6 +16,8 @@
 #ifndef BT_DEFORMABLE_LAGRANGIAN_FORCE_H
 #define BT_DEFORMABLE_LAGRANGIAN_FORCE_H
 
+#include "btApi.h"
+
 #include "btSoftBody.h"
 #include <LinearMath/btHashMap.h>
 #include <iostream>

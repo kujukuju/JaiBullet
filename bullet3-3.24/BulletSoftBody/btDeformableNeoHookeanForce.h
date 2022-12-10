@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_NEOHOOKEAN_H
 #define BT_NEOHOOKEAN_H
 
+#include "btApi.h"
+
 #include "btDeformableLagrangianForce.h"
 #include "LinearMath/btQuickprof.h"
 #include "LinearMath/btImplicitQRSVD.h"

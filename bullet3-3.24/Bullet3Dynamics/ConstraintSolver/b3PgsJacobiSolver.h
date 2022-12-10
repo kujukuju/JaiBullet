@@ -1,6 +1,8 @@
 #ifndef B3_PGS_JACOBI_SOLVER
 #define B3_PGS_JACOBI_SOLVER
 
+#include "btApi.h"
+
 struct b3Contact4;
 struct b3ContactPoint;
 

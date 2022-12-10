@@ -2,6 +2,8 @@
 #ifndef BT_CPU_UTILITY_H
 #define BT_CPU_UTILITY_H
 
+#include "btApi.h"
+
 #include "LinearMath/btScalar.h"
 
 #include <string.h>  //memset

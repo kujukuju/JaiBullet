@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_THREAD_SUPPORT_INTERFACE_H
 #define BT_THREAD_SUPPORT_INTERFACE_H
 
+#include "btApi.h"
+
 class btCriticalSection
 {
 public:

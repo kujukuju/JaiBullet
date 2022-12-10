@@ -16,6 +16,8 @@
 #ifndef BT_DEFORMABLE_MULTIBODY_DYNAMICS_WORLD_H
 #define BT_DEFORMABLE_MULTIBODY_DYNAMICS_WORLD_H
 
+#include "btApi.h"
+
 #include "btSoftMultiBodyDynamicsWorld.h"
 #include "btDeformableLagrangianForce.h"
 #include "btDeformableMassSpringForce.h"

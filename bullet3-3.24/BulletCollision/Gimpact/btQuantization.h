@@ -1,6 +1,8 @@
 #ifndef BT_GIMPACT_QUANTIZATION_H_INCLUDED
 #define BT_GIMPACT_QUANTIZATION_H_INCLUDED
 
+#include "btApi.h"
+
 /*! \file btQuantization.h
 *\author Francisco Leon Najera
 

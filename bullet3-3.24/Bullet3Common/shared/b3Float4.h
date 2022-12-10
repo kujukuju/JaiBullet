@@ -1,6 +1,8 @@
 #ifndef B3_FLOAT4_H
 #define B3_FLOAT4_H
 
+#include "btApi.h"
+
 #include "Bullet3Common/shared/b3PlatformDefinitions.h"
 
 #ifdef __cplusplus

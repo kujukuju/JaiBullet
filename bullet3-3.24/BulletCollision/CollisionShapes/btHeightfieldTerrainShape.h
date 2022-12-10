@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_HEIGHTFIELD_TERRAIN_SHAPE_H
 #define BT_HEIGHTFIELD_TERRAIN_SHAPE_H
 
+#include "btApi.h"
+
 #include "btConcaveShape.h"
 #include "LinearMath/btAlignedObjectArray.h"
 

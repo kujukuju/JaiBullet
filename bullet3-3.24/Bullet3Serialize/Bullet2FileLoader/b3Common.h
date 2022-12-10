@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef __BCOMMON_H__
 #define __BCOMMON_H__
 
+#include "btApi.h"
+
 #include <assert.h>
 //#include "bLog.h"
 #include "Bullet3Common/b3AlignedObjectArray.h"

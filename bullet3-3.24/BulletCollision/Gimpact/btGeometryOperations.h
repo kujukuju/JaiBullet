@@ -1,6 +1,8 @@
 #ifndef BT_BASIC_GEOMETRY_OPERATIONS_H_INCLUDED
 #define BT_BASIC_GEOMETRY_OPERATIONS_H_INCLUDED
 
+#include "btApi.h"
+
 /*! \file btGeometryOperations.h
 *\author Francisco Leon Najera
 

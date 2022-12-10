@@ -1,6 +1,8 @@
 #ifndef B3_GPU_SAP_BROADPHASE_H
 #define B3_GPU_SAP_BROADPHASE_H
 
+#include "btApi.h"
+
 #include "Bullet3OpenCL/ParallelPrimitives/b3OpenCLArray.h"
 #include "Bullet3OpenCL/ParallelPrimitives/b3FillCL.h"  //b3Int2
 class b3Vector3;

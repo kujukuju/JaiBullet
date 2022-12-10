@@ -18,6 +18,8 @@ subject to the following restrictions:
 #ifndef BT_SHAPE_HULL_H
 #define BT_SHAPE_HULL_H
 
+#include "btApi.h"
+
 #include "LinearMath/btAlignedObjectArray.h"
 #include "BulletCollision/CollisionShapes/btConvexShape.h"
 

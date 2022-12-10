@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef B3_TYPED_CONSTRAINT_H
 #define B3_TYPED_CONSTRAINT_H
 
+#include "btApi.h"
+
 #include "Bullet3Common/b3Scalar.h"
 #include "b3SolverConstraint.h"
 

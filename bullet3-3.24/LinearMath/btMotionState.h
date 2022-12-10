@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_MOTIONSTATE_H
 #define BT_MOTIONSTATE_H
 
+#include "btApi.h"
+
 #include "btTransform.h"
 
 ///The btMotionState interface class allows the dynamics world to synchronize and interpolate the updated world transforms with graphics

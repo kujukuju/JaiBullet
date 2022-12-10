@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_SIMPLEX_SOLVER_INTERFACE_H
 #define BT_SIMPLEX_SOLVER_INTERFACE_H
 
+#include "btApi.h"
+
 #include "LinearMath/btVector3.h"
 
 #define NO_VIRTUAL_INTERFACE 1

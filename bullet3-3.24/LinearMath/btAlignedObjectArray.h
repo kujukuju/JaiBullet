@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_OBJECT_ARRAY__
 #define BT_OBJECT_ARRAY__
 
+#include "btApi.h"
+
 #include "btScalar.h"  // has definitions like SIMD_FORCE_INLINE
 #include "btAlignedAllocator.h"
 

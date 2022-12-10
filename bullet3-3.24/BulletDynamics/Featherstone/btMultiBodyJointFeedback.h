@@ -15,6 +15,8 @@ subject to the following restrictions:
 #ifndef BT_MULTIBODY_JOINT_FEEDBACK_H
 #define BT_MULTIBODY_JOINT_FEEDBACK_H
 
+#include "btApi.h"
+
 #include "LinearMath/btSpatialAlgebra.h"
 
 struct btMultiBodyJointFeedback

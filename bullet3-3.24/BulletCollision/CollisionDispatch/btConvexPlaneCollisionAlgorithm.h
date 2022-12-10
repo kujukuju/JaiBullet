@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_CONVEX_PLANE_COLLISION_ALGORITHM_H
 #define BT_CONVEX_PLANE_COLLISION_ALGORITHM_H
 
+#include "btApi.h"
+
 #include "BulletCollision/BroadphaseCollision/btCollisionAlgorithm.h"
 #include "BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
 #include "BulletCollision/CollisionDispatch/btCollisionCreateFunc.h"

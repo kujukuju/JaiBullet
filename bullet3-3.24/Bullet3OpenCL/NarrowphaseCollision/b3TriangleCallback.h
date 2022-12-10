@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef B3_TRIANGLE_CALLBACK_H
 #define B3_TRIANGLE_CALLBACK_H
 
+#include "btApi.h"
+
 #include "Bullet3Common/b3Vector3.h"
 
 ///The b3TriangleCallback provides a callback for each overlapping triangle when calling processAllTriangles.

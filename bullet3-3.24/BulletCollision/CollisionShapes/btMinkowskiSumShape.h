@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_MINKOWSKI_SUM_SHAPE_H
 #define BT_MINKOWSKI_SUM_SHAPE_H
 
+#include "btApi.h"
+
 #include "btConvexInternalShape.h"
 #include "BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"  // for the types
 

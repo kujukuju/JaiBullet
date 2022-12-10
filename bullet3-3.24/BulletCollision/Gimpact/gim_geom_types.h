@@ -1,6 +1,8 @@
 #ifndef GIM_GEOM_TYPES_H_INCLUDED
 #define GIM_GEOM_TYPES_H_INCLUDED
 
+#include "btApi.h"
+
 /*! \file gim_geom_types.h
 \author Francisco Leon Najera
 */

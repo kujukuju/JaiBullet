@@ -14,6 +14,8 @@ subject to the following restrictions:
 #ifndef B3_GPU_PARALLEL_LINEAR_BVH_H
 #define B3_GPU_PARALLEL_LINEAR_BVH_H
 
+#include "btApi.h"
+
 //#include "Bullet3Collision/BroadPhaseCollision/shared/b3Aabb.h"
 #include "Bullet3OpenCL/BroadphaseCollision/b3SapAabb.h"
 #include "Bullet3Common/shared/b3Int2.h"

@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef __BCHUNK_H__
 #define __BCHUNK_H__
 
+#include "btApi.h"
+
 #if defined(_WIN32) && !defined(__MINGW32__)
 #define b3Long64 __int64
 #elif defined(__MINGW32__)

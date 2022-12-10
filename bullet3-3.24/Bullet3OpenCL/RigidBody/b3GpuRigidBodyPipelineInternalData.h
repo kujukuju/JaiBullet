@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef B3_GPU_RIGIDBODY_PIPELINE_INTERNAL_DATA_H
 #define B3_GPU_RIGIDBODY_PIPELINE_INTERNAL_DATA_H
 
+#include "btApi.h"
+
 #include "Bullet3OpenCL/Initialize/b3OpenCLInclude.h"
 #include "Bullet3Common/b3AlignedObjectArray.h"
 

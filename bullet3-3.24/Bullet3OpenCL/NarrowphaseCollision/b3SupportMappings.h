@@ -2,6 +2,8 @@
 #ifndef B3_SUPPORT_MAPPINGS_H
 #define B3_SUPPORT_MAPPINGS_H
 
+#include "btApi.h"
+
 #include "Bullet3Common/b3Transform.h"
 #include "Bullet3Common/b3AlignedObjectArray.h"
 #include "b3VectorFloat4.h"

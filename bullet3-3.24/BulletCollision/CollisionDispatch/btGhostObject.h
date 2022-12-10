@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_GHOST_OBJECT_H
 #define BT_GHOST_OBJECT_H
 
+#include "btApi.h"
+
 #include "btCollisionObject.h"
 #include "BulletCollision/BroadphaseCollision/btOverlappingPairCallback.h"
 #include "LinearMath/btAlignedAllocator.h"

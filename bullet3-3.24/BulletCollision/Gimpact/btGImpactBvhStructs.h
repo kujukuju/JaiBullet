@@ -1,6 +1,8 @@
 #ifndef GIM_BOX_SET_STRUCT_H_INCLUDED
 #define GIM_BOX_SET_STRUCT_H_INCLUDED
 
+#include "btApi.h"
+
 /*! \file gim_box_set.h
 \author Francisco Leon Najera
 */

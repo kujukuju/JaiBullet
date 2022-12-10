@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_MANIFOLD_RESULT_H
 #define BT_MANIFOLD_RESULT_H
 
+#include "btApi.h"
+
 class btCollisionObject;
 struct btCollisionObjectWrapper;
 

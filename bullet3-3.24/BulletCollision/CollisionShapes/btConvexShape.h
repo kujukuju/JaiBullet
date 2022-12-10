@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_CONVEX_SHAPE_INTERFACE1
 #define BT_CONVEX_SHAPE_INTERFACE1
 
+#include "btApi.h"
+
 #include "btCollisionShape.h"
 
 #include "LinearMath/btVector3.h"

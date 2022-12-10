@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_COMPOUND_SHAPE_H
 #define BT_COMPOUND_SHAPE_H
 
+#include "btApi.h"
+
 #include "btCollisionShape.h"
 
 #include "LinearMath/btVector3.h"

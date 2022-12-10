@@ -19,6 +19,8 @@
 #ifndef BT_AXIS_SWEEP_3_INTERNAL_H
 #define BT_AXIS_SWEEP_3_INTERNAL_H
 
+#include "btApi.h"
+
 #include "LinearMath/btVector3.h"
 #include "btOverlappingPairCache.h"
 #include "btBroadphaseInterface.h"

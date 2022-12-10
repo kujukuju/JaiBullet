@@ -16,6 +16,8 @@
 #ifndef BT_COROTATED_H
 #define BT_COROTATED_H
 
+#include "btApi.h"
+
 #include "btDeformableLagrangianForce.h"
 #include "LinearMath/btPolarDecomposition.h"
 

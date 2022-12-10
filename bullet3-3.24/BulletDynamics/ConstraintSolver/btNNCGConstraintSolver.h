@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_NNCG_CONSTRAINT_SOLVER_H
 #define BT_NNCG_CONSTRAINT_SOLVER_H
 
+#include "btApi.h"
+
 #include "btSequentialImpulseConstraintSolver.h"
 
 ATTRIBUTE_ALIGNED16(class)

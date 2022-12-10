@@ -18,6 +18,8 @@
 #ifndef B3_MPR_PENETRATION_H
 #define B3_MPR_PENETRATION_H
 
+#include "btApi.h"
+
 #include "Bullet3Common/shared/b3PlatformDefinitions.h"
 #include "Bullet3Common/shared/b3Float4.h"
 #include "Bullet3Collision/NarrowPhaseCollision/shared/b3RigidBodyData.h"

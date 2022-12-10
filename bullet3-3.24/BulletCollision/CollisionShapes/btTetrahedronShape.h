@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_SIMPLEX_1TO4_SHAPE
 #define BT_SIMPLEX_1TO4_SHAPE
 
+#include "btApi.h"
+
 #include "btPolyhedralConvexShape.h"
 #include "BulletCollision/BroadphaseCollision/btBroadphaseProxy.h"
 

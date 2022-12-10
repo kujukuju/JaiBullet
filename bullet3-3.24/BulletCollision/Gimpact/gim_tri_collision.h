@@ -1,6 +1,8 @@
 #ifndef GIM_TRI_COLLISION_H_INCLUDED
 #define GIM_TRI_COLLISION_H_INCLUDED
 
+#include "btApi.h"
+
 /*! \file gim_tri_collision.h
 \author Francisco Leon Najera
 */

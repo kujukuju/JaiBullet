@@ -19,6 +19,8 @@ subject to the following restrictions:
 #ifndef BT_CD_HULL_H
 #define BT_CD_HULL_H
 
+#include "btApi.h"
+
 #include "btVector3.h"
 #include "btAlignedObjectArray.h"
 

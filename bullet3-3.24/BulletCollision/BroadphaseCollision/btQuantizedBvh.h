@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_QUANTIZED_BVH_H
 #define BT_QUANTIZED_BVH_H
 
+#include "btApi.h"
+
 class btSerializer;
 
 //#define DEBUG_CHECK_DEQUANTIZATION 1

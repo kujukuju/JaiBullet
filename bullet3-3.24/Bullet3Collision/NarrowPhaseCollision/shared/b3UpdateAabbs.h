@@ -1,6 +1,8 @@
 #ifndef B3_UPDATE_AABBS_H
 #define B3_UPDATE_AABBS_H
 
+#include "btApi.h"
+
 #include "Bullet3Collision/BroadPhaseCollision/shared/b3Aabb.h"
 #include "Bullet3Collision/NarrowPhaseCollision/shared/b3Collidable.h"
 #include "Bullet3Collision/NarrowPhaseCollision/shared/b3RigidBodyData.h"

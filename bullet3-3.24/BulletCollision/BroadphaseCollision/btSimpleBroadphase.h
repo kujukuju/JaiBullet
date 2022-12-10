@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_SIMPLE_BROADPHASE_H
 #define BT_SIMPLE_BROADPHASE_H
 
+#include "btApi.h"
+
 #include "btOverlappingPairCache.h"
 
 struct btSimpleBroadphaseProxy : public btBroadphaseProxy

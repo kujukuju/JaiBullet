@@ -1,6 +1,8 @@
 #ifndef BT_GIMPACT_BVH_H_INCLUDED
 #define BT_GIMPACT_BVH_H_INCLUDED
 
+#include "btApi.h"
+
 /*! \file gim_box_set.h
 \author Francisco Leon Najera
 */

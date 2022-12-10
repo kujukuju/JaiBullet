@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_CONVEX_CAST_H
 #define BT_CONVEX_CAST_H
 
+#include "btApi.h"
+
 #include "LinearMath/btTransform.h"
 #include "LinearMath/btVector3.h"
 #include "LinearMath/btScalar.h"

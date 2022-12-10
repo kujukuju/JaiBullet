@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_STATIC_PLANE_SHAPE_H
 #define BT_STATIC_PLANE_SHAPE_H
 
+#include "btApi.h"
+
 #include "btConcaveShape.h"
 
 ///The btStaticPlaneShape simulates an infinite non-moving (static) collision plane.

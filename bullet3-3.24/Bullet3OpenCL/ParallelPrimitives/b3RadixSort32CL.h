@@ -2,6 +2,8 @@
 #ifndef B3_RADIXSORT32_H
 #define B3_RADIXSORT32_H
 
+#include "btApi.h"
+
 #include "b3OpenCLArray.h"
 
 struct b3SortData

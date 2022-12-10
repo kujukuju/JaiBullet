@@ -1,6 +1,8 @@
 #ifndef GIM_QUANTIZED_SET_STRUCTS_H_INCLUDED
 #define GIM_QUANTIZED_SET_STRUCTS_H_INCLUDED
 
+#include "btApi.h"
+
 /*! \file btGImpactQuantizedBvh.h
 \author Francisco Leon Najera
 */

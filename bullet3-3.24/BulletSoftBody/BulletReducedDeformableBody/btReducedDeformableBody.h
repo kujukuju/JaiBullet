@@ -1,6 +1,8 @@
 #ifndef BT_REDUCED_SOFT_BODY_H
 #define BT_REDUCED_SOFT_BODY_H
 
+#include "btApi.h"
+
 #include "../btSoftBody.h"
 #include "LinearMath/btAlignedObjectArray.h"
 #include "LinearMath/btVector3.h"

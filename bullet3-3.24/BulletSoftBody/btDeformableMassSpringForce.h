@@ -16,6 +16,8 @@
 #ifndef BT_MASS_SPRING_H
 #define BT_MASS_SPRING_H
 
+#include "btApi.h"
+
 #include "btDeformableLagrangianForce.h"
 
 class btDeformableMassSpringForce : public btDeformableLagrangianForce

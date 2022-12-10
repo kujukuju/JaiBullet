@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef GRAHAM_SCAN_2D_CONVEX_HULL_H
 #define GRAHAM_SCAN_2D_CONVEX_HULL_H
 
+#include "btApi.h"
+
 #include "btVector3.h"
 #include "btAlignedObjectArray.h"
 

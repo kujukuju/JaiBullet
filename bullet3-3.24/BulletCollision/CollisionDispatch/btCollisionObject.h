@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_COLLISION_OBJECT_H
 #define BT_COLLISION_OBJECT_H
 
+#include "btApi.h"
+
 #include "LinearMath/btTransform.h"
 
 //island management, m_activationState1

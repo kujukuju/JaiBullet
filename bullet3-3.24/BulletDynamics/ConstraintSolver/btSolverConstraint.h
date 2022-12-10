@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_SOLVER_CONSTRAINT_H
 #define BT_SOLVER_CONSTRAINT_H
 
+#include "btApi.h"
+
 class btRigidBody;
 #include "LinearMath/btVector3.h"
 #include "LinearMath/btMatrix3x3.h"

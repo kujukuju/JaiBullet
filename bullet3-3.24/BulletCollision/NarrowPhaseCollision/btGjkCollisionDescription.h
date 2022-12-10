@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef GJK_COLLISION_DESCRIPTION_H
 #define GJK_COLLISION_DESCRIPTION_H
 
+#include "btApi.h"
+
 #include "LinearMath/btVector3.h"
 
 struct btGjkCollisionDescription

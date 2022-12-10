@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_CONTACT_CONSTRAINT_H
 #define BT_CONTACT_CONSTRAINT_H
 
+#include "btApi.h"
+
 #include "LinearMath/btVector3.h"
 #include "btJacobianEntry.h"
 #include "btTypedConstraint.h"

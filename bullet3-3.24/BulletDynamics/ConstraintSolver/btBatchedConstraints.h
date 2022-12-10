@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_BATCHED_CONSTRAINTS_H
 #define BT_BATCHED_CONSTRAINTS_H
 
+#include "btApi.h"
+
 #include "LinearMath/btThreads.h"
 #include "LinearMath/btAlignedObjectArray.h"
 #include "BulletDynamics/ConstraintSolver/btSolverBody.h"

@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef B3_HASH_MAP_H
 #define B3_HASH_MAP_H
 
+#include "btApi.h"
+
 #include "b3AlignedObjectArray.h"
 
 #include <string>

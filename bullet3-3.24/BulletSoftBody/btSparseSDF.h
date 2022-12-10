@@ -17,6 +17,8 @@ subject to the following restrictions:
 #ifndef BT_SPARSE_SDF_H
 #define BT_SPARSE_SDF_H
 
+#include "btApi.h"
+
 #include "BulletCollision/CollisionDispatch/btCollisionObject.h"
 #include "BulletCollision/NarrowPhaseCollision/btGjkEpa2.h"
 

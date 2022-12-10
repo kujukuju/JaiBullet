@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef BT_SCALED_BVH_TRIANGLE_MESH_SHAPE_H
 #define BT_SCALED_BVH_TRIANGLE_MESH_SHAPE_H
 
+#include "btApi.h"
+
 #include "BulletCollision/CollisionShapes/btBvhTriangleMeshShape.h"
 
 ///The btScaledBvhTriangleMeshShape allows to instance a scaled version of an existing btBvhTriangleMeshShape.

@@ -16,6 +16,8 @@ subject to the following restrictions:
 #ifndef B3_CONTACT_SOLVER_INFO
 #define B3_CONTACT_SOLVER_INFO
 
+#include "btApi.h"
+
 #include "Bullet3Common/b3Scalar.h"
 
 enum b3SolverMode

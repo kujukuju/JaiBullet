@@ -2,6 +2,8 @@
 #ifndef B3_BUFFER_INFO_CL_H
 #define B3_BUFFER_INFO_CL_H
 
+#include "btApi.h"
+
 #include "b3OpenCLArray.h"
 
 struct b3BufferInfoCL

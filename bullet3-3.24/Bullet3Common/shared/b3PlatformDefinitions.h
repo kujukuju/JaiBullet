@@ -1,6 +1,8 @@
 #ifndef B3_PLATFORM_DEFINITIONS_H
 #define B3_PLATFORM_DEFINITIONS_H
 
+#include "btApi.h"
+
 struct MyTest
 {
 	int bla;

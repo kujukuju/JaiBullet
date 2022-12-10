@@ -8,6 +8,8 @@
 #ifndef DeformableBodyInplaceSolverIslandCallback_h
 #define DeformableBodyInplaceSolverIslandCallback_h
 
+#include "btApi.h"
+
 struct DeformableBodyInplaceSolverIslandCallback : public MultiBodyInplaceSolverIslandCallback
 {
 	btDeformableMultiBodyConstraintSolver* m_deformableSolver;

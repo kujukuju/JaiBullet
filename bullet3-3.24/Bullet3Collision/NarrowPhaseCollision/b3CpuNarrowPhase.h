@@ -1,6 +1,8 @@
 #ifndef B3_CPU_NARROWPHASE_H
 #define B3_CPU_NARROWPHASE_H
 
+#include "btApi.h"
+
 #include "Bullet3Collision/NarrowPhaseCollision/shared/b3Collidable.h"
 #include "Bullet3Common/b3AlignedObjectArray.h"
 #include "Bullet3Common/b3Vector3.h"
