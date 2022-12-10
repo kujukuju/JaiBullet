@@ -25,7 +25,7 @@ subject to the following restrictions:
 ///see for discussion of static island optimizations by Vroonsh here: http://code.google.com/p/bullet/issues/detail?id=406
 #define STATIC_SIMULATION_ISLAND_OPTIMIZATION 1
 
-struct btElement
+struct BT_API btElement
 {
 	int m_id;
 	int m_sz;
@@ -34,7 +34,7 @@ struct btElement
 ///UnionFind calculates connected subsets
 // Implements weighted Quick Union with path compression
 // optimization: could use short ints instead of ints (halving memory, would limit the number of rigid bodies to 64k, sounds reasonable)
-class btUnionFind
+class BT_API btUnionFind
 {
 private:
 	btAlignedObjectArray<btElement> m_elements;

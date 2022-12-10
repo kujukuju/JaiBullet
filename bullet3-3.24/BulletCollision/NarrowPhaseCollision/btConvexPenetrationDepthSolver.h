@@ -24,7 +24,7 @@ class btConvexShape;
 class btTransform;
 
 ///ConvexPenetrationDepthSolver provides an interface for penetration depth calculation.
-class btConvexPenetrationDepthSolver
+class BT_API btConvexPenetrationDepthSolver
 {
 public:
 	virtual ~btConvexPenetrationDepthSolver(){};

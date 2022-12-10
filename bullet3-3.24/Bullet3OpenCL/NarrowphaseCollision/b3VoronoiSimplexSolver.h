@@ -26,7 +26,7 @@ subject to the following restrictions:
 //#define BT_USE_EQUAL_VERTEX_THRESHOLD
 #define VORONOI_DEFAULT_EQUAL_VERTEX_THRESHOLD 0.0001f
 
-struct b3UsageBitfield
+struct BT_API b3UsageBitfield
 {
 	b3UsageBitfield()
 	{
@@ -50,7 +50,7 @@ struct b3UsageBitfield
 	unsigned short unused4 : 1;
 };
 
-struct b3SubSimplexClosestResult
+struct BT_API b3SubSimplexClosestResult
 {
 	b3Vector3 m_closestPointOnSimplex;
 	//MASK for m_usedVertices
@@ -87,7 +87,7 @@ struct b3SubSimplexClosestResult
 /// b3VoronoiSimplexSolver is an implementation of the closest point distance algorithm from a 1-4 points simplex to the origin.
 /// Can be used with GJK, as an alternative to Johnson distance algorithm.
 
-B3_ATTRIBUTE_ALIGNED16(class)
+BT_API B3_ATTRIBUTE_ALIGNED16(class)
 b3VoronoiSimplexSolver
 {
 public:

@@ -22,7 +22,7 @@ subject to the following restrictions:
 class btVoronoiSimplexSolver;
 class btConvexPenetrationDepthSolver;
 
-struct btDefaultCollisionConstructionInfo
+struct BT_API btDefaultCollisionConstructionInfo
 {
 	btPoolAllocator* m_persistentManifoldPool;
 	btPoolAllocator* m_collisionAlgorithmPool;
@@ -45,7 +45,7 @@ struct btDefaultCollisionConstructionInfo
 ///btCollisionConfiguration allows to configure Bullet collision detection
 ///stack allocator, pool memory allocators
 ///@todo: describe the meaning
-class btDefaultCollisionConfiguration : public btCollisionConfiguration
+class BT_API btDefaultCollisionConfiguration : public btCollisionConfiguration
 {
 protected:
 	int m_persistentManifoldPoolSize;

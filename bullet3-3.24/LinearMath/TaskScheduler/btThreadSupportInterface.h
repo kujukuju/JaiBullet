@@ -18,7 +18,7 @@ subject to the following restrictions:
 
 #include "btApi.h"
 
-class btCriticalSection
+class BT_API btCriticalSection
 {
 public:
 	btCriticalSection() {}
@@ -28,7 +28,7 @@ public:
 	virtual void unlock() = 0;
 };
 
-class btThreadSupportInterface
+class BT_API btThreadSupportInterface
 {
 public:
 	virtual ~btThreadSupportInterface() {}

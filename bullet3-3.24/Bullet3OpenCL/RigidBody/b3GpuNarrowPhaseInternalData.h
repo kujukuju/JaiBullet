@@ -24,7 +24,7 @@
 
 class b3ConvexUtility;
 
-struct b3GpuNarrowPhaseInternalData
+struct BT_API b3GpuNarrowPhaseInternalData
 {
 	b3AlignedObjectArray<b3ConvexUtility*>* m_convexData;
 

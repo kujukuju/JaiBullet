@@ -20,7 +20,7 @@ subject to the following restrictions:
 
 #ifdef __cplusplus
 
-struct b3UnsignedInt2
+struct BT_API b3UnsignedInt2
 {
 	union {
 		struct
@@ -34,7 +34,7 @@ struct b3UnsignedInt2
 	};
 };
 
-struct b3Int2
+struct BT_API b3Int2
 {
 	union {
 		struct

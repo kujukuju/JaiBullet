@@ -39,7 +39,7 @@ Configuration var for applying interpolation of  contact normals
 
 ///The GIM_CONTACT is an internal GIMPACT structure, similar to btManifoldPoint.
 ///@todo: remove and replace GIM_CONTACT by btManifoldPoint.
-class GIM_CONTACT
+class BT_API GIM_CONTACT
 {
 public:
 	btVector3 m_point;

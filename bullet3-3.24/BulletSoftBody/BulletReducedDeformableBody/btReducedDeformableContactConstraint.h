@@ -4,7 +4,7 @@
 #include "btApi.h"
 
 // ================= static constraints ===================
-class btReducedDeformableStaticConstraint : public btDeformableStaticConstraint
+class BT_API btReducedDeformableStaticConstraint : public btDeformableStaticConstraint
 {
  public:
   btReducedDeformableBody* m_rsb;
@@ -40,7 +40,7 @@ class btReducedDeformableStaticConstraint : public btDeformableStaticConstraint
 };
 
 // ================= base contact constraints ===================
-class btReducedDeformableRigidContactConstraint : public btDeformableRigidContactConstraint
+class BT_API btReducedDeformableRigidContactConstraint : public btDeformableRigidContactConstraint
 {
  public:
   bool m_collideStatic;     // flag for collision with static object
@@ -120,7 +120,7 @@ class btReducedDeformableRigidContactConstraint : public btDeformableRigidContac
 };
 
 // ================= node vs rigid constraints ===================
-class btReducedDeformableNodeRigidContactConstraint : public btReducedDeformableRigidContactConstraint
+class BT_API btReducedDeformableNodeRigidContactConstraint : public btReducedDeformableRigidContactConstraint
 {
  public:
   btSoftBody::Node* m_node;
@@ -161,7 +161,7 @@ class btReducedDeformableNodeRigidContactConstraint : public btReducedDeformable
 };
 
 // ================= face vs rigid constraints ===================
-class btReducedDeformableFaceRigidContactConstraint : public btReducedDeformableRigidContactConstraint
+class BT_API btReducedDeformableFaceRigidContactConstraint : public btReducedDeformableRigidContactConstraint
 {
  public:
   btSoftBody::Face* m_face;

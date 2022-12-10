@@ -92,7 +92,7 @@ public:
 	virtual const char* serialize(void* dataBuffer, btSerializer* serializer) const;
 };
 
-struct btGeneric6DofSpringConstraintData
+struct BT_API btGeneric6DofSpringConstraintData
 {
 	btGeneric6DofConstraintData m_6dofData;
 
@@ -102,7 +102,7 @@ struct btGeneric6DofSpringConstraintData
 	float m_springDamping[6];
 };
 
-struct btGeneric6DofSpringConstraintDoubleData2
+struct BT_API btGeneric6DofSpringConstraintDoubleData2
 {
 	btGeneric6DofConstraintDoubleData2 m_6dofData;
 

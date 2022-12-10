@@ -37,7 +37,7 @@ typedef bool (*btShapePairCallback)(const btCollisionShape* pShape0, const btCol
 extern btShapePairCallback gCompoundChildShapePairCallback;
 
 /// btCompoundCollisionAlgorithm  supports collision between CompoundCollisionShapes and other collision shapes
-class btCompoundCollisionAlgorithm : public btActivatingCollisionAlgorithm
+class BT_API btCompoundCollisionAlgorithm : public btActivatingCollisionAlgorithm
 {
 	btNodeStack stack2;
 	btManifoldArray manifoldArray;

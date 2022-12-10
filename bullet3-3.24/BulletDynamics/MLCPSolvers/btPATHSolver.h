@@ -42,7 +42,7 @@ Error_Interface e;
 #include "btMLCPSolverInterface.h"
 #include "Dantzig/lcp.h"
 
-class btPathSolver : public btMLCPSolverInterface
+class BT_API btPathSolver : public btMLCPSolverInterface
 {
 public:
 	btPathSolver()

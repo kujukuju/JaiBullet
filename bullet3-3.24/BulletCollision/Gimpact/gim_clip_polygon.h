@@ -36,7 +36,7 @@ email: projectileman@yahoo.com
 */
 
 //! This function calcs the distance from a 3D plane
-class DISTANCE_PLANE_3D_FUNC
+class BT_API DISTANCE_PLANE_3D_FUNC
 {
 public:
 	template <typename CLASS_POINT, typename CLASS_PLANE>

@@ -22,13 +22,13 @@ subject to the following restrictions:
 #include "Bullet3Common/b3AlignedObjectArray.h"
 #include "Bullet3Common/b3Transform.h"
 
-struct b3MyFace
+struct BT_API b3MyFace
 {
 	b3AlignedObjectArray<int> m_indices;
 	b3Scalar m_plane[4];
 };
 
-B3_ATTRIBUTE_ALIGNED16(class)
+BT_API B3_ATTRIBUTE_ALIGNED16(class)
 b3ConvexUtility
 {
 public:

@@ -6,7 +6,7 @@
 
 typedef struct b3BvhSubtreeInfoData b3BvhSubtreeInfoData_t;
 
-struct b3BvhSubtreeInfoData
+struct BT_API b3BvhSubtreeInfoData
 {
 	//12 bytes
 	unsigned short int m_quantizedAabbMin[3];

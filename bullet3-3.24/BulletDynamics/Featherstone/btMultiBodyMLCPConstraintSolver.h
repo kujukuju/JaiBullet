@@ -25,7 +25,7 @@ subject to the following restrictions:
 class btMLCPSolverInterface;
 class btMultiBody;
 
-class btMultiBodyMLCPConstraintSolver : public btMultiBodyConstraintSolver
+class BT_API btMultiBodyMLCPConstraintSolver : public btMultiBodyConstraintSolver
 {
 protected:
 	/// \name MLCP Formulation for Rigid Bodies

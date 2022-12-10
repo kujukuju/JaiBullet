@@ -46,7 +46,7 @@ class btDispatcher;
 class btSoftBodySolver;
 
 /* btSoftBodyWorldInfo	*/
-struct btSoftBodyWorldInfo
+struct BT_API btSoftBodyWorldInfo
 {
 	btScalar air_density;
 	btScalar water_density;
@@ -73,7 +73,7 @@ struct btSoftBodyWorldInfo
 
 ///The btSoftBody is an class to simulate cloth and volumetric soft bodies.
 ///There is two-way interaction between btSoftBody and btRigidBody/btCollisionObject.
-class btSoftBody : public btCollisionObject
+class BT_API btSoftBody : public btCollisionObject
 {
 public:
 	btAlignedObjectArray<const class btCollisionObject*> m_collisionDisabledObjects;

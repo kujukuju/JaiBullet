@@ -26,14 +26,14 @@ Nov.2006
 #include "b3AlignedAllocator.h"
 
 ///The b3Block class is an internal structure for the b3StackAlloc memory allocator.
-struct b3Block
+struct BT_API b3Block
 {
 	b3Block* previous;
 	unsigned char* address;
 };
 
 ///The StackAlloc class provides some fast stack-based memory allocator (LIFO last-in first-out)
-class b3StackAlloc
+class BT_API b3StackAlloc
 {
 public:
 	b3StackAlloc(unsigned int size)

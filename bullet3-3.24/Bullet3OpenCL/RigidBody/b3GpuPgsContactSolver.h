@@ -10,7 +10,7 @@
 #include "Bullet3Collision/NarrowPhaseCollision/b3Contact4.h"
 #include "b3GpuConstraint4.h"
 
-class b3GpuPgsContactSolver
+class BT_API b3GpuPgsContactSolver
 {
 protected:
 	int m_debugOutput;

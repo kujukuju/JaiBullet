@@ -29,7 +29,7 @@ struct btCollisionObjectWrapper;
 // class btDeformableBackwardEulerObjective;
 // class btDeformableMultiBodyDynamicsWorld;
 
-class btDeformableBodySolver : public btSoftBodySolver
+class BT_API btDeformableBodySolver : public btSoftBodySolver
 {
 	typedef btAlignedObjectArray<btVector3> TVStack;
 

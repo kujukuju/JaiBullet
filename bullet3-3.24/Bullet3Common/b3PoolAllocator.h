@@ -21,7 +21,7 @@ subject to the following restrictions:
 #include "b3AlignedAllocator.h"
 
 ///The b3PoolAllocator class allows to efficiently allocate a large pool of objects, instead of dynamically allocating them separately.
-class b3PoolAllocator
+class BT_API b3PoolAllocator
 {
 	int m_elemSize;
 	int m_maxElements;

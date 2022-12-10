@@ -27,7 +27,7 @@ class btDispatcher;
 
 typedef btAlignedObjectArray<btBroadphasePair> btBroadphasePairArray;
 
-struct btOverlapCallback
+struct BT_API btOverlapCallback
 {
 	virtual ~btOverlapCallback()
 	{
@@ -36,7 +36,7 @@ struct btOverlapCallback
 	virtual bool processOverlap(btBroadphasePair& pair) = 0;
 };
 
-struct btOverlapFilterCallback
+struct BT_API btOverlapFilterCallback
 {
 	virtual ~btOverlapFilterCallback()
 	{
@@ -49,7 +49,7 @@ const int BT_NULL_PAIR = 0xffffffff;
 
 ///The btOverlappingPairCache provides an interface for overlapping pair management (add, remove, storage), used by the btBroadphaseInterface broadphases.
 ///The btHashedOverlappingPairCache and btSortedOverlappingPairCache classes are two implementations.
-class btOverlappingPairCache : public btOverlappingPairCallback
+class BT_API btOverlappingPairCache : public btOverlappingPairCallback
 {
 public:
 	virtual ~btOverlappingPairCache() {}  // this is needed so we can get to the derived class destructor
@@ -257,7 +257,7 @@ private:
 
 ///btSortedOverlappingPairCache maintains the objects with overlapping AABB
 ///Typically managed by the Broadphase, Axis3Sweep or btSimpleBroadphase
-class btSortedOverlappingPairCache : public btOverlappingPairCache
+class BT_API btSortedOverlappingPairCache : public btOverlappingPairCache
 {
 protected:
 	//avoid brute-force finding all the time
@@ -352,7 +352,7 @@ public:
 };
 
 ///btNullPairCache skips add/removal of overlapping pairs. Userful for benchmarking and unit testing.
-class btNullPairCache : public btOverlappingPairCache
+class BT_API btNullPairCache : public btOverlappingPairCache
 {
 	btBroadphasePairArray m_overlappingPairArray;
 

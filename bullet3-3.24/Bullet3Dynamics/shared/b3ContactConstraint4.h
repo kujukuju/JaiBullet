@@ -5,7 +5,7 @@
 
 typedef struct b3ContactConstraint4 b3ContactConstraint4_t;
 
-struct b3ContactConstraint4
+struct BT_API b3ContactConstraint4
 {
 	b3Float4 m_linear;  //normal?
 	b3Float4 m_worldPos[4];

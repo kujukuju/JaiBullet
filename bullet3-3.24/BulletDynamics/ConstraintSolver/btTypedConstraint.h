@@ -439,7 +439,7 @@ SIMD_FORCE_INLINE int btTypedConstraint::calculateSerializeBufferSize() const
 	return sizeof(btTypedConstraintData2);
 }
 
-class btAngularLimit
+class BT_API btAngularLimit
 {
 private:
 	btScalar

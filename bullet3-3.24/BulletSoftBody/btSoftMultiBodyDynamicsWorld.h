@@ -28,7 +28,7 @@ typedef btAlignedObjectArray<btSoftBody*> btSoftBodyArray;
 
 class btSoftBodySolver;
 
-class btSoftMultiBodyDynamicsWorld : public btMultiBodyDynamicsWorld
+class BT_API btSoftMultiBodyDynamicsWorld : public btMultiBodyDynamicsWorld
 {
 	btSoftBodyArray m_softBodies;
 	int m_drawFlags;

@@ -11,7 +11,7 @@
 #include "Bullet3Common/shared/b3Int4.h"
 #include "Bullet3OpenCL/ParallelPrimitives/b3OpenCLArray.h"
 
-class b3GpuBroadphaseInterface
+class BT_API b3GpuBroadphaseInterface
 {
 public:
 	typedef class b3GpuBroadphaseInterface*(CreateFunc)(cl_context ctx, cl_device_id device, cl_command_queue q);

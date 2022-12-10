@@ -37,7 +37,7 @@
 #define B3_MPR_TOLERANCE 1E-6f
 #define B3_MPR_MAX_ITERATIONS 1000
 
-struct _b3MprSupport_t
+struct BT_API _b3MprSupport_t
 {
 	b3Float4 v;   //!< Support point in minkowski sum
 	b3Float4 v1;  //!< Support point in obj1
@@ -45,7 +45,7 @@ struct _b3MprSupport_t
 };
 typedef struct _b3MprSupport_t b3MprSupport_t;
 
-struct _b3MprSimplex_t
+struct BT_API _b3MprSimplex_t
 {
 	b3MprSupport_t ps[4];
 	int last;  //!< index of last added point

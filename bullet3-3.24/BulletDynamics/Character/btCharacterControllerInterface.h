@@ -25,7 +25,7 @@ class btCollisionShape;
 class btRigidBody;
 class btCollisionWorld;
 
-class btCharacterControllerInterface : public btActionInterface
+class BT_API btCharacterControllerInterface : public btActionInterface
 {
 public:
 	btCharacterControllerInterface(){};

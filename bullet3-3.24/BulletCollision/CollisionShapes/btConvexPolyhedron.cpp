@@ -33,8 +33,10 @@ inline bool IsAlmostZero1(const btVector3& v)
 	return true;
 }
 
-struct btInternalVertexPair
+struct BT_API btInternalVertexPair
 {
+    btInternalVertexPair() = default;
+
 	btInternalVertexPair(short int v0, short int v1)
 		: m_v0(v0),
 		  m_v1(v1)

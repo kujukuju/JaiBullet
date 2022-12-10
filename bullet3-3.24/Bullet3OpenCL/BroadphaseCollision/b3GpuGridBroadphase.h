@@ -6,7 +6,7 @@
 #include "b3GpuBroadphaseInterface.h"
 #include "Bullet3OpenCL/ParallelPrimitives/b3RadixSort32CL.h"
 
-struct b3ParamsGridBroadphaseCL
+struct BT_API b3ParamsGridBroadphaseCL
 {
 	float m_invCellSize[4];
 	int m_gridSize[4];
@@ -22,7 +22,7 @@ struct b3ParamsGridBroadphaseCL
 	}
 };
 
-class b3GpuGridBroadphase : public b3GpuBroadphaseInterface
+class BT_API b3GpuGridBroadphase : public b3GpuBroadphaseInterface
 {
 protected:
 	cl_context m_context;

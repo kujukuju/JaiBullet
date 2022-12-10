@@ -25,7 +25,7 @@ subject to the following restrictions:
 
 class btIDebugDraw;
 
-struct btBatchedConstraints
+struct BT_API btBatchedConstraints
 {
 	enum BatchingMethod
 	{

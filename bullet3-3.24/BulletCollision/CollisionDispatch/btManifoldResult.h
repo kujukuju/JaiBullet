@@ -46,7 +46,7 @@ extern CalculateCombinedCallback gCalculateCombinedContactDampingCallback;
 extern CalculateCombinedCallback gCalculateCombinedContactStiffnessCallback;
 
 ///btManifoldResult is a helper class to manage  contact results.
-class btManifoldResult : public btDiscreteCollisionDetectorInterface::Result
+class BT_API btManifoldResult : public btDiscreteCollisionDetectorInterface::Result
 {
 protected:
 	btPersistentManifold* m_manifoldPtr;

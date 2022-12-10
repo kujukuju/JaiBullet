@@ -46,7 +46,7 @@ SIMD_FORCE_INLINE int btStrLen(const char* str)
 	return len;
 }
 
-class btChunk
+class BT_API btChunk
 {
 public:
 	int m_chunkCode;
@@ -64,7 +64,7 @@ enum btSerializationFlags
 	BT_SERIALIZE_CONTACT_MANIFOLDS = 8,
 };
 
-class btSerializer
+class BT_API btSerializer
 {
 public:
 	virtual ~btSerializer() {}
@@ -124,7 +124,7 @@ public:
 #define BT_CONTACTMANIFOLD_CODE BT_MAKE_ID('C', 'O', 'N', 'T')
 #define BT_DNA_CODE BT_MAKE_ID('D', 'N', 'A', '1')
 
-struct btPointerUid
+struct BT_API btPointerUid
 {
 	union {
 		void* m_ptr;
@@ -132,7 +132,7 @@ struct btPointerUid
 	};
 };
 
-struct btBulletSerializedArrays
+struct BT_API btBulletSerializedArrays
 {
 	btBulletSerializedArrays()
 	{
@@ -155,7 +155,7 @@ struct btBulletSerializedArrays
 
 ///The btDefaultSerializer is the main Bullet serialization class.
 ///The constructor takes an optional argument for backwards compatibility, it is recommended to leave this empty/zero.
-class btDefaultSerializer : public btSerializer
+class BT_API btDefaultSerializer : public btSerializer
 {
 protected:
 	btAlignedObjectArray<char*> mTypes;

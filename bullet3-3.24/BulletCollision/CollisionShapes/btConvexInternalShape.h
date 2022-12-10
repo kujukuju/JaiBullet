@@ -134,7 +134,7 @@ public:
 };
 
 ///do not change those serialization structures, it requires an updated sBulletDNAstr/sBulletDNAstr64
-struct btConvexInternalShapeData
+struct BT_API btConvexInternalShapeData
 {
 	btCollisionShapeData m_collisionShapeData;
 
@@ -169,7 +169,7 @@ SIMD_FORCE_INLINE const char* btConvexInternalShape::serialize(void* dataBuffer,
 }
 
 ///btConvexInternalAabbCachingShape adds local aabb caching for convex shapes, to avoid expensive bounding box calculations
-class btConvexInternalAabbCachingShape : public btConvexInternalShape
+class BT_API btConvexInternalAabbCachingShape : public btConvexInternalShape
 {
 	btVector3 m_localAabbMin;
 	btVector3 m_localAabbMax;

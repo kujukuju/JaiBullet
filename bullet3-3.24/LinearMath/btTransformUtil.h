@@ -28,7 +28,7 @@ SIMD_FORCE_INLINE btVector3 btAabbSupport(const btVector3& halfExtents, const bt
 }
 
 /// Utils related to temporal transforms
-class btTransformUtil
+class BT_API btTransformUtil
 {
 public:
 	static void integrateTransform(const btTransform& curTrans, const btVector3& linvel, const btVector3& angvel, btScalar timeStep, btTransform& predictedTransform)
@@ -146,7 +146,7 @@ public:
 
 ///The btConvexSeparatingDistanceUtil can help speed up convex collision detection
 ///by conservatively updating a cached separating distance/vector instead of re-calculating the closest distance
-class btConvexSeparatingDistanceUtil
+class BT_API btConvexSeparatingDistanceUtil
 {
 	btQuaternion m_ornA;
 	btQuaternion m_ornB;

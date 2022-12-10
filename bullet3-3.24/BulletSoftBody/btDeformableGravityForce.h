@@ -20,7 +20,7 @@
 
 #include "btDeformableLagrangianForce.h"
 
-class btDeformableGravityForce : public btDeformableLagrangianForce
+class BT_API btDeformableGravityForce : public btDeformableLagrangianForce
 {
 public:
 	typedef btAlignedObjectArray<btVector3> TVStack;

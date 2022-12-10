@@ -31,7 +31,7 @@ subject to the following restrictions:
 ///  So long as there are at least as many solvers as there are hardware threads, it should never need to
 ///  spin wait.
 ///
-class btConstraintSolverPoolMt : public btConstraintSolver
+class BT_API btConstraintSolverPoolMt : public btConstraintSolver
 {
 public:
 	// create the solvers for me

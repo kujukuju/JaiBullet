@@ -31,7 +31,7 @@ class btConvexPenetrationDepthSolver;
 
 ///The convex2dConvex2dAlgorithm collision algorithm support 2d collision detection for btConvex2dShape
 ///Currently it requires the btMinkowskiPenetrationDepthSolver, it has support for 2d penetration depth computation
-class btConvex2dConvex2dAlgorithm : public btActivatingCollisionAlgorithm
+class BT_API btConvex2dConvex2dAlgorithm : public btActivatingCollisionAlgorithm
 {
 	btSimplexSolverInterface* m_simplexSolver;
 	btConvexPenetrationDepthSolver* m_pdSolver;

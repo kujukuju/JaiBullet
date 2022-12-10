@@ -23,7 +23,7 @@
 
 ///Rudimentary btCpuFeatureUtility for CPU features: only report the features that Bullet actually uses (SSE4/FMA3, NEON_HPFP)
 ///We assume SSE2 in case BT_USE_SSE2 is defined in LinearMath/btScalar.h
-class btCpuFeatureUtility
+class BT_API btCpuFeatureUtility
 {
 public:
 	enum btCpuFeature

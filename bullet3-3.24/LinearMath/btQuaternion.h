@@ -48,7 +48,7 @@ const btSimdFloat4 ATTRIBUTE_ALIGNED16(vPPPM) = {+0.0f, +0.0f, +0.0f, -0.0f};
 #endif
 
 /**@brief The btQuaternion implements quaternion to perform linear algebra rotations in combination with btMatrix3x3, btVector3 and btTransform. */
-class btQuaternion : public btQuadWord
+class BT_API btQuaternion : public btQuadWord
 {
 public:
 	/**@brief No initialization constructor */
@@ -965,12 +965,12 @@ shortestArcQuatNormalize2(btVector3& v0, btVector3& v1)
 	return shortestArcQuat(v0, v1);
 }
 
-struct btQuaternionFloatData
+struct BT_API btQuaternionFloatData
 {
 	float m_floats[4];
 };
 
-struct btQuaternionDoubleData
+struct BT_API btQuaternionDoubleData
 {
 	double m_floats[4];
 };

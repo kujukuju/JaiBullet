@@ -23,7 +23,7 @@ class btDispatcher;
 struct btBroadphasePair;
 
 ///The btOverlappingPairCallback class is an additional optional broadphase user callback for adding/removing overlapping pairs, similar interface to btOverlappingPairCache.
-class btOverlappingPairCallback
+class BT_API btOverlappingPairCallback
 {
 protected:
 	btOverlappingPairCallback() {}

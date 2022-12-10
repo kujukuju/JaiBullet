@@ -46,7 +46,7 @@ class btSliderConstraint;
 class btGearConstraint;
 struct btContactSolverInfo;
 
-class btCollisionWorldImporter
+class BT_API btCollisionWorldImporter
 {
 protected:
 	btCollisionWorld* m_collisionWorld;

@@ -24,7 +24,7 @@ subject to the following restrictions:
 class btRigidBody;
 
 /// constraint class used for lateral tyre friction.
-class btSolve2LinearConstraint
+class BT_API btSolve2LinearConstraint
 {
 	btScalar m_tau;
 	btScalar m_damping;

@@ -30,7 +30,7 @@ struct btCollisionObjectWrapper;
 class btPersistentManifold;
 class btPoolAllocator;
 
-struct btDispatcherInfo
+struct BT_API btDispatcherInfo
 {
 	enum DispatchFunc
 	{
@@ -76,7 +76,7 @@ enum ebtDispatcherQueryType
 
 ///The btDispatcher interface class can be used in combination with broadphase to dispatch calculations for overlapping pairs.
 ///For example for pairwise collision detection, calculating contact points stored in btPersistentManifold or user callbacks (game logic).
-class btDispatcher
+class BT_API btDispatcher
 {
 public:
 	virtual ~btDispatcher();

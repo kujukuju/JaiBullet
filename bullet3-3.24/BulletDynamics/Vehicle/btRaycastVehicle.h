@@ -24,7 +24,7 @@ class btDynamicsWorld;
 //class btVehicleTuning;
 
 ///rayCast vehicle, very special constraint that turn a rigidbody into a vehicle.
-class btRaycastVehicle : public btActionInterface
+class BT_API btRaycastVehicle : public btActionInterface
 {
 	btAlignedObjectArray<btVector3> m_forwardWS;
 	btAlignedObjectArray<btVector3> m_axle;
@@ -204,7 +204,7 @@ public:
 	}
 };
 
-class btDefaultVehicleRaycaster : public btVehicleRaycaster
+class BT_API btDefaultVehicleRaycaster : public btVehicleRaycaster
 {
 	btDynamicsWorld* m_dynamicsWorld;
 

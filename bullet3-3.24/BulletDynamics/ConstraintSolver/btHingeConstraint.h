@@ -339,7 +339,7 @@ public:
 //only for backward compatibility
 #ifdef BT_BACKWARDS_COMPATIBLE_SERIALIZATION
 ///this structure is not used, except for loading pre-2.82 .bullet files
-struct btHingeConstraintDoubleData
+struct BT_API btHingeConstraintDoubleData
 {
 	btTypedConstraintData m_typeConstraintData;
 	btTransformDoubleData m_rbAFrame;  // constraint axii. Assumes z is hinge axis.
@@ -396,7 +396,7 @@ public:
 	virtual void getInfo1(btConstraintInfo1 * info);
 };
 
-struct btHingeConstraintFloatData
+struct BT_API btHingeConstraintFloatData
 {
 	btTypedConstraintData m_typeConstraintData;
 	btTransformFloatData m_rbAFrame;  // constraint axii. Assumes z is hinge axis.
@@ -416,7 +416,7 @@ struct btHingeConstraintFloatData
 };
 
 ///do not change those serialization structures, it requires an updated sBulletDNAstr/sBulletDNAstr64
-struct btHingeConstraintDoubleData2
+struct BT_API btHingeConstraintDoubleData2
 {
 	btTypedConstraintDoubleData m_typeConstraintData;
 	btTransformDoubleData m_rbAFrame;  // constraint axii. Assumes z is hinge axis.

@@ -27,7 +27,7 @@ class btVertexBufferDescriptor;
 class btCollisionObject;
 class btSoftBody;
 
-class btSoftBodySolver
+class BT_API btSoftBodySolver
 {
 public:
 	enum SolverTypes
@@ -131,7 +131,7 @@ public:
  * Class to manage movement of data from a solver to a given target.
  * This version is abstract. Subclasses will have custom pairings for different combinations.
  */
-class btSoftBodySolverOutput
+class BT_API btSoftBodySolverOutput
 {
 protected:
 public:

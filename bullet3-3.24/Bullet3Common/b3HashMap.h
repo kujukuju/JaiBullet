@@ -23,7 +23,7 @@ subject to the following restrictions:
 #include <string>
 
 ///very basic hashable string implementation, compatible with b3HashMap
-struct b3HashString
+struct BT_API b3HashString
 {
 	std::string m_string;
 	unsigned int m_hash;
@@ -32,6 +32,8 @@ struct b3HashString
 	{
 		return m_hash;
 	}
+
+    b3HashString() = default;
 
 	b3HashString(const char* name)
 		: m_string(name)
@@ -74,11 +76,13 @@ struct b3HashString
 
 const int B3_HASH_NULL = 0xffffffff;
 
-class b3HashInt
+class BT_API b3HashInt
 {
 	int m_uid;
 
 public:
+    b3HashInt() = default;
+
 	b3HashInt(int uid) : m_uid(uid)
 	{
 	}
@@ -112,7 +116,7 @@ public:
 	}
 };
 
-class b3HashPtr
+class BT_API b3HashPtr
 {
 	union {
 		const void* m_pointer;
@@ -120,6 +124,8 @@ class b3HashPtr
 	};
 
 public:
+    b3HashPtr() = default;
+
 	b3HashPtr(const void* ptr)
 		: m_pointer(ptr)
 	{
@@ -154,12 +160,14 @@ public:
 };
 
 template <class Value>
-class b3HashKeyPtr
+class BT_API b3HashKeyPtr
 {
 	int m_uid;
 
 public:
-	b3HashKeyPtr(int uid) : m_uid(uid)
+    b3HashKeyPtr() = default;
+
+    b3HashKeyPtr(int uid) : m_uid(uid)
 	{
 	}
 
@@ -189,11 +197,13 @@ public:
 };
 
 template <class Value>
-class b3HashKey
+class BT_API b3HashKey
 {
 	int m_uid;
 
 public:
+    b3HashKey() = default;
+
 	b3HashKey(int uid) : m_uid(uid)
 	{
 	}
@@ -225,7 +235,7 @@ public:
 ///The b3HashMap template class implements a generic and lightweight hashmap.
 ///A basic sample of how to use b3HashMap is located in Demos\BasicDemo\main.cpp
 template <class Key, class Value>
-class b3HashMap
+class BT_API b3HashMap
 {
 protected:
 	b3AlignedObjectArray<int> m_hashTable;

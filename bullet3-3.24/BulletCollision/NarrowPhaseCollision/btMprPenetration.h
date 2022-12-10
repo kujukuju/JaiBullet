@@ -30,7 +30,7 @@
 
 //#define MPR_AVERAGE_CONTACT_POSITIONS
 
-struct btMprCollisionDescription
+struct BT_API btMprCollisionDescription
 {
 	btVector3 m_firstDir;
 	int m_maxGjkIterations;
@@ -49,7 +49,7 @@ struct btMprCollisionDescription
 	}
 };
 
-struct btMprDistanceInfo
+struct BT_API btMprDistanceInfo
 {
 	btVector3 m_pointOnA;
 	btVector3 m_pointOnB;
@@ -68,7 +68,7 @@ struct btMprDistanceInfo
 #define BT_MPR_TOLERANCE 1E-6f
 #define BT_MPR_MAX_ITERATIONS 1000
 
-struct _btMprSupport_t
+struct BT_API _btMprSupport_t
 {
 	btVector3 v;   //!< Support point in minkowski sum
 	btVector3 v1;  //!< Support point in obj1
@@ -76,7 +76,7 @@ struct _btMprSupport_t
 };
 typedef struct _btMprSupport_t btMprSupport_t;
 
-struct _btMprSimplex_t
+struct BT_API _btMprSimplex_t
 {
 	btMprSupport_t ps[4];
 	int last;  //!< index of last added point

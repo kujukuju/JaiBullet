@@ -36,7 +36,7 @@ class btDeformableMultiBodyConstraintSolver;
 
 typedef btAlignedObjectArray<btSoftBody*> btSoftBodyArray;
 
-class btDeformableMultiBodyDynamicsWorld : public btMultiBodyDynamicsWorld
+class BT_API btDeformableMultiBodyDynamicsWorld : public btMultiBodyDynamicsWorld
 {
 	typedef btAlignedObjectArray<btVector3> TVStack;
 	///Solver classes that encapsulate multiple deformable bodies for solving

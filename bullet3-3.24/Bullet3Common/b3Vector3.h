@@ -85,7 +85,7 @@ inline b3Vector4 b3MakeVector4(b3Scalar x, b3Scalar y, b3Scalar z, b3Scalar w);
  * It has an un-used w component to suit 16-byte alignment when b3Vector3 is stored in containers. This extra component can be used by derived classes (Quaternion?) or by user
  * Ideally, this class should be replaced by a platform optimized SIMD version that keeps the data in registers
  */
-B3_ATTRIBUTE_ALIGNED16(class)
+BT_API B3_ATTRIBUTE_ALIGNED16(class)
 b3Vector3
 {
 public:
@@ -1031,7 +1031,7 @@ B3_FORCE_INLINE long b3Vector3::minDot(const b3Vector3* array, long array_count,
 #endif
 }
 
-class b3Vector4 : public b3Vector3
+class BT_API b3Vector4 : public b3Vector3
 {
 public:
 	B3_FORCE_INLINE b3Vector4 absolute4() const
@@ -1213,12 +1213,12 @@ B3_FORCE_INLINE void b3PlaneSpace1(const T& n, T& p, T& q)
 	}
 }
 
-struct b3Vector3FloatData
+struct BT_API b3Vector3FloatData
 {
 	float m_floats[4];
 };
 
-struct b3Vector3DoubleData
+struct BT_API b3Vector3DoubleData
 {
 	double m_floats[4];
 };

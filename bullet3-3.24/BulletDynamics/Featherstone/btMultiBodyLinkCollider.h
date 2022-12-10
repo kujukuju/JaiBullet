@@ -31,7 +31,7 @@ subject to the following restrictions:
 #define btMultiBodyLinkColliderDataName "btMultiBodyLinkColliderFloatData"
 #endif
 
-class btMultiBodyLinkCollider : public btCollisionObject
+class BT_API btMultiBodyLinkCollider : public btCollisionObject
 {
 	//protected:
 public:

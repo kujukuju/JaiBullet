@@ -46,7 +46,7 @@
 
 #include <limits>
 #include "btMatrix3x3.h"
-class btMatrix2x2
+class BT_API btMatrix2x2
 {
 public:
     btScalar m_00, m_01, m_10, m_11;

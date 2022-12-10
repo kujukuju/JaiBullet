@@ -35,7 +35,7 @@ http://gimpact.sf.net
 struct b3RigidBodyData;
 
 //! Rotation Limit structure for generic joints
-class b3RotationalLimitMotor
+class BT_API b3RotationalLimitMotor
 {
 public:
 	//! limit_parameters
@@ -122,7 +122,7 @@ public:
 	b3Scalar solveAngularLimits(b3Scalar timeStep, b3Vector3& axis, b3Scalar jacDiagABInv, b3RigidBodyData* body0, b3RigidBodyData* body1);
 };
 
-class b3TranslationalLimitMotor
+class BT_API b3TranslationalLimitMotor
 {
 public:
 	b3Vector3 m_lowerLimit;  //!< the constraint lower limits
@@ -257,7 +257,7 @@ This brings support for limit parameters and motors. </li>
 </ul>
 
 */
-B3_ATTRIBUTE_ALIGNED16(class)
+BT_API B3_ATTRIBUTE_ALIGNED16(class)
 b3Generic6DofConstraint : public b3TypedConstraint
 {
 protected:

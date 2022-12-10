@@ -15,7 +15,7 @@
 #pragma warning(disable : 4996)
 #endif
 #define B3_CL_MAX_ARG_SIZE 16
-B3_ATTRIBUTE_ALIGNED16(struct)
+BT_API B3_ATTRIBUTE_ALIGNED16(struct)
 b3KernelArgData
 {
 	int m_isBuffer;
@@ -28,7 +28,7 @@ b3KernelArgData
 	};
 };
 
-class b3LauncherCL
+class BT_API b3LauncherCL
 {
 	cl_command_queue m_commandQueue;
 	cl_kernel m_kernel;

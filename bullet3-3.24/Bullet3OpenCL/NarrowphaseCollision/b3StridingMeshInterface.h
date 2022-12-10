@@ -35,7 +35,7 @@ enum PHY_ScalarType
 ///	The b3StridingMeshInterface is the interface class for high performance generic access to triangle meshes, used in combination with b3BvhTriangleMeshShape and some other collision shapes.
 /// Using index striding of 3*sizeof(integer) it can use triangle arrays, using index striding of 1*sizeof(integer) it can handle triangle strips.
 /// It allows for sharing graphics and collision meshes. Also it provides locking/unlocking of graphics meshes that are in gpu memory.
-B3_ATTRIBUTE_ALIGNED16(class)
+BT_API B3_ATTRIBUTE_ALIGNED16(class)
 b3StridingMeshInterface
 {
 protected:
@@ -104,31 +104,31 @@ public:
 	//virtual	const char*	serialize(void* dataBuffer, b3Serializer* serializer) const;
 };
 
-struct b3IntIndexData
+struct BT_API b3IntIndexData
 {
 	int m_value;
 };
 
-struct b3ShortIntIndexData
+struct BT_API b3ShortIntIndexData
 {
 	short m_value;
 	char m_pad[2];
 };
 
-struct b3ShortIntIndexTripletData
+struct BT_API b3ShortIntIndexTripletData
 {
 	short m_values[3];
 	char m_pad[2];
 };
 
-struct b3CharIndexTripletData
+struct BT_API b3CharIndexTripletData
 {
 	unsigned char m_values[3];
 	char m_pad;
 };
 
 ///do not change those serialization structures, it requires an updated sBulletDNAstr/sBulletDNAstr64
-struct b3MeshPartData
+struct BT_API b3MeshPartData
 {
 	b3Vector3FloatData* m_vertices3f;
 	b3Vector3DoubleData* m_vertices3d;
@@ -144,7 +144,7 @@ struct b3MeshPartData
 };
 
 ///do not change those serialization structures, it requires an updated sBulletDNAstr/sBulletDNAstr64
-struct b3StridingMeshInterfaceData
+struct BT_API b3StridingMeshInterfaceData
 {
 	b3MeshPartData* m_meshPartsPtr;
 	b3Vector3FloatData m_scaling;

@@ -26,14 +26,14 @@ Nov.2006
 #include "btAlignedAllocator.h"
 
 ///The btBlock class is an internal structure for the btStackAlloc memory allocator.
-struct btBlock
+struct BT_API btBlock
 {
 	btBlock* previous;
 	unsigned char* address;
 };
 
 ///The StackAlloc class provides some fast stack-based memory allocator (LIFO last-in first-out)
-class btStackAlloc
+class BT_API btStackAlloc
 {
 public:
 	btStackAlloc(unsigned int size)

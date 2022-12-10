@@ -22,7 +22,7 @@ subject to the following restrictions:
 #include "LinearMath/btQuickprof.h"
 #include "LinearMath/btImplicitQRSVD.h"
 // This energy is as described in https://graphics.pixar.com/library/StableElasticity/paper.pdf
-class btDeformableNeoHookeanForce : public btDeformableLagrangianForce
+class BT_API btDeformableNeoHookeanForce : public btDeformableLagrangianForce
 {
 public:
 	typedef btAlignedObjectArray<btVector3> TVStack;

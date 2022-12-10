@@ -21,7 +21,7 @@ subject to the following restrictions:
 #include "BulletCollision/CollisionDispatch/btCollisionObject.h"
 #include "BulletDynamics/Dynamics/btRigidBody.h"
 
-struct SoftBodyMaterialData
+struct BT_API SoftBodyMaterialData
 {
 	float m_linearStiffness;
 	float m_angularStiffness;
@@ -29,7 +29,7 @@ struct SoftBodyMaterialData
 	int m_flags;
 };
 
-struct SoftBodyNodeData
+struct BT_API SoftBodyNodeData
 {
 	SoftBodyMaterialData *m_material;
 	btVector3FloatData m_position;
@@ -43,7 +43,7 @@ struct SoftBodyNodeData
 	int m_pad;
 };
 
-struct SoftBodyLinkData
+struct BT_API SoftBodyLinkData
 {
 	SoftBodyMaterialData *m_material;
 	int m_nodeIndices[2];  // Node pointers
@@ -51,7 +51,7 @@ struct SoftBodyLinkData
 	int m_bbending;        // Bending link
 };
 
-struct SoftBodyFaceData
+struct BT_API SoftBodyFaceData
 {
 	btVector3FloatData m_normal;  // Normal
 	SoftBodyMaterialData *m_material;
@@ -59,7 +59,7 @@ struct SoftBodyFaceData
 	float m_restArea;      // Rest area
 };
 
-struct SoftBodyTetraData
+struct BT_API SoftBodyTetraData
 {
 	btVector3FloatData m_c0[4];  // gradients
 	SoftBodyMaterialData *m_material;
@@ -70,7 +70,7 @@ struct SoftBodyTetraData
 	int m_pad;
 };
 
-struct SoftRigidAnchorData
+struct BT_API SoftRigidAnchorData
 {
 	btMatrix3x3FloatData m_c0;        // Impulse matrix
 	btVector3FloatData m_c1;          // Relative anchor
@@ -80,7 +80,7 @@ struct SoftRigidAnchorData
 	float m_c2;       // ima*dt
 };
 
-struct SoftBodyConfigData
+struct BT_API SoftBodyConfigData
 {
 	int m_aeroModel;                         // Aerodynamic model (default: V_Point)
 	float m_baumgarte;                       // Velocities correction factor (Baumgarte)
@@ -110,7 +110,7 @@ struct SoftBodyConfigData
 	int m_collisionFlags;                    // Collisions flags
 };
 
-struct SoftBodyPoseData
+struct BT_API SoftBodyPoseData
 {
 	btMatrix3x3FloatData m_rot;    // Rotation
 	btMatrix3x3FloatData m_scale;  // Scale
@@ -128,7 +128,7 @@ struct SoftBodyPoseData
 	int m_pad;
 };
 
-struct SoftBodyClusterData
+struct BT_API SoftBodyClusterData
 {
 	btTransformFloatData m_framexform;
 	btMatrix3x3FloatData m_locii;
@@ -169,7 +169,7 @@ enum btSoftJointBodyType
 	BT_JOINT_COLLISION_OBJECT
 };
 
-struct btSoftBodyJointData
+struct BT_API btSoftBodyJointData
 {
 	void *m_bodyA;
 	void *m_bodyB;
@@ -186,7 +186,7 @@ struct btSoftBodyJointData
 };
 
 ///do not change those serialization structures, it requires an updated sBulletDNAstr/sBulletDNAstr64
-struct btSoftBodyFloatData
+struct BT_API btSoftBodyFloatData
 {
 	btCollisionObjectFloatData m_collisionObjectData;
 

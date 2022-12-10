@@ -31,7 +31,7 @@ subject to the following restrictions:
 #include "btTriangleShapeEx.h"
 #include "btContactProcessingStructs.h"
 
-class btContactArray : public btAlignedObjectArray<GIM_CONTACT>
+class BT_API btContactArray : public btAlignedObjectArray<GIM_CONTACT>
 {
 public:
 	btContactArray()

@@ -21,7 +21,7 @@ subject to the following restrictions:
 #include "btTriangleCallback.h"
 #include "LinearMath/btAlignedObjectArray.h"
 
-struct btTriangle
+struct BT_API btTriangle
 {
 	btVector3 m_vertex0;
 	btVector3 m_vertex1;
@@ -39,7 +39,7 @@ struct btTriangle
 ///				const btTriangle& tri = triBuf.getTriangle(i);
 ///				//do something useful here with the triangle
 ///			}
-class btTriangleBuffer : public btTriangleCallback
+class BT_API btTriangleBuffer : public btTriangleCallback
 {
 	btAlignedObjectArray<btTriangle> m_triangleBuffer;
 

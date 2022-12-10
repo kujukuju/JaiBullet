@@ -44,7 +44,7 @@ void btResetThreadIndexCounter();  // notify that all worker threads have been d
 ///               which has one thread per core and the threads don't sleep until they
 ///               run out of tasks. Not good for general purpose use.
 ///
-class btSpinMutex
+class BT_API btSpinMutex
 {
 	int mLock;
 
@@ -100,7 +100,7 @@ SIMD_FORCE_INLINE bool btMutexTryLock(btSpinMutex* mutex)
 //
 // btIParallelForBody -- subclass this to express work that can be done in parallel
 //
-class btIParallelForBody
+class BT_API btIParallelForBody
 {
 public:
 	virtual ~btIParallelForBody() {}
@@ -111,7 +111,7 @@ public:
 // btIParallelSumBody -- subclass this to express work that can be done in parallel
 //                       and produces a sum over all loop elements
 //
-class btIParallelSumBody
+class BT_API btIParallelSumBody
 {
 public:
 	virtual ~btIParallelSumBody() {}
@@ -122,7 +122,7 @@ public:
 // btITaskScheduler -- subclass this to implement a task scheduler that can dispatch work to
 //                     worker threads
 //
-class btITaskScheduler
+class BT_API btITaskScheduler
 {
 public:
 	btITaskScheduler(const char* name);

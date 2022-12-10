@@ -25,7 +25,7 @@ struct btCollisionObjectWrapper;
 struct btCollisionAlgorithmConstructionInfo;
 
 ///Used by the btCollisionDispatcher to register and create instances for btCollisionAlgorithm
-struct btCollisionAlgorithmCreateFunc
+struct BT_API btCollisionAlgorithmCreateFunc
 {
 	bool m_swapped;
 

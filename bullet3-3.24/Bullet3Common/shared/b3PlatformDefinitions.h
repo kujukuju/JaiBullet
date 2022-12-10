@@ -3,7 +3,7 @@
 
 #include "btApi.h"
 
-struct MyTest
+struct BT_API MyTest
 {
 	int bla;
 };

@@ -29,7 +29,7 @@ class btConvexPolyhedron;
 typedef btAlignedObjectArray<btVector3> btVertexArray;
 
 // Clips a face to the back of a plane
-struct btPolyhedralContactClipping
+struct BT_API btPolyhedralContactClipping
 {
 	static void clipHullAgainstHull(const btVector3& separatingNormal1, const btConvexPolyhedron& hullA, const btConvexPolyhedron& hullB, const btTransform& transA, const btTransform& transB, const btScalar minDist, btScalar maxDist, btVertexArray& worldVertsB1, btVertexArray& worldVertsB2, btDiscreteCollisionDetectorInterface::Result& resultOut);
 

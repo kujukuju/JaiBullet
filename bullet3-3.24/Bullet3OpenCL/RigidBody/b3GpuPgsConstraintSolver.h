@@ -34,7 +34,7 @@ struct b3InertiaData;
 #include "Bullet3OpenCL/Initialize/b3OpenCLInclude.h"
 #include "b3GpuGenericConstraint.h"
 
-class b3GpuPgsConstraintSolver
+class BT_API b3GpuPgsConstraintSolver
 {
 protected:
 	int m_staticIdx;

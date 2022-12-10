@@ -21,7 +21,7 @@
 #include "btKrylovSolver.h"
 
 template <class MatrixX>
-class btConjugateResidual : public btKrylovSolver<MatrixX>
+class BT_API btConjugateResidual : public btKrylovSolver<MatrixX>
 {
 	typedef btAlignedObjectArray<btVector3> TVStack;
 	typedef btKrylovSolver<MatrixX> Base;

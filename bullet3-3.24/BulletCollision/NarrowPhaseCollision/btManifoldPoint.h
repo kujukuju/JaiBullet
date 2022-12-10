@@ -50,7 +50,7 @@ enum btContactPointFlags
 
 /// ManifoldContactPoint collects and maintains persistent contactpoints.
 /// used to improve stability and performance of rigidbody dynamics response.
-class btManifoldPoint
+class BT_API btManifoldPoint
 {
 public:
 	btManifoldPoint()

@@ -16,7 +16,7 @@ class b3Dispatcher;
 struct b3RigidBodyData;
 struct b3InertiaData;
 
-class b3PgsJacobiSolver
+class BT_API b3PgsJacobiSolver
 {
 protected:
 	b3AlignedObjectArray<b3SolverBody> m_tmpSolverBodyPool;

@@ -59,7 +59,7 @@ void b3AlignedAllocSetCustomAligned(b3AlignedAllocFunc* allocFunc, b3AlignedFree
 ///The b3AlignedAllocator is a portable class for aligned memory allocations.
 ///Default implementations for unaligned and aligned allocations can be overridden by a custom allocator using b3AlignedAllocSetCustom and b3AlignedAllocSetCustomAligned.
 template <typename T, unsigned Alignment>
-class b3AlignedAllocator
+class BT_API b3AlignedAllocator
 {
 	typedef b3AlignedAllocator<T, Alignment> self_type;
 

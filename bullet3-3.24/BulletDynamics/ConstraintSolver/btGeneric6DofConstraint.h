@@ -43,7 +43,7 @@ class btRigidBody;
 #endif  //BT_USE_DOUBLE_PRECISION
 
 //! Rotation Limit structure for generic joints
-class btRotationalLimitMotor
+class BT_API btRotationalLimitMotor
 {
 public:
 	//! limit_parameters
@@ -130,7 +130,7 @@ public:
 	btScalar solveAngularLimits(btScalar timeStep, btVector3& axis, btScalar jacDiagABInv, btRigidBody* body0, btRigidBody* body1);
 };
 
-class btTranslationalLimitMotor
+class BT_API btTranslationalLimitMotor
 {
 public:
 	btVector3 m_lowerLimit;  //!< the constraint lower limits
@@ -553,7 +553,7 @@ public:
 	virtual const char* serialize(void* dataBuffer, btSerializer* serializer) const;
 };
 
-struct btGeneric6DofConstraintData
+struct BT_API btGeneric6DofConstraintData
 {
 	btTypedConstraintData m_typeConstraintData;
 	btTransformFloatData m_rbAFrame;  // constraint axii. Assumes z is hinge axis.
@@ -569,7 +569,7 @@ struct btGeneric6DofConstraintData
 	int m_useOffsetForConstraintFrame;
 };
 
-struct btGeneric6DofConstraintDoubleData2
+struct BT_API btGeneric6DofConstraintDoubleData2
 {
 	btTypedConstraintDoubleData m_typeConstraintData;
 	btTransformDoubleData m_rbAFrame;  // constraint axii. Assumes z is hinge axis.

@@ -22,7 +22,7 @@ subject to the following restrictions:
 #include "btMLCPSolverInterface.h"
 #include "btDantzigLCP.h"
 
-class btDantzigSolver : public btMLCPSolverInterface
+class BT_API btDantzigSolver : public btMLCPSolverInterface
 {
 protected:
 	btScalar m_acceptableUpperLimitSolution;

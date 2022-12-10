@@ -19,7 +19,7 @@ subject to the following restrictions:
 
 #include "LinearMath/btSpatialAlgebra.h"
 
-struct btMultiBodyJointFeedback
+struct BT_API btMultiBodyJointFeedback
 {
 	btSpatialForceVector m_reactionForces;
 };

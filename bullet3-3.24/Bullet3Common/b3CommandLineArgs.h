@@ -11,7 +11,7 @@
 #include <string>
 #include <cstring>
 #include <sstream>
-class b3CommandLineArgs
+class BT_API b3CommandLineArgs
 {
 protected:
 	std::map<std::string, std::string> pairs;

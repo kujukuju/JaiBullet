@@ -31,7 +31,7 @@ class btCollisionObject;
 
 typedef btScalar (*btSingleConstraintRowSolver)(btSolverBody&, btSolverBody&, const btSolverConstraint&);
 
-struct btSolverAnalyticsData
+struct BT_API btSolverAnalyticsData
 {
 	btSolverAnalyticsData()
 	{

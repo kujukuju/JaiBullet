@@ -57,7 +57,7 @@ inline unsigned int HsiehHash(const char* data, int len)
 }
 
 template <const int CELLSIZE>
-struct btSparseSdf
+struct BT_API btSparseSdf
 {
 	//
 	// Inner types

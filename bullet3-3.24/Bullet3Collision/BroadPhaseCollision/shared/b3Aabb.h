@@ -9,7 +9,7 @@
 
 typedef struct b3Aabb b3Aabb_t;
 
-struct b3Aabb
+struct BT_API b3Aabb
 {
 	union {
 		float m_min[4];

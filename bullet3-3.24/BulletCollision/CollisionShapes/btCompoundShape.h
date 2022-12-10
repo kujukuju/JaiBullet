@@ -178,7 +178,7 @@ public:
 // clang-format off
 
 ///do not change those serialization structures, it requires an updated sBulletDNAstr/sBulletDNAstr64
-struct btCompoundShapeChildData
+struct BT_API btCompoundShapeChildData
 {
 	btTransformFloatData	m_transform;
 	btCollisionShapeData	*m_childShape;

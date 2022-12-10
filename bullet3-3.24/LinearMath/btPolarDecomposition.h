@@ -13,7 +13,7 @@
  * required to be a square 3x3 matrix with real elements. This means that U will
  * be an orthogonal matrix and H with be a positive-definite, symmetric matrix.
  */
-class btPolarDecomposition
+class BT_API btPolarDecomposition
 {
 public:
 	/**

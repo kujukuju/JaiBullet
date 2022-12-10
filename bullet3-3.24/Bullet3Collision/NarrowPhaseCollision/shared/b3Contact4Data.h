@@ -7,7 +7,7 @@
 
 typedef struct b3Contact4Data b3Contact4Data_t;
 
-struct b3Contact4Data
+struct BT_API b3Contact4Data
 {
 	b3Float4 m_worldPosB[4];
 	//	b3Float4	m_localPosA[4];

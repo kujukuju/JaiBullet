@@ -30,7 +30,7 @@ SIMD_FORCE_INLINE int btGetConstraintIslandId2(const btTypedConstraint* lhs)
     islandId = rcolObj0.getIslandTag() >= 0 ? rcolObj0.getIslandTag() : rcolObj1.getIslandTag();
     return islandId;
 }
-class btSortConstraintOnIslandPredicate2
+class BT_API btSortConstraintOnIslandPredicate2
 {
 public:
     bool operator()(const btTypedConstraint* lhs, const btTypedConstraint* rhs) const
@@ -52,7 +52,7 @@ SIMD_FORCE_INLINE int btGetMultiBodyConstraintIslandId(const btMultiBodyConstrai
     return islandId;
 }
 
-class btSortMultiBodyConstraintOnIslandPredicate
+class BT_API btSortMultiBodyConstraintOnIslandPredicate
 {
 public:
     bool operator()(const btMultiBodyConstraint* lhs, const btMultiBodyConstraint* rhs) const

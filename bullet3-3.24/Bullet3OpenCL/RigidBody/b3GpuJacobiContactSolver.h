@@ -16,7 +16,7 @@
 
 class b3TypedConstraint;
 
-struct b3JacobiSolverInfo
+struct BT_API b3JacobiSolverInfo
 {
 	int m_fixedBodyIndex;
 
@@ -34,7 +34,7 @@ struct b3JacobiSolverInfo
 	{
 	}
 };
-class b3GpuJacobiContactSolver
+class BT_API b3GpuJacobiContactSolver
 {
 protected:
 	struct b3GpuJacobiSolverInternalData* m_data;

@@ -244,13 +244,13 @@ SIMD_FORCE_INLINE bool operator==(const btTransform& t1, const btTransform& t2)
 }
 
 ///for serialization
-struct btTransformFloatData
+struct BT_API btTransformFloatData
 {
 	btMatrix3x3FloatData m_basis;
 	btVector3FloatData m_origin;
 };
 
-struct btTransformDoubleData
+struct BT_API btTransformDoubleData
 {
 	btMatrix3x3DoubleData m_basis;
 	btVector3DoubleData m_origin;

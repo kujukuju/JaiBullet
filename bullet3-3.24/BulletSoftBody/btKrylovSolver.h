@@ -27,7 +27,7 @@
 #include "LinearMath/btQuickprof.h"
 
 template <class MatrixX>
-class btKrylovSolver
+class BT_API btKrylovSolver
 {
 	typedef btAlignedObjectArray<btVector3> TVStack;
 

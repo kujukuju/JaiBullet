@@ -20,7 +20,7 @@ subject to the following restrictions:
 
 #include "b3GpuParallelLinearBvh.h"
 
-class b3GpuParallelLinearBvhBroadphase : public b3GpuBroadphaseInterface
+class BT_API b3GpuParallelLinearBvhBroadphase : public b3GpuBroadphaseInterface
 {
 	b3GpuParallelLinearBvh m_plbvh;
 

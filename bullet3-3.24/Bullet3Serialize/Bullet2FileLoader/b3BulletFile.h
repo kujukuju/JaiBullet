@@ -27,7 +27,7 @@ subject to the following restrictions:
 namespace bParse
 {
 // ----------------------------------------------------- //
-class b3BulletFile : public bFile
+class BT_API b3BulletFile : public bFile
 {
 protected:
 	char* m_DnaCopy;

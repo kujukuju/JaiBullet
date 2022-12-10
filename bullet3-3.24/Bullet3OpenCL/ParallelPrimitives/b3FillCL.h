@@ -9,7 +9,7 @@
 #include "Bullet3Common/shared/b3Int2.h"
 #include "Bullet3Common/shared/b3Int4.h"
 
-class b3FillCL
+class BT_API b3FillCL
 {
 	cl_command_queue m_commandQueue;
 

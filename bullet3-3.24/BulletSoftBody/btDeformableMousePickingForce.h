@@ -20,7 +20,7 @@
 
 #include "btDeformableLagrangianForce.h"
 
-class btDeformableMousePickingForce : public btDeformableLagrangianForce
+class BT_API btDeformableMousePickingForce : public btDeformableLagrangianForce
 {
 	// If true, the damping force will be in the direction of the spring
 	// If false, the damping force will be in the direction of the velocity

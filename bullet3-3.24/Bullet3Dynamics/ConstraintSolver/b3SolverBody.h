@@ -31,7 +31,7 @@ subject to the following restrictions:
 
 #ifdef USE_SIMD
 
-struct b3SimdScalar
+struct BT_API b3SimdScalar
 {
 	B3_FORCE_INLINE b3SimdScalar()
 	{
@@ -102,7 +102,7 @@ operator+(const b3SimdScalar& v1, const b3SimdScalar& v2)
 #endif
 
 ///The b3SolverBody is an internal datastructure for the constraint solver. Only necessary data is packed to increase cache coherence/performance.
-B3_ATTRIBUTE_ALIGNED16(struct)
+BT_API B3_ATTRIBUTE_ALIGNED16(struct)
 b3SolverBody
 {
 	B3_DECLARE_ALIGNED_ALLOCATOR();

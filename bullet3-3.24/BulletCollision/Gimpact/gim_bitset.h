@@ -40,7 +40,7 @@ email: projectileman@yahoo.com
 #define GUINT_BIT_COUNT 32
 #define GUINT_EXPONENT 5
 
-class gim_bitset
+class BT_API gim_bitset
 {
 public:
 	gim_array<GUINT> m_container;

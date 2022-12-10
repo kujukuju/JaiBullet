@@ -41,7 +41,7 @@ email: projectileman@yahoo.com
 
 ///Macros for sorting.
 //! Prototype for comparators
-class less_comparator
+class BT_API less_comparator
 {
 public:
 	template <class T, class Z>
@@ -52,7 +52,7 @@ public:
 };
 
 //! Prototype for comparators
-class integer_comparator
+class BT_API integer_comparator
 {
 public:
 	template <class T>
@@ -63,7 +63,7 @@ public:
 };
 
 //!Prototype for getting the integer representation of an object
-class uint_key_func
+class BT_API uint_key_func
 {
 public:
 	template <class T>
@@ -74,7 +74,7 @@ public:
 };
 
 //!Prototype for copying elements
-class copy_elements_func
+class BT_API copy_elements_func
 {
 public:
 	template <class T>
@@ -85,7 +85,7 @@ public:
 };
 
 //!Prototype for copying elements
-class memcopy_elements_func
+class BT_API memcopy_elements_func
 {
 public:
 	template <class T>
@@ -96,7 +96,7 @@ public:
 };
 
 //! @{
-struct GIM_RSORT_TOKEN
+struct BT_API GIM_RSORT_TOKEN
 {
 	GUINT m_key;
 	GUINT m_value;
@@ -121,7 +121,7 @@ struct GIM_RSORT_TOKEN
 };
 
 //! Prototype for comparators
-class GIM_RSORT_TOKEN_COMPARATOR
+class BT_API GIM_RSORT_TOKEN_COMPARATOR
 {
 public:
 	inline int operator()(const GIM_RSORT_TOKEN& a, const GIM_RSORT_TOKEN& b)

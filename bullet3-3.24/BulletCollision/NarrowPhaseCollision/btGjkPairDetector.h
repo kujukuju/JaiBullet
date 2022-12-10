@@ -26,7 +26,7 @@ class btConvexShape;
 class btConvexPenetrationDepthSolver;
 
 /// btGjkPairDetector uses GJK to implement the btDiscreteCollisionDetectorInterface
-class btGjkPairDetector : public btDiscreteCollisionDetectorInterface
+class BT_API btGjkPairDetector : public btDiscreteCollisionDetectorInterface
 {
 	btVector3 m_cachedSeparatingAxis;
 	btConvexPenetrationDepthSolver* m_penetrationDepthSolver;

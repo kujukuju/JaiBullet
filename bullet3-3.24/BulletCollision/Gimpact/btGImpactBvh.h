@@ -33,7 +33,7 @@ subject to the following restrictions:
 #include "btGImpactBvhStructs.h"
 
 //! A pairset array
-class btPairSet : public btAlignedObjectArray<GIM_PAIR>
+class BT_API btPairSet : public btAlignedObjectArray<GIM_PAIR>
 {
 public:
 	btPairSet()
@@ -51,16 +51,16 @@ public:
 	}
 };
 
-class GIM_BVH_DATA_ARRAY : public btAlignedObjectArray<GIM_BVH_DATA>
+class BT_API GIM_BVH_DATA_ARRAY : public btAlignedObjectArray<GIM_BVH_DATA>
 {
 };
 
-class GIM_BVH_TREE_NODE_ARRAY : public btAlignedObjectArray<GIM_BVH_TREE_NODE>
+class BT_API GIM_BVH_TREE_NODE_ARRAY : public btAlignedObjectArray<GIM_BVH_TREE_NODE>
 {
 };
 
 //! Basic Box tree structure
-class btBvhTree
+class BT_API btBvhTree
 {
 protected:
 	int m_num_nodes;
@@ -148,7 +148,7 @@ This class is a wrapper for primitive collections.
 This tells relevant info for the Bounding Box set classes, which take care of space classification.
 This class can manage Compound shapes and trimeshes, and if it is managing trimesh then the  Hierarchy Bounding Box classes will take advantage of primitive Vs Box overlapping tests for getting optimal results and less Per Box compairisons.
 */
-class btPrimitiveManagerBase
+class BT_API btPrimitiveManagerBase
 {
 public:
 	virtual ~btPrimitiveManagerBase() {}
@@ -166,7 +166,7 @@ public:
 This class offers an structure for managing a box tree of primitives.
 Requires a Primitive prototype (like btPrimitiveManagerBase )
 */
-class btGImpactBvh
+class BT_API btGImpactBvh
 {
 protected:
 	btBvhTree m_box_tree;

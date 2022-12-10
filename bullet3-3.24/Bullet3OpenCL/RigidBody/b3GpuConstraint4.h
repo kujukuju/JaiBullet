@@ -8,7 +8,7 @@
 
 #include "Bullet3Dynamics/shared/b3ContactConstraint4.h"
 
-B3_ATTRIBUTE_ALIGNED16(struct)
+BT_API B3_ATTRIBUTE_ALIGNED16(struct)
 b3GpuConstraint4 : public b3ContactConstraint4
 {
 	B3_DECLARE_ALIGNED_ALLOCATOR();

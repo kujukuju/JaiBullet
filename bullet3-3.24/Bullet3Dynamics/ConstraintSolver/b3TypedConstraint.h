@@ -52,7 +52,7 @@ enum b3ConstraintParams
 #define b3AssertConstrParams(_par)
 #endif
 
-B3_ATTRIBUTE_ALIGNED16(struct)
+BT_API B3_ATTRIBUTE_ALIGNED16(struct)
 b3JointFeedback
 {
 	b3Vector3 m_appliedForceBodyA;
@@ -64,7 +64,7 @@ b3JointFeedback
 struct b3RigidBodyData;
 
 ///TypedConstraint is the baseclass for Bullet constraints and vehicles
-B3_ATTRIBUTE_ALIGNED16(class)
+BT_API B3_ATTRIBUTE_ALIGNED16(class)
 b3TypedConstraint : public b3TypedObject
 {
 	int m_userConstraintType;
@@ -376,7 +376,7 @@ struct	b3TypedConstraintData
 }
 */
 
-class b3AngularLimit
+class BT_API b3AngularLimit
 {
 private:
 	b3Scalar

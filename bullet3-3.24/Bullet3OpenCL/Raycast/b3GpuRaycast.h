@@ -9,7 +9,7 @@
 #include "Bullet3Common/b3AlignedObjectArray.h"
 #include "Bullet3Collision/NarrowPhaseCollision/b3RaycastInfo.h"
 
-class b3GpuRaycast
+class BT_API b3GpuRaycast
 {
 protected:
 	struct b3GpuRaycastInternalData* m_data;

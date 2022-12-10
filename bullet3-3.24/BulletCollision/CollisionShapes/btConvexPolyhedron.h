@@ -25,7 +25,7 @@ subject to the following restrictions:
 
 #define TEST_INTERNAL_OBJECTS 1
 
-struct btFace
+struct BT_API btFace
 {
 	btAlignedObjectArray<int> m_indices;
 	//	btAlignedObjectArray<int>	m_connectedFaces;

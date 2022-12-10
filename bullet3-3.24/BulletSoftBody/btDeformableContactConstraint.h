@@ -21,7 +21,7 @@
 #include "btSoftBody.h"
 
 // btDeformableContactConstraint is an abstract class specifying the method that each type of contact constraint needs to implement
-class btDeformableContactConstraint
+class BT_API btDeformableContactConstraint
 {
 public:
 	// True if the friction is static
@@ -71,7 +71,7 @@ public:
 
 //
 // Constraint that a certain node in the deformable objects cannot move
-class btDeformableStaticConstraint : public btDeformableContactConstraint
+class BT_API btDeformableStaticConstraint : public btDeformableContactConstraint
 {
 public:
 	btSoftBody::Node* m_node;
@@ -113,7 +113,7 @@ public:
 
 //
 // Anchor Constraint between rigid and deformable node
-class btDeformableNodeAnchorConstraint : public btDeformableContactConstraint
+class BT_API btDeformableNodeAnchorConstraint : public btDeformableContactConstraint
 {
 public:
 	const btSoftBody::DeformableNodeRigidAnchor* m_anchor;
@@ -141,7 +141,7 @@ public:
 
 //
 // Constraint between rigid/multi body and deformable objects
-class btDeformableRigidContactConstraint : public btDeformableContactConstraint
+class BT_API btDeformableRigidContactConstraint : public btDeformableContactConstraint
 {
 public:
 	btVector3 m_total_normal_dv;
@@ -181,7 +181,7 @@ public:
 
 //
 // Constraint between rigid/multi body and deformable objects nodes
-class btDeformableNodeRigidContactConstraint : public btDeformableRigidContactConstraint
+class BT_API btDeformableNodeRigidContactConstraint : public btDeformableRigidContactConstraint
 {
 public:
 	// the deformable node in contact
@@ -216,7 +216,7 @@ public:
 
 //
 // Constraint between rigid/multi body and deformable objects faces
-class btDeformableFaceRigidContactConstraint : public btDeformableRigidContactConstraint
+class BT_API btDeformableFaceRigidContactConstraint : public btDeformableRigidContactConstraint
 {
 public:
 	btSoftBody::Face* m_face;
@@ -250,7 +250,7 @@ public:
 
 //
 // Constraint between  deformable objects faces and deformable objects nodes
-class btDeformableFaceNodeContactConstraint : public btDeformableContactConstraint
+class BT_API btDeformableFaceNodeContactConstraint : public btDeformableContactConstraint
 {
 public:
 	btSoftBody::Node* m_node;

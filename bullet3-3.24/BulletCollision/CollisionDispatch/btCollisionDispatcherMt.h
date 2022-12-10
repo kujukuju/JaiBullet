@@ -21,7 +21,7 @@ subject to the following restrictions:
 #include "BulletCollision/CollisionDispatch/btCollisionDispatcher.h"
 #include "LinearMath/btThreads.h"
 
-class btCollisionDispatcherMt : public btCollisionDispatcher
+class BT_API btCollisionDispatcherMt : public btCollisionDispatcher
 {
 public:
 	btCollisionDispatcherMt(btCollisionConfiguration* config, int grainSize = 40);

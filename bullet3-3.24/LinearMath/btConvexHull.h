@@ -26,7 +26,7 @@ subject to the following restrictions:
 
 typedef btAlignedObjectArray<unsigned int> TUIntArray;
 
-class HullResult
+class BT_API HullResult
 {
 public:
 	HullResult(void)
@@ -54,7 +54,7 @@ enum HullFlag
 	QF_DEFAULT = QF_TRIANGLES
 };
 
-class HullDesc
+class BT_API HullDesc
 {
 public:
 	HullDesc(void)
@@ -112,7 +112,7 @@ enum HullError
 	QE_FAIL  // failed.
 };
 
-class btPlane
+class BT_API btPlane
 {
 public:
 	btVector3 normal;
@@ -121,7 +121,7 @@ public:
 	btPlane() : normal(), dist(0) {}
 };
 
-class ConvexH
+class BT_API ConvexH
 {
 public:
 	class HalfEdge
@@ -145,7 +145,7 @@ public:
 	ConvexH(int vertices_size, int edges_size, int facets_size);
 };
 
-class int4
+class BT_API int4
 {
 public:
 	int x, y, z, w;
@@ -161,7 +161,7 @@ public:
 	int& operator[](int i) { return (&x)[i]; }
 };
 
-class PHullResult
+class BT_API PHullResult
 {
 public:
 	PHullResult(void)
@@ -181,7 +181,7 @@ public:
 
 ///The HullLibrary class can create a convex hull from a collection of vertices, using the ComputeHull method.
 ///The btShapeHull class uses this HullLibrary to create a approximate convex mesh given a general (non-polyhedral) convex shape.
-class HullLibrary
+class BT_API HullLibrary
 {
 	btAlignedObjectArray<class btHullTriangle*> m_tris;
 

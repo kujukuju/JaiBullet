@@ -22,7 +22,7 @@
 #include "BulletDynamics/Featherstone/btMultiBodyLinkCollider.h"
 #include "BulletDynamics/Featherstone/btMultiBodyConstraint.h"
 
-struct DeformableContactConstraint
+struct BT_API DeformableContactConstraint
 {
 	const btSoftBody::Node* m_node;
 	btAlignedObjectArray<const btSoftBody::RContact*> m_contact;
@@ -65,7 +65,7 @@ struct DeformableContactConstraint
 	}
 };
 
-class btCGProjection
+class BT_API btCGProjection
 {
 public:
 	typedef btAlignedObjectArray<btVector3> TVStack;

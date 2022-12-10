@@ -21,7 +21,7 @@ subject to the following restrictions:
 #include "btMultiBodyConstraint.h"
 struct btSolverInfo;
 
-class btMultiBodyJointLimitConstraint : public btMultiBodyConstraint
+class BT_API btMultiBodyJointLimitConstraint : public btMultiBodyConstraint
 {
 protected:
 	btScalar m_lowerBound;

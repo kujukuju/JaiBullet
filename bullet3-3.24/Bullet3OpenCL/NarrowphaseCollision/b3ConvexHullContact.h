@@ -19,7 +19,7 @@
 
 //#include "../../dynamics/basic_demo/Stubs/ChNarrowPhase.h"
 
-struct GpuSatCollision
+struct BT_API GpuSatCollision
 {
 	cl_context m_context;
 	cl_device_id m_device;

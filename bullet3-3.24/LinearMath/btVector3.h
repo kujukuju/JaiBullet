@@ -1072,7 +1072,7 @@ SIMD_FORCE_INLINE long btVector3::minDot(const btVector3* array, long array_coun
 #endif  //BT_USE_SIMD_VECTOR3
 }
 
-class btVector4 : public btVector3
+class BT_API btVector4 : public btVector3
 {
 public:
 	SIMD_FORCE_INLINE btVector4() {}
@@ -1280,12 +1280,12 @@ SIMD_FORCE_INLINE void btPlaneSpace1(const T& n, T& p, T& q)
 	}
 }
 
-struct btVector3FloatData
+struct BT_API btVector3FloatData
 {
 	float m_floats[4];
 };
 
-struct btVector3DoubleData
+struct BT_API btVector3DoubleData
 {
 	double m_floats[4];
 };

@@ -21,7 +21,7 @@ subject to the following restrictions:
 #include "btApi.h"
 
 // Material class to be used by btMultimaterialTriangleMeshShape to store triangle properties
-class btMaterial
+class BT_API btMaterial
 {
 	// public members so that materials can change due to world events
 public:

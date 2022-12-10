@@ -46,7 +46,7 @@ enum btMultiBodyLinkFlags
 // Link struct
 //
 
-struct btMultibodyLink
+struct BT_API btMultibodyLink
 {
 	BT_DECLARE_ALIGNED_ALLOCATOR();
 

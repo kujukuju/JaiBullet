@@ -29,7 +29,7 @@ subject to the following restrictions:
 #include <iomanip>  // std::setw
 #endif              //BT_DEBUG_OSTREAM
 
-class btIntSortPredicate
+class BT_API btIntSortPredicate
 {
 public:
 	bool operator()(const int& a, const int& b) const
@@ -39,7 +39,7 @@ public:
 };
 
 template <typename T>
-struct btVectorX
+struct BT_API btVectorX
 {
 	btAlignedObjectArray<T> m_storage;
 
@@ -151,7 +151,7 @@ struct btVectorX
  */
 
 template <typename T>
-struct btMatrixX
+struct BT_API btMatrixX
 {
 	int m_rows;
 	int m_cols;

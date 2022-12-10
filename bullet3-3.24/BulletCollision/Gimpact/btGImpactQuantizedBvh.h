@@ -30,12 +30,12 @@ subject to the following restrictions:
 #include "btQuantization.h"
 #include "btGImpactQuantizedBvhStructs.h"
 
-class GIM_QUANTIZED_BVH_NODE_ARRAY : public btAlignedObjectArray<BT_QUANTIZED_BVH_NODE>
+class BT_API GIM_QUANTIZED_BVH_NODE_ARRAY : public btAlignedObjectArray<BT_QUANTIZED_BVH_NODE>
 {
 };
 
 //! Basic Box tree structure
-class btQuantizedBvhTree
+class BT_API btQuantizedBvhTree
 {
 protected:
 	int m_num_nodes;
@@ -155,7 +155,7 @@ public:
 This class offers an structure for managing a box tree of primitives.
 Requires a Primitive prototype (like btPrimitiveManagerBase )
 */
-class btGImpactQuantizedBvh
+class BT_API btGImpactQuantizedBvh
 {
 protected:
 	btQuantizedBvhTree m_box_tree;

@@ -47,7 +47,7 @@ B3_FORCE_INLINE int b3StrLen(const char* str)
 	return len;
 }
 
-class b3Chunk
+class BT_API b3Chunk
 {
 public:
 	int m_chunkCode;
@@ -64,7 +64,7 @@ enum b3SerializationFlags
 	B3_SERIALIZE_NO_DUPLICATE_ASSERT = 4
 };
 
-class b3Serializer
+class BT_API b3Serializer
 {
 public:
 	virtual ~b3Serializer() {}
@@ -117,7 +117,7 @@ public:
 #define B3_DYNAMICSWORLD_CODE B3_MAKE_ID('D', 'W', 'L', 'D')
 #define B3_DNA_CODE B3_MAKE_ID('D', 'N', 'A', '1')
 
-struct b3PointerUid
+struct BT_API b3PointerUid
 {
 	union {
 		void* m_ptr;
@@ -127,7 +127,7 @@ struct b3PointerUid
 
 ///The b3DefaultSerializer is the main Bullet serialization class.
 ///The constructor takes an optional argument for backwards compatibility, it is recommended to leave this empty/zero.
-class b3DefaultSerializer : public b3Serializer
+class BT_API b3DefaultSerializer : public b3Serializer
 {
 	b3AlignedObjectArray<char*> mTypes;
 	b3AlignedObjectArray<short*> mStructs;

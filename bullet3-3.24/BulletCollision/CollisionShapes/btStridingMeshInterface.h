@@ -94,24 +94,24 @@ public:
 	virtual const char* serialize(void* dataBuffer, btSerializer* serializer) const;
 };
 
-struct btIntIndexData
+struct BT_API btIntIndexData
 {
 	int m_value;
 };
 
-struct btShortIntIndexData
+struct BT_API btShortIntIndexData
 {
 	short m_value;
 	char m_pad[2];
 };
 
-struct btShortIntIndexTripletData
+struct BT_API btShortIntIndexTripletData
 {
 	short m_values[3];
 	char m_pad[2];
 };
 
-struct btCharIndexTripletData
+struct BT_API btCharIndexTripletData
 {
 	unsigned char m_values[3];
 	char m_pad;

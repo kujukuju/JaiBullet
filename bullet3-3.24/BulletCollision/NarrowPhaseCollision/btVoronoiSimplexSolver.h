@@ -31,7 +31,7 @@ subject to the following restrictions:
 #define VORONOI_DEFAULT_EQUAL_VERTEX_THRESHOLD 0.0001f
 #endif  //BT_USE_DOUBLE_PRECISION
 
-struct btUsageBitfield
+struct BT_API btUsageBitfield
 {
 	btUsageBitfield()
 	{
@@ -55,7 +55,7 @@ struct btUsageBitfield
 	unsigned short unused4 : 1;
 };
 
-struct btSubSimplexClosestResult
+struct BT_API btSubSimplexClosestResult
 {
 	btVector3 m_closestPointOnSimplex;
 	//MASK for m_usedVertices

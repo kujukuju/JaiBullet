@@ -17,7 +17,7 @@ subject to the following restrictions:
 
 #include "btApi.h"
 
-class btGEN_Link
+class BT_API btGEN_Link
 {
 public:
 	btGEN_Link() : m_next(0), m_prev(0) {}
@@ -56,7 +56,7 @@ private:
 	btGEN_Link *m_prev;
 };
 
-class btGEN_List
+class BT_API btGEN_List
 {
 public:
 	btGEN_List() : m_head(&m_tail, 0), m_tail(0, &m_head) {}

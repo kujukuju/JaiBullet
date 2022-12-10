@@ -5,7 +5,7 @@
 
 #include "Bullet3Common/shared/b3Mat3x3.h"
 
-struct b3Inertia
+struct BT_API b3Inertia
 {
 	b3Mat3x3 m_invInertiaWorld;
 	b3Mat3x3 m_initInvInertia;

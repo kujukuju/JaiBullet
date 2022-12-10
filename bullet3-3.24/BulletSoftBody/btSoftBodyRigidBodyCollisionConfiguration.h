@@ -24,7 +24,7 @@ class btVoronoiSimplexSolver;
 class btGjkEpaPenetrationDepthSolver;
 
 ///btSoftBodyRigidBodyCollisionConfiguration add softbody interaction on top of btDefaultCollisionConfiguration
-class btSoftBodyRigidBodyCollisionConfiguration : public btDefaultCollisionConfiguration
+class BT_API btSoftBodyRigidBodyCollisionConfiguration : public btDefaultCollisionConfiguration
 {
 	//default CreationFunctions, filling the m_doubleDispatch table
 	btCollisionAlgorithmCreateFunc* m_softSoftCreateFunc;

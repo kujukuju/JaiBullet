@@ -32,7 +32,7 @@ subject to the following restrictions:
 
 ///The btTriangleInfo structure stores information to adjust collision normals to avoid collisions against internal edges
 ///it can be generated using
-struct btTriangleInfo
+struct BT_API btTriangleInfo
 {
 	btTriangleInfo()
 	{

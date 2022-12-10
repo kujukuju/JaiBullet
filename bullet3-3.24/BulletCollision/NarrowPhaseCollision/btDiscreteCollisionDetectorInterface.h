@@ -26,7 +26,7 @@ subject to the following restrictions:
 /// the closest point is on the second object (B), and the normal points from the surface on B towards A.
 /// distance is between closest points on B and closest point on A. So you can calculate closest point on A
 /// by taking closestPointInA = closestPointInB + m_distance * m_normalOnSurfaceB
-struct btDiscreteCollisionDetectorInterface
+struct BT_API btDiscreteCollisionDetectorInterface
 {
 	struct Result
 	{

@@ -28,7 +28,7 @@ class btPersistentManifold;
 
 /// btSphereBoxCollisionAlgorithm  provides sphere-box collision detection.
 /// Other features are frame-coherency (persistent data) and collision response.
-class btSphereBoxCollisionAlgorithm : public btActivatingCollisionAlgorithm
+class BT_API btSphereBoxCollisionAlgorithm : public btActivatingCollisionAlgorithm
 {
 	bool m_ownManifold;
 	btPersistentManifold* m_manifoldPtr;

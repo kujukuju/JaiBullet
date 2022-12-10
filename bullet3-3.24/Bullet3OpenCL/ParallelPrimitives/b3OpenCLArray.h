@@ -7,7 +7,7 @@
 #include "Bullet3OpenCL/Initialize/b3OpenCLInclude.h"
 
 template <typename T>
-class b3OpenCLArray
+class BT_API b3OpenCLArray
 {
 	size_t m_size;
 	size_t m_capacity;

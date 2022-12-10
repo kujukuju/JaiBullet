@@ -8,7 +8,7 @@
 #include "Bullet3Common/shared/b3Quat.h"
 
 typedef struct b3GpuFace b3GpuFace_t;
-struct b3GpuFace
+struct BT_API b3GpuFace
 {
 	b3Float4 m_plane;
 	int m_indexOffset;
@@ -19,7 +19,7 @@ struct b3GpuFace
 
 typedef struct b3ConvexPolyhedronData b3ConvexPolyhedronData_t;
 
-struct b3ConvexPolyhedronData
+struct BT_API b3ConvexPolyhedronData
 {
 	b3Float4 m_localCenter;
 	b3Float4 m_extents;

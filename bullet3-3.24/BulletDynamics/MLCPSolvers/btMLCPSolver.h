@@ -23,7 +23,7 @@ subject to the following restrictions:
 #include "LinearMath/btMatrixX.h"
 #include "BulletDynamics/MLCPSolvers/btMLCPSolverInterface.h"
 
-class btMLCPSolver : public btSequentialImpulseConstraintSolver
+class BT_API btMLCPSolver : public btSequentialImpulseConstraintSolver
 {
 protected:
 	btMatrixXu m_A;

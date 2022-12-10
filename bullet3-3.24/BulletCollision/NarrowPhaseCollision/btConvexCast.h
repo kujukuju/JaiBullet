@@ -38,7 +38,7 @@ class btMinkowskiSumShape;
 //positive results (ray intersections that shouldn't be there)
 
 /// btConvexCast is an interface for Casting
-class btConvexCast
+class BT_API btConvexCast
 {
 public:
 	virtual ~btConvexCast();

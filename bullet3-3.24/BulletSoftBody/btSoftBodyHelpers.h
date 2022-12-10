@@ -26,7 +26,7 @@ subject to the following restrictions:
 //
 
 /* fDrawFlags															*/
-struct fDrawFlags
+struct BT_API fDrawFlags
 {
 	enum _
 	{
@@ -49,7 +49,7 @@ struct fDrawFlags
 	};
 };
 
-struct btSoftBodyHelpers
+struct BT_API btSoftBodyHelpers
 {
 	/* Draw body															*/
 	static void Draw(btSoftBody* psb,

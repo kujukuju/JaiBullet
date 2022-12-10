@@ -106,7 +106,7 @@ public:
 };
 
 ///btConeShape implements a Cone shape, around the X axis
-class btConeShapeX : public btConeShape
+class BT_API btConeShapeX : public btConeShape
 {
 public:
 	btConeShapeX(btScalar radius, btScalar height);
@@ -124,7 +124,7 @@ public:
 };
 
 ///btConeShapeZ implements a Cone shape, around the Z axis
-class btConeShapeZ : public btConeShape
+class BT_API btConeShapeZ : public btConeShape
 {
 public:
 	btConeShapeZ(btScalar radius, btScalar height);
@@ -142,7 +142,7 @@ public:
 };
 
 ///do not change those serialization structures, it requires an updated sBulletDNAstr/sBulletDNAstr64
-struct btConeShapeData
+struct BT_API btConeShapeData
 {
 	btConvexInternalShapeData m_convexInternalShapeData;
 

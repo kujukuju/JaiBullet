@@ -32,7 +32,7 @@ class b3RigidBody;
 #define b3Point2PointConstraintDataName "b3Point2PointConstraintFloatData"
 #endif  //B3_USE_DOUBLE_PRECISION
 
-struct b3ConstraintSetting
+struct BT_API b3ConstraintSetting
 {
 	b3ConstraintSetting() : m_tau(b3Scalar(0.3)),
 							m_damping(b3Scalar(1.)),
@@ -51,7 +51,7 @@ enum b3Point2PointFlags
 };
 
 /// point to point constraint between two rigidbodies each with a pivotpoint that descibes the 'ballsocket' location in local space
-B3_ATTRIBUTE_ALIGNED16(class)
+BT_API B3_ATTRIBUTE_ALIGNED16(class)
 b3Point2PointConstraint : public b3TypedConstraint
 {
 #ifdef IN_PARALLELL_SOLVER
@@ -117,7 +117,7 @@ public:
 };
 
 ///do not change those serialization structures, it requires an updated sBulletDNAstr/sBulletDNAstr64
-struct b3Point2PointConstraintFloatData
+struct BT_API b3Point2PointConstraintFloatData
 {
 	b3TypedConstraintData m_typeConstraintData;
 	b3Vector3FloatData m_pivotInA;
@@ -125,7 +125,7 @@ struct b3Point2PointConstraintFloatData
 };
 
 ///do not change those serialization structures, it requires an updated sBulletDNAstr/sBulletDNAstr64
-struct b3Point2PointConstraintDoubleData
+struct BT_API b3Point2PointConstraintDoubleData
 {
 	b3TypedConstraintData m_typeConstraintData;
 	b3Vector3DoubleData m_pivotInA;

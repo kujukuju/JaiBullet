@@ -32,7 +32,7 @@ subject to the following restrictions:
 #define BT_DEFAULT_MAX_POOLS 16
 
 //! Generic Pool class
-class btGenericMemoryPool
+class BT_API btGenericMemoryPool
 {
 public:
 	unsigned char *m_pool;      //[m_element_size*m_max_element_count];
@@ -106,7 +106,7 @@ public:
 /*!
 General purpose Allocator which can create Memory Pools dynamiacally as needed.
 */
-class btGenericPoolAllocator
+class BT_API btGenericPoolAllocator
 {
 protected:
 	size_t m_pool_element_size;

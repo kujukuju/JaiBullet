@@ -32,7 +32,7 @@ class btRigidBody;
 #define btPoint2PointConstraintDataName "btPoint2PointConstraintFloatData"
 #endif  //BT_USE_DOUBLE_PRECISION
 
-struct btConstraintSetting
+struct BT_API btConstraintSetting
 {
 	btConstraintSetting() : m_tau(btScalar(0.3)),
 							m_damping(btScalar(1.)),
@@ -128,7 +128,7 @@ public:
 };
 
 ///do not change those serialization structures, it requires an updated sBulletDNAstr/sBulletDNAstr64
-struct btPoint2PointConstraintFloatData
+struct BT_API btPoint2PointConstraintFloatData
 {
 	btTypedConstraintData m_typeConstraintData;
 	btVector3FloatData m_pivotInA;
@@ -136,7 +136,7 @@ struct btPoint2PointConstraintFloatData
 };
 
 ///do not change those serialization structures, it requires an updated sBulletDNAstr/sBulletDNAstr64
-struct btPoint2PointConstraintDoubleData2
+struct BT_API btPoint2PointConstraintDoubleData2
 {
 	btTypedConstraintDoubleData m_typeConstraintData;
 	btVector3DoubleData m_pivotInA;
@@ -147,7 +147,7 @@ struct btPoint2PointConstraintDoubleData2
 ///do not change those serialization structures, it requires an updated sBulletDNAstr/sBulletDNAstr64
 ///this structure is not used, except for loading pre-2.82 .bullet files
 ///do not change those serialization structures, it requires an updated sBulletDNAstr/sBulletDNAstr64
-struct btPoint2PointConstraintDoubleData
+struct BT_API btPoint2PointConstraintDoubleData
 {
 	btTypedConstraintData m_typeConstraintData;
 	btVector3DoubleData m_pivotInA;

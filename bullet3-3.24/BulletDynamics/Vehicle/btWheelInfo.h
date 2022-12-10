@@ -18,7 +18,7 @@
 
 class btRigidBody;
 
-struct btWheelInfoConstructionInfo
+struct BT_API btWheelInfoConstructionInfo
 {
 	btVector3 m_chassisConnectionCS;
 	btVector3 m_wheelDirectionCS;
@@ -36,7 +36,7 @@ struct btWheelInfoConstructionInfo
 };
 
 /// btWheelInfo contains information per wheel about friction and suspension.
-struct btWheelInfo
+struct BT_API btWheelInfo
 {
 	struct RaycastInfo
 	{

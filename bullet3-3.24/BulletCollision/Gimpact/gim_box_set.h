@@ -42,7 +42,7 @@ email: projectileman@yahoo.com
 #include "gim_pair.h"
 
 //! A pairset array
-class gim_pair_set : public gim_array<GIM_PAIR>
+class BT_API gim_pair_set : public gim_array<GIM_PAIR>
 {
 public:
 	gim_pair_set() : gim_array<GIM_PAIR>(32)
@@ -65,7 +65,7 @@ This class is a wrapper for primitive collections.
 This tells relevant info for the Bounding Box set classes, which take care of space classification.
 This class can manage Compound shapes and trimeshes, and if it is managing trimesh then the  Hierarchy Bounding Box classes will take advantage of primitive Vs Box overlapping tests for getting optimal results and less Per Box compairisons.
 */
-class GIM_PRIMITIVE_MANAGER_PROTOTYPE
+class BT_API GIM_PRIMITIVE_MANAGER_PROTOTYPE
 {
 public:
 	virtual ~GIM_PRIMITIVE_MANAGER_PROTOTYPE() {}
@@ -76,14 +76,14 @@ public:
 	virtual void get_primitive_triangle(GUINT prim_index, GIM_TRIANGLE& triangle) = 0;
 };
 
-struct GIM_AABB_DATA
+struct BT_API GIM_AABB_DATA
 {
 	GIM_AABB m_bound;
 	GUINT m_data;
 };
 
 //! Node Structure for trees
-struct GIM_BOX_TREE_NODE
+struct BT_API GIM_BOX_TREE_NODE
 {
 	GIM_AABB m_bound;
 	GUINT m_left;         //!< Left subtree
@@ -106,7 +106,7 @@ struct GIM_BOX_TREE_NODE
 };
 
 //! Basic Box tree structure
-class GIM_BOX_TREE
+class BT_API GIM_BOX_TREE
 {
 protected:
 	GUINT m_num_nodes;
@@ -189,7 +189,7 @@ Requires a Primitive prototype (like GIM_PRIMITIVE_MANAGER_PROTOTYPE ) and
 a Box tree structure ( like GIM_BOX_TREE).
 */
 template <typename _GIM_PRIMITIVE_MANAGER_PROTOTYPE, typename _GIM_BOX_TREE_PROTOTYPE>
-class GIM_BOX_TREE_TEMPLATE_SET
+class BT_API GIM_BOX_TREE_TEMPLATE_SET
 {
 protected:
 	_GIM_PRIMITIVE_MANAGER_PROTOTYPE m_primitive_manager;
@@ -425,14 +425,14 @@ public:
 this has the GIM_BOX_TREE implementation for bounding boxes.
 */
 template <typename _GIM_PRIMITIVE_MANAGER_PROTOTYPE>
-class GIM_BOX_TREE_SET : public GIM_BOX_TREE_TEMPLATE_SET<_GIM_PRIMITIVE_MANAGER_PROTOTYPE, GIM_BOX_TREE>
+class BT_API GIM_BOX_TREE_SET : public GIM_BOX_TREE_TEMPLATE_SET<_GIM_PRIMITIVE_MANAGER_PROTOTYPE, GIM_BOX_TREE>
 {
 public:
 };
 
 /// GIM_BOX_SET collision methods
 template <typename BOX_SET_CLASS0, typename BOX_SET_CLASS1>
-class GIM_TREE_TREE_COLLIDER
+class BT_API GIM_TREE_TREE_COLLIDER
 {
 public:
 	gim_pair_set* m_collision_pairs;

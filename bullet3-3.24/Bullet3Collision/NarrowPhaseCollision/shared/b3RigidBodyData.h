@@ -9,7 +9,7 @@
 
 typedef struct b3RigidBodyData b3RigidBodyData_t;
 
-struct b3RigidBodyData
+struct BT_API b3RigidBodyData
 {
 	b3Float4 m_pos;
 	b3Quat m_quat;
@@ -24,7 +24,7 @@ struct b3RigidBodyData
 
 typedef struct b3InertiaData b3InertiaData_t;
 
-struct b3InertiaData
+struct BT_API b3InertiaData
 {
 	b3Mat3x3 m_invInertiaWorld;
 	b3Mat3x3 m_initInvInertia;

@@ -22,7 +22,7 @@ subject to the following restrictions:
 
 #include "btMultiBodyConstraint.h"
 
-class btMultiBodySliderConstraint : public btMultiBodyConstraint
+class BT_API btMultiBodySliderConstraint : public btMultiBodyConstraint
 {
 protected:
 	btRigidBody* m_rigidBodyA;

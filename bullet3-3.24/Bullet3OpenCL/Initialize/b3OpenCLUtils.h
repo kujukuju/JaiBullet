@@ -104,7 +104,7 @@ typedef struct
 
 } b3OpenCLDeviceInfo;
 
-struct b3OpenCLPlatformInfo
+struct BT_API b3OpenCLPlatformInfo
 {
 	char m_platformVendor[B3_MAX_STRING_LENGTH];
 	char m_platformName[B3_MAX_STRING_LENGTH];
@@ -119,7 +119,7 @@ struct b3OpenCLPlatformInfo
 };
 
 ///C++ API for OpenCL utilities: convenience functions
-struct b3OpenCLUtils
+struct BT_API b3OpenCLUtils
 {
 	/// CL Context optionally takes a GL context. This is a generic type because we don't really want this code
 	/// to have to understand GL types. It is a HGLRC in _WIN32 or a GLXContext otherwise.

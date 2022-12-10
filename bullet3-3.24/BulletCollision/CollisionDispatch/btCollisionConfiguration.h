@@ -25,7 +25,7 @@ class btPoolAllocator;
 ///btCollisionConfiguration allows to configure Bullet collision detection
 ///stack allocator size, default collision algorithms and persistent manifold pool size
 ///@todo: describe the meaning
-class btCollisionConfiguration
+class BT_API btCollisionConfiguration
 {
 public:
 	virtual ~btCollisionConfiguration()

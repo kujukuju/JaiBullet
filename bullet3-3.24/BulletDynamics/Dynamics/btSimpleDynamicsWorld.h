@@ -26,7 +26,7 @@ class btConstraintSolver;
 
 ///The btSimpleDynamicsWorld serves as unit-test and to verify more complicated and optimized dynamics worlds.
 ///Please use btDiscreteDynamicsWorld instead
-class btSimpleDynamicsWorld : public btDynamicsWorld
+class BT_API btSimpleDynamicsWorld : public btDynamicsWorld
 {
 protected:
 	btConstraintSolver* m_constraintSolver;

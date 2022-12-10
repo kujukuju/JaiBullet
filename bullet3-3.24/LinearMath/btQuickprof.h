@@ -21,7 +21,7 @@
 #ifdef USE_BT_CLOCK
 
 ///The btClock is a portable basic clock that measures accurate time in seconds, use for profiling.
-class btClock
+class BT_API btClock
 {
 public:
 	btClock();
@@ -82,7 +82,7 @@ unsigned int btQuickprofGetCurrentThreadIndex2();
 #include <new>
 
 ///A node in the Profile Hierarchy Tree
-class CProfileNode
+class BT_API CProfileNode
 {
 public:
 	CProfileNode(const char* name, CProfileNode* parent);
@@ -119,7 +119,7 @@ protected:
 };
 
 ///An iterator to navigate through the tree
-class CProfileIterator
+class BT_API CProfileIterator
 {
 public:
 	// Access all the children of the current parent
@@ -153,7 +153,7 @@ protected:
 };
 
 ///The Manager for the Profile system
-class CProfileManager
+class BT_API CProfileManager
 {
 public:
 	static void Start_Profile(const char* name);
@@ -189,7 +189,7 @@ private:
 
 ///ProfileSampleClass is a simple way to profile a function's scope
 ///Use the BT_PROFILE macro at the start of scope to time
-class CProfileSample
+class BT_API CProfileSample
 {
 public:
 	CProfileSample(const char* name);

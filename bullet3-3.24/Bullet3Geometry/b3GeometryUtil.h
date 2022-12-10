@@ -21,7 +21,7 @@ subject to the following restrictions:
 #include "Bullet3Common/b3AlignedObjectArray.h"
 
 ///The b3GeometryUtil helper class provides a few methods to convert between plane equations and vertices.
-class b3GeometryUtil
+class BT_API b3GeometryUtil
 {
 public:
 	static void getPlaneEquationsFromVertices(b3AlignedObjectArray<b3Vector3>& vertices, b3AlignedObjectArray<b3Vector3>& planeEquationsOut);

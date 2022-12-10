@@ -9,7 +9,7 @@
 #include "Bullet3Common/b3AlignedObjectArray.h"
 #include "Bullet3Common/b3Vector3.h"
 
-class b3PrefixScanFloat4CL
+class BT_API b3PrefixScanFloat4CL
 {
 	enum
 	{

@@ -29,7 +29,7 @@ class btDispatcher;
 class btPersistentManifold;
 
 ///SimulationIslandManager creates and handles simulation islands, using btUnionFind
-class btSimulationIslandManager
+class BT_API btSimulationIslandManager
 {
 	btUnionFind m_unionFind;
 

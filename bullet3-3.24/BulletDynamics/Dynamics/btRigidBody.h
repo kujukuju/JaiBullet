@@ -58,7 +58,7 @@ enum btRigidBodyFlags
 ///- C) Kinematic objects, which are objects without mass, but the user can move them. There is one-way interaction, and Bullet calculates a velocity based on the timestep and previous and current world transform.
 ///Bullet automatically deactivates dynamic rigid bodies, when the velocity is below a threshold for a given time.
 ///Deactivated (sleeping) rigid bodies don't take any processing time, except a minor broadphase collision detection impact (to allow active objects to activate/wake up sleeping objects)
-class btRigidBody : public btCollisionObject
+class BT_API btRigidBody : public btCollisionObject
 {
 	btMatrix3x3 m_invInertiaTensorWorld;
 	btVector3 m_linearVelocity;
@@ -634,7 +634,7 @@ public:
 
 //@todo add m_optionalMotionState and m_constraintRefs to btRigidBodyData
 ///do not change those serialization structures, it requires an updated sBulletDNAstr/sBulletDNAstr64
-struct btRigidBodyFloatData
+struct BT_API btRigidBodyFloatData
 {
 	btCollisionObjectFloatData m_collisionObjectData;
 	btMatrix3x3FloatData m_invInertiaTensorWorld;
@@ -660,7 +660,7 @@ struct btRigidBodyFloatData
 };
 
 ///do not change those serialization structures, it requires an updated sBulletDNAstr/sBulletDNAstr64
-struct btRigidBodyDoubleData
+struct BT_API btRigidBodyDoubleData
 {
 	btCollisionObjectDoubleData m_collisionObjectData;
 	btMatrix3x3DoubleData m_invInertiaTensorWorld;

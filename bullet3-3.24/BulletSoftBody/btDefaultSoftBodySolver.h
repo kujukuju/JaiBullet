@@ -22,7 +22,7 @@ subject to the following restrictions:
 #include "btSoftBodySolverVertexBuffer.h"
 struct btCollisionObjectWrapper;
 
-class btDefaultSoftBodySolver : public btSoftBodySolver
+class BT_API btDefaultSoftBodySolver : public btSoftBodySolver
 {
 protected:
 	/** Variable to define whether we need to update solver constants on the next iteration */

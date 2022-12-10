@@ -36,7 +36,7 @@ enum btSolverMode
 	SOLVER_USE_ARTICULATED_WARMSTARTING = 4096,
 };
 
-struct btContactSolverInfoData
+struct BT_API btContactSolverInfoData
 {
 	btScalar m_tau;
 	btScalar m_damping;  //global non-contact constraint damping, can be locally overridden by constraints during 'getInfo2'.
@@ -116,7 +116,7 @@ struct btContactSolverInfo : public btContactSolverInfoData
 };
 
 ///do not change those serialization structures, it requires an updated sBulletDNAstr/sBulletDNAstr64
-struct btContactSolverInfoDoubleData
+struct BT_API btContactSolverInfoDoubleData
 {
 	double m_tau;
 	double m_damping;  //global non-contact constraint damping, can be locally overridden by constraints during 'getInfo2'.
@@ -144,7 +144,7 @@ struct btContactSolverInfoDoubleData
 	char m_padding[4];
 };
 ///do not change those serialization structures, it requires an updated sBulletDNAstr/sBulletDNAstr64
-struct btContactSolverInfoFloatData
+struct BT_API btContactSolverInfoFloatData
 {
 	float m_tau;
 	float m_damping;  //global non-contact constraint damping, can be locally overridden by constraints during 'getInfo2'.

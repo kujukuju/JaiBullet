@@ -31,7 +31,7 @@ class btPersistentManifold;
 
 typedef btAlignedObjectArray<btPersistentManifold*> btManifoldArray;
 
-struct btCollisionAlgorithmConstructionInfo
+struct BT_API btCollisionAlgorithmConstructionInfo
 {
 	btCollisionAlgorithmConstructionInfo()
 		: m_dispatcher1(0),
@@ -52,7 +52,7 @@ struct btCollisionAlgorithmConstructionInfo
 
 ///btCollisionAlgorithm is an collision interface that is compatible with the Broadphase and btDispatcher.
 ///It is persistent over frames
-class btCollisionAlgorithm
+class BT_API btCollisionAlgorithm
 {
 protected:
 	btDispatcher* m_dispatcher;

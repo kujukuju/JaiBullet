@@ -40,7 +40,7 @@ struct btSimpleBroadphaseProxy : public btBroadphaseProxy
 
 ///The SimpleBroadphase is just a unit-test for btAxisSweep3, bt32BitAxisSweep3, or btDbvtBroadphase, so use those classes instead.
 ///It is a brute force aabb culling broadphase based on O(n^2) aabb checks
-class btSimpleBroadphase : public btBroadphaseInterface
+class BT_API btSimpleBroadphase : public btBroadphaseInterface
 {
 protected:
 	int m_numHandles;  // number of active handles

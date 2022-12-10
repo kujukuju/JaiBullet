@@ -30,7 +30,7 @@ subject to the following restrictions:
 
 ///The btGeatConstraint will couple the angular velocity for two bodies around given local axis and ratio.
 ///See Bullet/Demos/ConstraintDemo for an example use.
-class btGearConstraint : public btTypedConstraint
+class BT_API btGearConstraint : public btTypedConstraint
 {
 protected:
 	btVector3 m_axisInA;
@@ -97,7 +97,7 @@ public:
 };
 
 ///do not change those serialization structures, it requires an updated sBulletDNAstr/sBulletDNAstr64
-struct btGearConstraintFloatData
+struct BT_API btGearConstraintFloatData
 {
 	btTypedConstraintFloatData m_typeConstraintData;
 
@@ -108,7 +108,7 @@ struct btGearConstraintFloatData
 	char m_padding[4];
 };
 
-struct btGearConstraintDoubleData
+struct BT_API btGearConstraintDoubleData
 {
 	btTypedConstraintDoubleData m_typeConstraintData;
 

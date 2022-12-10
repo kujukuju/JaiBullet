@@ -29,7 +29,7 @@ struct b3PoolBodyHandle : public U
 };
 
 template <typename T>
-class b3ResizablePool
+class BT_API b3ResizablePool
 {
 protected:
 	b3AlignedObjectArray<T> m_bodyHandles;

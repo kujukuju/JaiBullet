@@ -23,7 +23,7 @@ subject to the following restrictions:
 #include "btMultiBodyConstraint.h"
 struct btSolverInfo;
 
-class btMultiBodySphericalJointLimit : public btMultiBodyConstraint
+class BT_API btMultiBodySphericalJointLimit : public btMultiBodyConstraint
 {
 protected:
 	btVector3 m_desiredVelocity;

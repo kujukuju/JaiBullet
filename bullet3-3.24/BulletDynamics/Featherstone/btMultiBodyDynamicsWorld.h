@@ -30,7 +30,7 @@ struct MultiBodyInplaceSolverIslandCallback;
 
 ///The btMultiBodyDynamicsWorld adds Featherstone multi body dynamics to Bullet
 ///This implementation is still preliminary/experimental.
-class btMultiBodyDynamicsWorld : public btDiscreteDynamicsWorld
+class BT_API btMultiBodyDynamicsWorld : public btDiscreteDynamicsWorld
 {
 protected:
 	btAlignedObjectArray<btMultiBody*> m_multiBodies;

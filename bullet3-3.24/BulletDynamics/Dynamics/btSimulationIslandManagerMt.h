@@ -34,7 +34,7 @@ class btIDebugDraw;
 ///                       of islands. If only a single island exists, then no parallelism is
 ///                       possible.
 ///
-class btSimulationIslandManagerMt : public btSimulationIslandManager
+class BT_API btSimulationIslandManagerMt : public btSimulationIslandManager
 {
 public:
 	struct Island

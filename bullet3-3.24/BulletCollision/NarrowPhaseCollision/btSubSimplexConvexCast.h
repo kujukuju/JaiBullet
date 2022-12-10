@@ -26,7 +26,7 @@ class btConvexShape;
 ///"Ray Casting against bteral Convex Objects with Application to Continuous Collision Detection"
 /// GJK based Ray Cast, optimized version
 /// Objects should not start in overlap, otherwise results are not defined.
-class btSubsimplexConvexCast : public btConvexCast
+class BT_API btSubsimplexConvexCast : public btConvexCast
 {
 	btSimplexSolverInterface* m_simplexSolver;
 	const btConvexShape* m_convexA;

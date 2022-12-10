@@ -52,7 +52,7 @@ btCollisionDispatcher * dispatcher = static_cast<btCollisionDispatcher *>(m_dyna
 btGImpactCollisionAlgorithm::registerAlgorithm(dispatcher);
  \endcode
 */
-class btGImpactCollisionAlgorithm : public btActivatingCollisionAlgorithm
+class BT_API btGImpactCollisionAlgorithm : public btActivatingCollisionAlgorithm
 {
 protected:
 	btCollisionAlgorithm* m_convex_algorithm;

@@ -56,7 +56,7 @@ Configuration var for applying interpolation of  contact normals
 ///Contact lists must be create by calling \ref GIM_CREATE_CONTACT_LIST
 ///After querys, contact lists must be destroy by calling \ref GIM_DYNARRAY_DESTROY
 ///Contacts can be merge for avoid duplicate results by calling \ref gim_merge_contacts
-class GIM_CONTACT
+class BT_API GIM_CONTACT
 {
 public:
 	btVector3 m_point;
@@ -128,7 +128,7 @@ public:
 
 #endif
 
-class gim_contact_array : public gim_array<GIM_CONTACT>
+class BT_API gim_contact_array : public gim_array<GIM_CONTACT>
 {
 public:
 	gim_contact_array() : gim_array<GIM_CONTACT>(64)

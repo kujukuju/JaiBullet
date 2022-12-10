@@ -30,7 +30,7 @@ GJK-EPA collision solver by Nathanael Presson, 2008
 #include "BulletCollision/CollisionShapes/btConvexShape.h"
 
 ///btGjkEpaSolver contributed under zlib by Nathanael Presson
-struct btGjkEpaSolver2
+struct BT_API btGjkEpaSolver2
 {
 	struct sResults
 	{

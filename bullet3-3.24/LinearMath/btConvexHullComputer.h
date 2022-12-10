@@ -23,7 +23,7 @@ subject to the following restrictions:
 /// Convex hull implementation based on Preparata and Hong
 /// See http://code.google.com/p/bullet/issues/detail?id=275
 /// Ole Kniemeyer, MAXON Computer GmbH
-class btConvexHullComputer
+class BT_API btConvexHullComputer
 {
 private:
 	btScalar compute(const void* coords, bool doubleCoords, int stride, int count, btScalar shrink, btScalar shrinkClamp);

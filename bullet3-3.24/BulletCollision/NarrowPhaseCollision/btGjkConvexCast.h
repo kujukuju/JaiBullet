@@ -27,7 +27,7 @@ class btMinkowskiSumShape;
 #include "btSimplexSolverInterface.h"
 
 ///GjkConvexCast performs a raycast on a convex object using support mapping.
-class btGjkConvexCast : public btConvexCast
+class BT_API btGjkConvexCast : public btConvexCast
 {
 	btSimplexSolverInterface* m_simplexSolver;
 	const btConvexShape* m_convexA;

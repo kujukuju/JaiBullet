@@ -51,7 +51,7 @@ enum eGIMPACT_SHAPE_TYPE
 };
 
 //! Helper class for tetrahedrons
-class btTetrahedronShapeEx : public btBU_Simplex1to4
+class BT_API btTetrahedronShapeEx : public btBU_Simplex1to4
 {
 public:
 	btTetrahedronShapeEx()
@@ -72,7 +72,7 @@ public:
 };
 
 //! Base class for gimpact shapes
-class btGImpactShapeInterface : public btConcaveShape
+class BT_API btGImpactShapeInterface : public btConcaveShape
 {
 protected:
 	btAABB m_localAABB;
@@ -293,7 +293,7 @@ public:
 /*!
 This class only can manage Convex subshapes
 */
-class btGImpactCompoundShape : public btGImpactShapeInterface
+class BT_API btGImpactCompoundShape : public btGImpactShapeInterface
 {
 public:
 	//! compound primitive manager
@@ -501,7 +501,7 @@ public:
 - You can handle deformable meshes with this shape, by calling postUpdate() every time when changing the mesh vertices.
 
 */
-class btGImpactMeshShapePart : public btGImpactShapeInterface
+class BT_API btGImpactMeshShapePart : public btGImpactShapeInterface
 {
 public:
 	//! Trimesh primitive manager
@@ -849,7 +849,7 @@ Set of btGImpactMeshShapePart parts
 - You can handle deformable meshes with this shape, by calling postUpdate() every time when changing the mesh vertices.
 
 */
-class btGImpactMeshShape : public btGImpactShapeInterface
+class BT_API btGImpactMeshShape : public btGImpactShapeInterface
 {
 	btStridingMeshInterface* m_meshInterface;
 
@@ -1096,7 +1096,7 @@ public:
 };
 
 ///do not change those serialization structures, it requires an updated sBulletDNAstr/sBulletDNAstr64
-struct btGImpactMeshShapeData
+struct BT_API btGImpactMeshShapeData
 {
 	btCollisionShapeData m_collisionShapeData;
 

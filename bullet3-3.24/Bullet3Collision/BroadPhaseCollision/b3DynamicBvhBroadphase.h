@@ -41,7 +41,7 @@ subject to the following restrictions:
 
 #endif
 
-B3_ATTRIBUTE_ALIGNED16(struct)
+BT_API B3_ATTRIBUTE_ALIGNED16(struct)
 b3BroadphaseProxy
 {
 	B3_DECLARE_ALIGNED_ALLOCATOR();
@@ -111,7 +111,7 @@ typedef b3AlignedObjectArray<b3DbvtProxy*> b3DbvtProxyArray;
 ///The b3DynamicBvhBroadphase implements a broadphase using two dynamic AABB bounding volume hierarchies/trees (see b3DynamicBvh).
 ///One tree is used for static/non-moving objects, and another tree is used for dynamic objects. Objects can move from one tree to the other.
 ///This is a very fast broadphase, especially for very dynamic worlds where many objects are moving. Its insert/add and remove of objects is generally faster than the sweep and prune broadphases b3AxisSweep3 and b332BitAxisSweep3.
-struct b3DynamicBvhBroadphase
+struct BT_API b3DynamicBvhBroadphase
 {
 	/* Config		*/
 	enum

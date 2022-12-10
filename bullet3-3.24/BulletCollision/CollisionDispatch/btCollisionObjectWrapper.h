@@ -16,7 +16,7 @@ private:                             \
 	void operator delete(void*);
 
 struct btCollisionObjectWrapper;
-struct btCollisionObjectWrapper
+struct BT_API btCollisionObjectWrapper
 {
 	BT_DECLARE_STACK_ONLY_OBJECT
 

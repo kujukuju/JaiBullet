@@ -13,7 +13,7 @@ class b3Vector3;
 
 #include "b3GpuBroadphaseInterface.h"
 
-class b3GpuSapBroadphase : public b3GpuBroadphaseInterface
+class BT_API b3GpuSapBroadphase : public b3GpuBroadphaseInterface
 {
 	cl_context m_context;
 	cl_device_id m_device;

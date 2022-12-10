@@ -31,7 +31,7 @@
 // #include "btDeformableMultiBodyDynamicsWorld.h"
 #include "LinearMath/btQuickprof.h"
 
-class btDeformableBackwardEulerObjective
+class BT_API btDeformableBackwardEulerObjective
 {
 public:
 	enum _

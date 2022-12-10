@@ -34,7 +34,7 @@ const b3SimdFloat4 B3_ATTRIBUTE_ALIGNED16(b3vPPPM) = {+0.0f, +0.0f, +0.0f, -0.0f
 #endif
 
 /**@brief The b3Quaternion implements quaternion to perform linear algebra rotations in combination with b3Matrix3x3, b3Vector3 and b3Transform. */
-class b3Quaternion : public b3QuadWord
+class BT_API b3Quaternion : public b3QuadWord
 {
 public:
 	/**@brief No initialization constructor */

@@ -24,7 +24,7 @@ subject to the following restrictions:
 #include "Bullet3Common/b3AlignedObjectArray.h"
 #include "Bullet3Collision/NarrowPhaseCollision/b3RaycastInfo.h"
 
-class b3GpuRigidBodyPipeline
+class BT_API b3GpuRigidBodyPipeline
 {
 protected:
 	struct b3GpuRigidBodyPipelineInternalData* m_data;

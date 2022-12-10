@@ -5,7 +5,7 @@
 
 #include "btConcaveShape.h"
 
-class btSdfCollisionShape : public btConcaveShape
+class BT_API btSdfCollisionShape : public btConcaveShape
 {
 	struct btSdfCollisionShapeInternalData* m_data;
 

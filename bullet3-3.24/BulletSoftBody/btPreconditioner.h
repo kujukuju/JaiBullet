@@ -18,7 +18,7 @@
 
 #include "btApi.h"
 
-class Preconditioner
+class BT_API Preconditioner
 {
 public:
 	typedef btAlignedObjectArray<btVector3> TVStack;
@@ -27,7 +27,7 @@ public:
 	virtual ~Preconditioner() {}
 };
 
-class DefaultPreconditioner : public Preconditioner
+class BT_API DefaultPreconditioner : public Preconditioner
 {
 public:
 	virtual void operator()(const TVStack& x, TVStack& b)
@@ -43,7 +43,7 @@ public:
 	virtual ~DefaultPreconditioner() {}
 };
 
-class MassPreconditioner : public Preconditioner
+class BT_API MassPreconditioner : public Preconditioner
 {
 	btAlignedObjectArray<btScalar> m_inv_mass;
 	const btAlignedObjectArray<btSoftBody*>& m_softBodies;
@@ -83,7 +83,7 @@ public:
 	}
 };
 
-class KKTPreconditioner : public Preconditioner
+class BT_API KKTPreconditioner : public Preconditioner
 {
 	const btAlignedObjectArray<btSoftBody*>& m_softBodies;
 	const btDeformableContactProjection& m_projections;

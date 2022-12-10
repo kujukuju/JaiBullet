@@ -34,7 +34,7 @@ enum b3SolverMode
 	B3_SOLVER_ALLOW_ZERO_LENGTH_FRICTION_DIRECTIONS = 1024
 };
 
-struct b3ContactSolverInfoData
+struct BT_API b3ContactSolverInfoData
 {
 	b3Scalar m_tau;
 	b3Scalar m_damping;  //global non-contact constraint damping, can be locally overridden by constraints during 'getInfo2'.
@@ -90,7 +90,7 @@ struct b3ContactSolverInfo : public b3ContactSolverInfoData
 };
 
 ///do not change those serialization structures, it requires an updated sBulletDNAstr/sBulletDNAstr64
-struct b3ContactSolverInfoDoubleData
+struct BT_API b3ContactSolverInfoDoubleData
 {
 	double m_tau;
 	double m_damping;  //global non-contact constraint damping, can be locally overridden by constraints during 'getInfo2'.
@@ -117,7 +117,7 @@ struct b3ContactSolverInfoDoubleData
 	char m_padding[4];
 };
 ///do not change those serialization structures, it requires an updated sBulletDNAstr/sBulletDNAstr64
-struct b3ContactSolverInfoFloatData
+struct BT_API b3ContactSolverInfoFloatData
 {
 	float m_tau;
 	float m_damping;  //global non-contact constraint damping, can be locally overridden by constraints during 'getInfo2'.

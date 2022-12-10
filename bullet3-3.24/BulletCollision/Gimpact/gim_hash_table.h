@@ -45,7 +45,7 @@ email: projectileman@yahoo.com
 #define GIM_MIN_RADIX_SORT_SIZE 860  //!< calibrated on a PIII
 
 template <typename T>
-struct GIM_HASH_TABLE_NODE
+struct BT_API GIM_HASH_TABLE_NODE
 {
 	GUINT m_key;
 	T m_data;
@@ -88,7 +88,7 @@ struct GIM_HASH_TABLE_NODE
 };
 
 ///Macro for getting the key
-class GIM_HASH_NODE_GET_KEY
+class BT_API GIM_HASH_NODE_GET_KEY
 {
 public:
 	template <class T>
@@ -99,7 +99,7 @@ public:
 };
 
 ///Macro for comparing the key and the element
-class GIM_HASH_NODE_CMP_KEY_MACRO
+class BT_API GIM_HASH_NODE_CMP_KEY_MACRO
 {
 public:
 	template <class T>
@@ -110,7 +110,7 @@ public:
 };
 
 ///Macro for comparing Hash nodes
-class GIM_HASH_NODE_CMP_MACRO
+class BT_API GIM_HASH_NODE_CMP_MACRO
 {
 public:
 	template <class T>
@@ -176,7 +176,7 @@ When the array size reaches the size equivalent to 'min_hash_table_size', then i
 
 */
 template <class T>
-class gim_hash_table
+class BT_API gim_hash_table
 {
 protected:
 	typedef GIM_HASH_TABLE_NODE<T> _node_type;

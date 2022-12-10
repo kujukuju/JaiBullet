@@ -21,7 +21,7 @@ subject to the following restrictions:
 
 #include "LinearMath/btMatrixX.h"
 
-class btMLCPSolverInterface
+class BT_API btMLCPSolverInterface
 {
 public:
 	virtual ~btMLCPSolverInterface()

@@ -13,7 +13,7 @@
 ///Node can be used for leafnode or internal node. Leafnodes can point to 32-bit triangle index (non-negative range).
 typedef struct b3QuantizedBvhNodeData b3QuantizedBvhNodeData_t;
 
-struct b3QuantizedBvhNodeData
+struct BT_API b3QuantizedBvhNodeData
 {
 	//12 bytes
 	unsigned short int m_quantizedAabbMin[3];

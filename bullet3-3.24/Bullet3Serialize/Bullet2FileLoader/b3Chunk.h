@@ -30,7 +30,7 @@ subject to the following restrictions:
 namespace bParse
 {
 // ----------------------------------------------------- //
-class bChunkPtr4
+class BT_API bChunkPtr4
 {
 public:
 	bChunkPtr4() {}
@@ -44,7 +44,7 @@ public:
 };
 
 // ----------------------------------------------------- //
-class bChunkPtr8
+class BT_API bChunkPtr8
 {
 public:
 	bChunkPtr8() {}
@@ -57,7 +57,7 @@ public:
 };
 
 // ----------------------------------------------------- //
-class bChunkInd
+class BT_API bChunkInd
 {
 public:
 	bChunkInd() {}
@@ -67,7 +67,7 @@ public:
 };
 
 // ----------------------------------------------------- //
-class ChunkUtils
+class BT_API ChunkUtils
 {
 public:
 	// file chunk offset

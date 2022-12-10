@@ -27,7 +27,7 @@ class btPersistentManifold;
 /// btSphereSphereCollisionAlgorithm  provides sphere-sphere collision detection.
 /// Other features are frame-coherency (persistent data) and collision response.
 /// Also provides the most basic sample for custom/user btCollisionAlgorithm
-class btSphereTriangleCollisionAlgorithm : public btActivatingCollisionAlgorithm
+class BT_API btSphereTriangleCollisionAlgorithm : public btActivatingCollisionAlgorithm
 {
 	bool m_ownManifold;
 	btPersistentManifold* m_manifoldPtr;

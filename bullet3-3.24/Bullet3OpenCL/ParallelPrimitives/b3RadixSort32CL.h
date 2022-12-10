@@ -6,7 +6,7 @@
 
 #include "b3OpenCLArray.h"
 
-struct b3SortData
+struct BT_API b3SortData
 {
 	union {
 		unsigned int m_key;
@@ -20,7 +20,7 @@ struct b3SortData
 };
 #include "b3BufferInfoCL.h"
 
-class b3RadixSort32CL
+class BT_API b3RadixSort32CL
 {
 	b3OpenCLArray<unsigned int>* m_workBuffer1;
 	b3OpenCLArray<unsigned int>* m_workBuffer2;

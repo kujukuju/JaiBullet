@@ -798,7 +798,7 @@ SIMD_FORCE_INLINE btScalar btNormalizeAngle(btScalar angleInRadians)
 }
 
 ///rudimentary class to provide type info
-struct btTypedObject
+struct BT_API btTypedObject
 {
 	btTypedObject(int objectType)
 		: m_objectType(objectType)

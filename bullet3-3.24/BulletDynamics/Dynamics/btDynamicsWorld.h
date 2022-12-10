@@ -41,7 +41,7 @@ enum btDynamicsWorldType
 };
 
 ///The btDynamicsWorld is the interface class for several dynamics implementation, basic, discrete, parallel, and continuous etc.
-class btDynamicsWorld : public btCollisionWorld
+class BT_API btDynamicsWorld : public btCollisionWorld
 {
 protected:
 	btInternalTickCallback m_internalTickCallback;
@@ -160,14 +160,14 @@ public:
 };
 
 ///do not change those serialization structures, it requires an updated sBulletDNAstr/sBulletDNAstr64
-struct btDynamicsWorldDoubleData
+struct BT_API btDynamicsWorldDoubleData
 {
 	btContactSolverInfoDoubleData m_solverInfo;
 	btVector3DoubleData m_gravity;
 };
 
 ///do not change those serialization structures, it requires an updated sBulletDNAstr/sBulletDNAstr64
-struct btDynamicsWorldFloatData
+struct BT_API btDynamicsWorldFloatData
 {
 	btContactSolverInfoFloatData m_solverInfo;
 	btVector3FloatData m_gravity;

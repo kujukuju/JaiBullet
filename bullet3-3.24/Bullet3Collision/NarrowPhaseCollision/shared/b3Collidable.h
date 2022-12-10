@@ -21,7 +21,7 @@ enum b3ShapeTypes
 
 typedef struct b3Collidable b3Collidable_t;
 
-struct b3Collidable
+struct BT_API b3Collidable
 {
 	union {
 		int m_numChildShapes;
@@ -40,7 +40,7 @@ struct b3Collidable
 };
 
 typedef struct b3GpuChildShape b3GpuChildShape_t;
-struct b3GpuChildShape
+struct BT_API b3GpuChildShape
 {
 	b3Float4 m_childPosition;
 	b3Quat m_childOrientation;
@@ -59,7 +59,7 @@ struct b3GpuChildShape
 	int m_shapeType;
 };
 
-struct b3CompoundOverlappingPair
+struct BT_API b3CompoundOverlappingPair
 {
 	int m_bodyIndexA;
 	int m_bodyIndexB;

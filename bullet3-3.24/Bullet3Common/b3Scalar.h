@@ -655,7 +655,7 @@ B3_FORCE_INLINE b3Scalar b3NormalizeAngle(b3Scalar angleInRadians)
 }
 
 ///rudimentary class to provide type info
-struct b3TypedObject
+struct BT_API b3TypedObject
 {
 	b3TypedObject(int objectType)
 		: m_objectType(objectType)

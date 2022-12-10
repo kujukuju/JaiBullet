@@ -70,7 +70,7 @@ public:
 	virtual const char* serialize(void* dataBuffer, btSerializer* serializer) const;
 };
 
-struct btPositionAndRadius
+struct BT_API btPositionAndRadius
 {
 	btVector3FloatData m_pos;
 	float m_radius;

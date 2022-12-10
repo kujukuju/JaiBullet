@@ -113,7 +113,7 @@ public:
 
 ///btCapsuleShapeX represents a capsule around the Z axis
 ///the total height is height+2*radius, so the height is just the height between the center of each 'sphere' of the capsule caps.
-class btCapsuleShapeX : public btCapsuleShape
+class BT_API btCapsuleShapeX : public btCapsuleShape
 {
 public:
 	btCapsuleShapeX(btScalar radius, btScalar height);
@@ -127,7 +127,7 @@ public:
 
 ///btCapsuleShapeZ represents a capsule around the Z axis
 ///the total height is height+2*radius, so the height is just the height between the center of each 'sphere' of the capsule caps.
-class btCapsuleShapeZ : public btCapsuleShape
+class BT_API btCapsuleShapeZ : public btCapsuleShape
 {
 public:
 	btCapsuleShapeZ(btScalar radius, btScalar height);
@@ -140,7 +140,7 @@ public:
 };
 
 ///do not change those serialization structures, it requires an updated sBulletDNAstr/sBulletDNAstr64
-struct btCapsuleShapeData
+struct BT_API btCapsuleShapeData
 {
 	btConvexInternalShapeData m_convexInternalShapeData;
 

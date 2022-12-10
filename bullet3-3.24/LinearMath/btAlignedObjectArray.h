@@ -44,7 +44,7 @@ subject to the following restrictions:
 ///It is developed to replace stl::vector to avoid portability issues, including STL alignment issues to add SIMD/SSE data
 template <typename T>
 //template <class T>
-class btAlignedObjectArray
+class BT_API btAlignedObjectArray
 {
 	btAlignedAllocator<T, 16> m_allocator;
 

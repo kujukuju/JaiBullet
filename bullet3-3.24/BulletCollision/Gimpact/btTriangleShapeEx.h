@@ -35,7 +35,7 @@ subject to the following restrictions:
 #define MAX_TRI_CLIPPING 16
 
 //! Structure for collision
-struct GIM_TRIANGLE_CONTACT
+struct BT_API GIM_TRIANGLE_CONTACT
 {
 	btScalar m_penetration_depth;
 	int m_point_count;
@@ -68,7 +68,7 @@ struct GIM_TRIANGLE_CONTACT
 					  btScalar margin, const btVector3* points, int point_count);
 };
 
-class btPrimitiveTriangle
+class BT_API btPrimitiveTriangle
 {
 public:
 	btVector3 m_vertices[3];
@@ -125,7 +125,7 @@ public:
 /*!
 This class implements a better getAabb method than the previous btTriangleShape class
 */
-class btTriangleShapeEx : public btTriangleShape
+class BT_API btTriangleShapeEx : public btTriangleShape
 {
 public:
 	btTriangleShapeEx() : btTriangleShape(btVector3(0, 0, 0), btVector3(0, 0, 0), btVector3(0, 0, 0))

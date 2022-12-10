@@ -26,7 +26,7 @@ class b3Dispatcher;
 
 typedef b3AlignedObjectArray<b3BroadphasePair> b3BroadphasePairArray;
 
-struct b3OverlapCallback
+struct BT_API b3OverlapCallback
 {
 	virtual ~b3OverlapCallback()
 	{
@@ -35,7 +35,7 @@ struct b3OverlapCallback
 	virtual bool processOverlap(b3BroadphasePair& pair) = 0;
 };
 
-struct b3OverlapFilterCallback
+struct BT_API b3OverlapFilterCallback
 {
 	virtual ~b3OverlapFilterCallback()
 	{
@@ -52,7 +52,7 @@ const int B3_NULL_PAIR = 0xffffffff;
 
 ///The b3OverlappingPairCache provides an interface for overlapping pair management (add, remove, storage), used by the b3BroadphaseInterface broadphases.
 ///The b3HashedOverlappingPairCache and b3SortedOverlappingPairCache classes are two implementations.
-class b3OverlappingPairCache
+class BT_API b3OverlappingPairCache
 {
 public:
 	virtual ~b3OverlappingPairCache() {}  // this is needed so we can get to the derived class destructor
@@ -87,7 +87,7 @@ public:
 };
 
 /// Hash-space based Pair Cache, thanks to Erin Catto, Box2D, http://www.box2d.org, and Pierre Terdiman, Codercorner, http://codercorner.com
-class b3HashedOverlappingPairCache : public b3OverlappingPairCache
+class BT_API b3HashedOverlappingPairCache : public b3OverlappingPairCache
 {
 	b3BroadphasePairArray m_overlappingPairArray;
 	b3OverlapFilterCallback* m_overlapFilterCallback;
@@ -257,7 +257,7 @@ protected:
 
 ///b3SortedOverlappingPairCache maintains the objects with overlapping AABB
 ///Typically managed by the Broadphase, Axis3Sweep or b3SimpleBroadphase
-class b3SortedOverlappingPairCache : public b3OverlappingPairCache
+class BT_API b3SortedOverlappingPairCache : public b3OverlappingPairCache
 {
 protected:
 	//avoid brute-force finding all the time
@@ -352,7 +352,7 @@ public:
 };
 
 ///b3NullPairCache skips add/removal of overlapping pairs. Userful for benchmarking and unit testing.
-class b3NullPairCache : public b3OverlappingPairCache
+class BT_API b3NullPairCache : public b3OverlappingPairCache
 {
 	b3BroadphasePairArray m_overlappingPairArray;
 

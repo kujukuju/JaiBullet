@@ -53,7 +53,7 @@ to be implemented. the first `nub' variables are assumed to have findex < 0.
 #include "LinearMath/btScalar.h"
 #include "LinearMath/btAlignedObjectArray.h"
 
-struct btDantzigScratchMemory
+struct BT_API btDantzigScratchMemory
 {
 	btAlignedObjectArray<btScalar> m_scratch;
 	btAlignedObjectArray<btScalar> L;

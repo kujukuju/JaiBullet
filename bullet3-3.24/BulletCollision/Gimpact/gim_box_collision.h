@@ -133,7 +133,7 @@ email: projectileman@yahoo.com
 	}
 
 //!  Class for transforming a model1 to the space of model0
-class GIM_BOX_BOX_TRANSFORM_CACHE
+class BT_API GIM_BOX_BOX_TRANSFORM_CACHE
 {
 public:
 	btVector3 m_T1to0;    //!< Transforms translation of model1 to model 0
@@ -194,7 +194,7 @@ public:
 #endif
 
 //! Axis aligned box
-class GIM_AABB
+class BT_API GIM_AABB
 {
 public:
 	btVector3 m_min;

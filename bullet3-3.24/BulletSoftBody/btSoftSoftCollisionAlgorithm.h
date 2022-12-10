@@ -27,7 +27,7 @@ class btPersistentManifold;
 class btSoftBody;
 
 ///collision detection between two btSoftBody shapes
-class btSoftSoftCollisionAlgorithm : public btCollisionAlgorithm
+class BT_API btSoftSoftCollisionAlgorithm : public btCollisionAlgorithm
 {
 	bool m_ownManifold;
 	btPersistentManifold* m_manifoldPtr;

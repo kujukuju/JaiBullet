@@ -21,7 +21,7 @@ subject to the following restrictions:
 #include "btAlignedObjectArray.h"
 
 ///The btGeometryUtil helper class provides a few methods to convert between plane equations and vertices.
-class btGeometryUtil
+class BT_API btGeometryUtil
 {
 public:
 	static void getPlaneEquationsFromVertices(btAlignedObjectArray<btVector3>& vertices, btAlignedObjectArray<btVector3>& planeEquationsOut);

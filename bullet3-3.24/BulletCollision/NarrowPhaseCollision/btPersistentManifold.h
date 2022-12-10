@@ -270,7 +270,7 @@ public:
 
 // clang-format off
 
-struct btPersistentManifoldDoubleData
+struct BT_API btPersistentManifoldDoubleData
 {
 	btVector3DoubleData m_pointCacheLocalPointA[4];
 	btVector3DoubleData m_pointCacheLocalPointB[4];
@@ -317,7 +317,7 @@ struct btPersistentManifoldDoubleData
 };
 
 
-struct btPersistentManifoldFloatData
+struct BT_API btPersistentManifoldFloatData
 {
 	btVector3FloatData m_pointCacheLocalPointA[4];
 	btVector3FloatData m_pointCacheLocalPointB[4];

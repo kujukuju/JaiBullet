@@ -66,7 +66,7 @@ public:
 };
 
 ///The btPolyhedralConvexAabbCachingShape adds aabb caching to the btPolyhedralConvexShape
-class btPolyhedralConvexAabbCachingShape : public btPolyhedralConvexShape
+class BT_API btPolyhedralConvexAabbCachingShape : public btPolyhedralConvexShape
 {
 	btVector3 m_localAabbMin;
 	btVector3 m_localAabbMax;

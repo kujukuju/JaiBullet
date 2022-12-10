@@ -5,7 +5,7 @@
 
 
 //! Overlapping pair
-struct GIM_PAIR
+struct BT_API GIM_PAIR
 {
         int m_index1;
         int m_index2;

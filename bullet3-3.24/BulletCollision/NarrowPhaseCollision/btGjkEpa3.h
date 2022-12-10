@@ -31,7 +31,7 @@ Improvements and refactoring by Erwin Coumans, 2008-2014
 #include "LinearMath/btTransform.h"
 #include "btGjkCollisionDescription.h"
 
-struct btGjkEpaSolver3
+struct BT_API btGjkEpaSolver3
 {
 	struct sResults
 	{
@@ -82,7 +82,7 @@ typedef unsigned char U1;
 
 // MinkowskiDiff
 template <typename btConvexTemplate>
-struct MinkowskiDiff
+struct BT_API MinkowskiDiff
 {
 	const btConvexTemplate* m_convexAPtr;
 	const btConvexTemplate* m_convexBPtr;
@@ -133,7 +133,7 @@ enum eGjkStatus
 
 // GJK
 template <typename btConvexTemplate>
-struct GJK
+struct BT_API GJK
 {
 	/* Types		*/
 	struct sSV
@@ -543,7 +543,7 @@ enum eEpaStatus
 
 // EPA
 template <typename btConvexTemplate>
-struct EPA
+struct BT_API EPA
 {
 	/* Types		*/
 

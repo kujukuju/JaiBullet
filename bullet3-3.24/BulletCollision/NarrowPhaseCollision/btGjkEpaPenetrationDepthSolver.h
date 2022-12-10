@@ -23,7 +23,7 @@ subject to the following restrictions:
 
 ///EpaPenetrationDepthSolver uses the Expanding Polytope Algorithm to
 ///calculate the penetration depth between two convex shapes.
-class btGjkEpaPenetrationDepthSolver : public btConvexPenetrationDepthSolver
+class BT_API btGjkEpaPenetrationDepthSolver : public btConvexPenetrationDepthSolver
 {
 public:
 	btGjkEpaPenetrationDepthSolver()

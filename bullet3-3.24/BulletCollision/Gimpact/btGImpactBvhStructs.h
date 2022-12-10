@@ -33,14 +33,14 @@ subject to the following restrictions:
 #include "gim_pair.h" //for GIM_PAIR
 
 ///GIM_BVH_DATA is an internal GIMPACT collision structure to contain axis aligned bounding box
-struct GIM_BVH_DATA
+struct BT_API GIM_BVH_DATA
 {
 	btAABB m_bound;
 	int m_data;
 };
 
 //! Node Structure for trees
-class GIM_BVH_TREE_NODE
+class BT_API GIM_BVH_TREE_NODE
 {
 public:
 	btAABB m_bound;

@@ -28,7 +28,7 @@
 #include "LinearMath/btModifiedGramSchmidt.h"
 #include <vector>
 
-struct LagrangeMultiplier
+struct BT_API LagrangeMultiplier
 {
 	int m_num_constraints;  // Number of constraints
 	int m_num_nodes;        // Number of nodes in these constraints
@@ -37,7 +37,7 @@ struct LagrangeMultiplier
 	int m_indices[3];       // indices of the nodes involved, same size as m_num_nodes;
 };
 
-class btDeformableContactProjection
+class BT_API btDeformableContactProjection
 {
 public:
 	typedef btAlignedObjectArray<btVector3> TVStack;

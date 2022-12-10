@@ -15,7 +15,7 @@
 #include <stdio.h>
 #include <vector>
 #include <algorithm>
-struct TwoInts
+struct BT_API TwoInts
 {
     int a,b;
 };
@@ -26,7 +26,7 @@ inline bool operator<(const TwoInts& A, const TwoInts& B)
 
 
 // A helper vector type used for CG projections
-class btReducedVector
+class BT_API btReducedVector
 {
 public:
     btAlignedObjectArray<int> m_indices;

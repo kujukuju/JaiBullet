@@ -290,7 +290,7 @@ public:
 
 ///do not change those serialization structures, it requires an updated sBulletDNAstr/sBulletDNAstr64
 
-struct btSliderConstraintData
+struct BT_API btSliderConstraintData
 {
 	btTypedConstraintData m_typeConstraintData;
 	btTransformFloatData m_rbAFrame;  // constraint axii. Assumes z is hinge axis.
@@ -306,7 +306,7 @@ struct btSliderConstraintData
 	int m_useOffsetForConstraintFrame;
 };
 
-struct btSliderConstraintDoubleData
+struct BT_API btSliderConstraintDoubleData
 {
 	btTypedConstraintDoubleData m_typeConstraintData;
 	btTransformDoubleData m_rbAFrame;  // constraint axii. Assumes z is hinge axis.

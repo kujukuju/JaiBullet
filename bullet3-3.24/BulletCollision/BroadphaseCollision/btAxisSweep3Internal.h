@@ -35,7 +35,7 @@
 /// It uses quantized integers to represent the begin and end points for each of the 3 axis.
 /// Dont use this class directly, use btAxisSweep3 or bt32BitAxisSweep3 instead.
 template <typename BP_FP_INT_TYPE>
-class btAxisSweep3Internal : public btBroadphaseInterface
+class BT_API btAxisSweep3Internal : public btBroadphaseInterface
 {
 protected:
 	BP_FP_INT_TYPE m_bpHandleMask;

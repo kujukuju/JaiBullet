@@ -42,7 +42,7 @@ struct btSolverInfo;
 
 #include "btMultiBodySolverConstraint.h"
 
-struct btMultiBodyJacobianData
+struct BT_API btMultiBodyJacobianData
 {
 	btAlignedObjectArray<btScalar> m_jacobians;
 	btAlignedObjectArray<btScalar> m_deltaVelocitiesUnitImpulse;  //holds the joint-space response of the corresp. tree to the test impulse in each constraint space dimension

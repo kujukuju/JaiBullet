@@ -846,7 +846,7 @@ private:
 	bool m_kinematic_calculate_velocity;
 };
 
-struct btMultiBodyLinkDoubleData
+struct BT_API btMultiBodyLinkDoubleData
 {
 	btQuaternionDoubleData m_zeroRotParentToThis;
 	btVector3DoubleData m_parentComToThisPivotOffset;
@@ -883,7 +883,7 @@ struct btMultiBodyLinkDoubleData
 	char *m_paddingPtr;
 };
 
-struct btMultiBodyLinkFloatData
+struct BT_API btMultiBodyLinkFloatData
 {
 	btQuaternionFloatData m_zeroRotParentToThis;
 	btVector3FloatData m_parentComToThisPivotOffset;
@@ -919,7 +919,7 @@ struct btMultiBodyLinkFloatData
 };
 
 ///do not change those serialization structures, it requires an updated sBulletDNAstr/sBulletDNAstr64
-struct btMultiBodyDoubleData
+struct BT_API btMultiBodyDoubleData
 {
 	btVector3DoubleData m_baseWorldPosition;
 	btQuaternionDoubleData m_baseWorldOrientation;
@@ -936,7 +936,7 @@ struct btMultiBodyDoubleData
 };
 
 ///do not change those serialization structures, it requires an updated sBulletDNAstr/sBulletDNAstr64
-struct btMultiBodyFloatData
+struct BT_API btMultiBodyFloatData
 {
 	btVector3FloatData m_baseWorldPosition;
 	btQuaternionFloatData m_baseWorldOrientation;

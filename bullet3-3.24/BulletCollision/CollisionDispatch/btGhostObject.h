@@ -95,7 +95,7 @@ public:
 	}
 };
 
-class btPairCachingGhostObject : public btGhostObject
+class BT_API btPairCachingGhostObject : public btGhostObject
 {
 	btHashedOverlappingPairCache* m_hashPairCache;
 
@@ -116,7 +116,7 @@ public:
 };
 
 ///The btGhostPairCallback interfaces and forwards adding and removal of overlapping pairs from the btBroadphaseInterface to btGhostObject.
-class btGhostPairCallback : public btOverlappingPairCallback
+class BT_API btGhostPairCallback : public btOverlappingPairCallback
 {
 public:
 	btGhostPairCallback()

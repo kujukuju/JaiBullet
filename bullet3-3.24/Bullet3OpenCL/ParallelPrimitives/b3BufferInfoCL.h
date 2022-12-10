@@ -6,7 +6,7 @@
 
 #include "b3OpenCLArray.h"
 
-struct b3BufferInfoCL
+struct BT_API b3BufferInfoCL
 {
 	//b3BufferInfoCL(){}
 

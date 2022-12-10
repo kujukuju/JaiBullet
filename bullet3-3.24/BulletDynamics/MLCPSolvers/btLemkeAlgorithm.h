@@ -28,7 +28,7 @@ subject to the following restrictions:
 
 #include <vector>  //todo: replace by btAlignedObjectArray
 
-class btLemkeAlgorithm
+class BT_API btLemkeAlgorithm
 {
 public:
 	btLemkeAlgorithm(const btMatrixXu& M_, const btVectorXu& q_, const int& DEBUGLEVEL_ = 0) : DEBUGLEVEL(DEBUGLEVEL_)

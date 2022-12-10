@@ -66,7 +66,7 @@ enum RotateOrder
 	RO_ZYX
 };
 
-class btRotationalLimitMotor2
+class BT_API btRotationalLimitMotor2
 {
 public:
 	// upper < lower means free
@@ -159,7 +159,7 @@ public:
 	void testLimitValue(btScalar test_value);
 };
 
-class btTranslationalLimitMotor2
+class BT_API btTranslationalLimitMotor2
 {
 public:
 	// upper < lower means free
@@ -486,7 +486,7 @@ public:
 	static bool matrixToEulerZYX(const btMatrix3x3& mat, btVector3& xyz);
 };
 
-struct btGeneric6DofSpring2ConstraintData
+struct BT_API btGeneric6DofSpring2ConstraintData
 {
 	btTypedConstraintData m_typeConstraintData;
 	btTransformFloatData m_rbAFrame;
@@ -534,7 +534,7 @@ struct btGeneric6DofSpring2ConstraintData
 	int m_rotateOrder;
 };
 
-struct btGeneric6DofSpring2ConstraintDoubleData2
+struct BT_API btGeneric6DofSpring2ConstraintDoubleData2
 {
 	btTypedConstraintDoubleData m_typeConstraintData;
 	btTransformDoubleData m_rbAFrame;

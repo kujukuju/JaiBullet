@@ -40,7 +40,7 @@ enum btConstraintSolverType
 	BT_BLOCK_SOLVER = 16,
 };
 
-class btConstraintSolver
+class BT_API btConstraintSolver
 {
 public:
 	virtual ~btConstraintSolver() {}

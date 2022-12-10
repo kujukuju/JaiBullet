@@ -32,7 +32,7 @@ class btRigidBody;
 
 #ifdef USE_SIMD
 
-struct btSimdScalar
+struct BT_API btSimdScalar
 {
 	SIMD_FORCE_INLINE btSimdScalar()
 	{

@@ -11,7 +11,7 @@
 #include "Bullet3Collision/NarrowPhaseCollision/shared/b3RigidBodyData.h"
 #include "Bullet3Collision/NarrowPhaseCollision/shared/b3Contact4Data.h"
 
-class b3CpuNarrowPhase
+class BT_API b3CpuNarrowPhase
 {
 protected:
 	struct b3CpuNarrowPhaseInternalData* m_data;

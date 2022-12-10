@@ -22,8 +22,10 @@ subject to the following restrictions:
 
 const int BT_SIMPLE_NULL_PAIR = 0xffffffff;
 
-struct btSimplePair
+struct BT_API btSimplePair
 {
+    btSimplePair() = default;
+
 	btSimplePair(int indexA, int indexB)
 		: m_indexA(indexA),
 		  m_indexB(indexB),
@@ -48,7 +50,7 @@ extern int gAddedSimplePairs;
 extern int gFindSimplePairs;
 #endif  //BT_DEBUG_COLLISION_PAIRS
 
-class btHashedSimplePairCache
+class BT_API btHashedSimplePairCache
 {
 	btSimplePairArray m_overlappingPairArray;
 

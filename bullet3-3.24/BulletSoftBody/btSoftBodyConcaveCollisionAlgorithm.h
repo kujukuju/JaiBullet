@@ -33,7 +33,7 @@ class btCollisionShape;
 
 #include "BulletCollision/BroadphaseCollision/btQuantizedBvh.h"  //for definition of MAX_NUM_PARTS_IN_BITS
 
-struct btTriIndex
+struct BT_API btTriIndex
 {
 	int m_PartIdTriangleIndex;
 	class btCollisionShape* m_childShape;
@@ -63,7 +63,7 @@ struct btTriIndex
 };
 
 ///For each triangle in the concave mesh that overlaps with the AABB of a soft body (m_softBody), processTriangle is called.
-class btSoftBodyTriangleCallback : public btTriangleCallback
+class BT_API btSoftBodyTriangleCallback : public btTriangleCallback
 {
 	btSoftBody* m_softBody;
 	const btCollisionObject* m_triBody;
@@ -105,7 +105,7 @@ public:
 };
 
 /// btSoftBodyConcaveCollisionAlgorithm  supports collision between soft body shapes and (concave) trianges meshes.
-class btSoftBodyConcaveCollisionAlgorithm : public btCollisionAlgorithm
+class BT_API btSoftBodyConcaveCollisionAlgorithm : public btCollisionAlgorithm
 {
 	bool m_isSwapped;
 

@@ -29,7 +29,7 @@ subject to the following restrictions:
 #include "b3OpenCLArray.h"
 #include "b3FillCL.h"
 #include "b3RadixSort32CL.h"  //for b3SortData (perhaps move it?)
-class b3BoundSearchCL
+class BT_API b3BoundSearchCL
 {
 public:
 	enum Option

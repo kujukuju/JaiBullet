@@ -22,7 +22,7 @@ subject to the following restrictions:
 #include "btThreads.h"
 
 ///The btPoolAllocator class allows to efficiently allocate a large pool of objects, instead of dynamically allocating them separately.
-class btPoolAllocator
+class BT_API btPoolAllocator
 {
 	int m_elemSize;
 	int m_maxElements;

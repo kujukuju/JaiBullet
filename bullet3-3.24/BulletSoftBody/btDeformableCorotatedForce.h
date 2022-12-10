@@ -27,7 +27,7 @@ static inline int PolarDecomposition(const btMatrix3x3& m, btMatrix3x3& q, btMat
 	return polar.decompose(m, q, s);
 }
 
-class btDeformableCorotatedForce : public btDeformableLagrangianForce
+class BT_API btDeformableCorotatedForce : public btDeformableLagrangianForce
 {
 public:
 	typedef btAlignedObjectArray<btVector3> TVStack;

@@ -23,7 +23,7 @@ subject to the following restrictions:
 struct btBroadphaseProxy;
 class btConvexShape;
 
-class btTriangleRaycastCallback : public btTriangleCallback
+class BT_API btTriangleRaycastCallback : public btTriangleCallback
 {
 public:
 	//input
@@ -53,7 +53,7 @@ public:
 	virtual btScalar reportHit(const btVector3& hitNormalLocal, btScalar hitFraction, int partId, int triangleIndex) = 0;
 };
 
-class btTriangleConvexcastCallback : public btTriangleCallback
+class BT_API btTriangleConvexcastCallback : public btTriangleCallback
 {
 public:
 	const btConvexShape* m_convexShape;

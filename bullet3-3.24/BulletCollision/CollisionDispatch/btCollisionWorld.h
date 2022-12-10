@@ -84,7 +84,7 @@ class btSerializer;
 #include "LinearMath/btAlignedObjectArray.h"
 
 ///CollisionWorld is interface and container for the collision detection
-class btCollisionWorld
+class BT_API btCollisionWorld
 {
 protected:
 	btAlignedObjectArray<btCollisionObject*> m_collisionObjects;

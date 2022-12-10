@@ -7,12 +7,12 @@
 #include "LinearMath/btAabbUtil2.h"
 #include "LinearMath/btAlignedObjectArray.h"
 
-struct btMultiIndex
+struct BT_API btMultiIndex
 {
 	unsigned int ijk[3];
 };
 
-struct btAlignedBox3d
+struct BT_API btAlignedBox3d
 {
 	btVector3 m_min;
 	btVector3 m_max;
@@ -43,7 +43,7 @@ struct btAlignedBox3d
 	}
 };
 
-struct btShapeMatrix
+struct BT_API btShapeMatrix
 {
 	double m_vec[32];
 
@@ -58,7 +58,7 @@ struct btShapeMatrix
 	}
 };
 
-struct btShapeGradients
+struct BT_API btShapeGradients
 {
 	btVector3 m_vec[32];
 
@@ -84,12 +84,12 @@ struct btShapeGradients
 	}
 };
 
-struct btCell32
+struct BT_API btCell32
 {
 	unsigned int m_cells[32];
 };
 
-struct btMiniSDF
+struct BT_API btMiniSDF
 {
 	btAlignedBox3d m_domain;
 	unsigned int m_resolution[3];

@@ -31,7 +31,7 @@ subject to the following restrictions:
 #include "Bullet3Collision/BroadPhaseCollision/b3OverlappingPair.h"
 #include "Bullet3OpenCL/RigidBody/b3GpuGenericConstraint.h"
 
-struct b3GpuRigidBodyPipelineInternalData
+struct BT_API b3GpuRigidBodyPipelineInternalData
 {
 	cl_context m_context;
 	cl_device_id m_device;

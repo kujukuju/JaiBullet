@@ -22,7 +22,7 @@ subject to the following restrictions:
 #include "btAlignedObjectArray.h"
 
 ///very basic hashable string implementation, compatible with btHashMap
-struct btHashString
+struct BT_API btHashString
 {
 	std::string m_string1;
 	unsigned int m_hash;
@@ -63,7 +63,7 @@ struct btHashString
 
 const int BT_HASH_NULL = 0xffffffff;
 
-class btHashInt
+class BT_API btHashInt
 {
 	int m_uid;
 
@@ -106,7 +106,7 @@ public:
 	}
 };
 
-class btHashPtr
+class BT_API btHashPtr
 {
 	union {
 		const void* m_pointer;
@@ -114,6 +114,8 @@ class btHashPtr
 	};
 
 public:
+    btHashPtr() = default;
+
 	btHashPtr(const void* ptr)
 		: m_pointer(ptr)
 	{
@@ -147,12 +149,14 @@ public:
 };
 
 template <class Value>
-class btHashKeyPtr
+class BT_API btHashKeyPtr
 {
 	int m_uid;
 
 public:
-	btHashKeyPtr(int uid) : m_uid(uid)
+    btHashKeyPtr() = default;
+
+    btHashKeyPtr(int uid) : m_uid(uid)
 	{
 	}
 
@@ -182,12 +186,14 @@ public:
 };
 
 template <class Value>
-class btHashKey
+class BT_API btHashKey
 {
 	int m_uid;
 
 public:
-	btHashKey(int uid) : m_uid(uid)
+    btHashKey() = default;
+
+    btHashKey(int uid) : m_uid(uid)
 	{
 	}
 
@@ -218,7 +224,7 @@ public:
 ///The btHashMap template class implements a generic and lightweight hashmap.
 ///A basic sample of how to use btHashMap is located in Demos\BasicDemo\main.cpp
 template <class Key, class Value>
-class btHashMap
+class BT_API btHashMap
 {
 protected:
 	btAlignedObjectArray<int> m_hashTable;

@@ -42,7 +42,7 @@ email: projectileman@yahoo.com
 
 //!	Very simple array container with fast access and simd memory
 template <typename T>
-class gim_array
+class BT_API gim_array
 {
 public:
 	//! properties

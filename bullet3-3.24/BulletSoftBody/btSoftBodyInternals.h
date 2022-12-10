@@ -637,7 +637,7 @@ static SIMD_FORCE_INLINE bool bernsteinCCD(const btSoftBody::Face* face, const b
 // btSymMatrix
 //
 template <typename T>
-struct btSymMatrix
+struct BT_API btSymMatrix
 {
 	btSymMatrix() : dim(0) {}
 	btSymMatrix(int n, const T& init = T()) { resize(n, init); }
@@ -661,7 +661,7 @@ struct btSymMatrix
 //
 // btSoftBodyCollisionShape
 //
-class btSoftBodyCollisionShape : public btConcaveShape
+class BT_API btSoftBodyCollisionShape : public btConcaveShape
 {
 public:
 	btSoftBody* m_body;
@@ -727,7 +727,7 @@ public:
 //
 // btSoftClusterCollisionShape
 //
-class btSoftClusterCollisionShape : public btConvexInternalShape
+class BT_API btSoftClusterCollisionShape : public btConvexInternalShape
 {
 public:
 	const btSoftBody::Cluster* m_cluster;
@@ -1337,7 +1337,7 @@ static inline int MatchEdge(const btSoftBody::Node* a,
 // straitforward implementation of http://math.fullerton.edu/mathews/n2003/JacobiMethodMod.html
 // outputs are NOT sorted.
 //
-struct btEigen
+struct BT_API btEigen
 {
 	static int system(btMatrix3x3& a, btMatrix3x3* vectors, btVector3* values = 0)
 	{
@@ -1419,7 +1419,7 @@ static inline int PolarDecompose(const btMatrix3x3& m, btMatrix3x3& q, btMatrix3
 //
 // btSoftColliders
 //
-struct btSoftColliders
+struct BT_API btSoftColliders
 {
 	//
 	// ClusterBase

@@ -43,7 +43,7 @@ email: projectileman@yahoo.com
 #endif
 
 //! Structure for collision
-struct GIM_TRIANGLE_CONTACT_DATA
+struct BT_API GIM_TRIANGLE_CONTACT_DATA
 {
 	GREAL m_penetration_depth;
 	GUINT m_point_count;
@@ -119,7 +119,7 @@ struct GIM_TRIANGLE_CONTACT_DATA
 };
 
 //! Class for colliding triangles
-class GIM_TRIANGLE
+class BT_API GIM_TRIANGLE
 {
 public:
 	btScalar m_margin;

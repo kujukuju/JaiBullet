@@ -32,7 +32,7 @@ GJK-EPA collision solver by Nathanael Presson, 2008
 #include "Bullet3Collision/NarrowPhaseCollision/shared/b3ConvexPolyhedronData.h"
 
 ///btGjkEpaSolver contributed under zlib by Nathanael Presson
-struct b3GjkEpaSolver2
+struct BT_API b3GjkEpaSolver2
 {
 	struct sResults
 	{

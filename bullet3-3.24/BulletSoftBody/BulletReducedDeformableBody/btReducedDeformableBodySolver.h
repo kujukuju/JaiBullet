@@ -8,7 +8,7 @@
 
 class btReducedDeformableBody;
 
-class btReducedDeformableBodySolver : public btDeformableBodySolver
+class BT_API btReducedDeformableBodySolver : public btDeformableBodySolver
 {
  protected:
   bool m_ascendOrder;

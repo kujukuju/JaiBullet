@@ -8,7 +8,7 @@
 #include <stddef.h>  //ptrdiff_h
 #include <string.h>
 
-struct b3FileUtils
+struct BT_API b3FileUtils
 {
 	b3FileUtils()
 	{

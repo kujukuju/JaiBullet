@@ -32,7 +32,7 @@ struct GrahamVector3 : public btVector3
 	int m_orgIndex;
 };
 
-struct btAngleCompareFunc
+struct BT_API btAngleCompareFunc
 {
 	btVector3 m_anchor;
 	btAngleCompareFunc(const btVector3& anchor)

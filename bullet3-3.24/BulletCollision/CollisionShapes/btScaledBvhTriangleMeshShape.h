@@ -63,7 +63,7 @@ public:
 };
 
 ///do not change those serialization structures, it requires an updated sBulletDNAstr/sBulletDNAstr64
-struct btScaledTriangleMeshShapeData
+struct BT_API btScaledTriangleMeshShapeData
 {
 	btTriangleMeshShapeData m_trimeshShapeData;
 

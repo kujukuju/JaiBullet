@@ -131,7 +131,7 @@ subject to the following restrictions:
 //
 
 /* b3DbvtAabbMm			*/
-struct b3DbvtAabbMm
+struct BT_API b3DbvtAabbMm
 {
 	B3_DBVT_INLINE b3Vector3 Center() const { return ((mi + mx) / 2); }
 	B3_DBVT_INLINE b3Vector3 Lengths() const { return (mx - mi); }
@@ -179,7 +179,7 @@ private:
 typedef b3DbvtAabbMm b3DbvtVolume;
 
 /* b3DbvtNode				*/
-struct b3DbvtNode
+struct BT_API b3DbvtNode
 {
 	b3DbvtVolume volume;
 	b3DbvtNode* parent;
@@ -195,7 +195,7 @@ struct b3DbvtNode
 ///The b3DynamicBvh class implements a fast dynamic bounding volume tree based on axis aligned bounding boxes (aabb tree).
 ///This b3DynamicBvh is used for soft body collision detection and for the b3DynamicBvhBroadphase. It has a fast insert, remove and update of nodes.
 ///Unlike the b3QuantizedBvh, nodes can be dynamically moved around, which allows for change in topology of the underlying data structure.
-struct b3DynamicBvh
+struct BT_API b3DynamicBvh
 {
 	/* Stack element	*/
 	struct sStkNN

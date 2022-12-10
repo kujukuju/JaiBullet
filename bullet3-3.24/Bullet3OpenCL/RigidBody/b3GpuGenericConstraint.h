@@ -40,7 +40,7 @@ enum b3GpuGenericConstraintType
 	B3_GPU_MAX_CONSTRAINT_TYPE
 };
 
-struct b3GpuConstraintInfo2
+struct BT_API b3GpuConstraintInfo2
 {
 	// integrator parameters: frames per second (1/stepsize), default error
 	// reduction parameter (0..1).
@@ -75,7 +75,7 @@ struct b3GpuConstraintInfo2
 	b3Scalar m_damping;
 };
 
-B3_ATTRIBUTE_ALIGNED16(struct)
+BT_API B3_ATTRIBUTE_ALIGNED16(struct)
 b3GpuGenericConstraint
 {
 	int m_constraintType;

@@ -37,7 +37,7 @@ static inline double randomDouble(double low, double high)
 	return low + static_cast<double>(rand()) / RAND_MAX * (high - low);
 }
 
-class btDeformableLagrangianForce
+class BT_API btDeformableLagrangianForce
 {
 public:
 	typedef btAlignedObjectArray<btVector3> TVStack;

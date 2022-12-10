@@ -357,7 +357,7 @@ public:
 	virtual const char* serialize(void* dataBuffer, btSerializer* serializer) const;
 };
 
-struct btConeTwistConstraintDoubleData
+struct BT_API btConeTwistConstraintDoubleData
 {
 	btTypedConstraintDoubleData m_typeConstraintData;
 	btTransformDoubleData m_rbAFrame;
@@ -376,7 +376,7 @@ struct btConeTwistConstraintDoubleData
 
 #ifdef BT_BACKWARDS_COMPATIBLE_SERIALIZATION
 ///this structure is not used, except for loading pre-2.82 .bullet files
-struct btConeTwistConstraintData
+struct BT_API btConeTwistConstraintData
 {
 	btTypedConstraintData m_typeConstraintData;
 	btTransformFloatData m_rbAFrame;

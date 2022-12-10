@@ -26,7 +26,7 @@ subject to the following restrictions:
 
 ///EmptyAlgorithm is a stub for unsupported collision pairs.
 ///The dispatcher can dispatch a persistent btEmptyAlgorithm to avoid a search every frame.
-class btEmptyAlgorithm : public btCollisionAlgorithm
+class BT_API btEmptyAlgorithm : public btCollisionAlgorithm
 {
 public:
 	btEmptyAlgorithm(const btCollisionAlgorithmConstructionInfo& ci);

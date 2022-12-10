@@ -8,7 +8,7 @@
 #include "b3BufferInfoCL.h"
 #include "Bullet3Common/b3AlignedObjectArray.h"
 
-class b3PrefixScanCL
+class BT_API b3PrefixScanCL
 {
 	enum
 	{

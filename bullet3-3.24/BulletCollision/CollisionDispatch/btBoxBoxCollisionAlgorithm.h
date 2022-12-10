@@ -26,7 +26,7 @@ subject to the following restrictions:
 class btPersistentManifold;
 
 ///box-box collision detection
-class btBoxBoxCollisionAlgorithm : public btActivatingCollisionAlgorithm
+class BT_API btBoxBoxCollisionAlgorithm : public btActivatingCollisionAlgorithm
 {
 	bool m_ownManifold;
 	btPersistentManifold* m_manifoldPtr;

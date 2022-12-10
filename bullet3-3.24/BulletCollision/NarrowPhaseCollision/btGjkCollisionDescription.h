@@ -20,7 +20,7 @@ subject to the following restrictions:
 
 #include "LinearMath/btVector3.h"
 
-struct btGjkCollisionDescription
+struct BT_API btGjkCollisionDescription
 {
 	btVector3 m_firstDir;
 	int m_maxGjkIterations;

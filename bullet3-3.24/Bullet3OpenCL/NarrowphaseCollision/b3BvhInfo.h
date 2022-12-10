@@ -5,7 +5,7 @@
 
 #include "Bullet3Common/b3Vector3.h"
 
-struct b3BvhInfo
+struct BT_API b3BvhInfo
 {
 	b3Vector3 m_aabbMin;
 	b3Vector3 m_aabbMax;

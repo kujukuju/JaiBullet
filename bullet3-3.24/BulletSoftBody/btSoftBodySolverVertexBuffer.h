@@ -18,7 +18,7 @@ subject to the following restrictions:
 
 #include "btApi.h"
 
-class btVertexBufferDescriptor
+class BT_API btVertexBufferDescriptor
 {
 public:
 	enum BufferTypes
@@ -101,7 +101,7 @@ public:
 	}
 };
 
-class btCPUVertexBufferDescriptor : public btVertexBufferDescriptor
+class BT_API btCPUVertexBufferDescriptor : public btVertexBufferDescriptor
 {
 protected:
 	float *m_basePointer;

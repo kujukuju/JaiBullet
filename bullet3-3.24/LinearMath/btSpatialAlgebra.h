@@ -22,7 +22,7 @@ subject to the following restrictions:
 
 #include "btMatrix3x3.h"
 
-struct btSpatialForceVector
+struct BT_API btSpatialForceVector
 {
 	btVector3 m_topVec, m_bottomVec;
 	//
@@ -93,7 +93,7 @@ struct btSpatialForceVector
 	//btSpatialForceVector & operator = (const btSpatialForceVector &vec) { m_topVec = vec.m_topVec; m_bottomVec = vec.m_bottomVec; return *this; }
 };
 
-struct btSpatialMotionVector
+struct BT_API btSpatialMotionVector
 {
 	btVector3 m_topVec, m_bottomVec;
 	//
@@ -185,7 +185,7 @@ struct btSpatialMotionVector
 	btSpatialMotionVector operator*(const btScalar &s) const { return btSpatialMotionVector(s * m_topVec, s * m_bottomVec); }
 };
 
-struct btSymmetricSpatialDyad
+struct BT_API btSymmetricSpatialDyad
 {
 	btMatrix3x3 m_topLeftMat, m_topRightMat, m_bottomLeftMat;
 	//
@@ -227,7 +227,7 @@ struct btSymmetricSpatialDyad
 	}
 };
 
-struct btSpatialTransformationMatrix
+struct BT_API btSpatialTransformationMatrix
 {
 	btMatrix3x3 m_rotMat;  //btMatrix3x3 m_trnCrossMat;
 	btVector3 m_trnVec;

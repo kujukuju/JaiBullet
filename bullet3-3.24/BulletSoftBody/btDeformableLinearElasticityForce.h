@@ -22,7 +22,7 @@
 #include "LinearMath/btQuickprof.h"
 #include "btSoftBodyInternals.h"
 #define TETRA_FLAT_THRESHOLD 0.01
-class btDeformableLinearElasticityForce : public btDeformableLagrangianForce
+class BT_API btDeformableLinearElasticityForce : public btDeformableLagrangianForce
 {
 public:
 	typedef btAlignedObjectArray<btVector3> TVStack;

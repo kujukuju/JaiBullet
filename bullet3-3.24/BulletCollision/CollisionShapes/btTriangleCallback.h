@@ -22,14 +22,14 @@ subject to the following restrictions:
 
 ///The btTriangleCallback provides a callback for each overlapping triangle when calling processAllTriangles.
 ///This callback is called by processAllTriangles for all btConcaveShape derived class, such as  btBvhTriangleMeshShape, btStaticPlaneShape and btHeightfieldTerrainShape.
-class btTriangleCallback
+class BT_API btTriangleCallback
 {
 public:
 	virtual ~btTriangleCallback();
 	virtual void processTriangle(btVector3* triangle, int partId, int triangleIndex) = 0;
 };
 
-class btInternalTriangleIndexCallback
+class BT_API btInternalTriangleIndexCallback
 {
 public:
 	virtual ~btInternalTriangleIndexCallback();

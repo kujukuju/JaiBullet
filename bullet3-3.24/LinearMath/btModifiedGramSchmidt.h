@@ -15,7 +15,7 @@
 #include <iostream>
 #include <cmath>
 template<class TV>
-class btModifiedGramSchmidt
+class BT_API btModifiedGramSchmidt
 {
 public:
     btAlignedObjectArray<TV> m_in;

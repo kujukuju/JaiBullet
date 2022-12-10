@@ -46,7 +46,7 @@ enum bFileVerboseMode
 	FD_VERBOSE_DUMP_FILE_INFO = 8,
 };
 // ----------------------------------------------------- //
-class bFile
+class BT_API bFile
 {
 protected:
 	char m_headerString[7];

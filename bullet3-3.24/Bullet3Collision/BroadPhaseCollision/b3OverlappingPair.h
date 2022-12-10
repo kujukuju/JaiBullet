@@ -51,7 +51,7 @@ inline b3Int4 b3MakeBroadphasePair(int xx, int yy)
 };
 */
 
-class b3BroadphasePairSortPredicate
+class BT_API b3BroadphasePairSortPredicate
 {
 public:
 	bool operator()(const b3BroadphasePair& a, const b3BroadphasePair& b) const

@@ -28,7 +28,7 @@ B3_FORCE_INLINE b3Vector3 b3AabbSupport(const b3Vector3& halfExtents, const b3Ve
 }
 
 /// Utils related to temporal transforms
-class b3TransformUtil
+class BT_API b3TransformUtil
 {
 public:
 	static void integrateTransform(const b3Transform& curTrans, const b3Vector3& linvel, const b3Vector3& angvel, b3Scalar timeStep, b3Transform& predictedTransform)
@@ -133,7 +133,7 @@ public:
 
 ///The b3ConvexSeparatingDistanceUtil can help speed up convex collision detection
 ///by conservatively updating a cached separating distance/vector instead of re-calculating the closest distance
-class b3ConvexSeparatingDistanceUtil
+class BT_API b3ConvexSeparatingDistanceUtil
 {
 	b3Quaternion m_ornA;
 	b3Quaternion m_ornB;

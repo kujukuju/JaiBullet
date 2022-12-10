@@ -48,7 +48,7 @@ subject to the following restrictions:
 ///The BVH implementation here shares many concepts with [Karras 2012], but a different method is used for constructing the tree.
 ///Instead of searching for the child nodes of each internal node, we search for the parent node of each node.
 ///Additionally, a non-atomic traversal that starts from the leaf nodes and moves towards the root node is used to set the AABBs.
-class b3GpuParallelLinearBvh
+class BT_API b3GpuParallelLinearBvh
 {
 	cl_command_queue m_queue;
 

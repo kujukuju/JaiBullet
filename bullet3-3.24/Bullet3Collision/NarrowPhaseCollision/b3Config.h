@@ -3,7 +3,7 @@
 
 #include "btApi.h"
 
-struct b3Config
+struct BT_API b3Config
 {
 	int m_maxConvexBodies;
 	int m_maxConvexShapes;

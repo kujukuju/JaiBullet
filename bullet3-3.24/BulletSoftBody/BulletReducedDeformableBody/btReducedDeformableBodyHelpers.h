@@ -6,7 +6,7 @@
 #include "btReducedDeformableBody.h"
 #include <string>
 
-struct btReducedDeformableBodyHelpers
+struct BT_API btReducedDeformableBodyHelpers
 {
 	// create a reduced deformable object
 	static btReducedDeformableBody* createReducedDeformableObject(btSoftBodyWorldInfo& worldInfo, const std::string& file_path, const std::string& vtk_file, const int num_modes, bool rigid_only);

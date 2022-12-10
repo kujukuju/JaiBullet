@@ -42,7 +42,7 @@ enum
 	B3_MAX_NUM_BATCHES = 128,
 };
 
-class b3SolverBase
+class BT_API b3SolverBase
 {
 public:
 	struct ConstraintCfg
@@ -58,7 +58,7 @@ public:
 	};
 };
 
-class b3Solver : public b3SolverBase
+class BT_API b3Solver : public b3SolverBase
 {
 public:
 	cl_context m_context;

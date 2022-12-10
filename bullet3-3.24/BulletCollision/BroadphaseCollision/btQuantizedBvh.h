@@ -146,7 +146,7 @@ public:
 	}
 };
 
-class btNodeOverlapCallback
+class BT_API btNodeOverlapCallback
 {
 public:
 	virtual ~btNodeOverlapCallback(){};
@@ -466,7 +466,7 @@ private:
 
 // clang-format off
 // parser needs * with the name
-struct btBvhSubtreeInfoData
+struct BT_API btBvhSubtreeInfoData
 {
 	int m_rootNodeIndex;
 	int m_subtreeSize;
@@ -474,7 +474,7 @@ struct btBvhSubtreeInfoData
 	unsigned short m_quantizedAabbMax[3];
 };
 
-struct btOptimizedBvhNodeFloatData
+struct BT_API btOptimizedBvhNodeFloatData
 {
 	btVector3FloatData m_aabbMinOrg;
 	btVector3FloatData m_aabbMaxOrg;
@@ -484,7 +484,7 @@ struct btOptimizedBvhNodeFloatData
 	char m_pad[4];
 };
 
-struct btOptimizedBvhNodeDoubleData
+struct BT_API btOptimizedBvhNodeDoubleData
 {
 	btVector3DoubleData m_aabbMinOrg;
 	btVector3DoubleData m_aabbMaxOrg;
@@ -495,7 +495,7 @@ struct btOptimizedBvhNodeDoubleData
 };
 
 
-struct btQuantizedBvhNodeData
+struct BT_API btQuantizedBvhNodeData
 {
 	unsigned short m_quantizedAabbMin[3];
 	unsigned short m_quantizedAabbMax[3];

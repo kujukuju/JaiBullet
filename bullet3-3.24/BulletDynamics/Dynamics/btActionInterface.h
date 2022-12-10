@@ -25,7 +25,7 @@ class btCollisionWorld;
 #include "btRigidBody.h"
 
 ///Basic interface to allow actions such as vehicles and characters to be updated inside a btDynamicsWorld
-class btActionInterface
+class BT_API btActionInterface
 {
 protected:
 	static btRigidBody& getFixedBody();

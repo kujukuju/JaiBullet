@@ -20,7 +20,7 @@
 
 #include "btKrylovSolver.h"
 template <class MatrixX>
-class btConjugateGradient : public btKrylovSolver<MatrixX>
+class BT_API btConjugateGradient : public btKrylovSolver<MatrixX>
 {
 	typedef btAlignedObjectArray<btVector3> TVStack;
 	typedef btKrylovSolver<MatrixX> Base;

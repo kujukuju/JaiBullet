@@ -22,7 +22,7 @@ subject to the following restrictions:
 
 namespace bParse
 {
-struct bNameInfo
+struct BT_API bNameInfo
 {
 	char *m_name;
 	bool m_isPointer;
@@ -30,7 +30,7 @@ struct bNameInfo
 	int m_dim1;
 };
 
-class bDNA
+class BT_API bDNA
 {
 public:
 	bDNA();

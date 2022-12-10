@@ -128,7 +128,7 @@ public:
 	virtual const char* serialize(void* dataBuffer, btSerializer* serializer) const;
 };
 
-class btCylinderShapeX : public btCylinderShape
+class BT_API btCylinderShapeX : public btCylinderShape
 {
 public:
 	BT_DECLARE_ALIGNED_ALLOCATOR();
@@ -150,7 +150,7 @@ public:
 	}
 };
 
-class btCylinderShapeZ : public btCylinderShape
+class BT_API btCylinderShapeZ : public btCylinderShape
 {
 public:
 	BT_DECLARE_ALIGNED_ALLOCATOR();
@@ -173,7 +173,7 @@ public:
 };
 
 ///do not change those serialization structures, it requires an updated sBulletDNAstr/sBulletDNAstr64
-struct btCylinderShapeData
+struct BT_API btCylinderShapeData
 {
 	btConvexInternalShapeData m_convexInternalShapeData;
 
