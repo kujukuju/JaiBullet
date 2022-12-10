@@ -207,7 +207,7 @@ static int runLengthEncodeConstraintInfo(btBatchedConstraintInfo* outConInfos, i
 	return iDest;
 }
 
-struct ReadSolverConstraintsLoop : public btIParallelForBody
+struct BT_API ReadSolverConstraintsLoop : public btIParallelForBody
 {
 	btBatchedConstraintInfo* m_outConInfos;
 	btConstraintArray* m_constraints;
@@ -300,7 +300,7 @@ static void expandConstraintRows(int* destConstraintBatchIds, const int* srcCons
 	}
 }
 
-struct ExpandConstraintRowsLoop : public btIParallelForBody
+struct BT_API ExpandConstraintRowsLoop : public btIParallelForBody
 {
 	int* m_destConstraintBatchIds;
 	const int* m_srcConstraintBatchIds;
@@ -402,7 +402,7 @@ static void updateConstraintBatchIdsForMerges(int* constraintBatchIds, int numCo
 	}
 }
 
-struct UpdateConstraintBatchIdsForMergesLoop : public btIParallelForBody
+struct BT_API UpdateConstraintBatchIdsForMergesLoop : public btIParallelForBody
 {
 	int* m_constraintBatchIds;
 	const btBatchInfo* m_batches;
@@ -456,7 +456,7 @@ static void writeOutConstraintIndicesForRangeOfBatches(btBatchedConstraints* bc,
 	}
 }
 
-struct WriteOutConstraintIndicesLoop : public btIParallelForBody
+struct BT_API WriteOutConstraintIndicesLoop : public btIParallelForBody
 {
 	btBatchedConstraints* m_batchedConstraints;
 	const int* m_constraintBatchIds;
@@ -771,7 +771,7 @@ static void assignConstraintsToGridBatches(const AssignConstraintsToGridBatchesP
 	}
 }
 
-struct AssignConstraintsToGridBatchesLoop : public btIParallelForBody
+struct BT_API AssignConstraintsToGridBatchesLoop : public btIParallelForBody
 {
 	const AssignConstraintsToGridBatchesParams* m_params;
 

@@ -257,8 +257,8 @@ This brings support for limit parameters and motors. </li>
 </ul>
 
 */
-BT_API B3_ATTRIBUTE_ALIGNED16(class)
-b3Generic6DofConstraint : public b3TypedConstraint
+B3_ATTRIBUTE_ALIGNED16(class)
+BT_API b3Generic6DofConstraint : public b3TypedConstraint
 {
 protected:
 	//! relative_frames

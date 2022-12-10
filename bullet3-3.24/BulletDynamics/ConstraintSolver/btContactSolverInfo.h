@@ -74,7 +74,7 @@ struct BT_API btContactSolverInfoData
 	int m_numNonContactInnerIterations;
 };
 
-struct btContactSolverInfo : public btContactSolverInfoData
+struct BT_API btContactSolverInfo : public btContactSolverInfoData
 {
 	inline btContactSolverInfo()
 	{

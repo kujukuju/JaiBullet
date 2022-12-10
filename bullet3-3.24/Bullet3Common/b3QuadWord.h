@@ -28,8 +28,8 @@ subject to the following restrictions:
  * Some issues under PS3 Linux with IBM 2.1 SDK, gcc compiler prevent from using aligned quadword.
  */
 #ifndef USE_LIBSPE2
-BT_API B3_ATTRIBUTE_ALIGNED16(class)
-b3QuadWord
+B3_ATTRIBUTE_ALIGNED16(class)
+BT_API b3QuadWord
 #else
 class b3QuadWord
 #endif

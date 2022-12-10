@@ -52,7 +52,7 @@ struct BT_API btTriangleInfo
 typedef btHashMap<btHashInt, btTriangleInfo> btInternalTriangleInfoMap;
 
 ///The btTriangleInfoMap stores edge angle information for some triangles. You can compute this information yourself or using btGenerateInternalEdgeInfo.
-struct btTriangleInfoMap : public btInternalTriangleInfoMap
+struct BT_API btTriangleInfoMap : public btInternalTriangleInfoMap
 {
 	btScalar m_convexEpsilon;          ///used to determine if an edge or contact normal is convex, using the dot product
 	btScalar m_planarEpsilon;          ///used to determine if a triangle edge is planar with zero angle

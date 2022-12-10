@@ -40,8 +40,8 @@ const b3SimdFloat4 B3_ATTRIBUTE_ALIGNED16(b3v0010) = {0.0f, 0.0f, 1.0f, 0.0f};
 
 /**@brief The b3Matrix3x3 class implements a 3x3 rotation matrix, to perform linear algebra in combination with b3Quaternion, b3Transform and b3Vector3.
 * Make sure to only include a pure orthogonal matrix without scaling. */
-BT_API B3_ATTRIBUTE_ALIGNED16(class)
-b3Matrix3x3
+B3_ATTRIBUTE_ALIGNED16(class)
+BT_API b3Matrix3x3
 {
 	///Data storage for the matrix, each vector is a row of the matrix
 	b3Vector3 m_el[3];

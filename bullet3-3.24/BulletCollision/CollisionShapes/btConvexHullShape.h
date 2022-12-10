@@ -25,7 +25,7 @@ subject to the following restrictions:
 ///The btConvexHullShape implements an implicit convex hull of an array of vertices.
 ///Bullet provides a general and fast collision detector for convex shapes based on GJK and EPA using localGetSupportingVertex.
 ATTRIBUTE_ALIGNED16(class)
-btConvexHullShape : public btPolyhedralConvexAabbCachingShape
+BT_API btConvexHullShape : public btPolyhedralConvexAabbCachingShape
 {
 protected:
 	btAlignedObjectArray<btVector3> m_unscaledPoints;

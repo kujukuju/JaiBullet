@@ -25,7 +25,7 @@ subject to the following restrictions:
 //#define BTMBP2PCONSTRAINT_BLOCK_ANGULAR_MOTION_TEST
 
 ATTRIBUTE_ALIGNED16(class)
-btMultiBodyPoint2Point : public btMultiBodyConstraint
+BT_API btMultiBodyPoint2Point : public btMultiBodyConstraint
 {
 protected:
 	btRigidBody* m_rigidBodyA;

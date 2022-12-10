@@ -21,7 +21,7 @@ typedef b3AlignedObjectArray<b3DbvtNode*> b3NodeArray;
 typedef b3AlignedObjectArray<const b3DbvtNode*> b3ConstNodeArray;
 
 //
-struct b3DbvtNodeEnumerator : b3DynamicBvh::ICollide
+struct BT_API b3DbvtNodeEnumerator : b3DynamicBvh::ICollide
 {
 	b3ConstNodeArray nodes;
 	void Process(const b3DbvtNode* n) { nodes.push_back(n); }

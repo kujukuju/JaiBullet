@@ -21,7 +21,7 @@ subject to the following restrictions:
 #include "btGeneric6DofSpring2Constraint.h"
 
 ATTRIBUTE_ALIGNED16(class)
-btFixedConstraint : public btGeneric6DofSpring2Constraint
+BT_API btFixedConstraint : public btGeneric6DofSpring2Constraint
 {
 public:
 	btFixedConstraint(btRigidBody & rbA, btRigidBody & rbB, const btTransform& frameInA, const btTransform& frameInB);

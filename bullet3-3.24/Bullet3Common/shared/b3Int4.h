@@ -7,8 +7,8 @@
 
 #include "Bullet3Common/b3Scalar.h"
 
-BT_API B3_ATTRIBUTE_ALIGNED16(struct)
-b3UnsignedInt4
+B3_ATTRIBUTE_ALIGNED16(struct)
+BT_API b3UnsignedInt4
 {
 	B3_DECLARE_ALIGNED_ALLOCATOR();
 
@@ -24,8 +24,8 @@ b3UnsignedInt4
 	};
 };
 
-BT_API B3_ATTRIBUTE_ALIGNED16(struct)
-b3Int4
+B3_ATTRIBUTE_ALIGNED16(struct)
+BT_API b3Int4
 {
 	B3_DECLARE_ALIGNED_ALLOCATOR();
 

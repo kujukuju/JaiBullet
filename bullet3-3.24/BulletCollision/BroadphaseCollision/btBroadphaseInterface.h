@@ -30,7 +30,7 @@ struct BT_API btBroadphaseAabbCallback
 	virtual bool process(const btBroadphaseProxy* proxy) = 0;
 };
 
-struct btBroadphaseRayCallback : public btBroadphaseAabbCallback
+struct BT_API btBroadphaseRayCallback : public btBroadphaseAabbCallback
 {
 	///added some cached data to accelerate ray-AABB tests
 	btVector3 m_rayDirectionInverse;

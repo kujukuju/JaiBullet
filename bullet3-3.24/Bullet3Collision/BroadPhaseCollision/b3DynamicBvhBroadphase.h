@@ -41,8 +41,8 @@ subject to the following restrictions:
 
 #endif
 
-BT_API B3_ATTRIBUTE_ALIGNED16(struct)
-b3BroadphaseProxy
+B3_ATTRIBUTE_ALIGNED16(struct)
+BT_API b3BroadphaseProxy
 {
 	B3_DECLARE_ALIGNED_ALLOCATOR();
 
@@ -90,7 +90,7 @@ b3BroadphaseProxy
 //
 // b3DbvtProxy
 //
-struct b3DbvtProxy : b3BroadphaseProxy
+struct BT_API b3DbvtProxy : b3BroadphaseProxy
 {
 	/* Fields		*/
 	//b3DbvtAabbMm	aabb;

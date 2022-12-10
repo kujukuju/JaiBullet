@@ -23,7 +23,7 @@ subject to the following restrictions:
 #include "btTriangleIndexVertexArray.h"
 
 ATTRIBUTE_ALIGNED16(struct)
-btMaterialProperties
+BT_API btMaterialProperties
 {
 	///m_materialBase ==========> 2 btScalar values make up one material, friction then restitution
 	int m_numMaterials;
@@ -50,7 +50,7 @@ typedef btAlignedObjectArray<btMaterialProperties> MaterialArray;
 ///is the users responsibility to maintain the array during the lifetime of the
 ///TriangleIndexVertexMaterialArray.
 ATTRIBUTE_ALIGNED16(class)
-btTriangleIndexVertexMaterialArray : public btTriangleIndexVertexArray
+BT_API btTriangleIndexVertexMaterialArray : public btTriangleIndexVertexArray
 {
 protected:
 	MaterialArray m_materials;

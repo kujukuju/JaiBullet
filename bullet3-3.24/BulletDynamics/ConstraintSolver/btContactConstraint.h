@@ -25,7 +25,7 @@ subject to the following restrictions:
 
 ///btContactConstraint can be automatically created to solve contact constraints using the unified btTypedConstraint interface
 ATTRIBUTE_ALIGNED16(class)
-btContactConstraint : public btTypedConstraint
+BT_API btContactConstraint : public btTypedConstraint
 {
 protected:
 	btPersistentManifold m_contactManifold;

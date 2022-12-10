@@ -103,7 +103,7 @@ operator+(const btSimdScalar& v1, const btSimdScalar& v2)
 
 ///The btSolverBody is an internal datastructure for the constraint solver. Only necessary data is packed to increase cache coherence/performance.
 ATTRIBUTE_ALIGNED16(struct)
-btSolverBody
+BT_API btSolverBody
 {
 	BT_DECLARE_ALIGNED_ALLOCATOR();
 	btTransform m_worldTransform;

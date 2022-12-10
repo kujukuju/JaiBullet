@@ -41,7 +41,7 @@ subject to the following restrictions:
 /// 5 : rotation Z (1st Euler rotational around Z axis, range [-PI+epsilon, PI-epsilon] )
 
 ATTRIBUTE_ALIGNED16(class)
-btGeneric6DofSpringConstraint : public btGeneric6DofConstraint
+BT_API btGeneric6DofSpringConstraint : public btGeneric6DofConstraint
 {
 protected:
 	bool m_springEnabled[6];

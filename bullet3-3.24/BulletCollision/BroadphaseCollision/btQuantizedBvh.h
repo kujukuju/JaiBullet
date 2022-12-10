@@ -55,7 +55,7 @@ class btSerializer;
 ///btQuantizedBvhNode is a compressed aabb node, 16 bytes.
 ///Node can be used for leafnode or internal node. Leafnodes can point to 32-bit triangle index (non-negative range).
 ATTRIBUTE_ALIGNED16(struct)
-btQuantizedBvhNode
+BT_API btQuantizedBvhNode
 {
 	BT_DECLARE_ALIGNED_ALLOCATOR();
 
@@ -94,7 +94,7 @@ btQuantizedBvhNode
 /// btOptimizedBvhNode contains both internal and leaf node information.
 /// Total node size is 44 bytes / node. You can use the compressed version of 16 bytes.
 ATTRIBUTE_ALIGNED16(struct)
-btOptimizedBvhNode
+BT_API btOptimizedBvhNode
 {
 	BT_DECLARE_ALIGNED_ALLOCATOR();
 
@@ -116,7 +116,7 @@ btOptimizedBvhNode
 
 ///btBvhSubtreeInfo provides info to gather a subtree of limited size
 ATTRIBUTE_ALIGNED16(class)
-btBvhSubtreeInfo
+BT_API btBvhSubtreeInfo
 {
 public:
 	BT_DECLARE_ALIGNED_ALLOCATOR();
@@ -166,7 +166,7 @@ typedef btAlignedObjectArray<btBvhSubtreeInfo> BvhSubtreeInfoArray;
 ///It is used by the btBvhTriangleMeshShape as midphase.
 ///It is recommended to use quantization for better performance and lower memory requirements.
 ATTRIBUTE_ALIGNED16(class)
-btQuantizedBvh
+BT_API btQuantizedBvh
 {
 public:
 	enum btTraversalMode

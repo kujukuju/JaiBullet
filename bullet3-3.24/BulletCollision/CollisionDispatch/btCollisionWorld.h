@@ -165,7 +165,7 @@ public:
 
 	///LocalShapeInfo gives extra information for complex shapes
 	///Currently, only btTriangleMeshShape is available, so it just contains triangleIndex and subpart
-	struct LocalShapeInfo
+	struct BT_API LocalShapeInfo
 	{
 		int m_shapePart;
 		int m_triangleIndex;
@@ -174,7 +174,7 @@ public:
 		//const btTransform*	m_shapeLocalTransform;
 	};
 
-	struct LocalRayResult
+	struct BT_API LocalRayResult
 	{
 		LocalRayResult(const btCollisionObject* collisionObject,
 					   LocalShapeInfo* localShapeInfo,
@@ -194,7 +194,7 @@ public:
 	};
 
 	///RayResultCallback is used to report new raycast results
-	struct RayResultCallback
+	struct BT_API RayResultCallback
 	{
 		btScalar m_closestHitFraction;
 		const btCollisionObject* m_collisionObject;
@@ -231,7 +231,7 @@ public:
 		virtual btScalar addSingleResult(LocalRayResult& rayResult, bool normalInWorldSpace) = 0;
 	};
 
-	struct ClosestRayResultCallback : public RayResultCallback
+	struct BT_API ClosestRayResultCallback : public RayResultCallback
 	{
 		ClosestRayResultCallback(const btVector3& rayFromWorld, const btVector3& rayToWorld)
 			: m_rayFromWorld(rayFromWorld),
@@ -266,7 +266,7 @@ public:
 		}
 	};
 
-	struct AllHitsRayResultCallback : public RayResultCallback
+	struct BT_API AllHitsRayResultCallback : public RayResultCallback
 	{
 		AllHitsRayResultCallback(const btVector3& rayFromWorld, const btVector3& rayToWorld)
 			: m_rayFromWorld(rayFromWorld),
@@ -306,7 +306,7 @@ public:
 		}
 	};
 
-	struct LocalConvexResult
+	struct BT_API LocalConvexResult
 	{
 		LocalConvexResult(const btCollisionObject* hitCollisionObject,
 						  LocalShapeInfo* localShapeInfo,
@@ -329,7 +329,7 @@ public:
 	};
 
 	///RayResultCallback is used to report new raycast results
-	struct ConvexResultCallback
+	struct BT_API ConvexResultCallback
 	{
 		btScalar m_closestHitFraction;
 		int m_collisionFilterGroup;
@@ -361,7 +361,7 @@ public:
 		virtual btScalar addSingleResult(LocalConvexResult& convexResult, bool normalInWorldSpace) = 0;
 	};
 
-	struct ClosestConvexResultCallback : public ConvexResultCallback
+	struct BT_API ClosestConvexResultCallback : public ConvexResultCallback
 	{
 		ClosestConvexResultCallback(const btVector3& convexFromWorld, const btVector3& convexToWorld)
 			: m_convexFromWorld(convexFromWorld),
@@ -399,7 +399,7 @@ public:
 	};
 
 	///ContactResultCallback is used to report contact points
-	struct ContactResultCallback
+	struct BT_API ContactResultCallback
 	{
 		int m_collisionFilterGroup;
 		int m_collisionFilterMask;

@@ -29,7 +29,7 @@ subject to the following restrictions:
 /// it can be used in combination with a constraint solver
 /// Can be used to relate the effect of an impulse to the constraint error
 ATTRIBUTE_ALIGNED16(class)
-btJacobianEntry
+BT_API btJacobianEntry
 {
 public:
 	btJacobianEntry(){};

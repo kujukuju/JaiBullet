@@ -27,8 +27,8 @@ subject to the following restrictions:
 #include "b3SolverBody.h"
 
 ///1D constraint along a normal axis between bodyA and bodyB. It can be combined to solve contact and friction constraints.
-BT_API B3_ATTRIBUTE_ALIGNED16(struct)
-b3SolverConstraint
+B3_ATTRIBUTE_ALIGNED16(struct)
+BT_API b3SolverConstraint
 {
 	B3_DECLARE_ALIGNED_ALLOCATOR();
 

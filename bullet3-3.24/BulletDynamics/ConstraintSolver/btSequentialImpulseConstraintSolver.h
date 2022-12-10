@@ -50,7 +50,7 @@ struct BT_API btSolverAnalyticsData
 
 ///The btSequentialImpulseConstraintSolver is a fast SIMD implementation of the Projected Gauss Seidel (iterative LCP) method.
 ATTRIBUTE_ALIGNED16(class)
-btSequentialImpulseConstraintSolver : public btConstraintSolver
+BT_API btSequentialImpulseConstraintSolver : public btConstraintSolver
 {
 	
 

@@ -2,6 +2,10 @@
 // Created by Kuju on 12/9/2022.
 //
 
+#pragma warning(disable: 4305)
+#pragma warning(disable: 4267)
+#pragma warning(disable: 4244)
+
 #ifndef BT_API_H
 #define BT_API_H
 

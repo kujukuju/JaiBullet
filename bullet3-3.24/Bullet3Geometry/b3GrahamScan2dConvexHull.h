@@ -21,7 +21,7 @@ subject to the following restrictions:
 #include "Bullet3Common/b3Vector3.h"
 #include "Bullet3Common/b3AlignedObjectArray.h"
 
-struct b3GrahamVector3 : public b3Vector3
+struct BT_API b3GrahamVector3 : public b3Vector3
 {
 	b3GrahamVector3(const b3Vector3& org, int orgIndex)
 		: b3Vector3(org),

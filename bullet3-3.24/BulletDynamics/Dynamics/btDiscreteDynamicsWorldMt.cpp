@@ -189,7 +189,7 @@ void btDiscreteDynamicsWorldMt::solveConstraints(btContactSolverInfo& solverInfo
 	m_constraintSolver->allSolved(solverInfo, m_debugDrawer);
 }
 
-struct UpdaterUnconstrainedMotion : public btIParallelForBody
+struct BT_API UpdaterUnconstrainedMotion : public btIParallelForBody
 {
 	btScalar timeStep;
 	btRigidBody** rigidBodies;

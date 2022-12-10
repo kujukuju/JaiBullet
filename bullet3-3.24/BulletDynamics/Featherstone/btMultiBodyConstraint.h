@@ -55,7 +55,7 @@ struct BT_API btMultiBodyJacobianData
 };
 
 ATTRIBUTE_ALIGNED16(class)
-btMultiBodyConstraint
+BT_API btMultiBodyConstraint
 {
 protected:
 	btMultiBody* m_bodyA;

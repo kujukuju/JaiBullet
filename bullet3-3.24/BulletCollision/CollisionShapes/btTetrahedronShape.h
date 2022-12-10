@@ -23,7 +23,7 @@ subject to the following restrictions:
 
 ///The btBU_Simplex1to4 implements tetrahedron, triangle, line, vertex collision shapes. In most cases it is better to use btConvexHullShape instead.
 ATTRIBUTE_ALIGNED16(class)
-btBU_Simplex1to4 : public btPolyhedralConvexAabbCachingShape
+BT_API btBU_Simplex1to4 : public btPolyhedralConvexAabbCachingShape
 {
 protected:
 	int m_numVertices;

@@ -26,7 +26,7 @@ subject to the following restrictions:
 
 ///The btBox2dShape is a box primitive around the origin, its sides axis aligned with length specified by half extents, in local shape coordinates. When used as part of a btCollisionObject or btRigidBody it will be an oriented box in world space.
 ATTRIBUTE_ALIGNED16(class)
-btBox2dShape : public btPolyhedralConvexShape
+BT_API btBox2dShape : public btPolyhedralConvexShape
 {
 	//btVector3	m_boxHalfExtents1; //use m_implicitShapeDimensions instead
 

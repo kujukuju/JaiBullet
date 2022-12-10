@@ -21,7 +21,7 @@ typedef btAlignedObjectArray<btDbvtNode*> tNodeArray;
 typedef btAlignedObjectArray<const btDbvtNode*> tConstNodeArray;
 
 //
-struct btDbvtNodeEnumerator : btDbvt::ICollide
+struct BT_API btDbvtNodeEnumerator : btDbvt::ICollide
 {
 	tConstNodeArray nodes;
 	void Process(const btDbvtNode* n) { nodes.push_back(n); }

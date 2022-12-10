@@ -30,8 +30,8 @@ subject to the following restrictions:
 #endif  //
 
 ///The b3SolverBody is an internal datastructure for the constraint solver. Only necessary data is packed to increase cache coherence/performance.
-BT_API B3_ATTRIBUTE_ALIGNED16(struct)
-b3GpuSolverBody
+B3_ATTRIBUTE_ALIGNED16(struct)
+BT_API b3GpuSolverBody
 {
 	B3_DECLARE_ALIGNED_ALLOCATOR();
 	//	b3Transform		m_worldTransformUnused;

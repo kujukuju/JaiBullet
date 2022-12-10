@@ -24,7 +24,7 @@ class BT_API btReducedDeformableBodySolver : public btDeformableBodySolver
  public:
   btAlignedObjectArray<btAlignedObjectArray<btReducedDeformableStaticConstraint> > m_staticConstraints;
   btAlignedObjectArray<btAlignedObjectArray<btReducedDeformableNodeRigidContactConstraint> > m_nodeRigidConstraints;
-  btAlignedObjectArray<btAlignedObjectArray<btReducedDeformableFaceRigidContactConstraint> > m_faceRigidConstraints;
+//  btAlignedObjectArray<btAlignedObjectArray<btReducedDeformableFaceRigidContactConstraint> > m_faceRigidConstraints;
   
   btReducedDeformableBodySolver();
   ~btReducedDeformableBodySolver() {}

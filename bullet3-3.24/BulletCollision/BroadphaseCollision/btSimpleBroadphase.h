@@ -20,7 +20,7 @@ subject to the following restrictions:
 
 #include "btOverlappingPairCache.h"
 
-struct btSimpleBroadphaseProxy : public btBroadphaseProxy
+struct BT_API btSimpleBroadphaseProxy : public btBroadphaseProxy
 {
 	int m_nextFree;
 

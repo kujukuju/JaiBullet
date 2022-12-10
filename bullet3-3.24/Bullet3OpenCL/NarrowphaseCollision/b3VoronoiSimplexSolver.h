@@ -87,8 +87,8 @@ struct BT_API b3SubSimplexClosestResult
 /// b3VoronoiSimplexSolver is an implementation of the closest point distance algorithm from a 1-4 points simplex to the origin.
 /// Can be used with GJK, as an alternative to Johnson distance algorithm.
 
-BT_API B3_ATTRIBUTE_ALIGNED16(class)
-b3VoronoiSimplexSolver
+B3_ATTRIBUTE_ALIGNED16(class)
+BT_API b3VoronoiSimplexSolver
 {
 public:
 	B3_DECLARE_ALIGNED_ALLOCATOR();

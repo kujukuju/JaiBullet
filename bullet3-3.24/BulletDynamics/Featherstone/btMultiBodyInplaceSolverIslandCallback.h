@@ -64,7 +64,7 @@ public:
     }
 };
 
-struct MultiBodyInplaceSolverIslandCallback : public btSimulationIslandManager::IslandCallback
+struct BT_API MultiBodyInplaceSolverIslandCallback : public btSimulationIslandManager::IslandCallback
 {
 
     btContactSolverInfo* m_solverInfo;

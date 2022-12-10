@@ -27,7 +27,7 @@ subject to the following restrictions:
 ///It can be useful for to simplify a complex convex object and for visualization of a non-polyhedral convex object.
 ///It approximates the convex hull using the supporting vertex of 42 directions.
 ATTRIBUTE_ALIGNED16(class)
-btShapeHull
+BT_API btShapeHull
 {
 protected:
 	btAlignedObjectArray<btVector3> m_vertices;

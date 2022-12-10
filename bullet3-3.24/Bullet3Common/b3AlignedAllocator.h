@@ -96,7 +96,7 @@ public:
 	void destroy(pointer ptr) { ptr->~value_type(); }
 
 	template <typename O>
-	struct rebind
+	struct BT_API rebind
 	{
 		typedef b3AlignedAllocator<O, Alignment> other;
 	};

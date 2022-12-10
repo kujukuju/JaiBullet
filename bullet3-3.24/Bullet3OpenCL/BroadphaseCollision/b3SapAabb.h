@@ -7,8 +7,8 @@
 #include "Bullet3Collision/BroadPhaseCollision/shared/b3Aabb.h"
 
 ///just make sure that the b3Aabb is 16-byte aligned
-BT_API B3_ATTRIBUTE_ALIGNED16(struct)
-b3SapAabb : public b3Aabb{
+B3_ATTRIBUTE_ALIGNED16(struct)
+BT_API b3SapAabb : public b3Aabb{
 
 			};
 

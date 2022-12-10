@@ -30,7 +30,7 @@ subject to the following restrictions:
 /// In other words, rotation of the two bodies about the direction perpendicular to the two axes will be equal."
 
 ATTRIBUTE_ALIGNED16(class)
-btUniversalConstraint : public btGeneric6DofConstraint
+BT_API btUniversalConstraint : public btGeneric6DofConstraint
 {
 protected:
 	btVector3 m_anchor;

@@ -46,7 +46,7 @@ static btScalar btGetAngle(const btVector3& edgeA, const btVector3& normalA, con
 	return angle;
 }
 
-struct btConnectivityProcessor : public btTriangleCallback
+struct BT_API btConnectivityProcessor : public btTriangleCallback
 {
 	int m_partIdA;
 	int m_triangleIndexA;

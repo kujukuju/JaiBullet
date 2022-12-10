@@ -24,7 +24,7 @@ subject to the following restrictions:
 
 /// The btCylinderShape class implements a cylinder shape primitive, centered around the origin. Its central axis aligned with the Y axis. btCylinderShapeX is aligned with the X axis and btCylinderShapeZ around the Z axis.
 ATTRIBUTE_ALIGNED16(class)
-btCylinderShape : public btConvexInternalShape
+BT_API btCylinderShape : public btConvexInternalShape
 
 {
 protected:

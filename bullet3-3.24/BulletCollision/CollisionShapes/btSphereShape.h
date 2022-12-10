@@ -22,7 +22,7 @@ subject to the following restrictions:
 
 ///The btSphereShape implements an implicit sphere, centered around a local origin with radius.
 ATTRIBUTE_ALIGNED16(class)
-btSphereShape : public btConvexInternalShape
+BT_API btSphereShape : public btConvexInternalShape
 
 {
 public:

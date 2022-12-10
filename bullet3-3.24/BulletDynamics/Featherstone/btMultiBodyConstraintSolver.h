@@ -28,7 +28,7 @@ class btMultiBody;
 #include "btMultiBodyConstraint.h"
 
 ATTRIBUTE_ALIGNED16(class)
-btMultiBodyConstraintSolver : public btSequentialImpulseConstraintSolver
+BT_API btMultiBodyConstraintSolver : public btSequentialImpulseConstraintSolver
 {
 protected:
 	btMultiBodyConstraintArray m_multiBodyNonContactConstraints;

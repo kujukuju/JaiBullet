@@ -151,7 +151,7 @@ SIMD_FORCE_INLINE btScalar bt_mat3_dot_col(
 
 //!  Class for transforming a model1 to the space of model0
 ATTRIBUTE_ALIGNED16(class)
-BT_BOX_BOX_TRANSFORM_CACHE
+BT_API BT_BOX_BOX_TRANSFORM_CACHE
 {
 public:
 	btVector3 m_T1to0;    //!< Transforms translation of model1 to model 0
@@ -214,7 +214,7 @@ public:
 
 //! Axis aligned box
 ATTRIBUTE_ALIGNED16(class)
-btAABB
+BT_API btAABB
 {
 public:
 	btVector3 m_min;

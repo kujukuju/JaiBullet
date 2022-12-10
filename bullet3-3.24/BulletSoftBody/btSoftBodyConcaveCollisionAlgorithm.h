@@ -38,6 +38,8 @@ struct BT_API btTriIndex
 	int m_PartIdTriangleIndex;
 	class btCollisionShape* m_childShape;
 
+    btTriIndex() = default;
+
 	btTriIndex(int partId, int triangleIndex, btCollisionShape* shape)
 	{
 		m_PartIdTriangleIndex = (partId << (31 - MAX_NUM_PARTS_IN_BITS)) | triangleIndex;

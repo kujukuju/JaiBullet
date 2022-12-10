@@ -29,7 +29,7 @@ subject to the following restrictions:
  */
 #ifndef USE_LIBSPE2
 ATTRIBUTE_ALIGNED16(class)
-btQuadWord
+BT_API btQuadWord
 #else
 class btQuadWord
 #endif

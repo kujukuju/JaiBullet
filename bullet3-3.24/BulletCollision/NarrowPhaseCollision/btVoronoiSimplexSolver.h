@@ -93,10 +93,10 @@ struct BT_API btSubSimplexClosestResult
 /// Can be used with GJK, as an alternative to Johnson distance algorithm.
 #ifdef NO_VIRTUAL_INTERFACE
 ATTRIBUTE_ALIGNED16(class)
-btVoronoiSimplexSolver
+BT_API btVoronoiSimplexSolver
 #else
 ATTRIBUTE_ALIGNED16(class)
-btVoronoiSimplexSolver : public btSimplexSolverInterface
+BT_API btVoronoiSimplexSolver : public btSimplexSolverInterface
 #endif
 {
 public:

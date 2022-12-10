@@ -7,7 +7,7 @@
 
 ///The btDefaultMotionState provides a common implementation to synchronize world transforms with offsets.
 ATTRIBUTE_ALIGNED16(struct)
-btDefaultMotionState : public btMotionState
+BT_API btDefaultMotionState : public btMotionState
 {
 	btTransform m_graphicsWorldTrans;
 	btTransform m_centerOfMassOffset;

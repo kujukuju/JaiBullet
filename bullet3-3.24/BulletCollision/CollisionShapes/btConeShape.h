@@ -23,7 +23,7 @@ subject to the following restrictions:
 
 ///The btConeShape implements a cone shape primitive, centered around the origin and aligned with the Y axis. The btConeShapeX is aligned around the X axis and btConeShapeZ around the Z axis.
 ATTRIBUTE_ALIGNED16(class)
-btConeShape : public btConvexInternalShape
+BT_API btConeShape : public btConvexInternalShape
 
 {
 	btScalar m_sinAngle;

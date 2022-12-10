@@ -98,7 +98,7 @@ static inline void b3Clear(T& value)
 //
 
 /* Tree collider	*/
-struct b3DbvtTreeCollider : b3DynamicBvh::ICollide
+struct BT_API b3DbvtTreeCollider : b3DynamicBvh::ICollide
 {
 	b3DynamicBvhBroadphase* pbp;
 	b3DbvtProxy* proxy;
@@ -227,7 +227,7 @@ void	b3DynamicBvhBroadphase::getAabb(b3BroadphaseProxy* absproxy,b3Vector3& aabb
 }
 */
 
-struct BroadphaseRayTester : b3DynamicBvh::ICollide
+struct BT_API BroadphaseRayTester : b3DynamicBvh::ICollide
 {
 	b3BroadphaseRayCallback& m_rayCallback;
 	BroadphaseRayTester(b3BroadphaseRayCallback& orgCallback)
@@ -266,7 +266,7 @@ void b3DynamicBvhBroadphase::rayTest(const b3Vector3& rayFrom, const b3Vector3& 
 							  callback);
 }
 
-struct BroadphaseAabbTester : b3DynamicBvh::ICollide
+struct BT_API BroadphaseAabbTester : b3DynamicBvh::ICollide
 {
 	b3BroadphaseAabbCallback& m_aabbCallback;
 	BroadphaseAabbTester(b3BroadphaseAabbCallback& orgCallback)

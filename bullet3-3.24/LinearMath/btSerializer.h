@@ -690,7 +690,7 @@ public:
 ///of objects. There will be a demo on how to use the btInMemorySerializer.
 #ifdef ENABLE_INMEMORY_SERIALIZER
 
-struct btInMemorySerializer : public btDefaultSerializer
+struct BT_API btInMemorySerializer : public btDefaultSerializer
 {
 	btHashMap<btHashPtr, btChunk*> m_uid2ChunkPtr;
 	btHashMap<btHashPtr, void*> m_orgPtr2UniqueDataPtr;

@@ -13,7 +13,7 @@ enum
 };
 
 template <typename U>
-struct b3PoolBodyHandle : public U
+struct BT_API b3PoolBodyHandle : public U
 {
 	B3_DECLARE_ALIGNED_ALLOCATOR();
 

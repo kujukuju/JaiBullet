@@ -47,7 +47,7 @@ enum btHingeFlags
 /// hinge constraint between two rigidbodies each with a pivotpoint that descibes the axis location in local space
 /// axis defines the orientation of the hinge axis
 ATTRIBUTE_ALIGNED16(class)
-btHingeConstraint : public btTypedConstraint
+BT_API btHingeConstraint : public btTypedConstraint
 {
 #ifdef IN_PARALLELL_SOLVER
 public:
@@ -360,7 +360,7 @@ struct BT_API btHingeConstraintDoubleData
 
 ///The getAccumulatedHingeAngle returns the accumulated hinge angle, taking rotation across the -PI/PI boundary into account
 ATTRIBUTE_ALIGNED16(class)
-btHingeAccumulatedAngleConstraint : public btHingeConstraint
+BT_API btHingeAccumulatedAngleConstraint : public btHingeConstraint
 {
 protected:
 	btScalar m_accumulatedAngle;

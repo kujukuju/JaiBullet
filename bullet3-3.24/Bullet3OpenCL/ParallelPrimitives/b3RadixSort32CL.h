@@ -46,7 +46,7 @@ class BT_API b3RadixSort32CL
 	class b3FillCL* m_fill;
 
 public:
-	struct b3ConstData
+	struct BT_API b3ConstData
 	{
 		int m_n;
 		int m_nWGs;

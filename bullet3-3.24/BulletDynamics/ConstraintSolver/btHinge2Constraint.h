@@ -28,7 +28,7 @@ subject to the following restrictions:
 // 1 translational (along axis Z) with suspension spring
 
 ATTRIBUTE_ALIGNED16(class)
-btHinge2Constraint : public btGeneric6DofSpring2Constraint
+BT_API btHinge2Constraint : public btGeneric6DofSpring2Constraint
 {
 protected:
 	btVector3 m_anchor;

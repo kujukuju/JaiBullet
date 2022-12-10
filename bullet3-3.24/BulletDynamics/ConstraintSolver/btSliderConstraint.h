@@ -65,7 +65,7 @@ enum btSliderFlags
 };
 
 ATTRIBUTE_ALIGNED16(class)
-btSliderConstraint : public btTypedConstraint
+BT_API btSliderConstraint : public btTypedConstraint
 {
 protected:
 	///for backwards compatibility during the transition to 'getInfo/getInfo2'

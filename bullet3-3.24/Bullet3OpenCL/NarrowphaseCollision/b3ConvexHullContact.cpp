@@ -324,7 +324,7 @@ GpuSatCollision::~GpuSatCollision()
 		clReleaseKernel(m_bvhTraversalKernel);
 }
 
-struct MyTriangleCallback : public b3NodeOverlapCallback
+struct BT_API MyTriangleCallback : public b3NodeOverlapCallback
 {
 	int m_bodyIndexA;
 	int m_bodyIndexB;

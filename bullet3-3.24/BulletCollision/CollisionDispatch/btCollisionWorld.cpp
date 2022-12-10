@@ -926,7 +926,7 @@ void btCollisionWorld::objectQuerySingleInternal(const btConvexShape* castShape,
 	}
 }
 
-struct btSingleRayCallback : public btBroadphaseRayCallback
+struct BT_API btSingleRayCallback : public btBroadphaseRayCallback
 {
 	btVector3 m_rayFromWorld;
 	btVector3 m_rayToWorld;
@@ -1017,7 +1017,7 @@ void btCollisionWorld::rayTest(const btVector3& rayFromWorld, const btVector3& r
 #endif  //USE_BRUTEFORCE_RAYBROADPHASE
 }
 
-struct btSingleSweepCallback : public btBroadphaseRayCallback
+struct BT_API btSingleSweepCallback : public btBroadphaseRayCallback
 {
 	btTransform m_convexFromTrans;
 	btTransform m_convexToTrans;
@@ -1131,7 +1131,7 @@ void btCollisionWorld::convexSweepTest(const btConvexShape* castShape, const btT
 #endif  //USE_BRUTEFORCE_RAYBROADPHASE
 }
 
-struct btBridgedManifoldResult : public btManifoldResult
+struct BT_API btBridgedManifoldResult : public btManifoldResult
 {
 	btCollisionWorld::ContactResultCallback& m_resultCallback;
 
@@ -1185,7 +1185,7 @@ struct btBridgedManifoldResult : public btManifoldResult
 	}
 };
 
-struct btSingleContactCallback : public btBroadphaseAabbCallback
+struct BT_API btSingleContactCallback : public btBroadphaseAabbCallback
 {
 	btCollisionObject* m_collisionObject;
 	btCollisionWorld* m_world;

@@ -35,8 +35,8 @@ enum PHY_ScalarType
 ///	The b3StridingMeshInterface is the interface class for high performance generic access to triangle meshes, used in combination with b3BvhTriangleMeshShape and some other collision shapes.
 /// Using index striding of 3*sizeof(integer) it can use triangle arrays, using index striding of 1*sizeof(integer) it can handle triangle strips.
 /// It allows for sharing graphics and collision meshes. Also it provides locking/unlocking of graphics meshes that are in gpu memory.
-BT_API B3_ATTRIBUTE_ALIGNED16(class)
-b3StridingMeshInterface
+B3_ATTRIBUTE_ALIGNED16(class)
+BT_API b3StridingMeshInterface
 {
 protected:
 	b3Vector3 m_scaling;

@@ -32,7 +32,7 @@ subject to the following restrictions:
 ///btQuantizedBvhNode is a compressed aabb node, 16 bytes.
 ///Node can be used for leafnode or internal node. Leafnodes can point to 32-bit triangle index (non-negative range).
 ATTRIBUTE_ALIGNED16(struct)
-BT_QUANTIZED_BVH_NODE
+BT_API BT_QUANTIZED_BVH_NODE
 {
 	//12 bytes
 	unsigned short int m_quantizedAabbMin[3];

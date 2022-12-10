@@ -86,7 +86,7 @@ void btCompoundCompoundCollisionAlgorithm::removeChildAlgorithms()
 	m_childCollisionAlgorithmCache->removeAllPairs();
 }
 
-struct btCompoundCompoundLeafCallback : btDbvt::ICollide
+struct BT_API btCompoundCompoundLeafCallback : btDbvt::ICollide
 {
 	int m_numOverlapPairs;
 

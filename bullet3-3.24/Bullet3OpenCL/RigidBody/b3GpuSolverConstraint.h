@@ -26,8 +26,8 @@ subject to the following restrictions:
 //#define NO_FRICTION_TANGENTIALS 1
 
 ///1D constraint along a normal axis between bodyA and bodyB. It can be combined to solve contact and friction constraints.
-BT_API B3_ATTRIBUTE_ALIGNED16(struct)
-b3GpuSolverConstraint
+B3_ATTRIBUTE_ALIGNED16(struct)
+BT_API b3GpuSolverConstraint
 {
 	B3_DECLARE_ALIGNED_ALLOCATOR();
 

@@ -8,7 +8,7 @@
 #include "BulletCollision/NarrowPhaseCollision/btRaycastCallback.h"
 
 ATTRIBUTE_ALIGNED16(class)
-btCompoundFromGimpactShape : public btCompoundShape
+BT_API btCompoundFromGimpactShape : public btCompoundShape
 {
 public:
 	BT_DECLARE_ALIGNED_ALLOCATOR();
@@ -23,7 +23,7 @@ public:
 	}
 };
 
-struct MyCallback : public btTriangleRaycastCallback
+struct BT_API MyCallback : public btTriangleRaycastCallback
 {
 	int m_ignorePart;
 	int m_ignoreTriangleIndex;
@@ -45,7 +45,7 @@ struct MyCallback : public btTriangleRaycastCallback
 		return m_hitFraction;
 	}
 };
-struct MyInternalTriangleIndexCallback : public btInternalTriangleIndexCallback
+struct BT_API MyInternalTriangleIndexCallback : public btInternalTriangleIndexCallback
 {
 	const btGImpactMeshShape* m_gimpactShape;
 	btCompoundShape* m_colShape;

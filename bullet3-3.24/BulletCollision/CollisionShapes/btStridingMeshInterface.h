@@ -26,7 +26,7 @@ subject to the following restrictions:
 /// Using index striding of 3*sizeof(integer) it can use triangle arrays, using index striding of 1*sizeof(integer) it can handle triangle strips.
 /// It allows for sharing graphics and collision meshes. Also it provides locking/unlocking of graphics meshes that are in gpu memory.
 ATTRIBUTE_ALIGNED16(class)
-btStridingMeshInterface
+BT_API btStridingMeshInterface
 {
 protected:
 	btVector3 m_scaling;

@@ -198,20 +198,20 @@ struct BT_API b3DbvtNode
 struct BT_API b3DynamicBvh
 {
 	/* Stack element	*/
-	struct sStkNN
+	struct BT_API sStkNN
 	{
 		const b3DbvtNode* a;
 		const b3DbvtNode* b;
 		sStkNN() {}
 		sStkNN(const b3DbvtNode* na, const b3DbvtNode* nb) : a(na), b(nb) {}
 	};
-	struct sStkNP
+	struct BT_API sStkNP
 	{
 		const b3DbvtNode* node;
 		int mask;
 		sStkNP(const b3DbvtNode* n, unsigned m) : node(n), mask(m) {}
 	};
-	struct sStkNPS
+	struct BT_API sStkNPS
 	{
 		const b3DbvtNode* node;
 		int mask;
@@ -219,7 +219,7 @@ struct BT_API b3DynamicBvh
 		sStkNPS() {}
 		sStkNPS(const b3DbvtNode* n, unsigned m, b3Scalar v) : node(n), mask(m), value(v) {}
 	};
-	struct sStkCLN
+	struct BT_API sStkCLN
 	{
 		const b3DbvtNode* node;
 		b3DbvtNode* parent;
@@ -228,7 +228,7 @@ struct BT_API b3DynamicBvh
 	// Policies/Interfaces
 
 	/* ICollide	*/
-	struct ICollide
+	struct BT_API ICollide
 	{
 		B3_DBVT_VIRTUAL_DTOR(ICollide)
 		B3_DBVT_VIRTUAL void Process(const b3DbvtNode*, const b3DbvtNode*) {}
@@ -238,7 +238,7 @@ struct BT_API b3DynamicBvh
 		B3_DBVT_VIRTUAL bool AllLeaves(const b3DbvtNode*) { return (true); }
 	};
 	/* IWriter	*/
-	struct IWriter
+	struct BT_API IWriter
 	{
 		virtual ~IWriter() {}
 		virtual void Prepare(const b3DbvtNode* root, int numnodes) = 0;
@@ -246,7 +246,7 @@ struct BT_API b3DynamicBvh
 		virtual void WriteLeaf(const b3DbvtNode*, int index, int parent) = 0;
 	};
 	/* IClone	*/
-	struct IClone
+	struct BT_API IClone
 	{
 		virtual ~IClone() {}
 		virtual void CloneLeaf(b3DbvtNode*) {}

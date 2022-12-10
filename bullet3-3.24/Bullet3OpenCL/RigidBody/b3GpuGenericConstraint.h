@@ -75,8 +75,8 @@ struct BT_API b3GpuConstraintInfo2
 	b3Scalar m_damping;
 };
 
-BT_API B3_ATTRIBUTE_ALIGNED16(struct)
-b3GpuGenericConstraint
+B3_ATTRIBUTE_ALIGNED16(struct)
+BT_API b3GpuGenericConstraint
 {
 	int m_constraintType;
 	int m_rbA;

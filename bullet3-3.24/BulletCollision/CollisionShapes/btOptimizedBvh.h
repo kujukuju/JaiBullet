@@ -26,7 +26,7 @@ class btStridingMeshInterface;
 
 ///The btOptimizedBvh extends the btQuantizedBvh to create AABB tree for triangle meshes, through the btStridingMeshInterface.
 ATTRIBUTE_ALIGNED16(class)
-btOptimizedBvh : public btQuantizedBvh
+BT_API btOptimizedBvh : public btQuantizedBvh
 {
 public:
 	BT_DECLARE_ALIGNED_ALLOCATOR();

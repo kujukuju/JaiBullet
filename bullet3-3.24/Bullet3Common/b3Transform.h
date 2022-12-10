@@ -27,8 +27,8 @@ subject to the following restrictions:
 
 /**@brief The b3Transform class supports rigid transforms with only translation and rotation and no scaling/shear.
  *It can be used in combination with b3Vector3, b3Quaternion and b3Matrix3x3 linear algebra classes. */
-BT_API B3_ATTRIBUTE_ALIGNED16(class)
-b3Transform
+B3_ATTRIBUTE_ALIGNED16(class)
+BT_API b3Transform
 {
 	///Storage for the rotation
 	b3Matrix3x3 m_basis;

@@ -45,7 +45,7 @@ enum
 class BT_API b3SolverBase
 {
 public:
-	struct ConstraintCfg
+	struct BT_API ConstraintCfg
 	{
 		ConstraintCfg(float dt = 0.f) : m_positionDrift(0.005f), m_positionConstraintCoeff(0.2f), m_dt(dt), m_staticIdx(-1) {}
 

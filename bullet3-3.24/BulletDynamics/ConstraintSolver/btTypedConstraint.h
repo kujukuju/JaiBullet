@@ -63,7 +63,7 @@ enum btConstraintParams
 #endif
 
 ATTRIBUTE_ALIGNED16(struct)
-btJointFeedback
+BT_API btJointFeedback
 {
 	BT_DECLARE_ALIGNED_ALLOCATOR();
 	btVector3 m_appliedForceBodyA;
@@ -74,7 +74,7 @@ btJointFeedback
 
 ///TypedConstraint is the baseclass for Bullet constraints and vehicles
 ATTRIBUTE_ALIGNED16(class)
-btTypedConstraint : public btTypedObject
+BT_API btTypedConstraint : public btTypedObject
 {
 	int m_userConstraintType;
 

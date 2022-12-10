@@ -10,7 +10,7 @@
 
 #include "btApi.h"
 
-struct DeformableBodyInplaceSolverIslandCallback : public MultiBodyInplaceSolverIslandCallback
+struct BT_API DeformableBodyInplaceSolverIslandCallback : public MultiBodyInplaceSolverIslandCallback
 {
 	btDeformableMultiBodyConstraintSolver* m_deformableSolver;
 

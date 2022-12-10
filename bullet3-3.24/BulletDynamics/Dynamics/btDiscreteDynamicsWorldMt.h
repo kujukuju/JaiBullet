@@ -82,7 +82,7 @@ private:
 ///     - createPredictiveContacts
 ///
 ATTRIBUTE_ALIGNED16(class)
-btDiscreteDynamicsWorldMt : public btDiscreteDynamicsWorld
+BT_API btDiscreteDynamicsWorldMt : public btDiscreteDynamicsWorld
 {
 protected:
 	btConstraintSolver* m_constraintSolverMt;

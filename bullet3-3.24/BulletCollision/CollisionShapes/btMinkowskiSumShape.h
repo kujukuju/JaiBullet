@@ -23,7 +23,7 @@ subject to the following restrictions:
 
 /// The btMinkowskiSumShape is only for advanced users. This shape represents implicit based minkowski sum of two convex implicit shapes.
 ATTRIBUTE_ALIGNED16(class)
-btMinkowskiSumShape : public btConvexInternalShape
+BT_API btMinkowskiSumShape : public btConvexInternalShape
 {
 	btTransform m_transA;
 	btTransform m_transB;

@@ -212,7 +212,7 @@ void btConvexConvexAlgorithm ::setLowLevelOfDetail(bool useLowLevel)
 	m_lowLevelOfDetail = useLowLevel;
 }
 
-struct btPerturbedContactResult : public btManifoldResult
+struct BT_API btPerturbedContactResult : public btManifoldResult
 {
 	btManifoldResult* m_originalManifoldResult;
 	btTransform m_transformA;

@@ -35,8 +35,8 @@ extern b3Scalar gContactBreakingThreshold;
 ///reduces the cache to 4 points, when more then 4 points are added, using following rules:
 ///the contact point with deepest penetration is always kept, and it tries to maximuze the area covered by the points
 ///note that some pairs of objects might have more then one contact manifold.
-BT_API B3_ATTRIBUTE_ALIGNED16(class)
-b3ContactCache
+B3_ATTRIBUTE_ALIGNED16(class)
+BT_API b3ContactCache
 {
 	/// sort cached points so most isolated points come first
 	int sortCachedPoints(const b3Vector3& pt);

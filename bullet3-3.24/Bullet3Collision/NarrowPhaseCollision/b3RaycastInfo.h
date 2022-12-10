@@ -6,15 +6,15 @@
 
 #include "Bullet3Common/b3Vector3.h"
 
-BT_API B3_ATTRIBUTE_ALIGNED16(struct)
-b3RayInfo
+B3_ATTRIBUTE_ALIGNED16(struct)
+BT_API b3RayInfo
 {
 	b3Vector3 m_from;
 	b3Vector3 m_to;
 };
 
-BT_API B3_ATTRIBUTE_ALIGNED16(struct)
-b3RayHit
+B3_ATTRIBUTE_ALIGNED16(struct)
+BT_API b3RayHit
 {
 	b3Scalar m_hitFraction;
 	int m_hitBody;

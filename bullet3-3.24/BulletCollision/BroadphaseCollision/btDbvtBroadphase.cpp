@@ -98,7 +98,7 @@ static inline void clear(T& value)
 //
 
 /* Tree collider	*/
-struct btDbvtTreeCollider : btDbvt::ICollide
+struct BT_API btDbvtTreeCollider : btDbvt::ICollide
 {
 	btDbvtBroadphase* pbp;
 	btDbvtProxy* proxy;
@@ -223,7 +223,7 @@ void btDbvtBroadphase::getAabb(btBroadphaseProxy* absproxy, btVector3& aabbMin, 
 	aabbMax = proxy->m_aabbMax;
 }
 
-struct BroadphaseRayTester : btDbvt::ICollide
+struct BT_API BroadphaseRayTester : btDbvt::ICollide
 {
 	btBroadphaseRayCallback& m_rayCallback;
 	BroadphaseRayTester(btBroadphaseRayCallback& orgCallback)
@@ -283,7 +283,7 @@ void btDbvtBroadphase::rayTest(const btVector3& rayFrom, const btVector3& rayTo,
 							  callback);
 }
 
-struct BroadphaseAabbTester : btDbvt::ICollide
+struct BT_API BroadphaseAabbTester : btDbvt::ICollide
 {
 	btBroadphaseAabbCallback& m_aabbCallback;
 	BroadphaseAabbTester(btBroadphaseAabbCallback& orgCallback)

@@ -28,7 +28,7 @@ subject to the following restrictions:
 /// by taking closestPointInA = closestPointInB + m_distance * m_normalOnSurfaceB
 struct BT_API btDiscreteCollisionDetectorInterface
 {
-	struct Result
+	struct BT_API Result
 	{
 		virtual ~Result() {}
 
@@ -38,7 +38,7 @@ struct BT_API btDiscreteCollisionDetectorInterface
 		virtual void addContactPoint(const btVector3& normalOnBInWorld, const btVector3& pointInWorld, btScalar depth) = 0;
 	};
 
-	struct ClosestPointInput
+	struct BT_API ClosestPointInput
 	{
 		ClosestPointInput()
 			: m_maximumDistanceSquared(btScalar(BT_LARGE_FLOAT))
@@ -59,7 +59,7 @@ struct BT_API btDiscreteCollisionDetectorInterface
 	virtual void getClosestPoints(const ClosestPointInput& input, Result& output, class btIDebugDraw* debugDraw, bool swapResults = false) = 0;
 };
 
-struct btStorageResult : public btDiscreteCollisionDetectorInterface::Result
+struct BT_API btStorageResult : public btDiscreteCollisionDetectorInterface::Result
 {
 	btVector3 m_normalOnSurfaceB;
 	btVector3 m_closestPointInB;

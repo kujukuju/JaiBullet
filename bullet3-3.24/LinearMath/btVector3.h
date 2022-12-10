@@ -80,7 +80,7 @@ const int32x4_t ATTRIBUTE_ALIGNED16(btv3AbsMask) = (int32x4_t){0x7FFFFFFF, 0x7FF
  * Ideally, this class should be replaced by a platform optimized SIMD version that keeps the data in registers
  */
 ATTRIBUTE_ALIGNED16(class)
-btVector3
+BT_API btVector3
 {
 public:
 	BT_DECLARE_ALIGNED_ALLOCATOR();

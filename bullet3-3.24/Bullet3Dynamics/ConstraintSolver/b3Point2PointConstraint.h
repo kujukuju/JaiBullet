@@ -51,8 +51,8 @@ enum b3Point2PointFlags
 };
 
 /// point to point constraint between two rigidbodies each with a pivotpoint that descibes the 'ballsocket' location in local space
-BT_API B3_ATTRIBUTE_ALIGNED16(class)
-b3Point2PointConstraint : public b3TypedConstraint
+B3_ATTRIBUTE_ALIGNED16(class)
+BT_API b3Point2PointConstraint : public b3TypedConstraint
 {
 #ifdef IN_PARALLELL_SOLVER
 public:

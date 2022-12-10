@@ -22,7 +22,7 @@ subject to the following restrictions:
 #include "btBoxShape.h"
 
 ATTRIBUTE_ALIGNED16(class)
-btTriangleShape : public btPolyhedralConvexShape
+BT_API btTriangleShape : public btPolyhedralConvexShape
 {
 public:
 	BT_DECLARE_ALIGNED_ALLOCATOR();

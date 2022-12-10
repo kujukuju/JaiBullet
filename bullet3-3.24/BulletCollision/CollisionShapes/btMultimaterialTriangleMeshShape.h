@@ -25,7 +25,7 @@ subject to the following restrictions:
 
 ///The BvhTriangleMaterialMeshShape extends the btBvhTriangleMeshShape. Its main contribution is the interface into a material array, which allows per-triangle friction and restitution.
 ATTRIBUTE_ALIGNED16(class)
-btMultimaterialTriangleMeshShape : public btBvhTriangleMeshShape
+BT_API btMultimaterialTriangleMeshShape : public btBvhTriangleMeshShape
 {
 	btAlignedObjectArray<btMaterial *> m_materialList;
 

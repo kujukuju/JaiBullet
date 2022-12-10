@@ -177,7 +177,7 @@ void btSoftMultiBodyDynamicsWorld::debugDrawWorld()
 	}
 }
 
-struct btSoftSingleRayCallback : public btBroadphaseRayCallback
+struct BT_API btSoftSingleRayCallback : public btBroadphaseRayCallback
 {
 	btVector3 m_rayFromWorld;
 	btVector3 m_rayToWorld;

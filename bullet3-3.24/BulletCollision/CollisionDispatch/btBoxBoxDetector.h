@@ -26,7 +26,7 @@ class btBoxShape;
 
 /// btBoxBoxDetector wraps the ODE box-box collision detector
 /// re-distributed under the Zlib license with permission from Russell L. Smith
-struct btBoxBoxDetector : public btDiscreteCollisionDetectorInterface
+struct BT_API btBoxBoxDetector : public btDiscreteCollisionDetectorInterface
 {
 	const btBoxShape* m_box1;
 	const btBoxShape* m_box2;

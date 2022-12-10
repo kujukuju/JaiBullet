@@ -3,7 +3,7 @@
 #include "LinearMath/btAabbUtil2.h"
 
 ATTRIBUTE_ALIGNED16(struct)
-btSdfCollisionShapeInternalData
+BT_API btSdfCollisionShapeInternalData
 {
 	BT_DECLARE_ALIGNED_ALLOCATOR();
 

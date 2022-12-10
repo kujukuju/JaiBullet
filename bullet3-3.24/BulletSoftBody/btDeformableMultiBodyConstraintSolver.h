@@ -31,7 +31,7 @@ class btDeformableBodySolver;
 // 5. joint constraints
 // are all coupled in this solve.
 ATTRIBUTE_ALIGNED16(class)
-btDeformableMultiBodyConstraintSolver : public btMultiBodyConstraintSolver
+BT_API btDeformableMultiBodyConstraintSolver : public btMultiBodyConstraintSolver
 {
 	btDeformableBodySolver* m_deformableSolver;
 

@@ -33,7 +33,7 @@ struct BT_API btFace
 };
 
 ATTRIBUTE_ALIGNED16(class)
-btConvexPolyhedron
+BT_API btConvexPolyhedron
 {
 public:
 	BT_DECLARE_ALIGNED_ALLOCATOR();

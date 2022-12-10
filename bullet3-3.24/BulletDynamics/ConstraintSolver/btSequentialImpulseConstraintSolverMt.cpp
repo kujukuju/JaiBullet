@@ -243,7 +243,7 @@ void btSequentialImpulseConstraintSolverMt::internalSetupContactConstraints(int 
 	setFrictionConstraintImpulse(contactConstraint, solverBodyIdA, solverBodyIdB, cp, infoGlobal);
 }
 
-struct SetupContactConstraintsLoop : public btIParallelForBody
+struct BT_API SetupContactConstraintsLoop : public btIParallelForBody
 {
 	btSequentialImpulseConstraintSolverMt* m_solver;
 	const btBatchedConstraints* m_bc;
@@ -427,7 +427,7 @@ void btSequentialImpulseConstraintSolverMt::internalCollectContactManifoldCached
 	}
 }
 
-struct CollectContactManifoldCachedInfoLoop : public btIParallelForBody
+struct BT_API CollectContactManifoldCachedInfoLoop : public btIParallelForBody
 {
 	btSequentialImpulseConstraintSolverMt* m_solver;
 	btSequentialImpulseConstraintSolverMt::btContactManifoldCachedInfo* m_cachedInfoArray;
@@ -494,7 +494,7 @@ void btSequentialImpulseConstraintSolverMt::internalAllocContactConstraints(cons
 	}
 }
 
-struct AllocContactConstraintsLoop : public btIParallelForBody
+struct BT_API AllocContactConstraintsLoop : public btIParallelForBody
 {
 	btSequentialImpulseConstraintSolverMt* m_solver;
 	const btSequentialImpulseConstraintSolverMt::btContactManifoldCachedInfo* m_cachedInfoArray;
@@ -624,7 +624,7 @@ void btSequentialImpulseConstraintSolverMt::internalInitMultipleJoints(btTypedCo
 	}
 }
 
-struct InitJointsLoop : public btIParallelForBody
+struct BT_API InitJointsLoop : public btIParallelForBody
 {
 	btSequentialImpulseConstraintSolverMt* m_solver;
 	btTypedConstraint** m_constraints;
@@ -661,7 +661,7 @@ void btSequentialImpulseConstraintSolverMt::internalConvertMultipleJoints(const 
 	}
 }
 
-struct ConvertJointsLoop : public btIParallelForBody
+struct BT_API ConvertJointsLoop : public btIParallelForBody
 {
 	btSequentialImpulseConstraintSolverMt* m_solver;
 	const btAlignedObjectArray<btSequentialImpulseConstraintSolverMt::JointParams>& m_jointParamsArray;
@@ -777,7 +777,7 @@ void btSequentialImpulseConstraintSolverMt::internalConvertBodies(btCollisionObj
 	}
 }
 
-struct ConvertBodiesLoop : public btIParallelForBody
+struct BT_API ConvertBodiesLoop : public btIParallelForBody
 {
 	btSequentialImpulseConstraintSolverMt* m_solver;
 	btCollisionObject** m_bodies;
@@ -870,7 +870,7 @@ btScalar btSequentialImpulseConstraintSolverMt::resolveMultipleContactSplitPenet
 	return leastSquaresResidual;
 }
 
-struct ContactSplitPenetrationImpulseSolverLoop : public btIParallelSumBody
+struct BT_API ContactSplitPenetrationImpulseSolverLoop : public btIParallelSumBody
 {
 	btSequentialImpulseConstraintSolverMt* m_solver;
 	const btBatchedConstraints* m_bc;
@@ -1201,7 +1201,7 @@ void btSequentialImpulseConstraintSolverMt::randomizeConstraintOrdering(int iter
 	}
 }
 
-struct JointSolverLoop : public btIParallelSumBody
+struct BT_API JointSolverLoop : public btIParallelSumBody
 {
 	btSequentialImpulseConstraintSolverMt* m_solver;
 	const btBatchedConstraints* m_bc;
@@ -1242,7 +1242,7 @@ btScalar btSequentialImpulseConstraintSolverMt::resolveAllJointConstraints(int i
 	return leastSquaresResidual;
 }
 
-struct ContactSolverLoop : public btIParallelSumBody
+struct BT_API ContactSolverLoop : public btIParallelSumBody
 {
 	btSequentialImpulseConstraintSolverMt* m_solver;
 	const btBatchedConstraints* m_bc;
@@ -1281,7 +1281,7 @@ btScalar btSequentialImpulseConstraintSolverMt::resolveAllContactConstraints()
 	return leastSquaresResidual;
 }
 
-struct ContactFrictionSolverLoop : public btIParallelSumBody
+struct BT_API ContactFrictionSolverLoop : public btIParallelSumBody
 {
 	btSequentialImpulseConstraintSolverMt* m_solver;
 	const btBatchedConstraints* m_bc;
@@ -1320,7 +1320,7 @@ btScalar btSequentialImpulseConstraintSolverMt::resolveAllContactFrictionConstra
 	return leastSquaresResidual;
 }
 
-struct InterleavedContactSolverLoop : public btIParallelSumBody
+struct BT_API InterleavedContactSolverLoop : public btIParallelSumBody
 {
 	btSequentialImpulseConstraintSolverMt* m_solver;
 	const btBatchedConstraints* m_bc;
@@ -1359,7 +1359,7 @@ btScalar btSequentialImpulseConstraintSolverMt::resolveAllContactConstraintsInte
 	return leastSquaresResidual;
 }
 
-struct ContactRollingFrictionSolverLoop : public btIParallelSumBody
+struct BT_API ContactRollingFrictionSolverLoop : public btIParallelSumBody
 {
 	btSequentialImpulseConstraintSolverMt* m_solver;
 	const btBatchedConstraints* m_bc;
@@ -1474,7 +1474,7 @@ void btSequentialImpulseConstraintSolverMt::internalWriteBackBodies(int iBegin, 
 	writeBackBodies(iBegin, iEnd, infoGlobal);
 }
 
-struct WriteContactPointsLoop : public btIParallelForBody
+struct BT_API WriteContactPointsLoop : public btIParallelForBody
 {
 	btSequentialImpulseConstraintSolverMt* m_solver;
 	const btContactSolverInfo* m_infoGlobal;
@@ -1490,7 +1490,7 @@ struct WriteContactPointsLoop : public btIParallelForBody
 	}
 };
 
-struct WriteJointsLoop : public btIParallelForBody
+struct BT_API WriteJointsLoop : public btIParallelForBody
 {
 	btSequentialImpulseConstraintSolverMt* m_solver;
 	const btContactSolverInfo* m_infoGlobal;
@@ -1506,7 +1506,7 @@ struct WriteJointsLoop : public btIParallelForBody
 	}
 };
 
-struct WriteBodiesLoop : public btIParallelForBody
+struct BT_API WriteBodiesLoop : public btIParallelForBody
 {
 	btSequentialImpulseConstraintSolverMt* m_solver;
 	const btContactSolverInfo* m_infoGlobal;

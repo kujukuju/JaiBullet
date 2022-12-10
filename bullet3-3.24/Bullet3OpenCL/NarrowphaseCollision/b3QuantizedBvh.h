@@ -57,8 +57,8 @@ class b3Serializer;
 
 ///b3QuantizedBvhNode is a compressed aabb node, 16 bytes.
 ///Node can be used for leafnode or internal node. Leafnodes can point to 32-bit triangle index (non-negative range).
-BT_API B3_ATTRIBUTE_ALIGNED16(struct)
-b3QuantizedBvhNode : public b3QuantizedBvhNodeData
+B3_ATTRIBUTE_ALIGNED16(struct)
+BT_API b3QuantizedBvhNode : public b3QuantizedBvhNodeData
 {
 	B3_DECLARE_ALIGNED_ALLOCATOR();
 
@@ -90,8 +90,8 @@ b3QuantizedBvhNode : public b3QuantizedBvhNodeData
 
 /// b3OptimizedBvhNode contains both internal and leaf node information.
 /// Total node size is 44 bytes / node. You can use the compressed version of 16 bytes.
-BT_API B3_ATTRIBUTE_ALIGNED16(struct)
-b3OptimizedBvhNode
+B3_ATTRIBUTE_ALIGNED16(struct)
+BT_API b3OptimizedBvhNode
 {
 	B3_DECLARE_ALIGNED_ALLOCATOR();
 
@@ -112,8 +112,8 @@ b3OptimizedBvhNode
 };
 
 ///b3BvhSubtreeInfo provides info to gather a subtree of limited size
-BT_API B3_ATTRIBUTE_ALIGNED16(class)
-b3BvhSubtreeInfo : public b3BvhSubtreeInfoData
+B3_ATTRIBUTE_ALIGNED16(class)
+BT_API b3BvhSubtreeInfo : public b3BvhSubtreeInfoData
 {
 public:
 	B3_DECLARE_ALIGNED_ALLOCATOR();
@@ -153,8 +153,8 @@ typedef b3AlignedObjectArray<b3BvhSubtreeInfo> BvhSubtreeInfoArray;
 ///The b3QuantizedBvh class stores an AABB tree that can be quickly traversed on CPU and Cell SPU.
 ///It is used by the b3BvhTriangleMeshShape as midphase
 ///It is recommended to use quantization for better performance and lower memory requirements.
-BT_API B3_ATTRIBUTE_ALIGNED16(class)
-b3QuantizedBvh
+B3_ATTRIBUTE_ALIGNED16(class)
+BT_API b3QuantizedBvh
 {
 public:
 	enum b3TraversalMode

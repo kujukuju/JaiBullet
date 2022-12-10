@@ -49,7 +49,7 @@
 class btMultiBodyLinkCollider;
 
 ATTRIBUTE_ALIGNED16(class)
-btMultiBody
+BT_API btMultiBody
 {
 public:
 	BT_DECLARE_ALIGNED_ALLOCATOR();

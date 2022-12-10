@@ -63,7 +63,7 @@ enum btContactManifoldTypes
 
 //ATTRIBUTE_ALIGNED128( class) btPersistentManifold : public btTypedObject
 ATTRIBUTE_ALIGNED16(class)
-btPersistentManifold : public btTypedObject
+BT_API btPersistentManifold : public btTypedObject
 {
 	btManifoldPoint m_pointCache[MANIFOLD_CACHE_SIZE];
 

@@ -84,7 +84,7 @@ enum BroadphaseNativeTypes
 ///The btBroadphaseProxy is the main class that can be used with the Bullet broadphases.
 ///It stores collision shape type information, collision filter information and a client object, typically a btCollisionObject or btRigidBody.
 ATTRIBUTE_ALIGNED16(struct)
-btBroadphaseProxy
+BT_API btBroadphaseProxy
 {
 	BT_DECLARE_ALIGNED_ALLOCATOR();
 
@@ -177,7 +177,7 @@ struct btBroadphaseProxy;
 ///The btBroadphasePair class contains a pair of aabb-overlapping objects.
 ///A btDispatcher can search a btCollisionAlgorithm that performs exact/narrowphase collision detection on the actual collision shapes.
 ATTRIBUTE_ALIGNED16(struct)
-btBroadphasePair
+BT_API btBroadphasePair
 {
 	btBroadphasePair()
 		: m_pProxy0(0),

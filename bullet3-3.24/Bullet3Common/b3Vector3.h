@@ -85,8 +85,8 @@ inline b3Vector4 b3MakeVector4(b3Scalar x, b3Scalar y, b3Scalar z, b3Scalar w);
  * It has an un-used w component to suit 16-byte alignment when b3Vector3 is stored in containers. This extra component can be used by derived classes (Quaternion?) or by user
  * Ideally, this class should be replaced by a platform optimized SIMD version that keeps the data in registers
  */
-BT_API B3_ATTRIBUTE_ALIGNED16(class)
-b3Vector3
+B3_ATTRIBUTE_ALIGNED16(class)
+BT_API b3Vector3
 {
 public:
 #if defined(B3_USE_SSE) || defined(B3_USE_NEON)  // _WIN32 || ARM

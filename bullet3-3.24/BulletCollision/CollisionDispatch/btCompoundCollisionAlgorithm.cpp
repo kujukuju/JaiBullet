@@ -91,7 +91,7 @@ btCompoundCollisionAlgorithm::~btCompoundCollisionAlgorithm()
 	removeChildAlgorithms();
 }
 
-struct btCompoundLeafCallback : btDbvt::ICollide
+struct BT_API btCompoundLeafCallback : btDbvt::ICollide
 {
 public:
 	const btCollisionObjectWrapper* m_compoundColObjWrap;

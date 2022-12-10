@@ -106,7 +106,7 @@ void btCollisionDispatcherMt::releaseManifold(btPersistentManifold* manifold)
 	}
 }
 
-struct CollisionDispatcherUpdater : public btIParallelForBody
+struct BT_API CollisionDispatcherUpdater : public btIParallelForBody
 {
 	btBroadphasePair* mPairArray;
 	btNearCallback mCallback;

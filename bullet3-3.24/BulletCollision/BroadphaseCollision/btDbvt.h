@@ -230,20 +230,20 @@ typedef btAlignedObjectArray<const btDbvtNode*> btNodeStack;
 struct BT_API btDbvt
 {
 	/* Stack element	*/
-	struct sStkNN
+	struct BT_API sStkNN
 	{
 		const btDbvtNode* a;
 		const btDbvtNode* b;
 		sStkNN() {}
 		sStkNN(const btDbvtNode* na, const btDbvtNode* nb) : a(na), b(nb) {}
 	};
-	struct sStkNP
+	struct BT_API sStkNP
 	{
 		const btDbvtNode* node;
 		int mask;
 		sStkNP(const btDbvtNode* n, unsigned m) : node(n), mask(m) {}
 	};
-	struct sStkNPS
+	struct BT_API sStkNPS
 	{
 		const btDbvtNode* node;
 		int mask;
@@ -251,14 +251,14 @@ struct BT_API btDbvt
 		sStkNPS() {}
 		sStkNPS(const btDbvtNode* n, unsigned m, btScalar v) : node(n), mask(m), value(v) {}
 	};
-	struct sStkCLN
+	struct BT_API sStkCLN
 	{
 		const btDbvtNode* node;
 		btDbvtNode* parent;
 		sStkCLN(const btDbvtNode* n, btDbvtNode* p) : node(n), parent(p) {}
 	};
     
-    struct sStknNN
+    struct BT_API sStknNN
     {
         const btDbvntNode* a;
         const btDbvntNode* b;
@@ -268,7 +268,7 @@ struct BT_API btDbvt
 	// Policies/Interfaces
 
 	/* ICollide	*/
-	struct ICollide
+	struct BT_API ICollide
 	{
 		DBVT_VIRTUAL_DTOR(ICollide)
 		DBVT_VIRTUAL void Process(const btDbvtNode*, const btDbvtNode*) {}
@@ -279,7 +279,7 @@ struct BT_API btDbvt
 		DBVT_VIRTUAL bool AllLeaves(const btDbvtNode*) { return (true); }
 	};
 	/* IWriter	*/
-	struct IWriter
+	struct BT_API IWriter
 	{
 		virtual ~IWriter() {}
 		virtual void Prepare(const btDbvtNode* root, int numnodes) = 0;
@@ -287,7 +287,7 @@ struct BT_API btDbvt
 		virtual void WriteLeaf(const btDbvtNode*, int index, int parent) = 0;
 	};
 	/* IClone	*/
-	struct IClone
+	struct BT_API IClone
 	{
 		virtual ~IClone() {}
 		virtual void CloneLeaf(btDbvtNode*) {}

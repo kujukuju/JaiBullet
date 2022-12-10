@@ -34,7 +34,7 @@ subject to the following restrictions:
 ///Instead of building the bounding volume hierarchy acceleration structure, it is also possible to serialize (save) and deserialize (load) the structure from disk.
 ///See Demos\ConcaveDemo\ConcavePhysicsDemo.cpp for an example.
 ATTRIBUTE_ALIGNED16(class)
-btBvhTriangleMeshShape : public btTriangleMeshShape
+BT_API btBvhTriangleMeshShape : public btTriangleMeshShape
 {
 	btOptimizedBvh* m_bvh;
 	btTriangleInfoMap* m_triangleInfoMap;

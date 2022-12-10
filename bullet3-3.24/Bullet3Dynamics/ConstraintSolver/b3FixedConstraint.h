@@ -6,8 +6,8 @@
 
 #include "b3TypedConstraint.h"
 
-BT_API B3_ATTRIBUTE_ALIGNED16(class)
-b3FixedConstraint : public b3TypedConstraint
+B3_ATTRIBUTE_ALIGNED16(class)
+BT_API b3FixedConstraint : public b3TypedConstraint
 {
 	b3Vector3 m_pivotInA;
 	b3Vector3 m_pivotInB;

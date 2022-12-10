@@ -24,7 +24,7 @@ subject to the following restrictions:
 
 ///The btConvexPointCloudShape implements an implicit convex hull of an array of vertices.
 ATTRIBUTE_ALIGNED16(class)
-btConvexPointCloudShape : public btPolyhedralConvexAabbCachingShape
+BT_API btConvexPointCloudShape : public btPolyhedralConvexAabbCachingShape
 {
 	btVector3* m_unscaledPoints;
 	int m_numPoints;

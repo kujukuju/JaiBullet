@@ -27,7 +27,7 @@ typedef sce::PhysicsEffects::PfxConstraintRow btConstraintRow;
 #else
 // Don't change following order of parameters
 ATTRIBUTE_ALIGNED16(struct)
-btConstraintRow
+BT_API btConstraintRow
 {
 	btScalar m_normal[3];
 	btScalar m_rhs;

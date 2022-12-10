@@ -60,7 +60,7 @@ struct BT_API b3ContactSolverInfoData
 	b3Scalar m_singleAxisRollingFrictionThreshold;
 };
 
-struct b3ContactSolverInfo : public b3ContactSolverInfoData
+struct BT_API b3ContactSolverInfo : public b3ContactSolverInfoData
 {
 	inline b3ContactSolverInfo()
 	{

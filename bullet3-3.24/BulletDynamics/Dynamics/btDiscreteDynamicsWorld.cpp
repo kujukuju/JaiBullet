@@ -75,7 +75,7 @@ public:
 	}
 };
 
-struct InplaceSolverIslandCallback : public btSimulationIslandManager::IslandCallback
+struct BT_API InplaceSolverIslandCallback : public btSimulationIslandManager::IslandCallback
 {
 	btContactSolverInfo* m_solverInfo;
 	btConstraintSolver* m_solver;

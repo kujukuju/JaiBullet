@@ -19,7 +19,7 @@ class BT_API b3FillCL
 	cl_kernel m_fillFloatKernel;
 
 public:
-	struct b3ConstData
+	struct BT_API b3ConstData
 	{
 		union {
 			b3Int4 m_data;

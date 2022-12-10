@@ -20,7 +20,7 @@ subject to the following restrictions:
 
 #include "btDiscreteCollisionDetectorInterface.h"
 
-struct btPointCollector : public btDiscreteCollisionDetectorInterface::Result
+struct BT_API btPointCollector : public btDiscreteCollisionDetectorInterface::Result
 {
 	btVector3 m_normalOnBInWorld;
 	btVector3 m_pointInWorld;

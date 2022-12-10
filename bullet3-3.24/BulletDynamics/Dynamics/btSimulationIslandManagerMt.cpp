@@ -552,7 +552,7 @@ void btSimulationIslandManagerMt::serialIslandDispatch(btAlignedObjectArray<Isla
 	}
 }
 
-struct UpdateIslandDispatcher : public btIParallelForBody
+struct BT_API UpdateIslandDispatcher : public btIParallelForBody
 {
 	btAlignedObjectArray<btSimulationIslandManagerMt::Island*>& m_islandsPtr;
 	const btSimulationIslandManagerMt::SolverParams& m_solverParams;
