@@ -1,4 +1,3 @@
 .build/
-bulletc/.idea
-bulletc/bullet3-3.24/.idea
-bulletc/cmake-*
+libs/.idea
+libs/cmake-*

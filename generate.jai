@@ -11,17 +11,17 @@
 
     array_add(*libpaths, ".");
     array_add(*libnames, "bullet3");
-    array_add(*include_paths, tprint("%bulletc/bullet3-3.24", #filepath));
-    array_add(*source_files, tprint("%bulletc/capi/capi.h", #filepath));
+    array_add(*include_paths, tprint("%libs/bullet", #filepath));
+    array_add(*source_files, tprint("%libs/cbullet/cbullet.h", #filepath));
     opts.footer = "#import \"Math\";";
 
     // array_add(*extra_clang_arguments, "-x", "c++");
-    array_add(*extra_clang_arguments, "-D", "B3_USE_CLEW");
-    array_add(*extra_clang_arguments, "-D", "BT_SHARED");
+    // array_add(*extra_clang_arguments, "-D", "B3_USE_CLEW");
+    // array_add(*extra_clang_arguments, "-D", "BT_SHARED");
     generate_compile_time_struct_checks = false;
 
     visitor :: (decl: *Declaration, parent_decl: *Declaration) -> Declaration_Visit_Result {
-        if decl.name == "Vector4" {
+        if decl.name == "Vector3" {
             decl.decl_flags |= .OMIT_FROM_OUTPUT;
             return .STOP;
         }
@@ -36,4 +36,6 @@
     array_add(*system_include_paths, "C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.31.31103\\include");
 
     generate_bindings(opts, "module.jai");
+
+    // TODO need to generate helper methods for each function that has a *Vector3
 }
