@@ -12,4 +12,4 @@ I also generated helper methods for each method that accepts a pointer to a vect
 
 ### Example Project
 
-The example project depends on KodaJai for rendering and JaiSerializer for quick model loading.
+The example project depends on [KodaJai](https://github.com/kujukuju/KodaJai) for rendering and [JaiSerializer](https://github.com/kujukuju/JaiSerializer) for quick model loading.
