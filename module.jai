@@ -3,7 +3,7 @@
 //
 // jai ./generate.jai
 //
-
+size_t :: u64;
 
 
 CBT_COLLISION_FILTER_DEFAULT :: 1;
@@ -133,7 +133,15 @@ cbtTaskSchedSetNumThreads :: (num_threads: s32) -> void #foreign bullet3;
 cbtWorldCreate :: () -> CbtWorldHandle #foreign bullet3;
 cbtWorldDestroy :: (world_handle: CbtWorldHandle) -> void #foreign bullet3;
 cbtWorldSetGravity :: (world_handle: CbtWorldHandle, gravity: *Vector3) -> void #foreign bullet3;
+cbtWorldSetGravity :: (world_handle: CbtWorldHandle, gravity: Vector3) -> void {
+	return cbtWorldSetGravity(world_handle, *gravity);
+}
+
 cbtWorldGetGravity :: (world_handle: CbtWorldHandle, gravity: *Vector3) -> void #foreign bullet3;
+cbtWorldGetGravity :: (world_handle: CbtWorldHandle, gravity: Vector3) -> void {
+	return cbtWorldGetGravity(world_handle, *gravity);
+}
+
 cbtWorldStepSimulation :: (world_handle: CbtWorldHandle, time_step: float, max_sub_steps: s32, fixed_time_step: float) -> s32 #foreign bullet3;
 
 cbtWorldAddBody :: (world_handle: CbtWorldHandle, body_handle: CbtBodyHandle) -> void #foreign bullet3;
@@ -149,16 +157,32 @@ cbtWorldGetConstraint :: (world_handle: CbtWorldHandle, con_index: s32) -> CbtCo
 
 // Returns `true` when hits something, `false` otherwise
 cbtWorldRayTestClosest :: (world_handle: CbtWorldHandle, ray_from_world: *Vector3, ray_to_world: *Vector3, collision_filter_group: s32, collision_filter_mask: s32, flags: u32, result: *CbtRayCastResult) -> bool #foreign bullet3;
+cbtWorldRayTestClosest :: (world_handle: CbtWorldHandle, ray_from_world: Vector3, ray_to_world: Vector3, collision_filter_group: s32, collision_filter_mask: s32, flags: u32, result: *CbtRayCastResult) -> bool {
+	return cbtWorldRayTestClosest(world_handle, *ray_from_world, *ray_to_world, collision_filter_group, collision_filter_mask, flags, result);
+}
+
 
 cbtWorldDebugSetDrawer :: (world_handle: CbtWorldHandle, drawer: *CbtDebugDraw) -> void #foreign bullet3;
 cbtWorldDebugSetMode :: (world_handle: CbtWorldHandle, mode: s32) -> void #foreign bullet3;
 cbtWorldDebugGetMode :: (world_handle: CbtWorldHandle) -> s32 #foreign bullet3;
 cbtWorldDebugDrawAll :: (world_handle: CbtWorldHandle) -> void #foreign bullet3;
 cbtWorldDebugDrawLine1 :: (world_handle: CbtWorldHandle, p0: *Vector3, p1: *Vector3, color: *Vector3) -> void #foreign bullet3;
+cbtWorldDebugDrawLine1 :: (world_handle: CbtWorldHandle, p0: Vector3, p1: Vector3, color: Vector3) -> void {
+	return cbtWorldDebugDrawLine1(world_handle, *p0, *p1, *color);
+}
+
 
 cbtWorldDebugDrawLine2 :: (world_handle: CbtWorldHandle, p0: *Vector3, p1: *Vector3, color0: *Vector3, color1: *Vector3) -> void #foreign bullet3;
+cbtWorldDebugDrawLine2 :: (world_handle: CbtWorldHandle, p0: Vector3, p1: Vector3, color0: Vector3, color1: Vector3) -> void {
+	return cbtWorldDebugDrawLine2(world_handle, *p0, *p1, *color0, *color1);
+}
+
 
 cbtWorldDebugDrawSphere :: (world_handle: CbtWorldHandle, position: *Vector3, radius: float, color: *Vector3) -> void #foreign bullet3;
+cbtWorldDebugDrawSphere :: (world_handle: CbtWorldHandle, position: Vector3, radius: float, color: Vector3) -> void {
+	return cbtWorldDebugDrawSphere(world_handle, *position, radius, *color);
+}
+
 
 //
 // Shape
@@ -180,6 +204,10 @@ cbtShapeIsConcave :: (shape_handle: CbtShapeHandle) -> bool #foreign bullet3;
 cbtShapeIsCompound :: (shape_handle: CbtShapeHandle) -> bool #foreign bullet3;
 
 cbtShapeCalculateLocalInertia :: (shape_handle: CbtShapeHandle, mass: float, inertia: *Vector3) -> void #foreign bullet3;
+cbtShapeCalculateLocalInertia :: (shape_handle: CbtShapeHandle, mass: float, inertia: Vector3) -> void {
+	return cbtShapeCalculateLocalInertia(shape_handle, mass, *inertia);
+}
+
 
 cbtShapeSetUserPointer :: (shape_handle: CbtShapeHandle, user_pointer: *void) -> void #foreign bullet3;
 cbtShapeGetUserPointer :: (shape_handle: CbtShapeHandle) -> *void #foreign bullet3;
@@ -187,8 +215,20 @@ cbtShapeSetUserIndex :: (shape_handle: CbtShapeHandle, slot: s32, user_index: s3
 cbtShapeGetUserIndex :: (shape_handle: CbtShapeHandle, slot: s32) -> s32 #foreign bullet3;
 
 cbtShapeBoxCreate :: (shape_handle: CbtShapeHandle, half_extents: *Vector3) -> void #foreign bullet3;
+cbtShapeBoxCreate :: (shape_handle: CbtShapeHandle, half_extents: Vector3) -> void {
+	return cbtShapeBoxCreate(shape_handle, *half_extents);
+}
+
 cbtShapeBoxGetHalfExtentsWithoutMargin :: (shape_handle: CbtShapeHandle, half_extents: *Vector3) -> void #foreign bullet3;
+cbtShapeBoxGetHalfExtentsWithoutMargin :: (shape_handle: CbtShapeHandle, half_extents: Vector3) -> void {
+	return cbtShapeBoxGetHalfExtentsWithoutMargin(shape_handle, *half_extents);
+}
+
 cbtShapeBoxGetHalfExtentsWithMargin :: (shape_handle: CbtShapeHandle, half_extents: *Vector3) -> void #foreign bullet3;
+cbtShapeBoxGetHalfExtentsWithMargin :: (shape_handle: CbtShapeHandle, half_extents: Vector3) -> void {
+	return cbtShapeBoxGetHalfExtentsWithMargin(shape_handle, *half_extents);
+}
+
 
 cbtShapeSphereCreate :: (shape_handle: CbtShapeHandle, radius: float) -> void #foreign bullet3;
 cbtShapeSphereSetUnscaledRadius :: (shape_handle: CbtShapeHandle, radius: float) -> void #foreign bullet3;
@@ -200,8 +240,20 @@ cbtShapeCapsuleGetHalfHeight :: (shape_handle: CbtShapeHandle) -> float #foreign
 cbtShapeCapsuleGetRadius :: (shape_handle: CbtShapeHandle) -> float #foreign bullet3;
 
 cbtShapeCylinderCreate :: (shape_handle: CbtShapeHandle, half_extents: *Vector3, up_axis: s32) -> void #foreign bullet3;
+cbtShapeCylinderCreate :: (shape_handle: CbtShapeHandle, half_extents: Vector3, up_axis: s32) -> void {
+	return cbtShapeCylinderCreate(shape_handle, *half_extents, up_axis);
+}
+
 cbtShapeCylinderGetHalfExtentsWithoutMargin :: (shape_handle: CbtShapeHandle, half_extents: *Vector3) -> void #foreign bullet3;
+cbtShapeCylinderGetHalfExtentsWithoutMargin :: (shape_handle: CbtShapeHandle, half_extents: Vector3) -> void {
+	return cbtShapeCylinderGetHalfExtentsWithoutMargin(shape_handle, *half_extents);
+}
+
 cbtShapeCylinderGetHalfExtentsWithMargin :: (shape_handle: CbtShapeHandle, half_extents: *Vector3) -> void #foreign bullet3;
+cbtShapeCylinderGetHalfExtentsWithMargin :: (shape_handle: CbtShapeHandle, half_extents: Vector3) -> void {
+	return cbtShapeCylinderGetHalfExtentsWithMargin(shape_handle, *half_extents);
+}
+
 cbtShapeCylinderGetUpAxis :: (shape_handle: CbtShapeHandle) -> s32 #foreign bullet3;
 
 cbtShapeConeCreate :: (shape_handle: CbtShapeHandle, radius: float, height: float, up_axis: s32) -> void #foreign bullet3;
@@ -212,12 +264,20 @@ cbtShapeConeGetUpAxis :: (shape_handle: CbtShapeHandle) -> s32 #foreign bullet3;
 cbtShapeCompoundCreate :: (shape_handle: CbtShapeHandle, enable_dynamic_aabb_tree: bool, initial_child_capacity: s32) -> void #foreign bullet3;
 
 cbtShapeCompoundAddChild :: (shape_handle: CbtShapeHandle, local_transform: *[4] Vector3, child_shape_handle: CbtShapeHandle) -> void #foreign bullet3;
+cbtShapeCompoundAddChild :: (shape_handle: CbtShapeHandle, local_transform: [4] Vector3, child_shape_handle: CbtShapeHandle) -> void {
+	return cbtShapeCompoundAddChild(shape_handle, *local_transform, child_shape_handle);
+}
+
 
 cbtShapeCompoundRemoveChild :: (shape_handle: CbtShapeHandle, child_shape_handle: CbtShapeHandle) -> void #foreign bullet3;
 cbtShapeCompoundRemoveChildByIndex :: (shape_handle: CbtShapeHandle, child_shape_index: s32) -> void #foreign bullet3;
 cbtShapeCompoundGetNumChilds :: (shape_handle: CbtShapeHandle) -> s32 #foreign bullet3;
 cbtShapeCompoundGetChild :: (shape_handle: CbtShapeHandle, child_shape_index: s32) -> CbtShapeHandle #foreign bullet3;
 cbtShapeCompoundGetChildTransform :: (shape_handle: CbtShapeHandle, child_shape_index: s32, transform: *[4] Vector3) -> void #foreign bullet3;
+cbtShapeCompoundGetChildTransform :: (shape_handle: CbtShapeHandle, child_shape_index: s32, transform: [4] Vector3) -> void {
+	return cbtShapeCompoundGetChildTransform(shape_handle, child_shape_index, *transform);
+}
+
 
 cbtShapeTriMeshCreateBegin :: (shape_handle: CbtShapeHandle) -> void #foreign bullet3;
 cbtShapeTriMeshCreateEnd :: (shape_handle: CbtShapeHandle) -> void #foreign bullet3;
@@ -233,6 +293,10 @@ cbtBodyDeallocate :: (body_handle: CbtBodyHandle) -> void #foreign bullet3;
 cbtBodyDeallocateBatch :: (num: u32, body_handles: *CbtBodyHandle) -> void #foreign bullet3;
 
 cbtBodyCreate :: (body_handle: CbtBodyHandle, mass: float, transform: *[4] Vector3, shape_handle: CbtShapeHandle) -> void #foreign bullet3;
+cbtBodyCreate :: (body_handle: CbtBodyHandle, mass: float, transform: [4] Vector3, shape_handle: CbtShapeHandle) -> void {
+	return cbtBodyCreate(body_handle, mass, *transform, shape_handle);
+}
+
 
 cbtBodyDestroy :: (body_handle: CbtBodyHandle) -> void #foreign bullet3;
 cbtBodyIsCreated :: (body_handle: CbtBodyHandle) -> bool #foreign bullet3;
@@ -246,31 +310,87 @@ cbtBodySetFriction :: (body_handle: CbtBodyHandle, friction: float) -> void #for
 cbtBodySetRollingFriction :: (body_handle: CbtBodyHandle, friction: float) -> void #foreign bullet3;
 cbtBodySetSpinningFriction :: (body_handle: CbtBodyHandle, friction: float) -> void #foreign bullet3;
 cbtBodySetAnisotropicFriction :: (body_handle: CbtBodyHandle, friction: *Vector3, mode: s32) -> void #foreign bullet3;
+cbtBodySetAnisotropicFriction :: (body_handle: CbtBodyHandle, friction: Vector3, mode: s32) -> void {
+	return cbtBodySetAnisotropicFriction(body_handle, *friction, mode);
+}
+
 
 cbtBodySetContactStiffnessAndDamping :: (body_handle: CbtBodyHandle, stiffness: float, damping: float) -> void #foreign bullet3;
 
 cbtBodySetMassProps :: (body_handle: CbtBodyHandle, mass: float, inertia: *Vector3) -> void #foreign bullet3;
+cbtBodySetMassProps :: (body_handle: CbtBodyHandle, mass: float, inertia: Vector3) -> void {
+	return cbtBodySetMassProps(body_handle, mass, *inertia);
+}
+
 
 cbtBodySetDamping :: (body_handle: CbtBodyHandle, linear: float, angular: float) -> void #foreign bullet3;
 
 cbtBodySetLinearVelocity :: (body_handle: CbtBodyHandle, velocity: *Vector3) -> void #foreign bullet3;
+cbtBodySetLinearVelocity :: (body_handle: CbtBodyHandle, velocity: Vector3) -> void {
+	return cbtBodySetLinearVelocity(body_handle, *velocity);
+}
+
 cbtBodySetAngularVelocity :: (body_handle: CbtBodyHandle, velocity: *Vector3) -> void #foreign bullet3;
+cbtBodySetAngularVelocity :: (body_handle: CbtBodyHandle, velocity: Vector3) -> void {
+	return cbtBodySetAngularVelocity(body_handle, *velocity);
+}
+
 
 cbtBodySetLinearFactor :: (body_handle: CbtBodyHandle, factor: *Vector3) -> void #foreign bullet3;
+cbtBodySetLinearFactor :: (body_handle: CbtBodyHandle, factor: Vector3) -> void {
+	return cbtBodySetLinearFactor(body_handle, *factor);
+}
+
 cbtBodySetAngularFactor :: (body_handle: CbtBodyHandle, factor: *Vector3) -> void #foreign bullet3;
+cbtBodySetAngularFactor :: (body_handle: CbtBodyHandle, factor: Vector3) -> void {
+	return cbtBodySetAngularFactor(body_handle, *factor);
+}
+
 
 cbtBodySetGravity :: (body_handle: CbtBodyHandle, gravity: *Vector3) -> void #foreign bullet3;
+cbtBodySetGravity :: (body_handle: CbtBodyHandle, gravity: Vector3) -> void {
+	return cbtBodySetGravity(body_handle, *gravity);
+}
+
 cbtBodyGetGravity :: (body_handle: CbtBodyHandle, gravity: *Vector3) -> void #foreign bullet3;
+cbtBodyGetGravity :: (body_handle: CbtBodyHandle, gravity: Vector3) -> void {
+	return cbtBodyGetGravity(body_handle, *gravity);
+}
+
 
 cbtBodyGetNumConstraints :: (body_handle: CbtBodyHandle) -> s32 #foreign bullet3;
 cbtBodyGetConstraint :: (body_handle: CbtBodyHandle, index: s32) -> CbtConstraintHandle #foreign bullet3;
 
 cbtBodyApplyCentralForce :: (body_handle: CbtBodyHandle, force: *Vector3) -> void #foreign bullet3;
+cbtBodyApplyCentralForce :: (body_handle: CbtBodyHandle, force: Vector3) -> void {
+	return cbtBodyApplyCentralForce(body_handle, *force);
+}
+
 cbtBodyApplyCentralImpulse :: (body_handle: CbtBodyHandle, impulse: *Vector3) -> void #foreign bullet3;
+cbtBodyApplyCentralImpulse :: (body_handle: CbtBodyHandle, impulse: Vector3) -> void {
+	return cbtBodyApplyCentralImpulse(body_handle, *impulse);
+}
+
 cbtBodyApplyForce :: (body_handle: CbtBodyHandle, force: *Vector3, rel_pos: *Vector3) -> void #foreign bullet3;
+cbtBodyApplyForce :: (body_handle: CbtBodyHandle, force: Vector3, rel_pos: Vector3) -> void {
+	return cbtBodyApplyForce(body_handle, *force, *rel_pos);
+}
+
 cbtBodyApplyImpulse :: (body_handle: CbtBodyHandle, impulse: *Vector3, rel_pos: *Vector3) -> void #foreign bullet3;
+cbtBodyApplyImpulse :: (body_handle: CbtBodyHandle, impulse: Vector3, rel_pos: Vector3) -> void {
+	return cbtBodyApplyImpulse(body_handle, *impulse, *rel_pos);
+}
+
 cbtBodyApplyTorque :: (body_handle: CbtBodyHandle, torque: *Vector3) -> void #foreign bullet3;
+cbtBodyApplyTorque :: (body_handle: CbtBodyHandle, torque: Vector3) -> void {
+	return cbtBodyApplyTorque(body_handle, *torque);
+}
+
 cbtBodyApplyTorqueImpulse :: (body_handle: CbtBodyHandle, impulse: *Vector3) -> void #foreign bullet3;
+cbtBodyApplyTorqueImpulse :: (body_handle: CbtBodyHandle, impulse: Vector3) -> void {
+	return cbtBodyApplyTorqueImpulse(body_handle, *impulse);
+}
+
 
 cbtBodyGetRestitution :: (body_handle: CbtBodyHandle) -> float #foreign bullet3;
 
@@ -278,6 +398,10 @@ cbtBodyGetFriction :: (body_handle: CbtBodyHandle) -> float #foreign bullet3;
 cbtBodyGetRollingFriction :: (body_handle: CbtBodyHandle) -> float #foreign bullet3;
 cbtBodyGetSpinningFriction :: (body_handle: CbtBodyHandle) -> float #foreign bullet3;
 cbtBodyGetAnisotropicFriction :: (body_handle: CbtBodyHandle, friction: *Vector3) -> void #foreign bullet3;
+cbtBodyGetAnisotropicFriction :: (body_handle: CbtBodyHandle, friction: Vector3) -> void {
+	return cbtBodyGetAnisotropicFriction(body_handle, *friction);
+}
+
 
 cbtBodyGetContactStiffness :: (body_handle: CbtBodyHandle) -> float #foreign bullet3;
 cbtBodyGetContactDamping :: (body_handle: CbtBodyHandle) -> float #foreign bullet3;
@@ -288,10 +412,26 @@ cbtBodyGetLinearDamping :: (body_handle: CbtBodyHandle) -> float #foreign bullet
 cbtBodyGetAngularDamping :: (body_handle: CbtBodyHandle) -> float #foreign bullet3;
 
 cbtBodyGetLinearVelocity :: (body_handle: CbtBodyHandle, velocity: *Vector3) -> void #foreign bullet3;
+cbtBodyGetLinearVelocity :: (body_handle: CbtBodyHandle, velocity: Vector3) -> void {
+	return cbtBodyGetLinearVelocity(body_handle, *velocity);
+}
+
 cbtBodyGetAngularVelocity :: (body_handle: CbtBodyHandle, velocity: *Vector3) -> void #foreign bullet3;
+cbtBodyGetAngularVelocity :: (body_handle: CbtBodyHandle, velocity: Vector3) -> void {
+	return cbtBodyGetAngularVelocity(body_handle, *velocity);
+}
+
 
 cbtBodyGetTotalForce :: (body_handle: CbtBodyHandle, force: *Vector3) -> void #foreign bullet3;
+cbtBodyGetTotalForce :: (body_handle: CbtBodyHandle, force: Vector3) -> void {
+	return cbtBodyGetTotalForce(body_handle, *force);
+}
+
 cbtBodyGetTotalTorque :: (body_handle: CbtBodyHandle, torque: *Vector3) -> void #foreign bullet3;
+cbtBodyGetTotalTorque :: (body_handle: CbtBodyHandle, torque: Vector3) -> void {
+	return cbtBodyGetTotalTorque(body_handle, *torque);
+}
+
 
 cbtBodyIsStatic :: (body_handle: CbtBodyHandle) -> bool #foreign bullet3;
 cbtBodyIsKinematic :: (body_handle: CbtBodyHandle) -> bool #foreign bullet3;
@@ -311,10 +451,30 @@ cbtBodySetUserIndex :: (body_handle: CbtBodyHandle, slot: s32, user_index: s32) 
 cbtBodyGetUserIndex :: (body_handle: CbtBodyHandle, slot: s32) -> s32 #foreign bullet3;
 
 cbtBodySetCenterOfMassTransform :: (body_handle: CbtBodyHandle, transform: *[4] Vector3) -> void #foreign bullet3;
+cbtBodySetCenterOfMassTransform :: (body_handle: CbtBodyHandle, transform: [4] Vector3) -> void {
+	return cbtBodySetCenterOfMassTransform(body_handle, *transform);
+}
+
 cbtBodyGetCenterOfMassTransform :: (body_handle: CbtBodyHandle, transform: *[4] Vector3) -> void #foreign bullet3;
+cbtBodyGetCenterOfMassTransform :: (body_handle: CbtBodyHandle, transform: [4] Vector3) -> void {
+	return cbtBodyGetCenterOfMassTransform(body_handle, *transform);
+}
+
 cbtBodyGetCenterOfMassPosition :: (body_handle: CbtBodyHandle, position: *Vector3) -> void #foreign bullet3;
+cbtBodyGetCenterOfMassPosition :: (body_handle: CbtBodyHandle, position: Vector3) -> void {
+	return cbtBodyGetCenterOfMassPosition(body_handle, *position);
+}
+
 cbtBodyGetInvCenterOfMassTransform :: (body_handle: CbtBodyHandle, transform: *[4] Vector3) -> void #foreign bullet3;
+cbtBodyGetInvCenterOfMassTransform :: (body_handle: CbtBodyHandle, transform: [4] Vector3) -> void {
+	return cbtBodyGetInvCenterOfMassTransform(body_handle, *transform);
+}
+
 cbtBodyGetGraphicsWorldTransform :: (body_handle: CbtBodyHandle, transform: *[4] Vector3) -> void #foreign bullet3;
+cbtBodyGetGraphicsWorldTransform :: (body_handle: CbtBodyHandle, transform: [4] Vector3) -> void {
+	return cbtBodyGetGraphicsWorldTransform(body_handle, *transform);
+}
+
 
 cbtBodyGetCcdSweptSphereRadius :: (body_handle: CbtBodyHandle) -> float #foreign bullet3;
 cbtBodySetCcdSweptSphereRadius :: (body_handle: CbtBodyHandle, radius: float) -> void #foreign bullet3;
