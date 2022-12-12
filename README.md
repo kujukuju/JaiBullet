@@ -7,3 +7,9 @@ Seems completely ridiculous to write code for a game this way, so I tried genera
 And finally I found a C wrapper online for zbullet that wraps most of the useful functionality (missing a lot) and this is what is currently binded to.
 
 I also generated helper methods for each method that accepts a pointer to a vector/matrix/float rather than the actual object.
+
+---
+
+### Example Project
+
+The example project depends on KodaJai for rendering and JaiSerializer for quick model loading.
