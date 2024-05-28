@@ -595,5 +595,5 @@ cbtConConeTwistSetLimit :: (con_handle: CbtConstraintHandle, swing_span1: float,
 
 #scope_file
 
-bullet3 :: #foreign_library "./bullet3";
+bullet3 :: #library "./bullet3";
 #import "Math";

@@ -87,10 +87,10 @@ main :: () {
 
     cbtWorldAddBody(world, level_body);
 
-    last_time := get_time() * 1000;
+    last_time := seconds_since_init() * 1000;
     next_physics_time := last_time;
     while !should_exit() {
-        new_time := get_time() * 1000;
+        new_time := seconds_since_init() * 1000;
         percentage_loop = (finish_time - last_time) / (new_time - last_time);
         last_time = new_time;
 
@@ -106,7 +106,7 @@ main :: () {
         
         reset_temporary_storage();
 
-        finish_time = get_time() * 1000;
+        finish_time = seconds_since_init() * 1000;
     }
 }
 
