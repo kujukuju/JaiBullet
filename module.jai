@@ -90,9 +90,9 @@ CbtDebugDrawHandle__ :: struct {
 }
 CbtDebugDrawHandle :: *CbtDebugDrawHandle__;
 
-CbtAlignedAllocFunc :: #type (size: size_t, alignment: s32) -> *void #c_call;
+CbtAlignedAllocFunc :: #type (size: u64, alignment: s32) -> *void #c_call;
 CbtAlignedFreeFunc :: #type (memblock: *void) -> void #c_call;
-CbtAllocFunc :: #type (size: size_t) -> *void #c_call;
+CbtAllocFunc :: #type (size: u64) -> *void #c_call;
 CbtFreeFunc :: #type (memblock: *void) -> void #c_call;
 
 cbtAlignedAllocSetCustom :: (alloc: CbtAllocFunc, free: CbtFreeFunc) -> void #foreign bullet3;
@@ -145,6 +145,7 @@ cbtWorldGetGravity :: (world_handle: CbtWorldHandle, gravity: Vector3) -> void {
 cbtWorldStepSimulation :: (world_handle: CbtWorldHandle, time_step: float, max_sub_steps: s32, fixed_time_step: float) -> s32 #foreign bullet3;
 
 cbtWorldAddBody :: (world_handle: CbtWorldHandle, body_handle: CbtBodyHandle) -> void #foreign bullet3;
+cbtWorldAddBodyWithGroup :: (world_handle: CbtWorldHandle, body_handle: CbtBodyHandle, group: s32, mask: s32) -> void #foreign bullet3;
 cbtWorldAddConstraint :: (world_handle: CbtWorldHandle, con_handle: CbtConstraintHandle, disable_collision_between_linked_bodies: bool) -> void #foreign bullet3;
 
 cbtWorldRemoveBody :: (world_handle: CbtWorldHandle, body_handle: CbtBodyHandle) -> void #foreign bullet3;

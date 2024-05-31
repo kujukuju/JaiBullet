@@ -230,6 +230,14 @@ void cbtWorldAddBody(CbtWorldHandle world_handle, CbtBodyHandle body_handle) {
     world->addRigidBody(body);
 }
 
+void cbtWorldAddBodyWithGroup(CbtWorldHandle world_handle, CbtBodyHandle body_handle, int group, int mask) {
+    assert(world_handle);
+    assert(body_handle && cbtBodyIsCreated(body_handle));
+    auto world = ((WorldData*)world_handle)->world;
+    auto body = (btRigidBody*)body_handle;
+    world->addRigidBody(body, group, mask);
+}
+
 void cbtWorldAddConstraint(
     CbtWorldHandle world_handle,
     CbtConstraintHandle con_handle,

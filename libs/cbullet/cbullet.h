@@ -175,6 +175,7 @@ BT_API int cbtWorldStepSimulation(
 );
 
 BT_API void cbtWorldAddBody(CbtWorldHandle world_handle, CbtBodyHandle body_handle);
+BT_API void cbtWorldAddBodyWithGroup(CbtWorldHandle world_handle, CbtBodyHandle body_handle, int group, int mask);
 BT_API void cbtWorldAddConstraint(
     CbtWorldHandle world_handle,
     CbtConstraintHandle con_handle,

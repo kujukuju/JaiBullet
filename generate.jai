@@ -21,14 +21,13 @@
     // array_add(*extra_clang_arguments, "-D", "BT_SHARED");
     generate_compile_time_struct_checks = false;
 
-    visitor :: (decl: *Declaration, parent_decl: *Declaration) -> Declaration_Visit_Result {
+    opts.visitor = (decl: *Declaration, parent_decl: *Declaration) -> Declaration_Visit_Result {
         if decl.name == "Vector3" {
             decl.decl_flags |= .OMIT_FROM_OUTPUT;
             return .STOP;
         }
         return .RECURSE;
-    }
-    opts.visitor = visitor;
+    };
 
     // array_add(*system_include_paths, GENERATOR_DEFAULT_SYSTEM_INCLUDE_PATH);
     array_add(*system_include_paths, "C:\\Program Files (x86)\\Windows Kits\\10\\Include\\10.0.22621.0\\ucrt");
