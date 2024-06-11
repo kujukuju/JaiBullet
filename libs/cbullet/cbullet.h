@@ -50,6 +50,7 @@
 #define CBT_SHAPE_TYPE_CYLINDER 13
 #define CBT_SHAPE_TYPE_COMPOUND 31
 #define CBT_SHAPE_TYPE_TRIANGLE_MESH 21
+#define CBT_SHAPE_TYPE_CONVEX 4
 
 // cbtConGetType, cbtConAllocate
 #define CBT_CONSTRAINT_TYPE_POINT2POINT 3
@@ -94,6 +95,7 @@
 #define CBT_DBGMODE_DRAW_AABB 2
 
 typedef float Vector3[3];
+typedef float AABB3[6];
 
 #ifdef __cplusplus
 extern "C" {
@@ -104,6 +106,8 @@ extern "C" {
 CBT_DECLARE_HANDLE(CbtWorldHandle);
 CBT_DECLARE_HANDLE(CbtShapeHandle);
 CBT_DECLARE_HANDLE(CbtBodyHandle);
+// CBT_DECLARE_HANDLE(CbtGhostObjectHandle);
+CBT_DECLARE_HANDLE(CbtCharacterControllerHandle);
 CBT_DECLARE_HANDLE(CbtConstraintHandle);
 CBT_DECLARE_HANDLE(CbtDebugDrawHandle);
 
@@ -111,6 +115,8 @@ typedef void* (CbtAlignedAllocFunc)(size_t size, int alignment);
 typedef void (CbtAlignedFreeFunc)(void* memblock);
 typedef void* (CbtAllocFunc)(size_t size);
 typedef void (CbtFreeFunc)(void* memblock);
+
+BT_API void cbtCalculateAABB(CbtShapeHandle shape_handle);
 
 BT_API void cbtAlignedAllocSetCustom(CbtAllocFunc alloc, CbtFreeFunc free);
 BT_API void cbtAlignedAllocSetCustomAligned(CbtAlignedAllocFunc alloc, CbtAlignedFreeFunc free);
@@ -236,6 +242,7 @@ BT_API bool cbtShapeIsCreated(CbtShapeHandle shape_handle);
 BT_API int cbtShapeGetType(CbtShapeHandle shape_handle);
 BT_API void cbtShapeSetMargin(CbtShapeHandle shape_handle, float margin);
 BT_API float cbtShapeGetMargin(CbtShapeHandle shape_handle);
+BT_API void cbtShapeGetAABB(CbtShapeHandle shape_handle, AABB3 aabb);
 
 BT_API bool cbtShapeIsPolyhedral(CbtShapeHandle shape_handle);
 BT_API bool cbtShapeIsConvex2d(CbtShapeHandle shape_handle);
@@ -273,6 +280,10 @@ BT_API void cbtShapeConeCreate(CbtShapeHandle shape_handle, float radius, float 
 BT_API float cbtShapeConeGetRadius(CbtShapeHandle shape_handle);
 BT_API float cbtShapeConeGetHeight(CbtShapeHandle shape_handle);
 BT_API int cbtShapeConeGetUpAxis(CbtShapeHandle shape_handle);
+
+BT_API void cbtShapeConvexHullCreate(CbtShapeHandle shape_handle, const void* points, int numPoints);
+BT_API void cbtShapeConvexHullOptimize(CbtShapeHandle shape_handle);
+BT_API void cbtShapeConvexHullGetPoints(CbtShapeHandle shape_handle, void** points, int* numPoints);
 
 BT_API void cbtShapeCompoundCreate(
     CbtShapeHandle shape_handle,
@@ -395,6 +406,7 @@ BT_API int cbtBodyGetUserIndex(CbtBodyHandle body_handle, int slot); // slot can
 
 BT_API void cbtBodySetCenterOfMassTransform(CbtBodyHandle body_handle, const Vector3 transform[4]);
 BT_API void cbtBodyGetCenterOfMassTransform(CbtBodyHandle body_handle, Vector3 transform[4]);
+BT_API void cbtBodySetCenterOfMassPosition(CbtBodyHandle body_handle, const Vector3 position);
 BT_API void cbtBodyGetCenterOfMassPosition(CbtBodyHandle body_handle, Vector3 position);
 BT_API void cbtBodyGetInvCenterOfMassTransform(CbtBodyHandle body_handle, Vector3 transform[4]);
 BT_API void cbtBodyGetGraphicsWorldTransform(CbtBodyHandle body_handle, Vector3 transform[4]);
@@ -404,6 +416,29 @@ BT_API void cbtBodySetCcdSweptSphereRadius(CbtBodyHandle body_handle, float radi
 
 BT_API float cbtBodyGetCcdMotionThreshold(CbtBodyHandle body_handle);
 BT_API void cbtBodySetCcdMotionThreshold(CbtBodyHandle body_handle, float threshold);
+
+//
+// Kinematic Character
+//
+BT_API CbtCharacterControllerHandle cbtCharacterControllerAllocate(void);
+BT_API void cbtCharacterControllerDeallocate(CbtCharacterControllerHandle character_handle);
+
+BT_API void cbtCharacterControllerCreate(CbtCharacterControllerHandle character_handle, CbtShapeHandle shape_handle, float stepHeight, const Vector3 up);
+BT_API void cbtCharacterControllerDestroy(CbtCharacterControllerHandle character_handle);
+BT_API bool cbtCharacterControllerIsCreated(CbtCharacterControllerHandle character_handle);
+
+BT_API void cbtCharacterControllerSetLinearVelocity(CbtCharacterControllerHandle character_handle, const Vector3 velocity);
+BT_API void cbtCharacterControllerGetLinearVelocity(CbtCharacterControllerHandle character_handle, Vector3 velocity);
+BT_API void cbtCharacterControllerSetStepHeight(CbtCharacterControllerHandle character_handle, float stepHeight);
+BT_API float cbtCharacterControllerGetStepHeight(CbtCharacterControllerHandle character_handle);
+BT_API bool cbtCharacterControllerOnGround(CbtCharacterControllerHandle character_handle);
+BT_API void cbtCharacterControllerApplyImpulse(CbtCharacterControllerHandle character_handle, const Vector3 impulse);
+BT_API void cbtCharacterControllerSetGravity(CbtCharacterControllerHandle character_handle, const Vector3 gravity);
+BT_API void cbtCharacterControllerGetGravity(CbtCharacterControllerHandle character_handle, Vector3 gravity);
+BT_API void cbtCharacterControllerSetMaxSlope(CbtCharacterControllerHandle character_handle, float radians);
+BT_API float cbtCharacterControllerGetMaxSlope(CbtCharacterControllerHandle character_handle);
+BT_API void cbtCharacterControllerSetMaxPenetrationDepth(CbtCharacterControllerHandle character_handle, float d);
+BT_API float cbtCharacterControllerGetMaxPenetrationDepth(CbtCharacterControllerHandle character_handle);
 
 //
 // Constraints
@@ -423,7 +458,7 @@ BT_API float cbtConGetParam(CbtConstraintHandle con_handle, int param, int axis 
 
 BT_API void cbtConSetEnabled(CbtConstraintHandle con_handle, bool enabled);
 BT_API bool cbtConIsEnabled(CbtConstraintHandle con_handle);
-CbtBodyHandle cbtConGetBodyA(CbtConstraintHandle con_handle);
+BT_API CbtBodyHandle cbtConGetBodyA(CbtConstraintHandle con_handle);
 BT_API CbtBodyHandle cbtConGetBodyB(CbtConstraintHandle con_handle);
 BT_API void cbtConSetBreakingImpulseThreshold(CbtConstraintHandle con_handle, float threshold);
 BT_API float cbtConGetBreakingImpulseThreshold(CbtConstraintHandle con_handle);

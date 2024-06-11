@@ -6,7 +6,43 @@
 #include "BulletDynamics/ConstraintSolver/btContactConstraint.h"
 #include "BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolverMt.h"
 #include "BulletDynamics/Dynamics/btDiscreteDynamicsWorldMt.h"
+#include "BulletDynamics/Character/btKinematicCharacterController.h"
 #include "BulletCollision/CollisionDispatch/btCollisionDispatcherMt.h"
+#include "BulletCollision/CollisionDispatch/btGhostObject.h"
+
+void cbtCalculateAABB(CbtShapeHandle shape_handle) {
+    assert(shape_handle && cbtShapeIsCreated(shape_handle));
+
+    int shape_type = cbtShapeGetType(shape_handle);
+    
+    size_t offset = 0;
+    switch (shape_type) {
+        case CBT_SHAPE_TYPE_BOX: offset = sizeof(btBoxShape); break;
+        case CBT_SHAPE_TYPE_SPHERE: offset = sizeof(btSphereShape); break;
+        case CBT_SHAPE_TYPE_CAPSULE: offset = sizeof(btCapsuleShape); break;
+        case CBT_SHAPE_TYPE_CONE: offset = sizeof(btConeShape); break;
+        case CBT_SHAPE_TYPE_CYLINDER: offset = sizeof(btCylinderShape); break;
+        case CBT_SHAPE_TYPE_COMPOUND: offset = sizeof(btCompoundShape); break;
+        case CBT_SHAPE_TYPE_TRIANGLE_MESH: offset = sizeof(btBvhTriangleMeshShape) + sizeof(btTriangleIndexVertexArray); break;
+        case CBT_SHAPE_TYPE_CONVEX: offset = sizeof(btConvexHullShape); break;
+        default:
+            assert(0);
+    }
+
+    auto shape = (btCollisionShape*) shape_handle;
+    auto shape_aabb = *((AABB3*)((uint8_t*)shape_handle + offset));
+
+    btVector3 aabbMin;
+    btVector3 aabbMax;
+    shape->getAabb(btTransform::getIdentity(), aabbMin, aabbMax);
+
+    shape_aabb[0] = aabbMin.x();
+    shape_aabb[1] = aabbMin.y();
+    shape_aabb[2] = aabbMin.z();
+    shape_aabb[3] = aabbMax.x();
+    shape_aabb[4] = aabbMax.y();
+    shape_aabb[5] = aabbMax.z();
+}
 
 void cbtAlignedAllocSetCustom(CbtAllocFunc alloc, CbtFreeFunc free) {
     btAlignedAllocSetCustom(alloc, free);
@@ -422,6 +458,8 @@ void cbtWorldDebugDrawSphere(
     );
 }
 
+static_assert(sizeof(Vector3) == 12, "wrong size");
+static_assert(sizeof(AABB3) == 24, "wrong size");
 static_assert(sizeof(btCapsuleShape) == sizeof(btCapsuleShapeX), "wrong size");
 static_assert(sizeof(btCapsuleShape) == sizeof(btCapsuleShapeZ), "wrong size");
 static_assert(sizeof(btConeShape) == sizeof(btConeShapeX), "wrong size");
@@ -432,15 +470,14 @@ static_assert(sizeof(btCylinderShape) == sizeof(btCylinderShapeZ), "wrong size")
 CbtShapeHandle cbtShapeAllocate(int shape_type) {
     size_t size = 0;
     switch (shape_type) {
-        case CBT_SHAPE_TYPE_BOX: size = sizeof(btBoxShape); break;
-        case CBT_SHAPE_TYPE_SPHERE: size = sizeof(btSphereShape); break;
-        case CBT_SHAPE_TYPE_CAPSULE: size = sizeof(btCapsuleShape); break;
-        case CBT_SHAPE_TYPE_CONE: size = sizeof(btConeShape); break;
-        case CBT_SHAPE_TYPE_CYLINDER: size = sizeof(btCylinderShape); break;
-        case CBT_SHAPE_TYPE_COMPOUND: size = sizeof(btCompoundShape); break;
-        case CBT_SHAPE_TYPE_TRIANGLE_MESH:
-            size = sizeof(btBvhTriangleMeshShape) + sizeof(btTriangleIndexVertexArray);
-            break;
+        case CBT_SHAPE_TYPE_BOX: size = sizeof(btBoxShape) + sizeof(AABB3); break;
+        case CBT_SHAPE_TYPE_SPHERE: size = sizeof(btSphereShape) + sizeof(AABB3); break;
+        case CBT_SHAPE_TYPE_CAPSULE: size = sizeof(btCapsuleShape) + sizeof(AABB3); break;
+        case CBT_SHAPE_TYPE_CONE: size = sizeof(btConeShape) + sizeof(AABB3); break;
+        case CBT_SHAPE_TYPE_CYLINDER: size = sizeof(btCylinderShape) + sizeof(AABB3); break;
+        case CBT_SHAPE_TYPE_COMPOUND: size = sizeof(btCompoundShape) + sizeof(AABB3); break;
+        case CBT_SHAPE_TYPE_TRIANGLE_MESH: size = sizeof(btBvhTriangleMeshShape) + sizeof(btTriangleIndexVertexArray) + sizeof(AABB3); break;
+        case CBT_SHAPE_TYPE_CONVEX: size = sizeof(btConvexHullShape) + sizeof(AABB3); break;
         default:
             assert(0);
     }
@@ -499,11 +536,42 @@ float cbtShapeGetMargin(CbtShapeHandle shape_handle) {
     return shape->getMargin();
 }
 
+void cbtShapeGetAABB(CbtShapeHandle shape_handle, AABB3 aabb) {
+    assert(shape_handle && cbtShapeIsCreated(shape_handle));
+
+    int shape_type = cbtShapeGetType(shape_handle);
+
+    size_t offset = 0;
+    switch (shape_type) {
+        case CBT_SHAPE_TYPE_BOX: offset = sizeof(btBoxShape); break;
+        case CBT_SHAPE_TYPE_SPHERE: offset = sizeof(btSphereShape); break;
+        case CBT_SHAPE_TYPE_CAPSULE: offset = sizeof(btCapsuleShape); break;
+        case CBT_SHAPE_TYPE_CONE: offset = sizeof(btConeShape); break;
+        case CBT_SHAPE_TYPE_CYLINDER: offset = sizeof(btCylinderShape); break;
+        case CBT_SHAPE_TYPE_COMPOUND: offset = sizeof(btCompoundShape); break;
+        case CBT_SHAPE_TYPE_TRIANGLE_MESH: offset = sizeof(btBvhTriangleMeshShape) + sizeof(btTriangleIndexVertexArray); break;
+        case CBT_SHAPE_TYPE_CONVEX: offset = sizeof(btConvexHullShape); break;
+        default:
+            assert(0);
+    }
+    
+    auto shape_aabb = *((AABB3*)((uint8_t*)shape_handle + offset));
+
+    aabb[0] = shape_aabb[0];
+    aabb[1] = shape_aabb[1];
+    aabb[2] = shape_aabb[2];
+    aabb[3] = shape_aabb[3];
+    aabb[4] = shape_aabb[4];
+    aabb[5] = shape_aabb[5];
+}
+
 void cbtShapeBoxCreate(CbtShapeHandle shape_handle, const Vector3 half_extents) {
     assert(shape_handle && !cbtShapeIsCreated(shape_handle));
     assert(cbtShapeGetType(shape_handle) == CBT_SHAPE_TYPE_BOX);
     assert(half_extents && half_extents[0] > 0.0 && half_extents[1] > 0.0 && half_extents[2] > 0.0);
     new (shape_handle) btBoxShape(btVector3(half_extents[0], half_extents[1], half_extents[2]));
+
+    cbtCalculateAABB(shape_handle);
 }
 
 void cbtShapeBoxGetHalfExtentsWithoutMargin(CbtShapeHandle shape_handle, Vector3 half_extents) {
@@ -531,6 +599,8 @@ void cbtShapeSphereCreate(CbtShapeHandle shape_handle, float radius) {
     assert(cbtShapeGetType(shape_handle) == CBT_SHAPE_TYPE_SPHERE);
     assert(radius > 0.0);
     new (shape_handle) btSphereShape(radius);
+
+    cbtCalculateAABB(shape_handle);
 }
 
 void cbtShapeSphereSetUnscaledRadius(CbtShapeHandle shape_handle, float radius) {
@@ -560,6 +630,8 @@ void cbtShapeCapsuleCreate(CbtShapeHandle shape_handle, float radius, float heig
     } else {
         new (shape_handle) btCapsuleShapeZ(radius, height);
     }
+
+    cbtCalculateAABB(shape_handle);
 }
 
 int cbtShapeCapsuleGetUpAxis(CbtShapeHandle shape_handle) {
@@ -596,6 +668,8 @@ void cbtShapeCylinderCreate(CbtShapeHandle shape_handle, const Vector3 half_exte
     } else {
         new (shape_handle) btCylinderShapeZ(btVector3(half_extents[0], half_extents[1], half_extents[2]));
     }
+
+    cbtCalculateAABB(shape_handle);
 }
 
 void cbtShapeCylinderGetHalfExtentsWithoutMargin(CbtShapeHandle shape_handle, Vector3 half_extents) {
@@ -637,6 +711,8 @@ void cbtShapeConeCreate(CbtShapeHandle shape_handle, float radius, float height,
     } else {
         new (shape_handle) btConeShapeZ(radius, height);
     }
+
+    cbtCalculateAABB(shape_handle);
 }
 
 float cbtShapeConeGetRadius(CbtShapeHandle shape_handle) {
@@ -660,6 +736,31 @@ int cbtShapeConeGetUpAxis(CbtShapeHandle shape_handle) {
     return shape->getConeUpIndex();
 }
 
+void cbtShapeConvexHullCreate(CbtShapeHandle shape_handle, const void* points, int numPoints) {
+    assert(shape_handle && cbtShapeIsCreated(shape_handle));
+    assert(cbtShapeGetType(shape_handle) == CBT_SHAPE_TYPE_CONVEX);
+    assert(numPoints > 0);
+
+    new (shape_handle) btConvexHullShape((const float*) points, numPoints, 12);
+
+    cbtCalculateAABB(shape_handle);
+}
+
+void cbtShapeConvexHullOptimize(CbtShapeHandle shape_handle) {
+    assert(shape_handle && cbtShapeIsCreated(shape_handle));
+    assert(cbtShapeGetType(shape_handle) == CBT_SHAPE_TYPE_CONVEX);
+    auto shape = (btConvexHullShape*) shape_handle;
+    shape->optimizeConvexHull();
+}
+
+void cbtShapeConvexHullGetPoints(CbtShapeHandle shape_handle, void** points, int* numPoints) {
+    assert(shape_handle && cbtShapeIsCreated(shape_handle));
+    assert(cbtShapeGetType(shape_handle) == CBT_SHAPE_TYPE_CONVEX);
+    auto shape = (btConvexHullShape*) shape_handle;
+    *points = shape->getUnscaledPoints();
+    *numPoints = shape->getNumPoints();
+}
+
 void cbtShapeCompoundCreate(
     CbtShapeHandle shape_handle,
     bool enable_dynamic_aabb_tree,
@@ -669,6 +770,8 @@ void cbtShapeCompoundCreate(
     assert(initial_child_capacity >= 0);
     assert(cbtShapeGetType(shape_handle) == CBT_SHAPE_TYPE_COMPOUND);
     new (shape_handle) btCompoundShape(enable_dynamic_aabb_tree, initial_child_capacity);
+
+    cbtCalculateAABB(shape_handle);
 }
 
 static inline btTransform makeBtTransform(const Vector3 transform[4]) {
@@ -786,6 +889,8 @@ void cbtShapeTriMeshCreateEnd(CbtShapeHandle shape_handle) {
     assert(mesh_interface->getNumSubParts() > 0);
 
     new (shape_handle) btBvhTriangleMeshShape(mesh_interface, false, true);
+
+    cbtCalculateAABB(shape_handle);
 }
 
 void cbtShapeTriMeshDestroy(CbtShapeHandle shape_handle) {
@@ -1439,10 +1544,21 @@ void cbtBodyGetCenterOfMassTransform(CbtBodyHandle body_handle, Vector3 transfor
     transform[3][2] = origin.z();
 }
 
+void cbtBodySetCenterOfMassPosition(CbtBodyHandle body_handle, const Vector3 position) {
+    assert(body_handle && cbtBodyIsCreated(body_handle));
+    assert(position);
+    auto body = (btRigidBody*) body_handle;
+
+    btTransform& trans = body->getWorldTransform();
+    btVector3& origin = trans.getOrigin();
+
+    origin.setValue(position[0], position[1], position[3]);
+}
+
 void cbtBodyGetCenterOfMassPosition(CbtBodyHandle body_handle, Vector3 position) {
     assert(body_handle && cbtBodyIsCreated(body_handle));
     assert(position);
-    auto body = (btRigidBody*)body_handle;
+    auto body = (btRigidBody*) body_handle;
 
     const btTransform& trans = body->getCenterOfMassTransform();
     const btVector3& origin = trans.getOrigin();
@@ -1528,6 +1644,151 @@ void cbtBodySetCcdMotionThreshold(CbtBodyHandle body_handle, float threshold) {
     body->setCcdMotionThreshold(threshold);
 }
 
+// kinematic character
+static_assert((sizeof(btKinematicCharacterController) % 8) == 0, "sizeof(btKinematicCharacterController) is not multiple of 8");
+static_assert((sizeof(btPairCachingGhostObject) % 8) == 0, "sizeof(btPairCachingGhostObject) is not multiple of 8");
+static_assert(
+    ((sizeof(btKinematicCharacterController) + sizeof(btPairCachingGhostObject)) % 8) == 0,
+    "sizeof(btKinematicCharacterController) + sizeof(btPairCachingGhostObject) is not multiple of 8"
+);
+
+CbtCharacterControllerHandle cbtCharacterControllerAllocate(void) {
+    auto base = (uint64_t*)btAlignedAlloc(sizeof(btKinematicCharacterController) + sizeof(btPairCachingGhostObject), 16);
+    // Set vtable to 0. This means that body is not created.
+    base[0] = 0;
+    return (CbtCharacterControllerHandle)base;
+}
+
+void cbtCharacterControllerDeallocate(CbtCharacterControllerHandle character_handle) {
+    assert(character_handle && !cbtCharacterControllerIsCreated(character_handle));
+    btAlignedFree(character_handle);
+}
+
+void cbtCharacterControllerCreate(CbtCharacterControllerHandle character_handle, CbtShapeHandle shape_handle, float stepHeight, const Vector3 up) {
+    assert(character_handle && shape_handle);
+    assert(!cbtCharacterControllerIsCreated(character_handle));
+    assert(cbtShapeIsCreated(shape_handle));
+    assert(cbtShapeIsConvex(shape_handle));
+
+    auto shape = (btConvexShape*) shape_handle;
+
+    void* character_mem = (void*)character_handle;
+    void* ghost_mem = (void*)((uint8_t*)character_handle + sizeof(btKinematicCharacterController));
+
+    btPairCachingGhostObject* ghost_object = new (ghost_mem) btPairCachingGhostObject();
+    new (character_mem) btKinematicCharacterController(ghost_object, shape, stepHeight, btVector3(up[0], up[1], up[2]));
+}
+
+void cbtCharacterControllerDestroy(CbtCharacterControllerHandle character_handle) {
+    assert(character_handle && cbtCharacterControllerIsCreated(character_handle));
+
+    auto character = (btKinematicCharacterController*) character_handle;
+    auto ghost = (btPairCachingGhostObject*)((uint8_t*) character_handle + sizeof(btKinematicCharacterController));
+
+    character->~btKinematicCharacterController();
+    ghost->~btPairCachingGhostObject();
+
+    // Set vtable to 0, this means that object is not created.
+    ((uint64_t*)character)[0] = 0;
+}
+
+bool cbtCharacterControllerIsCreated(CbtCharacterControllerHandle character_handle) {
+    assert(character_handle);
+    // vtable == 0 means that object is not created.
+    return ((uint64_t*)character_handle)[0] != 0;
+}
+
+void cbtCharacterControllerSetLinearVelocity(CbtCharacterControllerHandle character_handle, const Vector3 velocity) {
+    assert(character_handle && cbtCharacterControllerIsCreated(character_handle));
+    auto character = (btKinematicCharacterController*) character_handle;
+
+    character->setLinearVelocity(btVector3(velocity[0], velocity[1], velocity[2]));
+}
+
+void cbtCharacterControllerGetLinearVelocity(CbtCharacterControllerHandle character_handle, Vector3 velocity) {
+    assert(character_handle && cbtCharacterControllerIsCreated(character_handle));
+    auto character = (btKinematicCharacterController*) character_handle;
+
+    const btVector3& vel = character->getLinearVelocity();
+    velocity[0] = vel.x();
+    velocity[1] = vel.y();
+    velocity[2] = vel.z();
+}
+
+void cbtCharacterControllerSetStepHeight(CbtCharacterControllerHandle character_handle, float stepHeight) {
+    assert(character_handle && cbtCharacterControllerIsCreated(character_handle));
+    auto character = (btKinematicCharacterController*) character_handle;
+
+    character->setStepHeight(stepHeight);
+}
+
+float cbtCharacterControllerGetStepHeight(CbtCharacterControllerHandle character_handle) {
+    assert(character_handle && cbtCharacterControllerIsCreated(character_handle));
+    auto character = (btKinematicCharacterController*) character_handle;
+
+    return character->getStepHeight();
+}
+
+bool cbtCharacterControllerOnGround(CbtCharacterControllerHandle character_handle) {
+    assert(character_handle && cbtCharacterControllerIsCreated(character_handle));
+    auto character = (btKinematicCharacterController*) character_handle;
+
+    return character->onGround();
+}
+
+void cbtCharacterControllerApplyImpulse(CbtCharacterControllerHandle character_handle, const Vector3 impulse) {
+    assert(character_handle && cbtCharacterControllerIsCreated(character_handle));
+    auto character = (btKinematicCharacterController*) character_handle;
+
+    character->applyImpulse(btVector3(impulse[0], impulse[1], impulse[2]));
+}
+
+void cbtCharacterControllerSetGravity(CbtCharacterControllerHandle character_handle, const Vector3 gravity) {
+    assert(character_handle && cbtCharacterControllerIsCreated(character_handle));
+    auto character = (btKinematicCharacterController*) character_handle;
+
+    character->setGravity(btVector3(gravity[0], gravity[1], gravity[2]));
+}
+
+void cbtCharacterControllerGetGravity(CbtCharacterControllerHandle character_handle, Vector3 gravity) {
+    assert(character_handle && cbtCharacterControllerIsCreated(character_handle));
+    auto character = (btKinematicCharacterController*) character_handle;
+
+    const btVector3& grav = character->getGravity();
+    gravity[0] = grav.x();
+    gravity[1] = grav.y();
+    gravity[2] = grav.z();
+}
+
+void cbtCharacterControllerSetMaxSlope(CbtCharacterControllerHandle character_handle, float radians) {
+    assert(character_handle && cbtCharacterControllerIsCreated(character_handle));
+    auto character = (btKinematicCharacterController*) character_handle;
+
+    character->setMaxSlope(radians);
+}
+
+float cbtCharacterControllerGetMaxSlope(CbtCharacterControllerHandle character_handle) {
+    assert(character_handle && cbtCharacterControllerIsCreated(character_handle));
+    auto character = (btKinematicCharacterController*) character_handle;
+
+    return character->getMaxSlope();
+}
+
+void cbtCharacterControllerSetMaxPenetrationDepth(CbtCharacterControllerHandle character_handle, float d) {
+    assert(character_handle && cbtCharacterControllerIsCreated(character_handle));
+    auto character = (btKinematicCharacterController*) character_handle;
+
+    character->setMaxPenetrationDepth(d);
+}
+
+float cbtCharacterControllerGetMaxPenetrationDepth(CbtCharacterControllerHandle character_handle) {
+    assert(character_handle && cbtCharacterControllerIsCreated(character_handle));
+    auto character = (btKinematicCharacterController*) character_handle;
+
+    return character->getMaxPenetrationDepth();
+}
+
+// constraints
 CbtBodyHandle cbtConGetFixedBody(void) {
     return (CbtBodyHandle)&btTypedConstraint::getFixedBody();
 }

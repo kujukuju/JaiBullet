@@ -14,7 +14,13 @@
     array_add(*include_paths, tprint("%libs/bullet", #filepath));
     array_add(*source_files, tprint("%libs/cbullet/cbullet.h", #filepath));
     opts.header = "size_t :: u64;";
-    opts.footer = "#import \"Math\";";
+    opts.footer = #string ___jai
+#import "Math";
+AABB3 :: struct {
+    lower: Vector3;
+    upper: Vector3;
+}
+___jai
 
     // array_add(*extra_clang_arguments, "-x", "c++");
     // array_add(*extra_clang_arguments, "-D", "B3_USE_CLEW");

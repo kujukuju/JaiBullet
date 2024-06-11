@@ -1,7 +1,7 @@
 //
 // This file was auto-generated using the following command:
 //
-// jai ./generate.jai
+// jai ../ generate.jai
 //
 size_t :: u64;
 
@@ -31,6 +31,7 @@ CBT_SHAPE_TYPE_CONE :: 11;
 CBT_SHAPE_TYPE_CYLINDER :: 13;
 CBT_SHAPE_TYPE_COMPOUND :: 31;
 CBT_SHAPE_TYPE_TRIANGLE_MESH :: 21;
+CBT_SHAPE_TYPE_CONVEX :: 4;
 
 CBT_CONSTRAINT_TYPE_POINT2POINT :: 3;
 CBT_CONSTRAINT_TYPE_HINGE :: 4;
@@ -69,6 +70,8 @@ CBT_DBGMODE_NO_DEBUG :: 0;
 CBT_DBGMODE_DRAW_WIREFRAME :: 1;
 CBT_DBGMODE_DRAW_AABB :: 2;
 
+AABB3 :: [6] float;
+
 CbtWorldHandle__ :: struct {
     unused: s32;
 }
@@ -81,6 +84,11 @@ CbtBodyHandle__ :: struct {
     unused: s32;
 }
 CbtBodyHandle :: *CbtBodyHandle__;
+
+CbtCharacterControllerHandle__ :: struct {
+    unused: s32;
+}
+CbtCharacterControllerHandle :: *CbtCharacterControllerHandle__;
 CbtConstraintHandle__ :: struct {
     unused: s32;
 }
@@ -94,6 +102,8 @@ CbtAlignedAllocFunc :: #type (size: u64, alignment: s32) -> *void #c_call;
 CbtAlignedFreeFunc :: #type (memblock: *void) -> void #c_call;
 CbtAllocFunc :: #type (size: u64) -> *void #c_call;
 CbtFreeFunc :: #type (memblock: *void) -> void #c_call;
+
+cbtCalculateAABB :: (shape_handle: CbtShapeHandle) -> void #foreign bullet3;
 
 cbtAlignedAllocSetCustom :: (alloc: CbtAllocFunc, free: CbtFreeFunc) -> void #foreign bullet3;
 cbtAlignedAllocSetCustomAligned :: (alloc: CbtAlignedAllocFunc, free: CbtAlignedFreeFunc) -> void #foreign bullet3;
@@ -196,6 +206,7 @@ cbtShapeIsCreated :: (shape_handle: CbtShapeHandle) -> bool #foreign bullet3;
 cbtShapeGetType :: (shape_handle: CbtShapeHandle) -> s32 #foreign bullet3;
 cbtShapeSetMargin :: (shape_handle: CbtShapeHandle, margin: float) -> void #foreign bullet3;
 cbtShapeGetMargin :: (shape_handle: CbtShapeHandle) -> float #foreign bullet3;
+cbtShapeGetAABB :: (shape_handle: CbtShapeHandle, aabb: *AABB3) -> void #foreign bullet3;
 
 cbtShapeIsPolyhedral :: (shape_handle: CbtShapeHandle) -> bool #foreign bullet3;
 cbtShapeIsConvex2d :: (shape_handle: CbtShapeHandle) -> bool #foreign bullet3;
@@ -261,6 +272,10 @@ cbtShapeConeCreate :: (shape_handle: CbtShapeHandle, radius: float, height: floa
 cbtShapeConeGetRadius :: (shape_handle: CbtShapeHandle) -> float #foreign bullet3;
 cbtShapeConeGetHeight :: (shape_handle: CbtShapeHandle) -> float #foreign bullet3;
 cbtShapeConeGetUpAxis :: (shape_handle: CbtShapeHandle) -> s32 #foreign bullet3;
+
+cbtShapeConvexHullCreate :: (shape_handle: CbtShapeHandle, points: *void, numPoints: s32) -> void #foreign bullet3;
+cbtShapeConvexHullOptimize :: (shape_handle: CbtShapeHandle) -> void #foreign bullet3;
+cbtShapeConvexHullGetPoints :: (shape_handle: CbtShapeHandle, points: **void, numPoints: *s32) -> void #foreign bullet3;
 
 cbtShapeCompoundCreate :: (shape_handle: CbtShapeHandle, enable_dynamic_aabb_tree: bool, initial_child_capacity: s32) -> void #foreign bullet3;
 
@@ -461,6 +476,11 @@ cbtBodyGetCenterOfMassTransform :: (body_handle: CbtBodyHandle, transform: [4] V
 	return cbtBodyGetCenterOfMassTransform(body_handle, *transform);
 }
 
+cbtBodySetCenterOfMassPosition :: (body_handle: CbtBodyHandle, position: *Vector3) -> void #foreign bullet3;
+cbtBodySetCenterOfMassPosition :: (body_handle: CbtBodyHandle, position: Vector3) -> void {
+	return cbtBodySetCenterOfMassPosition(body_handle, *position);
+}
+
 cbtBodyGetCenterOfMassPosition :: (body_handle: CbtBodyHandle, position: *Vector3) -> void #foreign bullet3;
 cbtBodyGetCenterOfMassPosition :: (body_handle: CbtBodyHandle, position: Vector3) -> void {
 	return cbtBodyGetCenterOfMassPosition(body_handle, *position);
@@ -484,6 +504,41 @@ cbtBodyGetCcdMotionThreshold :: (body_handle: CbtBodyHandle) -> float #foreign b
 cbtBodySetCcdMotionThreshold :: (body_handle: CbtBodyHandle, threshold: float) -> void #foreign bullet3;
 
 //
+// Kinematic Character
+//
+cbtCharacterControllerAllocate :: () -> CbtCharacterControllerHandle #foreign bullet3;
+cbtCharacterControllerDeallocate :: (character_handle: CbtCharacterControllerHandle) -> void #foreign bullet3;
+
+cbtCharacterControllerCreate :: (character_handle: CbtCharacterControllerHandle, shape_handle: CbtShapeHandle, stepHeight: float, up: *Vector3) -> void #foreign bullet3;
+cbtCharacterControllerCreate :: (character_handle: CbtCharacterControllerHandle, shape_handle: CbtShapeHandle, stepHeight: float, up: Vector3) -> void {
+	return cbtCharacterControllerCreate(character_handle, shape_handle, stepHeight, *up);
+}
+
+cbtCharacterControllerDestroy :: (character_handle: CbtCharacterControllerHandle) -> void #foreign bullet3;
+cbtCharacterControllerIsCreated :: (character_handle: CbtCharacterControllerHandle) -> bool #foreign bullet3;
+
+cbtCharacterControllerSetLinearVelocity :: (character_handle: CbtCharacterControllerHandle, velocity: *Vector3) -> void #foreign bullet3;
+cbtCharacterControllerSetLinearVelocity :: (character_handle: CbtCharacterControllerHandle, velocity: Vector3) -> void {
+	return cbtCharacterControllerSetLinearVelocity(character_handle, *velocity);
+}
+
+cbtCharacterControllerGetLinearVelocity :: (character_handle: CbtCharacterControllerHandle, velocity: *Vector3) -> void #foreign bullet3;
+cbtCharacterControllerGetLinearVelocity :: (character_handle: CbtCharacterControllerHandle, velocity: Vector3) -> void {
+	return cbtCharacterControllerGetLinearVelocity(character_handle, *velocity);
+}
+
+cbtCharacterControllerSetStepHeight :: (character_handle: CbtCharacterControllerHandle, stepHeight: float) -> void #foreign bullet3;
+cbtCharacterControllerGetStepHeight :: (character_handle: CbtCharacterControllerHandle) -> float #foreign bullet3;
+cbtCharacterControllerOnGround :: (character_handle: CbtCharacterControllerHandle) -> bool #foreign bullet3;
+cbtCharacterControllerApplyImpulse :: (character_handle: CbtCharacterControllerHandle, impulse: *Vector3) -> void #foreign bullet3;
+cbtCharacterControllerSetGravity :: (character_handle: CbtCharacterControllerHandle, gravity: *Vector3) -> void #foreign bullet3;
+cbtCharacterControllerGetGravity :: (character_handle: CbtCharacterControllerHandle, gravity: *Vector3) -> void #foreign bullet3;
+cbtCharacterControllerSetMaxSlope :: (character_handle: CbtCharacterControllerHandle, radians: float) -> void #foreign bullet3;
+cbtCharacterControllerGetMaxSlope :: (character_handle: CbtCharacterControllerHandle) -> float #foreign bullet3;
+cbtCharacterControllerSetMaxPenetrationDepth :: (character_handle: CbtCharacterControllerHandle, d: float) -> void #foreign bullet3;
+cbtCharacterControllerGetMaxPenetrationDepth :: (character_handle: CbtCharacterControllerHandle) -> float #foreign bullet3;
+
+//
 // Constraints
 //
 cbtConGetFixedBody :: () -> CbtBodyHandle #foreign bullet3;
@@ -501,7 +556,7 @@ cbtConGetParam :: (con_handle: CbtConstraintHandle, param: s32, axis: s32) -> fl
 
 cbtConSetEnabled :: (con_handle: CbtConstraintHandle, enabled: bool) -> void #foreign bullet3;
 cbtConIsEnabled :: (con_handle: CbtConstraintHandle) -> bool #foreign bullet3;
-
+cbtConGetBodyA :: (con_handle: CbtConstraintHandle) -> CbtBodyHandle #foreign bullet3;
 cbtConGetBodyB :: (con_handle: CbtConstraintHandle) -> CbtBodyHandle #foreign bullet3;
 cbtConSetBreakingImpulseThreshold :: (con_handle: CbtConstraintHandle, threshold: float) -> void #foreign bullet3;
 cbtConGetBreakingImpulseThreshold :: (con_handle: CbtConstraintHandle) -> float #foreign bullet3;
@@ -598,3 +653,7 @@ cbtConConeTwistSetLimit :: (con_handle: CbtConstraintHandle, swing_span1: float,
 
 bullet3 :: #library "./bullet3";
 #import "Math";
+AABB3 :: struct {
+    lower: Vector3;
+    upper: Vector3;
+}
