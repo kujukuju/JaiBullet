@@ -106,6 +106,8 @@ cbtCalculateAABB :: (shape_handle: CbtShapeHandle) -> void #foreign bullet3;
 cbtAlignedAllocSetCustom :: (alloc: CbtAllocFunc, free: CbtFreeFunc) -> void #foreign bullet3;
 cbtAlignedAllocSetCustomAligned :: (alloc: CbtAlignedAllocFunc, free: CbtAlignedFreeFunc) -> void #foreign bullet3;
 
+CbtGetCollision :: #type (body_a: CbtBodyHandle, body_b: CbtBodyHandle, normal: *Vector3, impulse: float, data: *void) -> bool #c_call;
+
 CbtDrawLine1Callback :: #type (_context: *void, p0: *Vector3, p1: *Vector3, color: *Vector3) -> void #c_call;
 
 CbtDrawLine2Callback :: #type (_context: *void, p0: *Vector3, p1: *Vector3, color0: *Vector3, color1: *Vector3) -> void #c_call;
@@ -175,6 +177,8 @@ cbtWorldRayTestClosest :: (world_handle: CbtWorldHandle, ray_from_world: Vector3
 	return cbtWorldRayTestClosest(world_handle, *ray_from_world, *ray_to_world, collision_filter_group, collision_filter_mask, flags, result);
 }
 
+
+cbtWorldGetContactPoints :: (world_handle: CbtWorldHandle, get_collision: CbtGetCollision, data: *void) -> void #foreign bullet3;
 
 cbtWorldDebugSetDrawer :: (world_handle: CbtWorldHandle, drawer: *CbtDebugDraw) -> void #foreign bullet3;
 cbtWorldDebugSetMode :: (world_handle: CbtWorldHandle, mode: s32) -> void #foreign bullet3;
@@ -505,6 +509,10 @@ cbtBodySetCcdSweptSphereRadius :: (body_handle: CbtBodyHandle, radius: float) ->
 
 cbtBodyGetCcdMotionThreshold :: (body_handle: CbtBodyHandle) -> float #foreign bullet3;
 cbtBodySetCcdMotionThreshold :: (body_handle: CbtBodyHandle, threshold: float) -> void #foreign bullet3;
+
+cbtBodyGetCollisionFlags :: (body_handle: CbtBodyHandle) -> s32 #foreign bullet3;
+cbtBodyAddCollisionFlag :: (body_handle: CbtBodyHandle, flag: s32) -> void #foreign bullet3;
+cbtBodyRemoveCollisionFlag :: (body_handle: CbtBodyHandle, flag: s32) -> void #foreign bullet3;
 
 //
 // Kinematic Character

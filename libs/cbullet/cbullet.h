@@ -97,19 +97,6 @@
 typedef float Vector3[3];
 typedef float AABB3[6];
 
-struct FindGroundCallback : public btCollisionWorld::ContactResultCallback {
-    public:
-    FindGroundCallback(btRigidBody* rigidBody)
-        : btCollisionWorld::ContactResultCallback(),
-          m_rigidBody(rigidBody) {
-
-    }
-
-    btScalar addSingleResult(btManifoldPoint& cp, const btCollisionObjectWrapper* colObj0Wrap, int partId0, int index0, const btCollisionObjectWrapper* colObj1Wrap, int partId1, int index1) override;
-
-    btRigidBody* m_rigidBody;
-}
-
 #ifdef __cplusplus
 extern "C" {
 #else
@@ -134,6 +121,13 @@ BT_API void cbtCalculateAABB(CbtShapeHandle shape_handle);
 BT_API void cbtAlignedAllocSetCustom(CbtAllocFunc alloc, CbtFreeFunc free);
 BT_API void cbtAlignedAllocSetCustomAligned(CbtAlignedAllocFunc alloc, CbtAlignedFreeFunc free);
 
+typedef bool (*CbtGetCollision)(
+    CbtBodyHandle body_a,
+    CbtBodyHandle body_b,
+    const Vector3 normal,
+    float impulse,
+    void* data
+);
 typedef void (*CbtDrawLine1Callback)(
     void* context,
     const Vector3 p0,
@@ -224,6 +218,11 @@ BT_API bool cbtWorldRayTestClosest(
     unsigned int flags,
     CbtRayCastResult* result
 );
+
+BT_API void cbtWorldGetContactPoints(
+    CbtWorldHandle world_handle,
+    CbtGetCollision get_collision,
+    void* data);
 
 BT_API void cbtWorldDebugSetDrawer(CbtWorldHandle world_handle, const CbtDebugDraw* drawer);
 BT_API void cbtWorldDebugSetMode(CbtWorldHandle world_handle, int mode);

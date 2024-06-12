@@ -10,12 +10,6 @@
 #include "BulletCollision/CollisionDispatch/btCollisionDispatcherMt.h"
 #include "BulletCollision/CollisionDispatch/btGhostObject.h"
 
-struct FindGroundCallback : public btCollisionWorld::ContactResultCallback {
-    btScalar addSingleResult(btManifoldPoint& cp, const btCollisionObjectWrapper* colObj0Wrap, int partId0, int index0, const btCollisionObjectWrapper* colObj1Wrap, int partId1, int index1) override {
-
-    }
-}
-
 void cbtCalculateAABB(CbtShapeHandle shape_handle) {
     assert(shape_handle && cbtShapeIsCreated(shape_handle));
 
@@ -185,6 +179,23 @@ void cbtTaskSchedSetNumThreads(int num_threads) {
 // manipulate the existing manifold contact points to be +/- your resolve direction (surface normal) and resolve distance
 
 // otherwise if its a normal body collision call into defaultNearCallback
+
+
+// to get the collision normals for an object
+// you would go through all the manifolds
+// via accessing the world dispatcher
+// the manifold data should include the object pointers
+// as well as the resolve directions
+
+// from a given peristent manifold you can get the number of contacts
+// and then iterate over these points and access the contact points via getContactPoint
+// a given contact point should haves the world normal direction of the collision
+// that can be used to determine if it's ground
+
+// one remaining problem is that the all overlaps / collision manifolds get found before dispatchAllCollisionPairs happens
+// if you find a valid stair step, the correct thing to do is discard all remaining manifolds and
+// look for any new collision overlap / manifolds and resolve all of those afterwards
+
 
 CbtWorldHandle cbtWorldCreate(void) {
     auto world_data = (WorldData*)btAlignedAlloc(sizeof(WorldData), 16);
@@ -395,6 +406,52 @@ bool cbtWorldRayTestClosest(
         result->body = (CbtBodyHandle)closest.m_collisionObject;
     }
     return closest.m_collisionObject != 0;
+}
+
+void cbtWorldGetContactPoints(
+    CbtWorldHandle world_handle,
+    CbtGetCollision get_collision,
+    void* data
+) {
+    // to get the collision normals for an object
+    // you would go through all the manifolds
+    // via accessing the world dispatcher
+    // the manifold data should include the object pointers
+    // as well as the resolve directions
+
+    // from a given peristent manifold you can get the number of contacts
+    // and then iterate over these points and access the contact points via getContactPoint
+    // a given contact point should haves the world normal direction of the collision
+    // that can be used to determine if it's ground
+
+    assert(world_handle);
+    auto world_data = (WorldData*)world_handle;
+    auto dispatcher = (btCollisionDispatcher*) world_data->dispatcher;
+    int num_manifolds = dispatcher->getNumManifolds();
+
+    btPersistentManifold** manifold_pointer = dispatcher->getInternalManifoldPointer();
+    for (int i = 0; i < num_manifolds; i++) {
+        btPersistentManifold* manifold = manifold_pointer[i];
+        const btCollisionObject* body0 = manifold->getBody0();
+        const btCollisionObject* body1 = manifold->getBody1();
+
+        auto handle0 = (CbtBodyHandle) body0;
+        auto handle1 = (CbtBodyHandle) body1;
+
+        int num_contacts = manifold->getNumContacts();
+        for (int a = 0; a < num_contacts; a++) {
+            const btManifoldPoint& contact = manifold->getContactPoint(a);
+
+            const btVector3& normal_vector = contact.m_normalWorldOnB;
+            float impulse = contact.m_appliedImpulse;
+
+            const Vector3 normal = {normal_vector.x(), normal_vector.y(), normal_vector.z()};
+
+            if (!get_collision(handle0, handle1, normal, impulse, data)) {
+                return;
+            }
+        }
+    }
 }
 
 void cbtWorldDebugSetDrawer(CbtWorldHandle world_handle, const CbtDebugDraw* drawer) {
