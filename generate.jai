@@ -32,6 +32,10 @@ ___jai
             decl.decl_flags |= .OMIT_FROM_OUTPUT;
             return .STOP;
         }
+        if decl.name == "AABB3" {
+            decl.decl_flags |= .OMIT_FROM_OUTPUT;
+            return .STOP;
+        }
         return .RECURSE;
     };
 

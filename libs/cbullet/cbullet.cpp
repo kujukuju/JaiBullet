@@ -10,6 +10,12 @@
 #include "BulletCollision/CollisionDispatch/btCollisionDispatcherMt.h"
 #include "BulletCollision/CollisionDispatch/btGhostObject.h"
 
+struct FindGroundCallback : public btCollisionWorld::ContactResultCallback {
+    btScalar addSingleResult(btManifoldPoint& cp, const btCollisionObjectWrapper* colObj0Wrap, int partId0, int index0, const btCollisionObjectWrapper* colObj1Wrap, int partId1, int index1) override {
+
+    }
+}
+
 void cbtCalculateAABB(CbtShapeHandle shape_handle) {
     assert(shape_handle && cbtShapeIsCreated(shape_handle));
 
@@ -122,6 +128,22 @@ struct WorldData {
 
 static btITaskScheduler* s_task_scheduler = nullptr;
 
+// static float distConv = 1.0;
+static float timeConv = 1.0;
+static float velConv = 1.0;
+static float accelConv = 1.0;
+
+void cbtSetUnits(float distance, float time) {
+    assert(distance == 1);
+    
+    // if you pass in 0.01 to go from pixels -> meters, your distConv becomes 0.01
+    timeConv = time;
+    // if you pass in 0.001 to go from milliseconds -> seconds, your velConv becomes 1000
+    // a velocity you pass in of 0.0004 becomes 0.4
+    velConv = distance / time;
+    accelConv = distance / (time * time);
+}
+
 void cbtTaskSchedInit(void) {
     assert(s_task_scheduler == nullptr);
     s_task_scheduler = btCreateDefaultTaskScheduler();
@@ -149,6 +171,20 @@ void cbtTaskSchedSetNumThreads(int num_threads) {
     assert(s_task_scheduler != nullptr);
     s_task_scheduler->setNumThreads(num_threads);
 }
+
+// overwrite the default btCollisionDispatcher
+// overwrite dispatchAllCollisionPairs
+// get the getOverlappingPairArray result
+// go through all overlapping pairs
+// these are pairs of collision objects
+// get the manifold from the dispatcher
+
+// if it contains a rigid body that is allowed to stair step
+// perform a convex sweep from step height down to current height
+// if a valid surface was found
+// manipulate the existing manifold contact points to be +/- your resolve direction (surface normal) and resolve distance
+
+// otherwise if its a normal body collision call into defaultNearCallback
 
 CbtWorldHandle cbtWorldCreate(void) {
     auto world_data = (WorldData*)btAlignedAlloc(sizeof(WorldData), 16);
@@ -240,22 +276,22 @@ void cbtWorldDestroy(CbtWorldHandle world_handle) {
 void cbtWorldSetGravity(CbtWorldHandle world_handle, const Vector3 gravity) {
     assert(world_handle && gravity);
     auto world = ((WorldData*)world_handle)->world;
-    world->setGravity(btVector3(gravity[0], gravity[1], gravity[2]));
+    world->setGravity(btVector3(gravity[0] * accelConv, gravity[1] * accelConv, gravity[2] * accelConv));
 }
 
 void cbtWorldGetGravity(CbtWorldHandle world_handle, Vector3 gravity) {
     assert(world_handle && gravity);
     auto world = ((WorldData*)world_handle)->world;
     auto tmp = world->getGravity();
-    gravity[0] = tmp.x();
-    gravity[1] = tmp.y();
-    gravity[2] = tmp.z();
+    gravity[0] = tmp.x() / accelConv;
+    gravity[1] = tmp.y() / accelConv;
+    gravity[2] = tmp.z() / accelConv;
 }
 
 int cbtWorldStepSimulation(CbtWorldHandle world_handle, float time_step, int max_sub_steps, float fixed_time_step) {
     assert(world_handle);
     auto world = ((WorldData*)world_handle)->world;
-    return world->stepSimulation(time_step, max_sub_steps, fixed_time_step);
+    return world->stepSimulation(time_step * timeConv, max_sub_steps, fixed_time_step * timeConv);
 }
 
 void cbtWorldAddBody(CbtWorldHandle world_handle, CbtBodyHandle body_handle) {
@@ -1161,26 +1197,26 @@ void cbtBodySetRestitution(CbtBodyHandle body_handle, float restitution) {
 void cbtBodySetFriction(CbtBodyHandle body_handle, float friction) {
     assert(body_handle && cbtBodyIsCreated(body_handle));
     auto body = (btRigidBody*)body_handle;
-    body->setFriction(friction);
+    body->setFriction(friction * accelConv);
 }
 
 void cbtBodySetRollingFriction(CbtBodyHandle body_handle, float friction) {
     assert(body_handle && cbtBodyIsCreated(body_handle));
     auto body = (btRigidBody*)body_handle;
-    body->setRollingFriction(friction);
+    body->setRollingFriction(friction * accelConv);
 }
 
 void cbtBodySetSpinningFriction(CbtBodyHandle body_handle, float friction) {
     assert(body_handle && cbtBodyIsCreated(body_handle));
     auto body = (btRigidBody*)body_handle;
-    body->setSpinningFriction(friction);
+    body->setSpinningFriction(friction * accelConv);
 }
 
 void cbtBodySetAnisotropicFriction(CbtBodyHandle body_handle, const Vector3 friction, int mode) {
     assert(body_handle && cbtBodyIsCreated(body_handle));
     assert(friction);
     auto body = (btRigidBody*)body_handle;
-    body->setAnisotropicFriction(btVector3(friction[0], friction[1], friction[2]), mode);
+    body->setAnisotropicFriction(btVector3(friction[0] * accelConv, friction[1] * accelConv, friction[2] * accelConv), mode);
 }
 
 void cbtBodySetContactStiffnessAndDamping(CbtBodyHandle body_handle, float stiffness, float damping) {
@@ -1206,14 +1242,14 @@ void cbtBodySetLinearVelocity(CbtBodyHandle body_handle, const Vector3 velocity)
     assert(body_handle && cbtBodyIsCreated(body_handle));
     assert(velocity);
     auto body = (btRigidBody*)body_handle;
-    body->setLinearVelocity(btVector3(velocity[0], velocity[1], velocity[2]));
+    body->setLinearVelocity(btVector3(velocity[0] * velConv, velocity[1] * velConv, velocity[2] * velConv));
 }
 
 void cbtBodySetAngularVelocity(CbtBodyHandle body_handle, const Vector3 velocity) {
     assert(body_handle && cbtBodyIsCreated(body_handle));
     assert(velocity);
     auto body = (btRigidBody*)body_handle;
-    body->setAngularVelocity(btVector3(velocity[0], velocity[1], velocity[2]));
+    body->setAngularVelocity(btVector3(velocity[0] * velConv, velocity[1] * velConv, velocity[2] * velConv));
 }
 
 void cbtBodySetLinearFactor(CbtBodyHandle body_handle, const Vector3 factor) {
@@ -1234,7 +1270,7 @@ void cbtBodySetGravity(CbtBodyHandle body_handle, const Vector3 gravity) {
     assert(body_handle && cbtBodyIsCreated(body_handle));
     assert(gravity);
     auto body = (btRigidBody*)body_handle;
-    body->setGravity(btVector3(gravity[0], gravity[1], gravity[2]));
+    body->setGravity(btVector3(gravity[0] * accelConv, gravity[1] * accelConv, gravity[2] * accelConv));
 }
 
 void cbtBodyGetGravity(CbtBodyHandle body_handle, Vector3 gravity) {
@@ -1242,9 +1278,9 @@ void cbtBodyGetGravity(CbtBodyHandle body_handle, Vector3 gravity) {
     assert(gravity);
     auto body = (btRigidBody*)body_handle;
     auto tmp = body->getGravity();
-    gravity[0] = tmp.x();
-    gravity[1] = tmp.y();
-    gravity[2] = tmp.z();
+    gravity[0] = tmp.x() / accelConv;
+    gravity[1] = tmp.y() / accelConv;
+    gravity[2] = tmp.z() / accelConv;
 }
 
 int cbtBodyGetNumConstraints(CbtBodyHandle body_handle) {
@@ -1263,21 +1299,21 @@ void cbtBodyApplyCentralForce(CbtBodyHandle body_handle, const Vector3 force) {
     assert(body_handle && cbtBodyIsCreated(body_handle));
     assert(force);
     auto body = (btRigidBody*)body_handle;
-    body->applyCentralForce(btVector3(force[0], force[1], force[2]));
+    body->applyCentralForce(btVector3(force[0] * accelConv, force[1] * accelConv, force[2] * accelConv));
 }
 
 void cbtBodyApplyCentralImpulse(CbtBodyHandle body_handle, const Vector3 impulse) {
     assert(body_handle && cbtBodyIsCreated(body_handle));
     assert(impulse);
     auto body = (btRigidBody*)body_handle;
-    body->applyCentralImpulse(btVector3(impulse[0], impulse[1], impulse[2]));
+    body->applyCentralImpulse(btVector3(impulse[0] * velConv, impulse[1] * velConv, impulse[2] * velConv));
 }
 
 void cbtBodyApplyForce(CbtBodyHandle body_handle, const Vector3 force, const Vector3 rel_pos) {
     assert(body_handle && cbtBodyIsCreated(body_handle));
     assert(force && rel_pos);
     auto body = (btRigidBody*)body_handle;
-    body->applyForce(btVector3(force[0], force[1], force[2]), btVector3(rel_pos[0], rel_pos[1], rel_pos[2]));
+    body->applyForce(btVector3(force[0] * accelConv, force[1] * accelConv, force[2] * accelConv), btVector3(rel_pos[0], rel_pos[1], rel_pos[2]));
 }
 
 void cbtBodyClearForces(CbtBodyHandle body_handle) {
@@ -1291,7 +1327,7 @@ void cbtBodyApplyImpulse(CbtBodyHandle body_handle, const Vector3 impulse, const
     assert(impulse && rel_pos);
     auto body = (btRigidBody*)body_handle;
     body->applyImpulse(
-        btVector3(impulse[0], impulse[1], impulse[2]),
+        btVector3(impulse[0] * velConv, impulse[1] * velConv, impulse[2] * velConv),
         btVector3(rel_pos[0], rel_pos[1], rel_pos[2])
     );
 }
@@ -1300,14 +1336,14 @@ void cbtBodyApplyTorque(CbtBodyHandle body_handle, const Vector3 torque) {
     assert(body_handle && cbtBodyIsCreated(body_handle));
     assert(torque);
     auto body = (btRigidBody*)body_handle;
-    body->applyTorque(btVector3(torque[0], torque[1], torque[2]));
+    body->applyTorque(btVector3(torque[0] * accelConv, torque[1] * accelConv, torque[2] * accelConv));
 }
 
 void cbtBodyApplyTorqueImpulse(CbtBodyHandle body_handle, const Vector3 impulse) {
     assert(body_handle && cbtBodyIsCreated(body_handle));
     assert(impulse);
     auto body = (btRigidBody*)body_handle;
-    body->applyTorqueImpulse(btVector3(impulse[0], impulse[1], impulse[2]));
+    body->applyTorqueImpulse(btVector3(impulse[0] * velConv, impulse[1] * velConv, impulse[2] * velConv));
 }
 
 float cbtBodyGetRestitution(CbtBodyHandle body_handle) {
@@ -1339,9 +1375,9 @@ void cbtBodyGetAnisotropicFriction(CbtBodyHandle body_handle, Vector3 friction) 
     assert(friction);
     auto body = (btRigidBody*)body_handle;
     const btVector3& f = body->getAnisotropicFriction();
-    friction[0] = f.x();
-    friction[1] = f.y();
-    friction[2] = f.z();
+    friction[0] = f.x() / accelConv;
+    friction[1] = f.y() / accelConv;
+    friction[2] = f.z() / accelConv;
 }
 
 float cbtBodyGetContactStiffness(CbtBodyHandle body_handle) {
@@ -1379,9 +1415,9 @@ void cbtBodyGetLinearVelocity(CbtBodyHandle body_handle, Vector3 velocity) {
     assert(velocity);
     auto body = (btRigidBody*)body_handle;
     const btVector3& vel = body->getLinearVelocity();
-    velocity[0] = vel.x();
-    velocity[1] = vel.y();
-    velocity[2] = vel.z();
+    velocity[0] = vel.x() / velConv;
+    velocity[1] = vel.y() / velConv;
+    velocity[2] = vel.z() / velConv;
 }
 
 void cbtBodyGetAngularVelocity(CbtBodyHandle body_handle, Vector3 velocity) {
@@ -1389,9 +1425,9 @@ void cbtBodyGetAngularVelocity(CbtBodyHandle body_handle, Vector3 velocity) {
     assert(velocity);
     auto body = (btRigidBody*)body_handle;
     const btVector3& vel = body->getAngularVelocity();
-    velocity[0] = vel.x();
-    velocity[1] = vel.y();
-    velocity[2] = vel.z();
+    velocity[0] = vel.x() / velConv;
+    velocity[1] = vel.y() / velConv;
+    velocity[2] = vel.z() / velConv;
 }
 
 void cbtBodyGetTotalForce(CbtBodyHandle body_handle, Vector3 force) {
@@ -1399,9 +1435,9 @@ void cbtBodyGetTotalForce(CbtBodyHandle body_handle, Vector3 force) {
     assert(force);
     auto body = (btRigidBody*)body_handle;
     auto tmp = body->getTotalForce();
-    force[0] = tmp.x();
-    force[1] = tmp.y();
-    force[2] = tmp.z();
+    force[0] = tmp.x() / accelConv;
+    force[1] = tmp.y() / accelConv;
+    force[2] = tmp.z() / accelConv;
 }
 
 void cbtBodyGetTotalTorque(CbtBodyHandle body_handle, Vector3 torque) {
@@ -1409,9 +1445,9 @@ void cbtBodyGetTotalTorque(CbtBodyHandle body_handle, Vector3 torque) {
     assert(torque);
     auto body = (btRigidBody*)body_handle;
     auto tmp = body->getTotalTorque();
-    torque[0] = tmp.x();
-    torque[1] = tmp.y();
-    torque[2] = tmp.z();
+    torque[0] = tmp.x() / accelConv;
+    torque[1] = tmp.y() / accelConv;
+    torque[2] = tmp.z() / accelConv;
 }
 
 bool cbtBodyIsStatic(CbtBodyHandle body_handle) {
@@ -1436,13 +1472,13 @@ float cbtBodyGetDeactivationTime(CbtBodyHandle body_handle) {
     assert(body_handle && cbtBodyIsCreated(body_handle));
     assert(body_handle);
     auto body = (btRigidBody*)body_handle;
-    return body->getDeactivationTime();
+    return body->getDeactivationTime() / timeConv;
 }
 
 void cbtBodySetDeactivationTime(CbtBodyHandle body_handle, float time) {
     assert(body_handle && cbtBodyIsCreated(body_handle));
     auto body = (btRigidBody*)body_handle;
-    return body->setDeactivationTime(time);
+    return body->setDeactivationTime(time * timeConv);
 }
 
 int cbtBodyGetActivationState(CbtBodyHandle body_handle) {
@@ -1552,7 +1588,7 @@ void cbtBodySetCenterOfMassPosition(CbtBodyHandle body_handle, const Vector3 pos
     btTransform& trans = body->getWorldTransform();
     btVector3& origin = trans.getOrigin();
 
-    origin.setValue(position[0], position[1], position[3]);
+    origin.setValue(position[0], position[1], position[2]);
 }
 
 void cbtBodyGetCenterOfMassPosition(CbtBodyHandle body_handle, Vector3 position) {
@@ -1644,6 +1680,25 @@ void cbtBodySetCcdMotionThreshold(CbtBodyHandle body_handle, float threshold) {
     body->setCcdMotionThreshold(threshold);
 }
 
+int cbtBodyGetCollisionFlags(CbtBodyHandle body_handle) {
+    assert(body_handle && cbtBodyIsCreated(body_handle));
+    auto body = (btRigidBody*) body_handle;
+    return body->getCollisionFlags();
+}
+
+void cbtBodyAddCollisionFlag(CbtBodyHandle body_handle, int flag) {
+    assert(body_handle && cbtBodyIsCreated(body_handle));
+    auto body = (btRigidBody*) body_handle;
+    body->setCollisionFlags(body->getCollisionFlags() | flag);
+}
+
+void cbtBodyRemoveCollisionFlag(CbtBodyHandle body_handle, int flag) {
+    assert(body_handle && cbtBodyIsCreated(body_handle));
+    auto body = (btRigidBody*) body_handle;
+    body->setCollisionFlags(body->getCollisionFlags() & ~flag);
+}
+
+
 // kinematic character
 static_assert((sizeof(btKinematicCharacterController) % 8) == 0, "sizeof(btKinematicCharacterController) is not multiple of 8");
 static_assert((sizeof(btPairCachingGhostObject) % 8) == 0, "sizeof(btPairCachingGhostObject) is not multiple of 8");
@@ -1702,7 +1757,7 @@ void cbtCharacterControllerSetLinearVelocity(CbtCharacterControllerHandle charac
     assert(character_handle && cbtCharacterControllerIsCreated(character_handle));
     auto character = (btKinematicCharacterController*) character_handle;
 
-    character->setLinearVelocity(btVector3(velocity[0], velocity[1], velocity[2]));
+    character->setLinearVelocity(btVector3(velocity[0] * velConv, velocity[1] * velConv, velocity[2] * velConv));
 }
 
 void cbtCharacterControllerGetLinearVelocity(CbtCharacterControllerHandle character_handle, Vector3 velocity) {
@@ -1710,9 +1765,9 @@ void cbtCharacterControllerGetLinearVelocity(CbtCharacterControllerHandle charac
     auto character = (btKinematicCharacterController*) character_handle;
 
     const btVector3& vel = character->getLinearVelocity();
-    velocity[0] = vel.x();
-    velocity[1] = vel.y();
-    velocity[2] = vel.z();
+    velocity[0] = vel.x() / velConv;
+    velocity[1] = vel.y() / velConv;
+    velocity[2] = vel.z() / velConv;
 }
 
 void cbtCharacterControllerSetStepHeight(CbtCharacterControllerHandle character_handle, float stepHeight) {
@@ -1740,14 +1795,14 @@ void cbtCharacterControllerApplyImpulse(CbtCharacterControllerHandle character_h
     assert(character_handle && cbtCharacterControllerIsCreated(character_handle));
     auto character = (btKinematicCharacterController*) character_handle;
 
-    character->applyImpulse(btVector3(impulse[0], impulse[1], impulse[2]));
+    character->applyImpulse(btVector3(impulse[0] * velConv, impulse[1] * velConv, impulse[2] * velConv));
 }
 
 void cbtCharacterControllerSetGravity(CbtCharacterControllerHandle character_handle, const Vector3 gravity) {
     assert(character_handle && cbtCharacterControllerIsCreated(character_handle));
     auto character = (btKinematicCharacterController*) character_handle;
 
-    character->setGravity(btVector3(gravity[0], gravity[1], gravity[2]));
+    character->setGravity(btVector3(gravity[0] * accelConv, gravity[1] * accelConv, gravity[2] * accelConv));
 }
 
 void cbtCharacterControllerGetGravity(CbtCharacterControllerHandle character_handle, Vector3 gravity) {
@@ -1755,9 +1810,9 @@ void cbtCharacterControllerGetGravity(CbtCharacterControllerHandle character_han
     auto character = (btKinematicCharacterController*) character_handle;
 
     const btVector3& grav = character->getGravity();
-    gravity[0] = grav.x();
-    gravity[1] = grav.y();
-    gravity[2] = grav.z();
+    gravity[0] = grav.x() / accelConv;
+    gravity[1] = grav.y() / accelConv;
+    gravity[2] = grav.z() / accelConv;
 }
 
 void cbtCharacterControllerSetMaxSlope(CbtCharacterControllerHandle character_handle, float radians) {
@@ -1973,7 +2028,7 @@ void cbtConPoint2PointSetImpulseClamp(CbtConstraintHandle con_handle, float impu
     assert(con_handle && cbtConIsCreated(con_handle));
     assert(cbtConGetType(con_handle) == CBT_CONSTRAINT_TYPE_POINT2POINT);
     btPoint2PointConstraint* con = (btPoint2PointConstraint*)con_handle;
-    con->m_setting.m_impulseClamp = impulse_clamp;
+    con->m_setting.m_impulseClamp = impulse_clamp * velConv;
 }
 
 void cbtConPoint2PointGetPivotA(CbtConstraintHandle con_handle, Vector3 pivot) {
@@ -2082,7 +2137,7 @@ void cbtConHingeEnableAngularMotor(
     assert(con_handle && cbtConIsCreated(con_handle));
     assert(cbtConGetType(con_handle) == CBT_CONSTRAINT_TYPE_HINGE);
     auto con = (btHingeConstraint*)con_handle;
-    con->enableAngularMotor(enable, target_velocity, max_motor_impulse);
+    con->enableAngularMotor(enable, target_velocity * velConv, max_motor_impulse * velConv);
 }
 
 void cbtConHingeSetLimit(
@@ -2289,8 +2344,8 @@ void cbtConSliderEnableLinearMotor(
     assert(cbtConGetType(con_handle) == CBT_CONSTRAINT_TYPE_SLIDER);
     auto con = (btSliderConstraint*)con_handle;
     con->setPoweredLinMotor(enable);
-    con->setTargetLinMotorVelocity(target_velocity);
-    con->setMaxLinMotorForce(max_motor_force);
+    con->setTargetLinMotorVelocity(target_velocity * velConv);
+    con->setMaxLinMotorForce(max_motor_force * accelConv);
 }
 
 void cbtConSliderEnableAngularMotor(
@@ -2303,8 +2358,8 @@ void cbtConSliderEnableAngularMotor(
     assert(cbtConGetType(con_handle) == CBT_CONSTRAINT_TYPE_SLIDER);
     auto con = (btSliderConstraint*)con_handle;
     con->setPoweredAngMotor(enable);
-    con->setTargetAngMotorVelocity(target_velocity);
-    con->setMaxAngMotorForce(max_force);
+    con->setTargetAngMotorVelocity(target_velocity * velConv);
+    con->setMaxAngMotorForce(max_force * accelConv);
 }
 
 bool cbtConSliderIsLinearMotorEnabled(CbtConstraintHandle con_handle) {
@@ -2330,10 +2385,10 @@ void cbtConSliderGetAngularMotor(
     assert(cbtConGetType(con_handle) == CBT_CONSTRAINT_TYPE_SLIDER);
     auto con = (btSliderConstraint*)con_handle;
     if (target_velocity) {
-        *target_velocity = con->getTargetAngMotorVelocity();
+        *target_velocity = con->getTargetAngMotorVelocity() / velConv;
     }
     if (max_force) {
-        *max_force = con->getMaxAngMotorForce();
+        *max_force = con->getMaxAngMotorForce() / accelConv;
     }
 }
 

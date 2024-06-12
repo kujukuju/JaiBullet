@@ -97,6 +97,19 @@
 typedef float Vector3[3];
 typedef float AABB3[6];
 
+struct FindGroundCallback : public btCollisionWorld::ContactResultCallback {
+    public:
+    FindGroundCallback(btRigidBody* rigidBody)
+        : btCollisionWorld::ContactResultCallback(),
+          m_rigidBody(rigidBody) {
+
+    }
+
+    btScalar addSingleResult(btManifoldPoint& cp, const btCollisionObjectWrapper* colObj0Wrap, int partId0, int index0, const btCollisionObjectWrapper* colObj1Wrap, int partId1, int index1) override;
+
+    btRigidBody* m_rigidBody;
+}
+
 #ifdef __cplusplus
 extern "C" {
 #else
@@ -156,6 +169,11 @@ typedef struct CbtRayCastResult {
     float hit_fraction;
     CbtBodyHandle body;
 } CbtRayCastResult;
+
+//
+// Conversion
+//
+BT_API void cbtSetUnits(float distance, float time);
 
 //
 // Task scheduler
@@ -416,6 +434,10 @@ BT_API void cbtBodySetCcdSweptSphereRadius(CbtBodyHandle body_handle, float radi
 
 BT_API float cbtBodyGetCcdMotionThreshold(CbtBodyHandle body_handle);
 BT_API void cbtBodySetCcdMotionThreshold(CbtBodyHandle body_handle, float threshold);
+
+BT_API int cbtBodyGetCollisionFlags(CbtBodyHandle body_handle);
+BT_API void cbtBodyAddCollisionFlag(CbtBodyHandle body_handle, int flag);
+BT_API void cbtBodyRemoveCollisionFlag(CbtBodyHandle body_handle, int flag);
 
 //
 // Kinematic Character

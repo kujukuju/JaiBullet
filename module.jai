@@ -1,7 +1,7 @@
 //
 // This file was auto-generated using the following command:
 //
-// jai ../ generate.jai
+// jai ../ ./generate.jai
 //
 size_t :: u64;
 
@@ -70,8 +70,6 @@ CBT_DBGMODE_NO_DEBUG :: 0;
 CBT_DBGMODE_DRAW_WIREFRAME :: 1;
 CBT_DBGMODE_DRAW_AABB :: 2;
 
-AABB3 :: [6] float;
-
 CbtWorldHandle__ :: struct {
     unused: s32;
 }
@@ -127,6 +125,11 @@ CbtRayCastResult :: struct {
     hit_fraction:     float;
     body:             CbtBodyHandle;
 }
+
+//
+// Conversion
+//
+cbtSetUnits :: (distance: float, time: float) -> void #foreign bullet3;
 
 //
 // Task scheduler
