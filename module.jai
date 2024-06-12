@@ -106,6 +106,7 @@ cbtCalculateAABB :: (shape_handle: CbtShapeHandle) -> void #foreign bullet3;
 cbtAlignedAllocSetCustom :: (alloc: CbtAllocFunc, free: CbtFreeFunc) -> void #foreign bullet3;
 cbtAlignedAllocSetCustomAligned :: (alloc: CbtAlignedAllocFunc, free: CbtAlignedFreeFunc) -> void #foreign bullet3;
 
+CbtGetStairHeight :: #type (body_a: CbtBodyHandle) -> float #c_call;
 CbtGetCollision :: #type (body_a: CbtBodyHandle, body_b: CbtBodyHandle, normal: *Vector3, impulse: float, data: *void) -> bool #c_call;
 
 CbtDrawLine1Callback :: #type (_context: *void, p0: *Vector3, p1: *Vector3, color: *Vector3) -> void #c_call;
@@ -145,7 +146,8 @@ cbtTaskSchedSetNumThreads :: (num_threads: s32) -> void #foreign bullet3;
 //
 // World
 //
-cbtWorldCreate :: () -> CbtWorldHandle #foreign bullet3;
+cbtWorldCreate :: (__args: ..Any) -> CbtWorldHandle #foreign bullet3;
+cbtWorldCreateWithStairs :: (get_stair_height: CbtGetStairHeight) -> CbtWorldHandle #foreign bullet3;
 cbtWorldDestroy :: (world_handle: CbtWorldHandle) -> void #foreign bullet3;
 cbtWorldSetGravity :: (world_handle: CbtWorldHandle, gravity: *Vector3) -> void #foreign bullet3;
 cbtWorldSetGravity :: (world_handle: CbtWorldHandle, gravity: Vector3) -> void {

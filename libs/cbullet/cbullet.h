@@ -97,6 +97,8 @@
 typedef float Vector3[3];
 typedef float AABB3[6];
 
+
+
 #ifdef __cplusplus
 extern "C" {
 #else
@@ -121,6 +123,7 @@ BT_API void cbtCalculateAABB(CbtShapeHandle shape_handle);
 BT_API void cbtAlignedAllocSetCustom(CbtAllocFunc alloc, CbtFreeFunc free);
 BT_API void cbtAlignedAllocSetCustomAligned(CbtAlignedAllocFunc alloc, CbtAlignedFreeFunc free);
 
+typedef float (*CbtGetStairHeight)(CbtBodyHandle body_a);
 typedef bool (*CbtGetCollision)(
     CbtBodyHandle body_a,
     CbtBodyHandle body_b,
@@ -181,7 +184,8 @@ BT_API void cbtTaskSchedSetNumThreads(int num_threads);
 //
 // World
 //
-BT_API CbtWorldHandle cbtWorldCreate(void);
+BT_API CbtWorldHandle cbtWorldCreate();
+BT_API CbtWorldHandle cbtWorldCreateWithStairs(CbtGetStairHeight get_stair_height);
 BT_API void cbtWorldDestroy(CbtWorldHandle world_handle);
 BT_API void cbtWorldSetGravity(CbtWorldHandle world_handle, const Vector3 gravity);
 BT_API void cbtWorldGetGravity(CbtWorldHandle world_handle, Vector3 gravity);
