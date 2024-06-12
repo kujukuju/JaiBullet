@@ -106,7 +106,7 @@ cbtCalculateAABB :: (shape_handle: CbtShapeHandle) -> void #foreign bullet3;
 cbtAlignedAllocSetCustom :: (alloc: CbtAllocFunc, free: CbtFreeFunc) -> void #foreign bullet3;
 cbtAlignedAllocSetCustomAligned :: (alloc: CbtAlignedAllocFunc, free: CbtAlignedFreeFunc) -> void #foreign bullet3;
 
-CbtGetStairHeight :: #type (body_a: CbtBodyHandle) -> float #c_call;
+CbtGetStairHeight :: #type (body: CbtBodyHandle) -> float #c_call;
 CbtGetCollision :: #type (body_a: CbtBodyHandle, body_b: CbtBodyHandle, normal: *Vector3, impulse: float, data: *void) -> bool #c_call;
 
 CbtDrawLine1Callback :: #type (_context: *void, p0: *Vector3, p1: *Vector3, color: *Vector3) -> void #c_call;
@@ -515,41 +515,6 @@ cbtBodySetCcdMotionThreshold :: (body_handle: CbtBodyHandle, threshold: float) -
 cbtBodyGetCollisionFlags :: (body_handle: CbtBodyHandle) -> s32 #foreign bullet3;
 cbtBodyAddCollisionFlag :: (body_handle: CbtBodyHandle, flag: s32) -> void #foreign bullet3;
 cbtBodyRemoveCollisionFlag :: (body_handle: CbtBodyHandle, flag: s32) -> void #foreign bullet3;
-
-//
-// Kinematic Character
-//
-cbtCharacterControllerAllocate :: () -> CbtCharacterControllerHandle #foreign bullet3;
-cbtCharacterControllerDeallocate :: (character_handle: CbtCharacterControllerHandle) -> void #foreign bullet3;
-
-cbtCharacterControllerCreate :: (character_handle: CbtCharacterControllerHandle, shape_handle: CbtShapeHandle, stepHeight: float, up: *Vector3) -> void #foreign bullet3;
-cbtCharacterControllerCreate :: (character_handle: CbtCharacterControllerHandle, shape_handle: CbtShapeHandle, stepHeight: float, up: Vector3) -> void {
-	return cbtCharacterControllerCreate(character_handle, shape_handle, stepHeight, *up);
-}
-
-cbtCharacterControllerDestroy :: (character_handle: CbtCharacterControllerHandle) -> void #foreign bullet3;
-cbtCharacterControllerIsCreated :: (character_handle: CbtCharacterControllerHandle) -> bool #foreign bullet3;
-
-cbtCharacterControllerSetLinearVelocity :: (character_handle: CbtCharacterControllerHandle, velocity: *Vector3) -> void #foreign bullet3;
-cbtCharacterControllerSetLinearVelocity :: (character_handle: CbtCharacterControllerHandle, velocity: Vector3) -> void {
-	return cbtCharacterControllerSetLinearVelocity(character_handle, *velocity);
-}
-
-cbtCharacterControllerGetLinearVelocity :: (character_handle: CbtCharacterControllerHandle, velocity: *Vector3) -> void #foreign bullet3;
-cbtCharacterControllerGetLinearVelocity :: (character_handle: CbtCharacterControllerHandle, velocity: Vector3) -> void {
-	return cbtCharacterControllerGetLinearVelocity(character_handle, *velocity);
-}
-
-cbtCharacterControllerSetStepHeight :: (character_handle: CbtCharacterControllerHandle, stepHeight: float) -> void #foreign bullet3;
-cbtCharacterControllerGetStepHeight :: (character_handle: CbtCharacterControllerHandle) -> float #foreign bullet3;
-cbtCharacterControllerOnGround :: (character_handle: CbtCharacterControllerHandle) -> bool #foreign bullet3;
-cbtCharacterControllerApplyImpulse :: (character_handle: CbtCharacterControllerHandle, impulse: *Vector3) -> void #foreign bullet3;
-cbtCharacterControllerSetGravity :: (character_handle: CbtCharacterControllerHandle, gravity: *Vector3) -> void #foreign bullet3;
-cbtCharacterControllerGetGravity :: (character_handle: CbtCharacterControllerHandle, gravity: *Vector3) -> void #foreign bullet3;
-cbtCharacterControllerSetMaxSlope :: (character_handle: CbtCharacterControllerHandle, radians: float) -> void #foreign bullet3;
-cbtCharacterControllerGetMaxSlope :: (character_handle: CbtCharacterControllerHandle) -> float #foreign bullet3;
-cbtCharacterControllerSetMaxPenetrationDepth :: (character_handle: CbtCharacterControllerHandle, d: float) -> void #foreign bullet3;
-cbtCharacterControllerGetMaxPenetrationDepth :: (character_handle: CbtCharacterControllerHandle) -> float #foreign bullet3;
 
 //
 // Constraints

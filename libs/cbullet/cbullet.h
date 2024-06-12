@@ -123,7 +123,7 @@ BT_API void cbtCalculateAABB(CbtShapeHandle shape_handle);
 BT_API void cbtAlignedAllocSetCustom(CbtAllocFunc alloc, CbtFreeFunc free);
 BT_API void cbtAlignedAllocSetCustomAligned(CbtAlignedAllocFunc alloc, CbtAlignedFreeFunc free);
 
-typedef float (*CbtGetStairHeight)(CbtBodyHandle body_a);
+typedef float (*CbtGetStairHeight)(CbtBodyHandle body);
 typedef bool (*CbtGetCollision)(
     CbtBodyHandle body_a,
     CbtBodyHandle body_b,
@@ -441,29 +441,6 @@ BT_API void cbtBodySetCcdMotionThreshold(CbtBodyHandle body_handle, float thresh
 BT_API int cbtBodyGetCollisionFlags(CbtBodyHandle body_handle);
 BT_API void cbtBodyAddCollisionFlag(CbtBodyHandle body_handle, int flag);
 BT_API void cbtBodyRemoveCollisionFlag(CbtBodyHandle body_handle, int flag);
-
-//
-// Kinematic Character
-//
-BT_API CbtCharacterControllerHandle cbtCharacterControllerAllocate(void);
-BT_API void cbtCharacterControllerDeallocate(CbtCharacterControllerHandle character_handle);
-
-BT_API void cbtCharacterControllerCreate(CbtCharacterControllerHandle character_handle, CbtShapeHandle shape_handle, float stepHeight, const Vector3 up);
-BT_API void cbtCharacterControllerDestroy(CbtCharacterControllerHandle character_handle);
-BT_API bool cbtCharacterControllerIsCreated(CbtCharacterControllerHandle character_handle);
-
-BT_API void cbtCharacterControllerSetLinearVelocity(CbtCharacterControllerHandle character_handle, const Vector3 velocity);
-BT_API void cbtCharacterControllerGetLinearVelocity(CbtCharacterControllerHandle character_handle, Vector3 velocity);
-BT_API void cbtCharacterControllerSetStepHeight(CbtCharacterControllerHandle character_handle, float stepHeight);
-BT_API float cbtCharacterControllerGetStepHeight(CbtCharacterControllerHandle character_handle);
-BT_API bool cbtCharacterControllerOnGround(CbtCharacterControllerHandle character_handle);
-BT_API void cbtCharacterControllerApplyImpulse(CbtCharacterControllerHandle character_handle, const Vector3 impulse);
-BT_API void cbtCharacterControllerSetGravity(CbtCharacterControllerHandle character_handle, const Vector3 gravity);
-BT_API void cbtCharacterControllerGetGravity(CbtCharacterControllerHandle character_handle, Vector3 gravity);
-BT_API void cbtCharacterControllerSetMaxSlope(CbtCharacterControllerHandle character_handle, float radians);
-BT_API float cbtCharacterControllerGetMaxSlope(CbtCharacterControllerHandle character_handle);
-BT_API void cbtCharacterControllerSetMaxPenetrationDepth(CbtCharacterControllerHandle character_handle, float d);
-BT_API float cbtCharacterControllerGetMaxPenetrationDepth(CbtCharacterControllerHandle character_handle);
 
 //
 // Constraints

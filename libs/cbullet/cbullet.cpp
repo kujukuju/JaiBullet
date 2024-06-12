@@ -7,7 +7,6 @@
 #include "BulletDynamics/ConstraintSolver/btContactConstraint.h"
 #include "BulletDynamics/ConstraintSolver/btSequentialImpulseConstraintSolverMt.h"
 #include "BulletDynamics/Dynamics/btDiscreteDynamicsWorldMt.h"
-#include "BulletDynamics/Character/btKinematicCharacterController.h"
 #include "BulletCollision/CollisionDispatch/btCollisionDispatcherMt.h"
 #include "BulletCollision/CollisionDispatch/btGhostObject.h"
 
@@ -167,28 +166,6 @@ void cbtTaskSchedSetNumThreads(int num_threads) {
     s_task_scheduler->setNumThreads(num_threads);
 }
 
-// overwrite the default btCollisionDispatcher
-// overwrite dispatchAllCollisionPairs
-// get the getOverlappingPairArray result
-// go through all overlapping pairs
-// these are pairs of collision objects
-// get the manifold from the dispatcher
-
-// if it contains a rigid body that is allowed to stair step
-// perform a convex sweep from step height down to current height
-// if a valid surface was found
-// manipulate the existing manifold contact points to be +/- your resolve direction (surface normal) and resolve distance
-
-// otherwise if its a normal body collision call into defaultNearCallback
-
-
-
-// one remaining problem is that the all overlaps / collision manifolds get found before dispatchAllCollisionPairs happens
-// if you find a valid stair step, the correct thing to do is discard all remaining manifolds and
-// look for any new collision overlap / manifolds and resolve all of those afterwards
-
-
-
 CbtWorldHandle cbtWorldCreate() {
     auto world_data = (WorldData*)btAlignedAlloc(sizeof(WorldData), 16);
     new (world_data) WorldData();
@@ -270,7 +247,7 @@ CbtWorldHandle cbtWorldCreateWithStairs(CbtGetStairHeight get_stair_height) {
         );
         world_data->world = (btDiscreteDynamicsWorld*)btAlignedAlloc(sizeof(btDiscreteDynamicsWorld), 16);
 
-        new (world_data->dispatcher) CbtStairCollisionDispatcher(world_data->collision_config);
+        new (world_data->dispatcher) CbtStairCollisionDispatcher(world_data->collision_config, world_data->world, get_stair_height);
         new (world_data->solver) btSequentialImpulseConstraintSolver();
 
         new (world_data->world) btDiscreteDynamicsWorld(
@@ -1782,151 +1759,6 @@ void cbtBodyRemoveCollisionFlag(CbtBodyHandle body_handle, int flag) {
     assert(body_handle && cbtBodyIsCreated(body_handle));
     auto body = (btRigidBody*) body_handle;
     body->setCollisionFlags(body->getCollisionFlags() & ~flag);
-}
-
-
-// kinematic character
-static_assert((sizeof(btKinematicCharacterController) % 8) == 0, "sizeof(btKinematicCharacterController) is not multiple of 8");
-static_assert((sizeof(btPairCachingGhostObject) % 8) == 0, "sizeof(btPairCachingGhostObject) is not multiple of 8");
-static_assert(
-    ((sizeof(btKinematicCharacterController) + sizeof(btPairCachingGhostObject)) % 8) == 0,
-    "sizeof(btKinematicCharacterController) + sizeof(btPairCachingGhostObject) is not multiple of 8"
-);
-
-CbtCharacterControllerHandle cbtCharacterControllerAllocate(void) {
-    auto base = (uint64_t*)btAlignedAlloc(sizeof(btKinematicCharacterController) + sizeof(btPairCachingGhostObject), 16);
-    // Set vtable to 0. This means that body is not created.
-    base[0] = 0;
-    return (CbtCharacterControllerHandle)base;
-}
-
-void cbtCharacterControllerDeallocate(CbtCharacterControllerHandle character_handle) {
-    assert(character_handle && !cbtCharacterControllerIsCreated(character_handle));
-    btAlignedFree(character_handle);
-}
-
-void cbtCharacterControllerCreate(CbtCharacterControllerHandle character_handle, CbtShapeHandle shape_handle, float stepHeight, const Vector3 up) {
-    assert(character_handle && shape_handle);
-    assert(!cbtCharacterControllerIsCreated(character_handle));
-    assert(cbtShapeIsCreated(shape_handle));
-    assert(cbtShapeIsConvex(shape_handle));
-
-    auto shape = (btConvexShape*) shape_handle;
-
-    void* character_mem = (void*)character_handle;
-    void* ghost_mem = (void*)((uint8_t*)character_handle + sizeof(btKinematicCharacterController));
-
-    btPairCachingGhostObject* ghost_object = new (ghost_mem) btPairCachingGhostObject();
-    new (character_mem) btKinematicCharacterController(ghost_object, shape, stepHeight, btVector3(up[0], up[1], up[2]));
-}
-
-void cbtCharacterControllerDestroy(CbtCharacterControllerHandle character_handle) {
-    assert(character_handle && cbtCharacterControllerIsCreated(character_handle));
-
-    auto character = (btKinematicCharacterController*) character_handle;
-    auto ghost = (btPairCachingGhostObject*)((uint8_t*) character_handle + sizeof(btKinematicCharacterController));
-
-    character->~btKinematicCharacterController();
-    ghost->~btPairCachingGhostObject();
-
-    // Set vtable to 0, this means that object is not created.
-    ((uint64_t*)character)[0] = 0;
-}
-
-bool cbtCharacterControllerIsCreated(CbtCharacterControllerHandle character_handle) {
-    assert(character_handle);
-    // vtable == 0 means that object is not created.
-    return ((uint64_t*)character_handle)[0] != 0;
-}
-
-void cbtCharacterControllerSetLinearVelocity(CbtCharacterControllerHandle character_handle, const Vector3 velocity) {
-    assert(character_handle && cbtCharacterControllerIsCreated(character_handle));
-    auto character = (btKinematicCharacterController*) character_handle;
-
-    character->setLinearVelocity(btVector3(velocity[0] * velConv, velocity[1] * velConv, velocity[2] * velConv));
-}
-
-void cbtCharacterControllerGetLinearVelocity(CbtCharacterControllerHandle character_handle, Vector3 velocity) {
-    assert(character_handle && cbtCharacterControllerIsCreated(character_handle));
-    auto character = (btKinematicCharacterController*) character_handle;
-
-    const btVector3& vel = character->getLinearVelocity();
-    velocity[0] = vel.x() / velConv;
-    velocity[1] = vel.y() / velConv;
-    velocity[2] = vel.z() / velConv;
-}
-
-void cbtCharacterControllerSetStepHeight(CbtCharacterControllerHandle character_handle, float stepHeight) {
-    assert(character_handle && cbtCharacterControllerIsCreated(character_handle));
-    auto character = (btKinematicCharacterController*) character_handle;
-
-    character->setStepHeight(stepHeight);
-}
-
-float cbtCharacterControllerGetStepHeight(CbtCharacterControllerHandle character_handle) {
-    assert(character_handle && cbtCharacterControllerIsCreated(character_handle));
-    auto character = (btKinematicCharacterController*) character_handle;
-
-    return character->getStepHeight();
-}
-
-bool cbtCharacterControllerOnGround(CbtCharacterControllerHandle character_handle) {
-    assert(character_handle && cbtCharacterControllerIsCreated(character_handle));
-    auto character = (btKinematicCharacterController*) character_handle;
-
-    return character->onGround();
-}
-
-void cbtCharacterControllerApplyImpulse(CbtCharacterControllerHandle character_handle, const Vector3 impulse) {
-    assert(character_handle && cbtCharacterControllerIsCreated(character_handle));
-    auto character = (btKinematicCharacterController*) character_handle;
-
-    character->applyImpulse(btVector3(impulse[0] * velConv, impulse[1] * velConv, impulse[2] * velConv));
-}
-
-void cbtCharacterControllerSetGravity(CbtCharacterControllerHandle character_handle, const Vector3 gravity) {
-    assert(character_handle && cbtCharacterControllerIsCreated(character_handle));
-    auto character = (btKinematicCharacterController*) character_handle;
-
-    character->setGravity(btVector3(gravity[0] * accelConv, gravity[1] * accelConv, gravity[2] * accelConv));
-}
-
-void cbtCharacterControllerGetGravity(CbtCharacterControllerHandle character_handle, Vector3 gravity) {
-    assert(character_handle && cbtCharacterControllerIsCreated(character_handle));
-    auto character = (btKinematicCharacterController*) character_handle;
-
-    const btVector3& grav = character->getGravity();
-    gravity[0] = grav.x() / accelConv;
-    gravity[1] = grav.y() / accelConv;
-    gravity[2] = grav.z() / accelConv;
-}
-
-void cbtCharacterControllerSetMaxSlope(CbtCharacterControllerHandle character_handle, float radians) {
-    assert(character_handle && cbtCharacterControllerIsCreated(character_handle));
-    auto character = (btKinematicCharacterController*) character_handle;
-
-    character->setMaxSlope(radians);
-}
-
-float cbtCharacterControllerGetMaxSlope(CbtCharacterControllerHandle character_handle) {
-    assert(character_handle && cbtCharacterControllerIsCreated(character_handle));
-    auto character = (btKinematicCharacterController*) character_handle;
-
-    return character->getMaxSlope();
-}
-
-void cbtCharacterControllerSetMaxPenetrationDepth(CbtCharacterControllerHandle character_handle, float d) {
-    assert(character_handle && cbtCharacterControllerIsCreated(character_handle));
-    auto character = (btKinematicCharacterController*) character_handle;
-
-    character->setMaxPenetrationDepth(d);
-}
-
-float cbtCharacterControllerGetMaxPenetrationDepth(CbtCharacterControllerHandle character_handle) {
-    assert(character_handle && cbtCharacterControllerIsCreated(character_handle));
-    auto character = (btKinematicCharacterController*) character_handle;
-
-    return character->getMaxPenetrationDepth();
 }
 
 // constraints
