@@ -1,5 +1,4 @@
 #include "cbullet.h"
-#include "cbullet_stairs.h"
 #include <assert.h>
 #include <stdint.h>
 #include "btBulletCollisionCommon.h"
@@ -219,46 +218,6 @@ CbtWorldHandle cbtWorldCreate() {
             world_data->solver,
             world_data->collision_config
         );
-    }
-
-    return (CbtWorldHandle)world_data;
-}
-
-CbtWorldHandle cbtWorldCreateWithStairs(CbtGetStairHeight get_stair_height) {
-    assert(get_stair_height && !s_task_scheduler);
-
-    auto world_data = (WorldData*)btAlignedAlloc(sizeof(WorldData), 16);
-    new (world_data) WorldData();
-
-    world_data->collision_config = (btDefaultCollisionConfiguration*)btAlignedAlloc(
-        sizeof(btDefaultCollisionConfiguration),
-            16
-    );
-    world_data->broadphase = (btDbvtBroadphase*)btAlignedAlloc(sizeof(btDbvtBroadphase), 16);
-
-    new (world_data->collision_config) btDefaultCollisionConfiguration();
-    new (world_data->broadphase) btDbvtBroadphase();
-
-    {
-        world_data->dispatcher = (btCollisionDispatcher*)btAlignedAlloc(sizeof(CbtStairCollisionDispatcher), 16);
-        world_data->solver = (btSequentialImpulseConstraintSolver*)btAlignedAlloc(
-            sizeof(btSequentialImpulseConstraintSolver),
-            16
-        );
-        world_data->world = (btDiscreteDynamicsWorld*)btAlignedAlloc(sizeof(btDiscreteDynamicsWorld), 16);
-
-        new (world_data->dispatcher) CbtStairCollisionDispatcher(world_data->collision_config, world_data->world, get_stair_height);
-        new (world_data->solver) btSequentialImpulseConstraintSolver();
-
-        new (world_data->world) btDiscreteDynamicsWorld(
-            world_data->dispatcher,
-            world_data->broadphase,
-            world_data->solver,
-            world_data->collision_config
-        );
-
-        // TODO
-        world_data->world->getDispatchInfo().m_allowedCcdPenetration = 0.001;
     }
 
     return (CbtWorldHandle)world_data;

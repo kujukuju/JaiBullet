@@ -223,7 +223,6 @@ set(BULLET3_SOURCE_FILES
     ./bullet/LinearMath/TaskScheduler/btTaskScheduler.cpp
     ./bullet/LinearMath/TaskScheduler/btThreadSupportPosix.cpp
     ./bullet/LinearMath/TaskScheduler/btThreadSupportWin32.cpp
-    ./cbullet/cbullet_stairs.cpp
     ./cbullet/cbullet.cpp)
 
 set(BULLET3_HEADER_FILES
@@ -461,7 +460,6 @@ set(BULLET3_HEADER_FILES
     ./bullet/LinearMath/btTransformUtil.h
     ./bullet/LinearMath/btVector3.h
     ./bullet/LinearMath/TaskScheduler/btThreadSupportInterface.h
-    ./cbullet/cbullet_stairs.h
     ./cbullet/cbullet.h)
 
 add_library(bullet3 ${BULLET3_SOURCE_FILES} ${BULLET3_HEADER_FILES})

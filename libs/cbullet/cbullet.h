@@ -185,7 +185,6 @@ BT_API void cbtTaskSchedSetNumThreads(int num_threads);
 // World
 //
 BT_API CbtWorldHandle cbtWorldCreate();
-BT_API CbtWorldHandle cbtWorldCreateWithStairs(CbtGetStairHeight get_stair_height);
 BT_API void cbtWorldDestroy(CbtWorldHandle world_handle);
 BT_API void cbtWorldSetGravity(CbtWorldHandle world_handle, const Vector3 gravity);
 BT_API void cbtWorldGetGravity(CbtWorldHandle world_handle, Vector3 gravity);

@@ -147,7 +147,6 @@ cbtTaskSchedSetNumThreads :: (num_threads: s32) -> void #foreign bullet3;
 // World
 //
 cbtWorldCreate :: (__args: ..Any) -> CbtWorldHandle #foreign bullet3;
-cbtWorldCreateWithStairs :: (get_stair_height: CbtGetStairHeight) -> CbtWorldHandle #foreign bullet3;
 cbtWorldDestroy :: (world_handle: CbtWorldHandle) -> void #foreign bullet3;
 cbtWorldSetGravity :: (world_handle: CbtWorldHandle, gravity: *Vector3) -> void #foreign bullet3;
 cbtWorldSetGravity :: (world_handle: CbtWorldHandle, gravity: Vector3) -> void {
