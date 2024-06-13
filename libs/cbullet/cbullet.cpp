@@ -256,6 +256,9 @@ CbtWorldHandle cbtWorldCreateWithStairs(CbtGetStairHeight get_stair_height) {
             world_data->solver,
             world_data->collision_config
         );
+
+        // TODO
+        world_data->world->getDispatchInfo().m_allowedCcdPenetration = 0.001;
     }
 
     return (CbtWorldHandle)world_data;
@@ -419,6 +422,7 @@ void cbtWorldGetContactPoints(
     CbtGetCollision get_collision,
     void* data
 ) {
+
     // to get the collision normals for an object
     // you would go through all the manifolds
     // via accessing the world dispatcher
